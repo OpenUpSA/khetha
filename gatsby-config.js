@@ -3,7 +3,6 @@ const { config } = require('dotenv');
 
 const starterpack = require('./starterpack.json');
 const createFilesystemConfig = require('./src/tooling/gatsby-config/createFilesystemConfig');
-const netlifyCmsConfig = require('./src/tooling/gatsby-config/netlifyCmsConfig');
 const buildManifestConfig = require('./src/tooling/gatsby-config/buildManifestConfig');
 const createHotjarConfig = require('./src/tooling/gatsby-config/createHotjarConfig');
 const createAnalyticsConfig = require('./src/tooling/gatsby-config/createAnalyticsConfig');
@@ -31,9 +30,8 @@ module.exports = {
     siteUrl: 'https://pocketreporter.netlify.com',
   },
   plugins: [
-    netlifyCmsConfig,
     createFilesystemConfig(__dirname),
-    ...(buildManifestConfig({ 
+    ...(buildManifestConfig({
       name: nameValue,
       theme: themeValue,
       background: backgroundValue,
@@ -42,7 +40,7 @@ module.exports = {
     ...(createAnalyticsConfig({ trackingId: GOOGLE_ANALYTICS_ID })),
     ...(createSentryConfig({ dsn: SENTRY_DNS })),
     '@wapps/gatsby-plugin-material-ui',
-    'gatsby-transformer-remark',
+    'gatsby-transformer-json',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-offline',
