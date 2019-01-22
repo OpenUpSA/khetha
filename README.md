@@ -1,5 +1,7 @@
 # 🗳 Kheta
 
+[![Join the chat at https://gitter.im/OpenUpSA/kheta](https://badges.gitter.im/OpenUpSA/kheta.svg)](https://gitter.im/OpenUpSA/kheta?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Kheta is an open-source tool created in partnership with Social Surveys Africa to engagement in the 2019 national election
 
 ## Interested in contributing?
