@@ -23,18 +23,18 @@ There are 6 root folders in the `src` folder. These are as follows:
 Gatsby uses the `src/pages` folder to build hardcoded routes. You use this folder to create both low-level routes and nested routes. For example you might have:
 
 ```powershell
-├── index.js
+├── index.jsx
 ├── about.js
 └── user
-    ├── index.js
+    ├── index.jsx
     ├── profile.js
     └── settings.js
 ```
 
 Which would translate into the following:
-- /: `index.js`
+- /: `index.jsx`
 - /about: `about.js`
-- /user: `user/index.js`
+- /user: `user/index.jsx`
 - /user/profile: `user/profile.js`
 
 As a rule of thumb these files should only initialise components and pass either hardcoded values or values obtained from GraphQL nodes to components in `src/views`.
@@ -91,11 +91,11 @@ For example:
 ├── events
 │   ├── onCreateNode.js
 │   ├── createPages.js
-│   └── index.js
+│   └── index.jsx
 └── products
     ├── onCreateNode.js
     ├── createPages.js
-    └── index.js
+    └── index.jsx
 ```
 
 ```js
@@ -125,7 +125,7 @@ const createPages = ({ graphql, actions }) => {
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
       createPage({
         path: node.fields.slug,
-        component: path.resolve(`./src/templates/product/index.js`),
+        component: path.resolve(`./src/templates/product/index.jsx`),
         context: {
           slug: node.fields.slug,
         },
@@ -191,14 +191,14 @@ For example:
 ├── List.jsx
 ├── Alert.jsx
 └── Button
-    ├── index.js
+    ├── index.jsx
     └── Markup.jsx
 ```
 
 ```js
-// src/components/Button/index.js
+index.jsx
 
-import { connect } from 'react-redux';
+import { conneindex.jsxm 'react-redux';
 import { reverseName } from '../redux/modules/users.js';
 import Button from './Component';
 
@@ -238,8 +238,7 @@ Furthermore, if we want another component-specific container around the componen
 ├── Alert.jsx
 └── Button
     ├── index.js
-    ├── Container.jsx
-    └── Markup.jsx
+    ├── Containindex.jsx   └── Markup.jsx
 ```
 
 Where `Container.jsx` would be as follows:
@@ -273,8 +272,7 @@ As per the principle of [grouping by features and routes](https://reactjs.org/do
 ├── Alert.js
 └── Button
     ├── index.js
-    ├── index.mdx
-    ├── config.js
+    ├── index.mindex.jsx── config.js
     ├── Container.jsx
     ├── Markup.jsx
     ├── Markup.test.js
@@ -285,7 +283,7 @@ As per the principle of [grouping by features and routes](https://reactjs.org/do
 ```
 
 These could hypothetically be as follows:
-- `index.js`: The file that initialises the component, the Redux container that wraps the component.
+- `index.js`: The file thatindex.jsxises the component, the Redux container that wraps the component.
 - `index.mdx`: A [.mdx file](https://mdxjs.com/) used by [Docz](https://docz.site) to generate documentation for the component.
 - `config.json`: Hardcoded constants can be stored as values in here for hardcoded values in the component.
 - `Container.jsx`: Might house the container component we created above.
@@ -303,8 +301,7 @@ However, this means that folders might get a bit cluttered for complex views and
 ├── Alert.js
 └── Button
     ├── index.js
-    ├── index.mdx
-    ├── config.js
+    ├── index.mindex.jsx── config.js
     ├── Container
     │   ├── index.jsx
     │   └── stringToUppercase.js
@@ -319,8 +316,7 @@ However, this means that folders might get a bit cluttered for complex views and
     │   └── Markup.mocks.json
     └── getIcon
         ├── index.js
-        ├── icon-1.svg
-        ├── icon-2.svg
+        ├── icoindex.jsx        ├── icon-2.svg
         └── icon-3.svg
 
 ```
@@ -335,16 +331,15 @@ For really complex components this can be taken another level deeper:
 ├── Alert.js
 └── Button
     ├── index.js
-    ├── index.mdx
-    ├── config.js
+    ├── index.mindex.jsx── config.js
     ├── Tooltip
     │   ├── index.jsx
     │   ├── Markup
     │   │   ├── index.js
-    │   │   └── .test.js
+    │   │   └──index.jsxs
     │   └── Spinner
     │       ├── index.js
-    │       └── .test.js
+    │       └──index.jsxs
     └── ...
 ```
 
@@ -375,7 +370,7 @@ If the number of assets get a bit overwhelming they can be broken off into a hel
     ├── index.jsx
     └── getImage
         ├── index.js
-        ├── image-1.jpg
+        ├── imaindex.jsx
         ├── image-2.jpg
         ├── image-3.jpg
         ├── image-4.jpg

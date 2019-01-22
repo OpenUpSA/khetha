@@ -48,6 +48,14 @@ module.exports = {
     'gatsby-plugin-offline',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-netlify',
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Roboto'],
+        },
+      },
+    },
   ],
   mapping: {
     'MarkdownRemark.frontmatter.translated_resource_link': 'MarkdownRemark.frontmatter.translated_resource_title',

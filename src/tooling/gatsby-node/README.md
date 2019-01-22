@@ -16,7 +16,7 @@ _Note that everything is this folder is configured to run during build time in n
 
 - [createArraysForTemplates.js](#createarraysfortemplatesjs)
 - [query.js](#queryjs)
-- [getFolderTranslations/index.js](#getfoldertranslationsindexjs)
+- [getFolderTranslations/index.jsx](#getfoldertranslationsindexjs)
 
 ## createArraysForTemplates.js
 
@@ -132,7 +132,7 @@ This query returns everything that is needed to build all HTML pages from the te
 |---|---|---|---|---|
 |grapql|function|true||You need to pass the `graphql` function exposed by `gatsy-node.js` during the `createPages` hook.|
 
-## getFolderTranslations/index.js
+## getFolderTranslations/index.jsx
 
 **Examples**
 
