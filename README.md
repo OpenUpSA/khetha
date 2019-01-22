@@ -1,10 +1,10 @@
-# 📱 Pocket Reporter
+# 🗳 Kheta
 
-Pocket Reporter is a free, open-source news editor in your pocket.
+Kheta is an open-source tool created in partnership with Social Surveys Africa to engagement in the 2019 national election
 
 ## Interested in contributing?
 
-Please visit the [project documentation](https://pocketreporter-docs.netlify.com) to get started.
+Please visit the [project documentation](https://kheta-docs.netlify.com) to get started.
 
 
 ## Setting up local environment
