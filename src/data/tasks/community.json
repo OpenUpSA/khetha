@@ -1,0 +1,142 @@
+{
+  "eng": {
+    "id": "community",
+    "title": "Community",
+    "description": "It is important to know what those around you think about the upcoming 2019 election. In this challenge you will need to speak to them.",
+    "difficulty": "hard",
+    "tasks": [
+      {
+        "title": "Question 1",
+        "description": "This is the description text that will get shown",
+        "format": "string"
+      },
+      {
+        "title": "Question 2",
+        "description": "This is the description text that will get shown",
+        "format": "textarea"
+      },
+      {
+        "title": "Question 3",
+        "description": "This is the description text that will get shown",
+        "format": "boolean"
+      },
+      {
+        "title": "Question 4",
+        "description": "This is the description text that will get shown",
+        "format": "select",
+        "options": ["one", "two", "three"]
+      },
+      {
+        "title": "Question 4",
+        "description": "This is the description text that will get shown",
+        "format": "checkbox",
+        "options": ["one", "two", "three"]
+      }
+    ]
+  },
+  "zul": {
+    "id": "community",
+    "title": "Community",
+    "description": "It is important to know what those around you think about the upcoming 2019 election. In this challenge you will need to speak to them.",
+    "difficulty": "hard",
+    "tasks": [
+      {
+        "title": "Question 1",
+        "description": "This is the description text that will get shown",
+        "format": "string"
+      },
+      {
+        "title": "Question 2",
+        "description": "This is the description text that will get shown",
+        "format": "textarea"
+      },
+      {
+        "title": "Question 3",
+        "description": "This is the description text that will get shown",
+        "format": "boolean"
+      },
+      {
+        "title": "Question 4",
+        "description": "This is the description text that will get shown",
+        "format": "select",
+        "options": ["one", "two", "three"]
+      },
+      {
+        "title": "Question 4",
+        "description": "This is the description text that will get shown",
+        "format": "checkbox",
+        "options": ["one", "two", "three"]
+      }
+    ]
+  },
+  "afr": {
+    "id": "community",
+    "title": "Community",
+    "description": "It is important to know what those around you think about the upcoming 2019 election. In this challenge you will need to speak to them.",
+    "difficulty": "hard",
+    "tasks": [
+      {
+        "title": "Question 1",
+        "description": "This is the description text that will get shown",
+        "format": "string"
+      },
+      {
+        "title": "Question 2",
+        "description": "This is the description text that will get shown",
+        "format": "textarea"
+      },
+      {
+        "title": "Question 3",
+        "description": "This is the description text that will get shown",
+        "format": "boolean"
+      },
+      {
+        "title": "Question 4",
+        "description": "This is the description text that will get shown",
+        "format": "select",
+        "options": ["one", "two", "three"]
+      },
+      {
+        "title": "Question 4",
+        "description": "This is the description text that will get shown",
+        "format": "checkbox",
+        "options": ["one", "two", "three"]
+      }
+    ]
+  },
+  "xho": {
+    "id": "community",
+    "title": "Community",
+    "description": "It is important to know what those around you think about the upcoming 2019 election. In this challenge you will need to speak to them.",
+    "difficulty": "hard",
+    "tasks": [
+      {
+        "title": "Question 1",
+        "description": "This is the description text that will get shown",
+        "format": "string"
+      },
+      {
+        "title": "Question 2",
+        "description": "This is the description text that will get shown",
+        "format": "textarea"
+      },
+      {
+        "title": "Question 3",
+        "description": "This is the description text that will get shown",
+        "format": "boolean"
+      },
+      {
+        "title": "Question 4",
+        "description": "This is the description text that will get shown",
+        "format": "select",
+        "options": ["one", "two", "three"]
+      },
+      {
+        "title": "Question 4",
+        "description": "This is the description text that will get shown",
+        "format": "checkbox",
+        "options": ["one", "two", "three"]
+      }
+    ]
+  }
+}
