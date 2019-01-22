@@ -1,11 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Fab from '@material-ui/core/Fab';
-
 import AddIcon from '@material-ui/icons/Add';
-import ListIcon from '@material-ui/icons/List';
-import HelpIcon from '@material-ui/icons/Help';
+import PersonIcon from '@material-ui/icons/Person';
+import CheckIcon from '@material-ui/icons/Check';
 
 const FooterWrapper = styled.div`
   position: fixed;
@@ -18,15 +16,18 @@ const FooterWrapper = styled.div`
 const FooterBar = styled.div`
   top: auto;
   bottom: 0;
-  height: 50px;
+  height: 75px;
   width: 100%;
   position: initial;
-  background-color: #73c619;
-  color: white;
+  background: linear-gradient(158.46deg, #00F260 0%, #0575E6 83.33%), #0576E6;
+  color: rgba(255, 255, 255, 0.7);
   @media (min-width: 760px) 
   {
     width: 52%;
     margin: auto
+  }
+  :hover, :active {
+    color: rgba(255, 255, 255, 1);
   }
 `;
 
@@ -34,7 +35,7 @@ const FooterToolbar = styled.div`
   padding: 0;
   display: flex;
   justify-content: space-between;
-  height: 50px;
+  height: 100%;
 `;
 
 const FooterList = styled.ul`
@@ -48,42 +49,30 @@ const FooterList = styled.ul`
 
 const FooterItem = styled.li`
   width: 33.33%;
-  font-size: 12px;
+  font-size: 14px;
+  line-height: 16px;
   :hover, :active {
-    background-color: #8fd247;
     border-radius: 0;
   }
 `;
 
 const FooterButton = styled.a`
-  color: white;
+  color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-transform: uppercase;
+  font-weight: 500;
   font-family: "Roboto", sans-serif;
   width: 100%;
   height: 100%;
   text-align: center;
-`;
-
-const AddButton = styled(Fab)`
-  &&{
-    background-color: grey;
-    background-image: radial-gradient(circle at 50% 50%, #969696, #333);
-    border: 5px solid #73c619;
-    box-shadow: none;
-    width: 30%;
-    color: white;
-    height: 75px;
-    width: 75px;
-    top: -30px;
-    position: absolute;
-  }
-  
   :hover, :active {
-    border: 5px solid #8fd247;
+    color: rgba(255, 255, 255, 1);
+    border-radius: 0;
+    border-bottom: 2px solid #FF005C;
   }
 `;
 
@@ -94,24 +83,20 @@ const Footer = () => (
         <FooterList>
           <FooterItem>
             <FooterButton href="/">
-              <ListIcon />
-              My stories
+              <CheckIcon />
+              Progress
             </FooterButton>
           </FooterItem>
           <FooterItem>
-            <FooterButton href="/english/folders/index.html">
-              <AddButton aria-label="Add Story">
-                <AddIcon style={{
-                  height: '65px', width: '65px', border: '5px solid white', borderRadius: '50%', padding: '5px',
-                }}
-                />
-              </AddButton>
+            <FooterButton href="/">
+              <AddIcon />
+              Start
             </FooterButton>
           </FooterItem>
           <FooterItem>
             <FooterButton href="/about">
-              <HelpIcon />
-              About
+              <PersonIcon />
+              Profile
             </FooterButton>
           </FooterItem>
         </FooterList>
