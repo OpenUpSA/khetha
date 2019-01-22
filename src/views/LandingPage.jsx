@@ -98,7 +98,7 @@ const LandingPage = () => (
       </Heading>
       <SubHeading>
         Kheta is a platform that allows you and your
-        community to make you voice heard during the 2019 election.
+        community to make your voice heard during the 2019 election.
       </SubHeading>
       <ButtonHolder>
         <OutlinedButton to="/">
