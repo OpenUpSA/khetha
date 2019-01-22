@@ -1,0 +1,485 @@
+{
+  "allMarkdownRemark": {
+    "edges": [
+      {
+        "node": {
+          "frontmatter": {
+            "type": "folder",
+            "title": "Example 1",
+            "icon": "FreeBreakfast",
+            "translated_title": [
+              {
+                "language": "Afrikaans",
+                "translation": "Voorbeeld 1"
+              }
+            ],
+            "translated_question_link": [
+              {
+                "frontmatter": {
+                  "translated_question_title": "Example 1",
+                  "question_link": {
+                    "frontmatter": {
+                      "language": "english",
+                      "question_title": "Example 1",
+                      "questions": [
+                        {
+                          "description": "Question 1",
+                          "formatOfAnswer": "True or False",
+                          "question": "Question 1"
+                        }
+                      ]
+                    }
+                  },
+                  "question_translations_link": [
+                    {
+                      "frontmatter": {
+                        "language": "afrikaans",
+                        "question_title": "Voorbeeld 1",
+                        "questions": [
+                          {
+                            "description": "Vraag 1",
+                            "formatOfAnswer": "Single line of text",
+                            "question": "Vraag 1"
+                          },
+                          {
+                            "description": "Vraag 2",
+                            "formatOfAnswer": "One from pre-selected options",
+                            "question": "Vraag 2"
+                          }
+                        ]
+                      }
+                    },
+                    null
+                  ]
+                }
+              },
+              {
+                "frontmatter": {
+                  "translated_question_title": "Example 2",
+                  "question_link": null,
+                  "question_translations_link": [
+                    {
+                      "frontmatter": {
+                        "language": "afrikaans",
+                        "question_title": "Voorbeeld 2",
+                        "questions": [
+                          {
+                            "description": "Vraag 1",
+                            "formatOfAnswer": "True or False",
+                            "question": "Vraag 1"
+                          }
+                        ]
+                      }
+                    },
+                    null
+                  ]
+                }
+              }
+            ],
+            "translated_resource_link": [
+              {
+                "frontmatter": {
+                  "translated_resource_title": "Example 1",
+                  "translated_title": null,
+                  "resource_link": {
+                    "html": "<p>Example 1</p>",
+                    "frontmatter": {
+                      "language": "english",
+                      "resource_title": "Example 1"
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "node": {
+          "frontmatter": {
+            "type": "folder",
+            "title": "Example 3",
+            "icon": "LocalPlay",
+            "translated_title": [
+              {
+                "language": "Afrikaans",
+                "translation": "Voorbeeld 3"
+              }
+            ],
+            "translated_question_link": [
+              {
+                "frontmatter": {
+                  "translated_question_title": "Example 2",
+                  "question_link": null,
+                  "question_translations_link": [
+                    {
+                      "frontmatter": {
+                        "language": "afrikaans",
+                        "question_title": "Voorbeeld 2",
+                        "questions": [
+                          {
+                            "description": "Vraag 1",
+                            "formatOfAnswer": "True or False",
+                            "question": "Vraag 1"
+                          }
+                        ]
+                      }
+                    },
+                    null
+                  ]
+                }
+              }
+            ],
+            "translated_resource_link": [
+              null
+            ]
+          }
+        }
+      },
+      {
+        "node": {
+          "frontmatter": {
+            "type": "folder",
+            "title": "Example 2",
+            "icon": "Cancel",
+            "translated_title": [
+              {
+                "language": "Afrikaans",
+                "translation": "Voorbeeld 2"
+              }
+            ],
+            "translated_question_link": [
+              {
+                "frontmatter": {
+                  "translated_question_title": "Example 1",
+                  "question_link": {
+                    "frontmatter": {
+                      "language": "english",
+                      "question_title": "Example 1",
+                      "questions": [
+                        {
+                          "description": "Question 1",
+                          "formatOfAnswer": "True or False",
+                          "question": "Question 1"
+                        }
+                      ]
+                    }
+                  },
+                  "question_translations_link": [
+                    {
+                      "frontmatter": {
+                        "language": "afrikaans",
+                        "question_title": "Voorbeeld 1",
+                        "questions": [
+                          {
+                            "description": "Vraag 1",
+                            "formatOfAnswer": "Single line of text",
+                            "question": "Vraag 1"
+                          },
+                          {
+                            "description": "Vraag 2",
+                            "formatOfAnswer": "One from pre-selected options",
+                            "question": "Vraag 2"
+                          }
+                        ]
+                      }
+                    },
+                    null
+                  ]
+                }
+              }
+            ],
+            "translated_resource_link": [
+              {
+                "frontmatter": {
+                  "translated_resource_title": "Example 1",
+                  "translated_title": null,
+                  "resource_link": {
+                    "html": "<p>Example 1</p>",
+                    "frontmatter": {
+                      "language": "english",
+                      "resource_title": "Example 1"
+                    }
+                  }
+                }
+              },
+              {
+                "frontmatter": {
+                  "translated_resource_title": "Example 2",
+                  "translated_title": null,
+                  "resource_link": null
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "node": {
+          "frontmatter": {
+            "type": "folder",
+            "title": "Test",
+            "icon": "Person",
+            "translated_title": [
+              {
+                "language": "Afrikaans",
+                "translation": "Toets"
+              }
+            ],
+            "translated_question_link": [
+              {
+                "frontmatter": {
+                  "translated_question_title": "Example 1",
+                  "question_link": {
+                    "frontmatter": {
+                      "language": "english",
+                      "question_title": "Example 1",
+                      "questions": [
+                        {
+                          "description": "Question 1",
+                          "formatOfAnswer": "True or False",
+                          "question": "Question 1"
+                        }
+                      ]
+                    }
+                  },
+                  "question_translations_link": [
+                    {
+                      "frontmatter": {
+                        "language": "afrikaans",
+                        "question_title": "Voorbeeld 1",
+                        "questions": [
+                          {
+                            "description": "Vraag 1",
+                            "formatOfAnswer": "Single line of text",
+                            "question": "Vraag 1"
+                          },
+                          {
+                            "description": "Vraag 2",
+                            "formatOfAnswer": "One from pre-selected options",
+                            "question": "Vraag 2"
+                          }
+                        ]
+                      }
+                    },
+                    null
+                  ]
+                }
+              }
+            ],
+            "translated_resource_link": [
+              null
+            ]
+          }
+        }
+      },
+      {
+        "node": {
+          "frontmatter": {
+            "type": "folder",
+            "title": "Example 4",
+            "icon": "FlashOn",
+            "translated_title": [
+              {
+                "language": "Afrikaans",
+                "translation": "Voorbeeld 4"
+              }
+            ],
+            "translated_question_link": [
+              null
+            ],
+            "translated_resource_link": [
+              {
+                "frontmatter": {
+                  "translated_resource_title": "Example 1",
+                  "translated_title": null,
+                  "resource_link": {
+                    "html": "<p>Example 1</p>",
+                    "frontmatter": {
+                      "language": "english",
+                      "resource_title": "Example 1"
+                    }
+                  }
+                }
+              },
+              {
+                "frontmatter": {
+                  "translated_resource_title": "Example 2",
+                  "translated_title": null,
+                  "resource_link": null
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "node": {
+          "frontmatter": {
+            "type": "question",
+            "title": "",
+            "icon": null,
+            "translated_title": null,
+            "translated_question_link": null,
+            "translated_resource_link": null
+          }
+        }
+      },
+      {
+        "node": {
+          "frontmatter": {
+            "type": "folder",
+            "title": "Violence Against Women",
+            "icon": "FlashOn",
+            "translated_title": [
+              {
+                "language": null,
+                "translation": null
+              }
+            ],
+            "translated_question_link": [
+              null,
+              null
+            ],
+            "translated_resource_link": [
+              null,
+              null
+            ]
+          }
+        }
+      },
+      {
+        "node": {
+          "frontmatter": {
+            "type": "page",
+            "title": "",
+            "icon": null,
+            "translated_title": null,
+            "translated_question_link": null,
+            "translated_resource_link": null
+          }
+        }
+      },
+      {
+        "node": {
+          "frontmatter": {
+            "type": "question",
+            "title": "",
+            "icon": null,
+            "translated_title": null,
+            "translated_question_link": null,
+            "translated_resource_link": null
+          }
+        }
+      },
+      {
+        "node": {
+          "frontmatter": {
+            "type": "resources",
+            "title": "",
+            "icon": null,
+            "translated_title": null,
+            "translated_question_link": null,
+            "translated_resource_link": null
+          }
+        }
+      },
+      {
+        "node": {
+          "frontmatter": {
+            "type": "question",
+            "title": "",
+            "icon": null,
+            "translated_title": null,
+            "translated_question_link": null,
+            "translated_resource_link": null
+          }
+        }
+      },
+      {
+        "node": {
+          "frontmatter": {
+            "type": "question",
+            "title": "",
+            "icon": null,
+            "translated_title": null,
+            "translated_question_link": null,
+            "translated_resource_link": null
+          }
+        }
+      },
+      {
+        "node": {
+          "frontmatter": {
+            "type": "resource",
+            "title": "",
+            "icon": null,
+            "translated_title": null,
+            "translated_question_link": null,
+            "translated_resource_link": null
+          }
+        }
+      },
+      {
+        "node": {
+          "frontmatter": {
+            "type": "translation_object",
+            "title": "",
+            "icon": null,
+            "translated_title": null,
+            "translated_question_link": null,
+            "translated_resource_link": null
+          }
+        }
+      },
+      {
+        "node": {
+          "frontmatter": {
+            "type": "translation_object",
+            "title": "",
+            "icon": null,
+            "translated_title": null,
+            "translated_question_link": null,
+            "translated_resource_link": null
+          }
+        }
+      },
+      {
+        "node": {
+          "frontmatter": {
+            "type": "translation_object",
+            "title": "",
+            "icon": null,
+            "translated_title": null,
+            "translated_question_link": null,
+            "translated_resource_link": null
+          }
+        }
+      },
+      {
+        "node": {
+          "frontmatter": {
+            "type": "translation_object",
+            "title": "",
+            "icon": null,
+            "translated_title": null,
+            "translated_question_link": null,
+            "translated_resource_link": null
+          }
+        }
+      },
+      {
+        "node": {
+          "frontmatter": {
+            "type": "resource",
+            "title": "",
+            "icon": null,
+            "translated_title": null,
+            "translated_question_link": null,
+            "translated_resource_link": null
+          }
+        }
+      }
+    ]
+  }
+}

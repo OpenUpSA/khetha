@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Example 1",
+    "icon": "Public",
+    "translated_title": [
+      {
+        "language": "Afrikaans",
+        "translation": "Voorbeeld 1"
+      }
+    ]
+  },
+  {
+    "title": "Example 2",
+    "icon": "FreeBreakfast",
+    "translated_title": [
+      {
+        "language": "Afrikaans",
+        "translation": "Voorbeeld 2"
+      }
+    ]
+  }
+]

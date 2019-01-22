@@ -1,0 +1,764 @@
+[
+  {
+    "context": {
+      "folders": [
+        [
+          {
+            "fallback": false,
+            "isoKey": "eng",
+            "title": "Example 1",
+            "url": "/eng/folders/example-1/index.html"
+          }
+        ],
+        [
+          {
+            "fallback": false,
+            "isoKey": "eng",
+            "title": "Example 2",
+            "url": "/eng/folders/example-2/index.html"
+          }
+        ]
+      ],
+      "meta": {
+        "isoKey": "eng",
+        "urls": {
+          "afr": {
+            "url": "/afr/folders/index.html"
+          },
+          "eng": {
+            "url": "/eng/folders/index.html"
+          },
+          "spa": {
+            "url": "/spa/folders/index.html"
+          },
+          "xho": {
+            "url": "/xho/folders/index.html"
+          }
+        }
+      }
+    },
+    "url": "/eng/folders/index.html"
+  },
+  {
+    "context": {
+      "folders": [
+        [
+          {
+            "fallback": false,
+            "isoKey": "afr",
+            "title": "Voorbeeld 1",
+            "url": "/afr/folders/voorbeeld-1/index.html"
+          }
+        ],
+        [
+          {
+            "fallback": false,
+            "isoKey": "afr",
+            "title": "Voorbeeld 2",
+            "url": "/afr/folders/voorbeeld-2/index.html"
+          }
+        ]
+      ],
+      "meta": {
+        "isoKey": "afr",
+        "urls": {
+          "afr": {
+            "url": "/afr/folders/index.html"
+          },
+          "eng": {
+            "url": "/eng/folders/index.html"
+          },
+          "spa": {
+            "url": "/spa/folders/index.html"
+          },
+          "xho": {
+            "url": "/xho/folders/index.html"
+          }
+        }
+      }
+    },
+    "url": "/afr/folders/index.html"
+  },
+  {
+    "context": {
+      "folders": [
+        [
+          {
+            "fallback": true,
+            "isoKey": "spa",
+            "title": "Example 1",
+            "url": "/spa/folders/example-1/index.html"
+          }
+        ],
+        [
+          {
+            "fallback": true,
+            "isoKey": "spa",
+            "title": "Example 2",
+            "url": "/spa/folders/example-2/index.html"
+          }
+        ]
+      ],
+      "meta": {
+        "isoKey": "spa",
+        "urls": {
+          "afr": {
+            "url": "/afr/folders/index.html"
+          },
+          "eng": {
+            "url": "/eng/folders/index.html"
+          },
+          "spa": {
+            "url": "/spa/folders/index.html"
+          },
+          "xho": {
+            "url": "/xho/folders/index.html"
+          }
+        }
+      }
+    },
+    "url": "/spa/folders/index.html"
+  },
+  {
+    "context": {
+      "folders": [
+        [
+          {
+            "fallback": true,
+            "isoKey": "xho",
+            "title": "Example 1",
+            "url": "/xho/folders/example-1/index.html"
+          }
+        ],
+        [
+          {
+            "fallback": true,
+            "isoKey": "xho",
+            "title": "Example 2",
+            "url": "/xho/folders/example-2/index.html"
+          }
+        ]
+      ],
+      "meta": {
+        "isoKey": "xho",
+        "urls": {
+          "afr": {
+            "url": "/afr/folders/index.html"
+          },
+          "eng": {
+            "url": "/eng/folders/index.html"
+          },
+          "spa": {
+            "url": "/spa/folders/index.html"
+          },
+          "xho": {
+            "url": "/xho/folders/index.html"
+          }
+        }
+      }
+    },
+    "url": "/xho/folders/index.html"
+  },
+  {
+    "context": {
+      "content": {
+        "questions": [
+          {
+            "fallback": false,
+            "questions": [
+              {
+                "description": "Question 1",
+                "formatOfAnswer": "True or False",
+                "question": "Question 1"
+              }
+            ],
+            "title": "Example 1"
+          }
+        ],
+        "resources": [
+          {
+            "fallback": false,
+            "title": "Example 1",
+            "url": "eng/resources/example-1"
+          }
+        ]
+      },
+      "icon": "FreeBreakfast",
+      "meta": {
+        "fallback": false,
+        "isoKey": "eng",
+        "urls": {
+          "afr": "/afr/folders/voorbeeld-1/index.html",
+          "eng": "/eng/folders/example-1/index.html",
+          "spa": "/spa/folders/example-1/index.html",
+          "xho": "/xho/folders/example-1/index.html"
+        }
+      },
+      "title": "Example 1"
+    },
+    "url": "/eng/folders/example-1/index.html"
+  },
+  {
+    "context": {
+      "content": {
+        "questions": [
+          {
+            "fallback": true,
+            "questions": [
+              {
+                "description": "Vraag 1",
+                "formatOfAnswer": "Single line of text",
+                "question": "Vraag 1"
+              },
+              {
+                "description": "Vraag 2",
+                "formatOfAnswer": "One from pre-selected options",
+                "question": "Vraag 2"
+              }
+            ],
+            "title": "Voorbeeld 1"
+          },
+          {
+            "fallback": true,
+            "questions": [
+              {
+                "description": "Vraag 1",
+                "formatOfAnswer": "True or False",
+                "question": "Vraag 1"
+              }
+            ],
+            "title": "Voorbeeld 2"
+          }
+        ],
+        "resources": [
+          {
+            "fallback": false,
+            "title": "Voorbeeld 1",
+            "url": "afr/resources/voorbeeld-1"
+          }
+        ]
+      },
+      "icon": "FreeBreakfast",
+      "meta": {
+        "fallback": false,
+        "isoKey": "afr",
+        "urls": {
+          "afr": "/afr/folders/voorbeeld-1/index.html",
+          "eng": "/eng/folders/example-1/index.html",
+          "spa": "/spa/folders/example-1/index.html",
+          "xho": "/xho/folders/example-1/index.html"
+        }
+      },
+      "title": "Voorbeeld 1"
+    },
+    "url": "/afr/folders/voorbeeld-1/index.html"
+  },
+  {
+    "context": {
+      "content": {
+        "questions": [
+          {
+            "fallback": true,
+            "questions": [
+              {
+                "description": "Question 1",
+                "formatOfAnswer": "True or False",
+                "question": "Question 1"
+              }
+            ],
+            "title": "Example 1"
+          }
+        ],
+        "resources": [
+          {
+            "fallback": true,
+            "title": "Example 1",
+            "url": "spa/resources/example-1"
+          }
+        ]
+      },
+      "icon": "FreeBreakfast",
+      "meta": {
+        "fallback": true,
+        "isoKey": "spa",
+        "urls": {
+          "afr": "/afr/folders/voorbeeld-1/index.html",
+          "eng": "/eng/folders/example-1/index.html",
+          "spa": "/spa/folders/example-1/index.html",
+          "xho": "/xho/folders/example-1/index.html"
+        }
+      },
+      "title": "Example 1"
+    },
+    "url": "/spa/folders/example-1/index.html"
+  },
+  {
+    "context": {
+      "content": {
+        "questions": [
+          {
+            "fallback": true,
+            "questions": [
+              {
+                "description": "Question 1",
+                "formatOfAnswer": "True or False",
+                "question": "Question 1"
+              }
+            ],
+            "title": "Example 1"
+          }
+        ],
+        "resources": [
+          {
+            "fallback": true,
+            "title": "Example 1",
+            "url": "xho/resources/example-1"
+          }
+        ]
+      },
+      "icon": "FreeBreakfast",
+      "meta": {
+        "fallback": true,
+        "isoKey": "xho",
+        "urls": {
+          "afr": "/afr/folders/voorbeeld-1/index.html",
+          "eng": "/eng/folders/example-1/index.html",
+          "spa": "/spa/folders/example-1/index.html",
+          "xho": "/xho/folders/example-1/index.html"
+        }
+      },
+      "title": "Example 1"
+    },
+    "url": "/xho/folders/example-1/index.html"
+  },
+  {
+    "context": {
+      "content": {
+        "questions": [
+          {
+            "fallback": false,
+            "questions": [
+              {
+                "description": "Question 1",
+                "formatOfAnswer": "True or False",
+                "question": "Question 1"
+              }
+            ],
+            "title": "Example 1"
+          },
+          {
+            "fallback": false,
+            "questions": [
+              {
+                "description": "Question 2",
+                "formatOfAnswer": "True or False",
+                "question": "Question 2"
+              }
+            ],
+            "title": "Example 2"
+          }
+        ],
+        "resources": [
+          {
+            "fallback": false,
+            "title": "Example 1",
+            "url": "eng/resources/example-1"
+          },
+          {
+            "fallback": false,
+            "title": "Example 2",
+            "url": "eng/resources/example-2"
+          }
+        ]
+      },
+      "icon": "Cancel",
+      "meta": {
+        "fallback": false,
+        "isoKey": "eng",
+        "urls": {
+          "afr": "/afr/folders/voorbeeld-2/index.html",
+          "eng": "/eng/folders/example-2/index.html",
+          "spa": "/spa/folders/example-2/index.html",
+          "xho": "/xho/folders/example-2/index.html"
+        }
+      },
+      "title": "Example 2"
+    },
+    "url": "/eng/folders/example-2/index.html"
+  },
+  {
+    "context": {
+      "content": {
+        "questions": [
+          {
+            "fallback": true,
+            "questions": [
+              {
+                "description": "Vraag 1",
+                "formatOfAnswer": "Single line of text",
+                "question": "Vraag 1"
+              },
+              {
+                "description": "Vraag 2",
+                "formatOfAnswer": "One from pre-selected options",
+                "question": "Vraag 2"
+              }
+            ],
+            "title": "Voorbeeld 1"
+          },
+          {
+            "fallback": true,
+            "questions": [
+              {
+                "description": "Vraag 1",
+                "formatOfAnswer": "Single line of text",
+                "question": "Vraag 1"
+              },
+              {
+                "description": "Vraag 2",
+                "formatOfAnswer": "One from pre-selected options",
+                "question": "Vraag 2"
+              }
+            ],
+            "title": "Voorbeeld 2"
+          }
+        ],
+        "resources": [
+          {
+            "fallback": false,
+            "title": "Voorbeeld 1",
+            "url": "afr/resources/voorbeeld-1"
+          },
+          {
+            "fallback": false,
+            "title": "Voorbeeld 2",
+            "url": "afr/resources/voorbeeld-2"
+          }
+        ]
+      },
+      "icon": "Cancel",
+      "meta": {
+        "fallback": false,
+        "isoKey": "afr",
+        "urls": {
+          "afr": "/afr/folders/voorbeeld-2/index.html",
+          "eng": "/eng/folders/example-2/index.html",
+          "spa": "/spa/folders/example-2/index.html",
+          "xho": "/xho/folders/example-2/index.html"
+        }
+      },
+      "title": "Voorbeeld 2"
+    },
+    "url": "/afr/folders/voorbeeld-2/index.html"
+  },
+  {
+    "context": {
+      "content": {
+        "questions": [
+          {
+            "fallback": true,
+            "questions": [
+              {
+                "description": "Question 1",
+                "formatOfAnswer": "True or False",
+                "question": "Question 1"
+              }
+            ],
+            "title": "Example 1"
+          },
+          {
+            "fallback": true,
+            "questions": [
+              {
+                "description": "Question 2",
+                "formatOfAnswer": "True or False",
+                "question": "Question 2"
+              }
+            ],
+            "title": "Example 2"
+          }
+        ],
+        "resources": [
+          {
+            "fallback": true,
+            "title": "Example 1",
+            "url": "spa/resources/example-1"
+          },
+          {
+            "fallback": true,
+            "title": "Example 2",
+            "url": "spa/resources/example-2"
+          }
+        ]
+      },
+      "icon": "Cancel",
+      "meta": {
+        "fallback": true,
+        "isoKey": "spa",
+        "urls": {
+          "afr": "/afr/folders/voorbeeld-2/index.html",
+          "eng": "/eng/folders/example-2/index.html",
+          "spa": "/spa/folders/example-2/index.html",
+          "xho": "/xho/folders/example-2/index.html"
+        }
+      },
+      "title": "Example 2"
+    },
+    "url": "/spa/folders/example-2/index.html"
+  },
+  {
+    "context": {
+      "content": {
+        "questions": [
+          {
+            "fallback": true,
+            "questions": [
+              {
+                "description": "Question 1",
+                "formatOfAnswer": "True or False",
+                "question": "Question 1"
+              }
+            ],
+            "title": "Example 1"
+          },
+          {
+            "fallback": true,
+            "questions": [
+              {
+                "description": "Question 2",
+                "formatOfAnswer": "True or False",
+                "question": "Question 2"
+              }
+            ],
+            "title": "Example 2"
+          }
+        ],
+        "resources": [
+          {
+            "fallback": true,
+            "title": "Example 1",
+            "url": "xho/resources/example-1"
+          },
+          {
+            "fallback": true,
+            "title": "Example 2",
+            "url": "xho/resources/example-2"
+          }
+        ]
+      },
+      "icon": "Cancel",
+      "meta": {
+        "fallback": true,
+        "isoKey": "xho",
+        "urls": {
+          "afr": "/afr/folders/voorbeeld-2/index.html",
+          "eng": "/eng/folders/example-2/index.html",
+          "spa": "/spa/folders/example-2/index.html",
+          "xho": "/xho/folders/example-2/index.html"
+        }
+      },
+      "title": "Example 2"
+    },
+    "url": "/xho/folders/example-2/index.html"
+  },
+  {
+    "context": {
+      "html": "<p>Example 1</p>",
+      "meta": {
+        "fallback": false,
+        "isoKey": "eng",
+        "languages": {
+          "afr": {
+            "fallback": false,
+            "url": "afr/resources/voorbeeld-1/index.html"
+          },
+          "spa": {
+            "fallback": true,
+            "url": "spa/resources/example-1/index.html"
+          },
+          "xho": {
+            "fallback": true,
+            "url": "xho/resources/example-1/index.html"
+          }
+        }
+      },
+      "title": "Example 1"
+    },
+    "url": "eng/resources/example-1/index.html"
+  },
+  {
+    "context": {
+      "html": "<p>Example 2</p>",
+      "meta": {
+        "fallback": false,
+        "isoKey": "eng",
+        "languages": {
+          "afr": {
+            "fallback": false,
+            "url": "afr/resources/voorbeeld-2/index.html"
+          },
+          "spa": {
+            "fallback": true,
+            "url": "spa/resources/example-2/index.html"
+          },
+          "xho": {
+            "fallback": true,
+            "url": "xho/resources/example-2/index.html"
+          }
+        }
+      },
+      "title": "Example 2"
+    },
+    "url": "eng/resources/example-2/index.html"
+  },
+  {
+    "context": {
+      "html": "<p>Voorbeeld 1</p>",
+      "meta": {
+        "fallback": false,
+        "isoKey": "afr",
+        "languages": {
+          "eng": {
+            "fallback": false,
+            "url": "eng/resources/example-1/index.html"
+          },
+          "spa": {
+            "fallback": true,
+            "url": "spa/resources/example-1/index.html"
+          },
+          "xho": {
+            "fallback": true,
+            "url": "xho/resources/example-1/index.html"
+          }
+        }
+      },
+      "title": "Voorbeeld 1"
+    },
+    "url": "afr/resources/voorbeeld-1/index.html"
+  },
+  {
+    "context": {
+      "html": "<p>Voorbeeld 1</p>",
+      "meta": {
+        "fallback": false,
+        "isoKey": "afr",
+        "languages": {
+          "eng": {
+            "fallback": false,
+            "url": "eng/resources/example-2/index.html"
+          },
+          "spa": {
+            "fallback": true,
+            "url": "spa/resources/example-2/index.html"
+          },
+          "xho": {
+            "fallback": true,
+            "url": "xho/resources/example-2/index.html"
+          }
+        }
+      },
+      "title": "Voorbeeld 2"
+    },
+    "url": "afr/resources/voorbeeld-2/index.html"
+  },
+  {
+    "context": {
+      "html": "<p>Example 1</p>",
+      "meta": {
+        "fallback": true,
+        "isoKey": "spa",
+        "languages": {
+          "afr": {
+            "fallback": false,
+            "url": "afr/resources/voorbeeld-1/index.html"
+          },
+          "eng": {
+            "fallback": false,
+            "url": "eng/resources/example-1/index.html"
+          },
+          "xho": {
+            "fallback": true,
+            "url": "xho/resources/example-1/index.html"
+          }
+        }
+      },
+      "title": "Example 1"
+    },
+    "url": "spa/resources/example-1/index.html"
+  },
+  {
+    "context": {
+      "html": "<p>Example 2</p>",
+      "meta": {
+        "fallback": true,
+        "isoKey": "spa",
+        "languages": {
+          "afr": {
+            "fallback": false,
+            "url": "afr/resources/voorbeeld-2/index.html"
+          },
+          "eng": {
+            "fallback": false,
+            "url": "eng/resources/example-2/index.html"
+          },
+          "xho": {
+            "fallback": true,
+            "url": "xho/resources/example-2/index.html"
+          }
+        }
+      },
+      "title": "Example 2"
+    },
+    "url": "spa/resources/example-2/index.html"
+  },
+  {
+    "context": {
+      "html": "<p>Example 1</p>",
+      "meta": {
+        "fallback": true,
+        "isoKey": "xho",
+        "languages": {
+          "afr": {
+            "fallback": false,
+            "url": "afr/resources/voorbeeld-1/index.html"
+          },
+          "eng": {
+            "fallback": false,
+            "url": "eng/resources/example-1/index.html"
+          },
+          "spa": {
+            "fallback": true,
+            "url": "spa/resources/example-1/index.html"
+          }
+        }
+      },
+      "title": "Example 1"
+    },
+    "url": "xho/resources/example-1/index.html"
+  },
+  {
+    "context": {
+      "html": "<p>Example 2</p>",
+      "meta": {
+        "fallback": true,
+        "isoKey": "xho",
+        "languages": {
+          "afr": {
+            "fallback": false,
+            "url": "afr/resources/voorbeeld-2/index.html"
+          },
+          "eng": {
+            "fallback": false,
+            "url": "eng/resources/example-2/index.html"
+          },
+          "spa": {
+            "fallback": true,
+            "url": "spa/resources/example-2/index.html"
+          }
+        }
+      },
+      "title": "Example 2"
+    },
+    "url": "xho/resources/example-2/index.html"
+  }
+]
