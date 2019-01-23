@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Heading = styled.h2`
+  color: ${props => props.color || '#000000'};
   position: relative;
   text-align: center;
   font-size: 26px;
@@ -11,9 +12,9 @@ const Heading = styled.h2`
 `;
 
 const MainHeading = (props) => {
-  const title = props.text;
+  const { title, color } = props;
   return (
-    <Heading>
+    <Heading color={color}>
       { title }
     </Heading>
   );
