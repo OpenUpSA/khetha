@@ -5,6 +5,7 @@ import MainHeading from '../components/MainHeading';
 import ProgressCards from '../components/ProgressCards';
 import Footer from '../components/Footer';
 
+
 const StyledWrapper = styled.div`
   font-family: "Roboto", sans-serif;
   position: relative;
@@ -23,7 +24,8 @@ const StyledWrapper = styled.div`
   flex-direction: column;
 `;
 
-const ProgressPage = () => (
+
+export default () => (
   <Fragment>
     <StyledWrapper>
       <MainHeading title="Kheta" color="#5F5F5F" />
@@ -32,5 +34,3 @@ const ProgressPage = () => (
     <Footer />
   </Fragment>
 );
-
-export default ProgressPage;

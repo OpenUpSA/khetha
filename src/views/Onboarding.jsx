@@ -33,6 +33,7 @@ const ButtonHolder = styled.div`
   justify-content: center;
 `;
 
+
 const LandingPage = () => (
   <Fragment>
     <StyledWrapper>
@@ -48,5 +49,6 @@ const LandingPage = () => (
     </StyledWrapper>
   </Fragment>
 );
+
 
 export default LandingPage;
