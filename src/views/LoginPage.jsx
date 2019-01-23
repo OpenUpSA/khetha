@@ -34,7 +34,7 @@ const ButtonHolder = styled.div`
 const LandingPage = () => (
   <Fragment>
     <StyledWrapper>
-      <MainHeading text="Log In" />
+      <MainHeading title="Log In" />
       <SubHeading
         text="In order to save your progress you need to
         sign in to Kheta with one of the following
