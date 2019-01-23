@@ -1,3 +1,13 @@
 {
-  "stories": {}
+  "storage": {
+    "version": 0
+  },
+  "user": {
+    "language": "eng",
+    "id": null
+  },
+  "tasks": {
+    "progress": {},
+    "completed": []
+  }
 }

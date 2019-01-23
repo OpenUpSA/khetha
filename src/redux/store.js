@@ -4,16 +4,27 @@ import persistState from 'redux-localstorage';
 import thunk from 'redux-thunk';
 
 import initialState from './initialState.json';
-import stories from './modules/stories';
+import user from './modules/user';
+import tasks from './modules/tasks';
+import storage from './modules/storage';
+
+
+const persistKeys = [
+  'storage',
+  'user',
+  'tasks',
+];
+
+
+const initLocalStorage = () => persistState(persistKeys, { key: 'state' });
+const isNode = typeof window === 'undefined';
 
 
 const rawReducers = {
-  stories,
+  storage,
+  user,
+  tasks,
 };
-
-
-const initLocalStorage = () => persistState(['stories'], { key: 'state' });
-const isNode = typeof window === 'undefined';
 
 
 const reducers = combineReducers(rawReducers);
