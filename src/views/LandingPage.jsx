@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import MainHeading from '../components/MainHeading';
 import Button from '@material-ui/core/Button';
 
 const StyledWrapper = styled.div`
@@ -22,19 +23,11 @@ const StyledWrapper = styled.div`
   flex-direction: column;
 `;
 
-const Heading = styled.h2`
-  position: relative;
-  text-align: center;
-  font-size: 26px;
-  line-height: 32px;
-  font-weight: bold;
-  margin: 0 0 15px 0;
-`;
-
 const SubHeading = styled.h3`
   position: relative;
   text-align: center;
   font-size: 17px;
+  font-weight: normal;
   line-height: 22px;
   letter-spacing: -0.41px;
   color: #8C8C8C;
@@ -93,9 +86,7 @@ const FilledButton = styled(Button)`
 const LandingPage = () => (
   <React.Fragment>
     <StyledWrapper>
-      <Heading>
-        What is Kheta?
-      </Heading>
+      <MainHeading text="What is Kheta?" />
       <SubHeading>
         Kheta is a platform that allows you and your
         community to make your voice heard during the 2019 election.
