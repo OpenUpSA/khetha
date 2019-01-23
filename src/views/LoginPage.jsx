@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import styled from 'styled-components';
 
 import MainHeading from '../components/MainHeading';
@@ -32,7 +32,7 @@ const ButtonHolder = styled.div`
 `;
 
 const LandingPage = () => (
-  <React.Fragment>
+  <Fragment>
     <StyledWrapper>
       <MainHeading text="Log In" />
       <SubHeading
@@ -48,7 +48,7 @@ const LandingPage = () => (
         <OutlinedButton text="Login with Email" link="/" width="100%" />
       </ButtonHolder>
     </StyledWrapper>
-  </React.Fragment>
+  </Fragment>
 );
 
 export default LandingPage;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import styled from 'styled-components';
 
 import MainHeading from '../components/MainHeading';
@@ -34,7 +34,7 @@ const ButtonHolder = styled.div`
 `;
 
 const LandingPage = () => (
-  <React.Fragment>
+  <Fragment>
     <StyledWrapper>
       <MainHeading text="What is Kheta?" />
       <SubHeading
@@ -42,11 +42,11 @@ const LandingPage = () => (
         community to make your voice heard during the 2019 election."
       />
       <ButtonHolder>
-        <OutlinedButton text="skip" link="/login" />
+        <OutlinedButton text="skip" link="/progress" />
         <FilledButton text="start" link="/login" />
       </ButtonHolder>
     </StyledWrapper>
-  </React.Fragment>
+  </Fragment>
 );
 
 export default LandingPage;
