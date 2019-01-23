@@ -23,6 +23,7 @@ export const languageToIso = (language) => {
     case 'Southern Sotho': return 'sot';
     case 'Tswana': return 'tsw';
     case 'Zulu': return 'zul';
+    default: throw new Error(`"${language}" is not a valid parameter.`);
   }
 };
 
@@ -39,5 +40,6 @@ export const isoToLanguage = (iso, formatting) => {
     case 'sot': return format('Southern Sotho');
     case 'tsn': return format('Tswana');
     case 'zul': return format('Zulu');
+    default: throw new Error(`"${iso}" is not a valid parameter.`);
   }
 };
