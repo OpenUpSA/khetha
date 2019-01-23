@@ -2,13 +2,13 @@ import React, { Fragment } from 'react';
 import styled from 'styled-components';
 
 import MainHeading from '../components/MainHeading';
-import ProgressCards from '../components/ProgressCards';
+import StartCards from '../components/StartCards';
 import Footer from '../components/Footer';
 
 const StyledWrapper = styled.div`
   font-family: "Roboto", sans-serif;
   position: relative;
-  min-height: 100vh;
+  height: calc(100vh - 75px);
   overflow: scroll;
   left: 0px;
   right: 0px;
@@ -23,14 +23,14 @@ const StyledWrapper = styled.div`
   flex-direction: column;
 `;
 
-const ProgressPage = () => (
+const StartPage = () => (
   <Fragment>
     <StyledWrapper>
       <MainHeading title="Kheta" color="#5F5F5F" />
-      <ProgressCards />
+      <StartCards />
     </StyledWrapper>
     <Footer />
   </Fragment>
 );
 
-export default ProgressPage;
+export default StartPage;

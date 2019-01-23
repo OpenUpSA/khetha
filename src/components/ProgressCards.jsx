@@ -84,7 +84,7 @@ const HeaderProgress = styled(({ barColorPrimary, ...other }) => (
   }
 `;
 
-const Cards = () => (
+const ProgressCards = () => (
   <CardWrapper>
     <CardItem>
       <CardLink to="/">
@@ -138,4 +138,4 @@ const Cards = () => (
   </CardWrapper>
 );
 
-export default Cards;
+export default ProgressCards;

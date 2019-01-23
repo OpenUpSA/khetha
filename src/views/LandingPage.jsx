@@ -36,14 +36,14 @@ const ButtonHolder = styled.div`
 const LandingPage = () => (
   <Fragment>
     <StyledWrapper>
-      <MainHeading text="What is Kheta?" />
+      <MainHeading title="What is Kheta?" />
       <SubHeading
         text="Kheta is a platform that allows you and your
         community to make your voice heard during the 2019 election."
       />
       <ButtonHolder>
         <OutlinedButton text="skip" link="/progress" />
-        <FilledButton text="start" link="/login" />
+        <FilledButton text="start" link="/start" />
       </ButtonHolder>
     </StyledWrapper>
   </Fragment>

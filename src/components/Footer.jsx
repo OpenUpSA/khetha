@@ -82,19 +82,19 @@ const Footer = () => (
       <FooterToolbar>
         <FooterList>
           <FooterItem>
-            <FooterButton href="/">
+            <FooterButton href="/progress">
               <CheckIcon />
               Progress
             </FooterButton>
           </FooterItem>
           <FooterItem>
-            <FooterButton href="/">
+            <FooterButton href="/start">
               <AddIcon />
               Start
             </FooterButton>
           </FooterItem>
           <FooterItem>
-            <FooterButton href="/about">
+            <FooterButton href="/">
               <PersonIcon />
               Profile
             </FooterButton>
