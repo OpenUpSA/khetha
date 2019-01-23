@@ -43,7 +43,7 @@ const LandingPage = () => (
       />
       <ButtonHolder>
         <OutlinedButton text="skip" link="/progress" />
-        <FilledButton text="start" link="/login" />
+        <FilledButton text="start" link="/start" />
       </ButtonHolder>
     </StyledWrapper>
   </Fragment>
