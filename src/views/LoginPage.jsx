@@ -6,7 +6,6 @@ import SubHeading from '../components/SubHeading';
 import FilledButton from '../components/FilledButton';
 import OutlinedButton from '../components/OutlinedButton';
 
-
 const StyledWrapper = styled.div`
   font-family: "Roboto", sans-serif;
   position: relative;
@@ -27,23 +26,26 @@ const StyledWrapper = styled.div`
 `;
 
 const ButtonHolder = styled.div`
-  position: relative;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  width: 100%;
 `;
 
 const LandingPage = () => (
   <Fragment>
     <StyledWrapper>
-      <MainHeading title="What is Kheta?" />
+      <MainHeading title="Log In" />
       <SubHeading
-        text="Kheta is a platform that allows you and your
-        community to make your voice heard during the 2019 election."
+        text="In order to save your progress you need to
+        sign in to Kheta with one of the following
+        services:"
       />
       <ButtonHolder>
-        <OutlinedButton text="skip" link="/progress" />
-        <FilledButton text="start" link="/start" />
+        <FilledButton text="Login with Google" link="/" width="100%" background="#db3236" font="none" justify="flex-start" />
+        <FilledButton text="Login with Facebook" link="/" width="100%" background="#3C5A99" font="none" justify="flex-start" />
+        <FilledButton text="Login with Instagram" link="/" width="100%" background="linear-gradient(90deg, #FDF496 -15%, #fd5949 23%,#d6249f 60%,#285AEA 125%);" font="none" justify="flex-start" />
+        <FilledButton text="Login with Twitter" link="/" width="100%" background="#1DA1F2" font="none" justify="flex-start" />
+        <OutlinedButton text="Login with Email" link="/" width="100%" />
       </ButtonHolder>
     </StyledWrapper>
   </Fragment>
