@@ -8,6 +8,8 @@ import LinearProgress from '@material-ui/core/LinearProgress';
 import IconButton from '@material-ui/core/es/IconButton/IconButton';
 
 import FaceIcon from '@material-ui/icons/Face';
+import CityIcon from '@material-ui/icons/LocationCity';
+import ThumbIcon from '@material-ui/icons/ThumbUp';
 
 
 const CardWrapper = styled.ul`
@@ -37,8 +39,10 @@ const CardLink = styled(Link)`
 const TopicCard = styled(Card)`
   && {
     color: #0575E6;
-    background-color: #FFFFFF;
+    background-color: ${props => props.background || '#FFFFFF'};
     height: 100px;
+    box-shadow: ${props => props.boxShadow || ''};
+    border: ${props => `1px solid ${props.border}` || ''};
   }
 `;
 
@@ -49,15 +53,16 @@ const StyledHeader = styled(({ headline, subtitle, ...other }) => (
     padding: 10px 16px 20px;
   }
   & .headline {
-    color: #0575E6;
+    color: ${props => props.color || '#0575E6'};
     font-size: 12px;
     line-height: 20px;
   }
   
   & .subtitle {
-    color: rgba(0, 0, 0, 0.87);
+    color: ${props => props.color || 'rgba(0, 0, 0, 0.87)'};
     font-size: 18px;
     line-height: 20px;
+    font-weight: bold;
   }
 `;
 
@@ -93,7 +98,40 @@ const Cards = () => (
             title="11 Points Remaining"
             subheader="Introductory Questions"
           />
-          <HeaderProgress variant="determinate" value={55} barColorPrimary="linear-gradient(177.9deg, #00F260 0%, #0575E6 83.33%), #0576E6;" />
+          <HeaderProgress variant="determinate" value={68} barColorPrimary="linear-gradient(177.9deg, #00F260 0%, #0575E6 83.33%), #0576E6;" />
+        </TopicCard>
+      </CardLink>
+    </CardItem>
+    <CardItem>
+      <CardLink to="/">
+        <TopicCard>
+          <StyledHeader
+            action={(
+              <IconButton>
+                <CityIcon color="primary" fontSize="large" />
+              </IconButton>
+            )}
+            title="31 Points Remaining"
+            subheader="Survey Your Community"
+          />
+          <HeaderProgress variant="determinate" value={25} barColorPrimary="linear-gradient(177.9deg, #00F260 0%, #0575E6 83.33%), #0576E6;" />
+        </TopicCard>
+      </CardLink>
+    </CardItem>
+    <CardItem complete>
+      <CardLink to="/">
+        <TopicCard background="transparent" boxShadow="none" border="#AFAFAF">
+          <StyledHeader
+            action={(
+              <IconButton>
+                <ThumbIcon fontSize="large" />
+              </IconButton>
+            )}
+            title="Completed!"
+            subheader="Voting Preferences"
+            color="#AFAFAF"
+          />
+          <HeaderProgress variant="determinate" value={100} barColorPrimary="#AFAFAF" />
         </TopicCard>
       </CardLink>
     </CardItem>
