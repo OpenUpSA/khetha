@@ -1,6 +1,6 @@
 import { createElement } from 'react';
 import { graphql } from 'gatsby';
-import Progress from '../views/Progress';
+import Task from '../../views/Task';
 
 
 export default ({ data }) => {
@@ -8,7 +8,7 @@ export default ({ data }) => {
     tasks: data.allTasksJson.edges.map(({ node }) => node),
   };
 
-  return createElement(Progress, props);
+  return createElement(Task, props);
 };
 
 

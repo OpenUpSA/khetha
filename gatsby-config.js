@@ -27,7 +27,7 @@ const {
 module.exports = {
   siteMetadata: {
     title: nameValue,
-    siteUrl: 'https://pocketreporter.netlify.com',
+    siteUrl: 'https://kheta.org.za',
   },
   plugins: [
     createFilesystemConfig(__dirname),
@@ -55,12 +55,4 @@ module.exports = {
       },
     },
   ],
-  mapping: {
-    'MarkdownRemark.frontmatter.translated_resource_link': 'MarkdownRemark.frontmatter.translated_resource_title',
-    'MarkdownRemark.frontmatter.translated_question_link': 'MarkdownRemark.frontmatter.translated_question_title',
-    'MarkdownRemark.frontmatter.resource_link': 'MarkdownRemark.frontmatter.resource_title',
-    'MarkdownRemark.frontmatter.question_link': 'MarkdownRemark.frontmatter.question_title',
-    'MarkdownRemark.frontmatter.resource_translations_link': 'MarkdownRemark.frontmatter.resource_title',
-    'MarkdownRemark.frontmatter.question_translations_link': 'MarkdownRemark.frontmatter.question_title',
-  },
 };

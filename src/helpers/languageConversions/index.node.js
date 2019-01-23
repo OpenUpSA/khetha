@@ -1,5 +1,8 @@
 const {
-  title, camel, snake, param,
+  title,
+  camel,
+  snake,
+  param,
 } = require('change-case');
 
 
@@ -13,6 +16,7 @@ const cases = {
 
 const languageToIso = (language) => {
   const formattedLanguage = title(language);
+
   switch (formattedLanguage) {
     case 'English': return 'eng';
     case 'Afrikaans': return 'afr';
@@ -23,6 +27,7 @@ const languageToIso = (language) => {
     case 'Southern Sotho': return 'sot';
     case 'Tswana': return 'tsw';
     case 'Zulu': return 'zul';
+    default: throw new Error(`"${language}" is not a valid parameter.`);
   }
 };
 
@@ -39,6 +44,7 @@ const isoToLanguage = (iso, formatting) => {
     case 'sot': return format('Southern Sotho');
     case 'tsn': return format('Tswana');
     case 'zul': return format('Zulu');
+    default: throw new Error(`"${iso}" is not a valid parameter.`);
   }
 };
 

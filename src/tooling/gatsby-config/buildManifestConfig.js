@@ -19,7 +19,7 @@ module.exports = ({ name, theme, background }) => {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name,
-        icon: 'src/assets/meta/logo.png',
+        icon: 'src/assets/meta/icon.png',
         short_name: name,
         start_url: '/',
         background_color: background,
