@@ -1,4 +1,10 @@
 import React from 'react';
+import Layout from '../components/Layout';
 
 
-export default () => <div>Faq</div>;
+export default ({ faqs, view }) => (
+  <Layout>
+    {faqs}
+    {view}
+  </Layout>
+);
