@@ -1,10 +1,10 @@
 {
   "type": "tasks",
   "id": "other",
-  "schedule": "24 January 2019",
+  "schedule": "23 Jan 2019",
   "points": 8,
 
-  "eng": {
+  "en": {
     "title": "Other Questions",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet vehicula mauris. Nam cursus diam leo, et varius mauris pellentesque in.",
     "tasks": [
@@ -37,7 +37,8 @@
       }
     ]
   },
-  "zul": {
+
+  "zu": {
     "title": "Other Questions",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet vehicula mauris. Nam cursus diam leo, et varius mauris pellentesque in.",
     "tasks": [
@@ -70,7 +71,8 @@
       }
     ]
   },
-  "afr": {
+
+  "af": {
     "title": "Other Questions",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet vehicula mauris. Nam cursus diam leo, et varius mauris pellentesque in.",
     "tasks": [
@@ -103,7 +105,8 @@
       }
     ]
   },
-  "xho": {
+
+  "xh": {
     "title": "Other Questions",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet vehicula mauris. Nam cursus diam leo, et varius mauris pellentesque in.",
     "tasks": [
