@@ -1,9 +1,12 @@
 {
+  "type": "tasks",
+  "id": "preferences",
+  "schedule": "28 January 2019",
+  "points": 2,
+
   "eng": {
-    "id": "preferences",
     "title": "Preferences",
     "description": "Tell us a bit about whether you will be voting in the 2019 election, and if so what are the choice that determine who you vote for.",
-    "difficulty": "medium",
     "tasks": [
       {
         "title": "Question 1",
@@ -35,10 +38,8 @@
     ]
   },
   "zul": {
-    "id": "preferences",
     "title": "Preferences",
     "description": "Tell us a bit about whether you will be voting in the 2019 election, and if so what are the choice that determine who you vote for.",
-    "difficulty": "medium",
     "tasks": [
       {
         "title": "Question 1",
@@ -70,10 +71,8 @@
     ]
   },
   "afr": {
-    "id": "preferences",
     "title": "Preferences",
     "description": "Tell us a bit about whether you will be voting in the 2019 election, and if so what are the choice that determine who you vote for.",
-    "difficulty": "medium",
     "tasks": [
       {
         "title": "Question 1",
@@ -106,9 +105,7 @@
   },
   "xho": {
     "id": "preferences",
-    "title": "Preferences",
     "description": "Tell us a bit about whether you will be voting in the 2019 election, and if so what are the choice that determine who you vote for.",
-    "difficulty": "medium",
     "tasks": [
       {
         "title": "Question 1",

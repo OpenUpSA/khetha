@@ -1,0 +1,20 @@
+{
+  "type": "views",
+  "id": "progress",
+
+  "eng": {
+    "points": "<amount> Points Collected"
+  },
+
+  "zul": {
+    "points": "<amount> Kheta Points"
+  },
+
+  "afr": {
+    "points": "<amount> Kheta Points"
+  },
+
+  "xho": {
+    "points": "<amount> Kheta Points"
+  }
+}

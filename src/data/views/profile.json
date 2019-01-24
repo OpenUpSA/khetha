@@ -1,0 +1,152 @@
+{
+  "type": "views",
+  "id": "main",
+
+  "eng": {
+    "primary": "Change language",
+    "help": {
+      "title": "Need help?",
+      "primary": "Find an answer"
+    },
+    "rewards": {
+      "title": "Rewards",
+      "list": [
+        {
+          "title": "Weekly Mystery Prize",
+          "prompt": "Required Level",
+          "level": "Springbok",
+          "description": "Just by participating in this project you will be illegible to win a secret prize every week."
+        },
+        {
+          "title": "shoX Panther Speaker",
+          "prompt": "Required Level",
+          "level": "Springbok",
+          "description": "Just by participating in this project you will be illegible to win a secret prize every week."
+        },
+        {
+          "title": "Samsung Galaxy S4",
+          "prompt": "Required Level",
+          "level": "Springbok",
+          "description": "Just by participating in this project you will be illegible to win a secret prize every week."
+        }
+      ]
+    },
+    "other": {
+      "winners": "Previous Winners",
+      "faq": "Frequently Asked Questions",
+      "confused": "Still confused?",
+      "chat": "Use our online chat"
+    }
+  },
+
+  "zul": {
+    "primary": "Change language",
+    "help": {
+      "title": "Need help?",
+      "primary": "Find an answer"
+    },
+    "rewards": {
+      "title": "Rewards",
+      "list": [
+        {
+          "title": "Weekly Mystery Prize",
+          "prompt": "Required Level",
+          "level": "Springbok",
+          "description": "Just by participating in this project you will be illegible to win a secret prize every week."
+        },
+        {
+          "title": "shoX Panther Speaker",
+          "prompt": "Required Level",
+          "level": "Springbok",
+          "description": "Just by participating in this project you will be illegible to win a secret prize every week."
+        },
+        {
+          "title": "Samsung Galaxy S4",
+          "prompt": "Required Level",
+          "level": "Springbok",
+          "description": "Just by participating in this project you will be illegible to win a secret prize every week."
+        }
+      ]
+    },
+    "other": {
+      "winners": "Previous Winners",
+      "faq": "Frequently Asked Questions",
+      "confused": "Still confused?",
+      "chat": "Use our online chat"
+    }
+  },
+
+  "afr": {
+    "primary": "Change language",
+    "help": {
+      "title": "Need help?",
+      "primary": "Find an answer"
+    },
+    "rewards": {
+      "title": "Rewards",
+      "list": [
+        {
+          "title": "Weekly Mystery Prize",
+          "prompt": "Required Level",
+          "level": "Springbok",
+          "description": "Just by participating in this project you will be illegible to win a secret prize every week."
+        },
+        {
+          "title": "shoX Panther Speaker",
+          "prompt": "Required Level",
+          "level": "Springbok",
+          "description": "Just by participating in this project you will be illegible to win a secret prize every week."
+        },
+        {
+          "title": "Samsung Galaxy S4",
+          "prompt": "Required Level",
+          "level": "Springbok",
+          "description": "Just by participating in this project you will be illegible to win a secret prize every week."
+        }
+      ]
+    },
+    "other": {
+      "winners": "Previous Winners",
+      "faq": "Frequently Asked Questions",
+      "confused": "Still confused?",
+      "chat": "Use our online chat"
+    }
+  },
+
+  "xho": {
+    "primary": "Change language",
+    "help": {
+      "title": "Need help?",
+      "primary": "Find an answer"
+    },
+    "rewards": {
+      "title": "Rewards",
+      "list": [
+        {
+          "title": "Weekly Mystery Prize",
+          "prompt": "Required Level",
+          "level": "Springbok",
+          "description": "Just by participating in this project you will be illegible to win a secret prize every week."
+        },
+        {
+          "title": "shoX Panther Speaker",
+          "prompt": "Required Level",
+          "level": "Springbok",
+          "description": "Just by participating in this project you will be illegible to win a secret prize every week."
+        },
+        {
+          "title": "Samsung Galaxy S4",
+          "prompt": "Required Level",
+          "level": "Springbok",
+          "description": "Just by participating in this project you will be illegible to win a secret prize every week."
+        }
+      ]
+    },
+    "other": {
+      "winners": "Previous Winners",
+      "faq": "Frequently Asked Questions",
+      "confused": "Still confused?",
+      "chat": "Use our online chat"
+    }
+  }
+}

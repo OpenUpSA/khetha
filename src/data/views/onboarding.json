@@ -1,0 +1,117 @@
+{
+  "type": "views",
+  "id": "onboarding",
+
+  "intro": {
+    "eng": {
+      "title": "What is Kheta?",
+      "description": "Kheta is a platform that allows you and your community to make you voice heard during the 2019 election.",
+      "primary": "Select a language"
+    },
+    "zul": {
+      "title": "What is Kheta?",
+      "description": "Kheta is a platform that allows you and your community to make you voice heard during the 2019 election.",
+      "cta": "Select a language",
+      "primary": "Start",
+      "secondary": "Skip"
+    },
+    "afr": {
+      "title": "What is Kheta?",
+      "description": "Kheta is a platform that allows you and your community to make you voice heard during the 2019 election.",
+      "primary": "Start",
+      "secondary": "Skip"
+    },
+    "xho": {
+      "title": "What is Kheta?",
+      "description": "Kheta is a platform that allows you and your community to make you voice heard during the 2019 election.",
+      "primary": "Start",
+      "secondary": "Skip"
+    }
+  },
+
+  "prizes": {
+    "eng": {
+      "title": "Want to win?",
+      "description": "As you complete tasks you earn Khata points towards prizes",
+      "primary": "Sign Up",
+      "prizes": [
+        {
+          "title": "Samsung Galaxy S4",
+          "description": "One lucky user will stand a chance to win a brand new Samsung smartphone."
+        },
+        {
+          "title": "Weekly Mystery Prize",
+          "description": "One lucky user will stand a chance to win a brand new Samsung smartphone."
+        }
+      ]
+    },
+    "zul": {
+      "title": "Want to win?",
+      "description": "As you complete tasks you earn Khata points towards prizes",
+      "primary": "Sign Up",
+      "prizes": [
+        {
+          "title": "Samsung Galaxy S4",
+          "description": "One lucky user will stand a chance to win a brand new Samsung smartphone."
+        },
+        {
+          "title": "Weekly Mystery Prize",
+          "description": "One lucky user will stand a chance to win a brand new Samsung smartphone."
+        }
+      ]
+    },
+    "afr": {
+      "title": "Want to win?",
+      "description": "As you complete tasks you earn Khata points towards prizes",
+      "primary": "Sign Up",
+      "prizes": [
+        {
+          "title": "Samsung Galaxy S4",
+          "description": "One lucky user will stand a chance to win a brand new Samsung smartphone."
+        },
+        {
+          "title": "Weekly Mystery Prize",
+          "description": "One lucky user will stand a chance to win a brand new Samsung smartphone."
+        }
+      ]
+    },
+    "xho": {
+      "title": "Want to win?",
+      "description": "As you complete tasks you earn Khata points towards prizes",
+      "primary": "Sign Up",
+      "prizes": [
+        {
+          "title": "Samsung Galaxy S4",
+          "description": "One lucky user will stand a chance to win a brand new Samsung smartphone."
+        },
+        {
+          "title": "Weekly Mystery Prize",
+          "description": "One lucky user will stand a chance to win a brand new Samsung smartphone."
+        }
+      ]
+    }
+  },
+
+  "alert": {
+    "eng": {
+      "title": "Very Important!",
+      "description": "In order to be notified when you qualify for a prize you need to enable web notifications on the next screen.",
+      "primary": "I understand"
+    },
+    "zul": {
+      "title": "Very Important!",
+      "description": "In order to be notified when you qualify for a prize you need to enable web notifications on the next screen.",
+      "primary": "I understand"
+    },
+    "afr": {
+      "title": "Very Important!",
+      "description": "In order to be notified when you qualify for a prize you need to enable web notifications on the next screen.",
+      "primary": "I understand"
+    },
+    "xho": {
+      "title": "Very Important!",
+      "description": "In order to be notified when you qualify for a prize you need to enable web notifications on the next screen.",
+      "primary": "I understand"
+    }
+  }
+}

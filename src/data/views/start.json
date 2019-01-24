@@ -1,0 +1,55 @@
+{
+  "type": "views",
+  "id": "start",
+
+  "eng": {
+    "points": "<amount> Kheta Points",
+    "filter": {
+      "title": "Filter tasks",
+      "difficulty": [
+        "easy",
+        "medium",
+        "hard",
+        "very hard"
+      ]
+    },
+    "more": {
+      "title": "Need more tasks?",
+      "description": "We are continually adding new tasks to this app as the build up to the 2019 election continues."
+    }
+  },
+
+  "zul": {
+    "points": "<amount> Kheta Points",
+    "filter": {
+      "title": "Filter tasks",
+      "difficulty": [
+        "easy",
+        "medium",
+        "hard",
+        "very hard"
+      ]
+    },
+    "more": {
+      "title": "Need more tasks?",
+      "description": "We are continually adding new tasks to this app as the build up to the 2019 election continues."
+    }
+  },
+
+  "afr": {
+    "points": "<amount> Kheta Points",
+    "filter": {
+      "title": "Filter tasks",
+      "difficulty": [
+        "easy",
+        "medium",
+        "hard",
+        "very hard"
+      ]
+    },
+    "more": {
+      "title": "Need more tasks?",
+      "description": "We are continually adding new tasks to this app as the build up to the 2019 election continues."
+    }
+  }
+}

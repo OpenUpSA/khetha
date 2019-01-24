@@ -1,9 +1,12 @@
 {
+  "type": "tasks",
+  "id": "community",
+  "schedule": "20 January 2019",
+  "points": 4,
+
   "eng": {
-    "id": "community",
     "title": "Community",
     "description": "It is important to know what those around you think about the upcoming 2019 election. In this challenge you will need to speak to them.",
-    "difficulty": "hard",
     "tasks": [
       {
         "title": "Question 1",
@@ -35,10 +38,8 @@
     ]
   },
   "zul": {
-    "id": "community",
     "title": "Community",
     "description": "It is important to know what those around you think about the upcoming 2019 election. In this challenge you will need to speak to them.",
-    "difficulty": "hard",
     "tasks": [
       {
         "title": "Question 1",
@@ -70,10 +71,8 @@
     ]
   },
   "afr": {
-    "id": "community",
     "title": "Community",
     "description": "It is important to know what those around you think about the upcoming 2019 election. In this challenge you will need to speak to them.",
-    "difficulty": "hard",
     "tasks": [
       {
         "title": "Question 1",
@@ -105,10 +104,8 @@
     ]
   },
   "xho": {
-    "id": "community",
     "title": "Community",
     "description": "It is important to know what those around you think about the upcoming 2019 election. In this challenge you will need to speak to them.",
-    "difficulty": "hard",
     "tasks": [
       {
         "title": "Question 1",

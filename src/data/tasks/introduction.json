@@ -1,9 +1,12 @@
 {
+  "type": "tasks",
+  "id": "introduction",
+  "schedule": "22 January 2019",
+  "points": 1,
+
   "eng": {
-    "id": "introduction",
     "title": "Introduction",
     "description": "Tell us a bit about yourself, we are interested in your age, gender and preferences. This will help us get a better idea of who is filling in the questions.",
-    "difficulty": "easy",
     "tasks": [
       {
         "title": "Question 1",
@@ -35,10 +38,8 @@
     ]
   },
   "zul": {
-    "id": "introduction",
     "title": "Introduction",
     "description": "Tell us a bit about yourself, we are interested in your age, gender and preferences. This will help us get a better idea of who is filling in the questions.",
-    "difficulty": "easy",
     "tasks": [
       {
         "title": "Question 1",
@@ -70,10 +71,8 @@
     ]
   }, 
   "afr": {
-    "id": "introduction",
     "title": "Introduction",
     "description": "Tell us a bit about yourself, we are interested in your age, gender and preferences. This will help us get a better idea of who is filling in the questions.",
-    "difficulty": "easy",
     "tasks": [
       {
         "title": "Question 1",
@@ -105,10 +104,8 @@
     ]
   }, 
   "xho": {
-    "id": "introduction",
     "title": "Introduction",
     "description": "Tell us a bit about yourself, we are interested in your age, gender and preferences. This will help us get a better idea of who is filling in the questions.",
-    "difficulty": "easy",
     "tasks": [
       {
         "title": "Question 1",

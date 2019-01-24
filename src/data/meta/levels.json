@@ -1,0 +1,48 @@
+{
+  "type": "meta",
+  "id": "levels",
+
+  "eng": [
+    "Honey Bee Level",
+    "Wild Hare Level",
+    "Warthog Level",
+    "Springbok Level",
+    "Zebra Level",
+    "Lion Level",
+    "Rhino Level",
+    "Elephant Level"
+  ],
+
+  "zul": [
+    "Honey Bee Level",
+    "Wild Hare Level",
+    "Warthog Level",
+    "Springbok Level",
+    "Zebra Level",
+    "Lion Level",
+    "Rhino Level",
+    "Elephant Level"
+  ],
+
+  "afr": [
+    "Honey Bee Level",
+    "Wild Hare Level",
+    "Warthog Level",
+    "Springbok Level",
+    "Zebra Level",
+    "Lion Level",
+    "Rhino Level",
+    "Elephant Level"
+  ],
+
+  "xho": [
+    "Honey Bee Level",
+    "Wild Hare Level",
+    "Warthog Level",
+    "Springbok Level",
+    "Zebra Level",
+    "Lion Level",
+    "Rhino Level",
+    "Elephant Level"
+  ]
+}
