@@ -11,8 +11,8 @@ Please visit the [project documentation](https://kheta-docs.netlify.com) to get 
 
 ## Setting up local environment
 
-1. Clone repository by running `git clone https://help.github.com/OpenUpSA/pocket-reporter/`.
+1. Clone repository by running `git clone https://help.github.com/OpenUpSA/kheta/`.
 2. Make sure you have the latest [NodeJS](https://nodejs.org/en/) installed.
-3. Run `npm install` in the root folder of the repository.
+3. Run `npm install` in the root folder of the repository (If you are on a Mac you might need to do `sudo npm install`).
 4. Run `npm start` to spin up the development server.
 5. Open `localhost:8000` in your browser.
