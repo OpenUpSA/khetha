@@ -1,0 +1,28 @@
+{
+  "type": "meta",
+  "id": "menu",
+
+  "eng": [
+      "Progress",
+      "Start",
+      "Profile"
+  ],
+
+  "zul": [
+    "Progress",
+    "Start",
+    "Profile"
+  ],
+
+  "afr": [
+    "Progress",
+    "Start",
+    "Profile"
+  ],
+
+  "xho": [
+    "Progress",
+    "Start",
+    "Profile"
+  ]
+}

@@ -1,9 +1,12 @@
 {
+  "type": "tasks",
+  "id": "other",
+  "schedule": "24 January 2019",
+  "points": 8,
+
   "eng": {
-    "id": "other",
     "title": "Other Questions",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet vehicula mauris. Nam cursus diam leo, et varius mauris pellentesque in.",
-    "difficulty": "very-hard",
     "tasks": [
       {
         "title": "Question 1",
@@ -35,10 +38,8 @@
     ]
   },
   "zul": {
-    "id": "other",
     "title": "Other Questions",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet vehicula mauris. Nam cursus diam leo, et varius mauris pellentesque in.",
-    "difficulty": "very-hard",
     "tasks": [
       {
         "title": "Question 1",
@@ -70,10 +71,8 @@
     ]
   },
   "afr": {
-    "id": "other",
     "title": "Other Questions",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet vehicula mauris. Nam cursus diam leo, et varius mauris pellentesque in.",
-    "difficulty": "very-hard",
     "tasks": [
       {
         "title": "Question 1",
@@ -105,10 +104,8 @@
     ]
   },
   "xho": {
-    "id": "other",
     "title": "Other Questions",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet vehicula mauris. Nam cursus diam leo, et varius mauris pellentesque in.",
-    "difficulty": "very-hard",
     "tasks": [
       {
         "title": "Question 1",
