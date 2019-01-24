@@ -1,8 +1,8 @@
 {
   "type": "views",
-  "id": "main",
+  "id": "profile",
 
-  "eng": {
+  "en": {
     "primary": "Change language",
     "help": {
       "title": "Need help?",
@@ -31,15 +31,10 @@
         }
       ]
     },
-    "other": {
-      "winners": "Previous Winners",
-      "faq": "Frequently Asked Questions",
-      "confused": "Still confused?",
-      "chat": "Use our online chat"
-    }
+    "winners": "Previous Winners"
   },
 
-  "zul": {
+  "zu": {
     "primary": "Change language",
     "help": {
       "title": "Need help?",
@@ -68,15 +63,10 @@
         }
       ]
     },
-    "other": {
-      "winners": "Previous Winners",
-      "faq": "Frequently Asked Questions",
-      "confused": "Still confused?",
-      "chat": "Use our online chat"
-    }
+    "winners": "Previous Winners"
   },
 
-  "afr": {
+  "af": {
     "primary": "Change language",
     "help": {
       "title": "Need help?",
@@ -105,15 +95,10 @@
         }
       ]
     },
-    "other": {
-      "winners": "Previous Winners",
-      "faq": "Frequently Asked Questions",
-      "confused": "Still confused?",
-      "chat": "Use our online chat"
-    }
+    "winners": "Previous Winners"
   },
 
-  "xho": {
+  "xh": {
     "primary": "Change language",
     "help": {
       "title": "Need help?",
@@ -142,11 +127,6 @@
         }
       ]
     },
-    "other": {
-      "winners": "Previous Winners",
-      "faq": "Frequently Asked Questions",
-      "confused": "Still confused?",
-      "chat": "Use our online chat"
-    }
+    "winners": "Previous Winners"
   }
 }

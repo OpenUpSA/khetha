@@ -1,4 +1,4 @@
 import React from 'react';
 
 
-export default () => <div>Faq</div>;
+export default props => <div>{console.log(props)}</div>;

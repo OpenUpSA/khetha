@@ -1,0 +1,28 @@
+{
+  "type": "views",
+  "id": "faq",
+
+  "en": {
+    "title": "Frequently Asked Questions",
+    "confused": "Still confused?",
+    "chat": "Use our online chat"
+  },
+
+  "zu": {
+    "title": "Frequently Asked Questions",
+    "confused": "Still confused?",
+    "chat": "Use our online chat"
+  },
+
+  "af": {
+    "title": "Frequently Asked Questions",
+    "confused": "Still confused?",
+    "chat": "Use our online chat"
+  },
+
+  "xh": {
+    "title": "Frequently Asked Questions",
+    "confused": "Still confused?",
+    "chat": "Use our online chat"
+  }
+}

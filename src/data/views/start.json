@@ -2,7 +2,7 @@
   "type": "views",
   "id": "start",
 
-  "eng": {
+  "en": {
     "points": "<amount> Kheta Points",
     "filter": {
       "title": "Filter tasks",
@@ -19,7 +19,7 @@
     }
   },
 
-  "zul": {
+  "zu": {
     "points": "<amount> Kheta Points",
     "filter": {
       "title": "Filter tasks",
@@ -36,7 +36,24 @@
     }
   },
 
-  "afr": {
+  "af": {
+    "points": "<amount> Kheta Points",
+    "filter": {
+      "title": "Filter tasks",
+      "difficulty": [
+        "easy",
+        "medium",
+        "hard",
+        "very hard"
+      ]
+    },
+    "more": {
+      "title": "Need more tasks?",
+      "description": "We are continually adding new tasks to this app as the build up to the 2019 election continues."
+    }
+  },
+
+  "xh": {
     "points": "<amount> Kheta Points",
     "filter": {
       "title": "Filter tasks",
