@@ -14,9 +14,19 @@ export const syncWithRemote = () => (dispatch, getState) => {
   const local = getState();
   const { value: id } = local.user.id;
   const keys = ['storage', 'user', 'tasks'];
+  const modifiedLocal = {
+    ...local,
+    user: {
+      ...local.user,
+      synced: {
+        timestamp: new Date().getTime(),
+        value: new Date().getTime(),
+      },
+    },
+  };
 
   const localAsStrings = keys.reduce(
-    (result, key) => ({ ...result, [key]: JSON.stringify(local[key]) }),
+    (result, key) => ({ ...result, [key]: JSON.stringify(modifiedLocal[key]) }),
     {},
   );
 
@@ -30,7 +40,8 @@ export const syncWithRemote = () => (dispatch, getState) => {
 
 export const initStateFromRemote = () => (dispatch, getState) => {
   const localState = getState();
-  const { value: id } = localState.user;
+  const { id: idObject } = localState.user || {};
+  const { value: id } = idObject || {};
 
   const local = {
     storage: localState.storage,

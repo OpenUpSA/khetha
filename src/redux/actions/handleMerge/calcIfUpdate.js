@@ -1,6 +1,11 @@
-export default (local, remote) => {
-  const localTime = new Date(local.storage.synced.timestamp || 0).getTime();
-  const remoteTime = new Date(remote.storage.synced.timestamp || 0).getTime();
+export default (local = {}, remote = {}) => {
+  const { synced: localSynced } = local.storage || {};
+  const { synced: remoteSynced } = remote.storage || {};
+  const { timestap: localTimestap } = localSynced || 0;
+  const { timestap: remoteTimestap } = remoteSynced || 0;
+
+  const localTime = new Date(localTimestap).getTime();
+  const remoteTime = new Date(remoteTimestap).getTime();
   const shouldUpdate = localTime < remoteTime;
 
   return shouldUpdate;

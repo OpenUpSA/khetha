@@ -2,11 +2,14 @@ import { initStateFromRemote } from '../index';
 import parseResponse from '../parseResponse';
 import handleMerge from '../handleMerge';
 import updateEntireState from '../updateEntireState';
+import * as user from '../../modules/user';
 
 
 const dispatch = jest.fn();
-dispatch.mockImplementation(value => value);
+dispatch.mockReturnValue(new Promise(resolve => resolve()));
 
+jest.mock('../../modules/user');
+user.createGuestAccount.mockReturnValue(value => value);
 
 jest.mock('../parseResponse');
 parseResponse.mockReturnValue(true);
