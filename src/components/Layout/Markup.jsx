@@ -1,10 +1,10 @@
 import React from 'react';
-import Header from './Header';
+import MenuHeader from './MenuHeader';
 
 
 export default ({ children, points }) => (
   <div>
-    <Header {...{ points }} />
+    <MenuHeader {...{ points }} />
     {children}
   </div>
 );

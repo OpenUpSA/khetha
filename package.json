@@ -16,7 +16,7 @@
     "test:lint:fix": "eslint src --fix"
   },
   "dependencies": {
-    "@material-ui/core": "^3.7.1",
+    "@material-ui/core": "^3.9.0",
     "@material-ui/icons": "^3.0.1",
     "@material-ui/lab": "^3.0.0-alpha.26",
     "axios": "^0.18.0",

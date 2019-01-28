@@ -5,25 +5,22 @@ import MainHeading from '../components/MainHeading';
 import ProgressCards from '../components/ProgressCards';
 import Footer from '../components/Footer';
 
-
 const StyledWrapper = styled.div`
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   position: relative;
   min-height: 100vh;
   overflow: scroll;
   left: 0px;
   right: 0px;
   padding: 20px 15px;
-  @media (min-width: 760px) 
-  {
+  @media (min-width: 760px) {
     max-width: 400px;
-    margin: auto
+    margin: auto;
   }
-  background: #E5E5E5;
+  background: #e5e5e5;
   display: flex;
   flex-direction: column;
 `;
-
 
 export default () => (
   <Fragment>
