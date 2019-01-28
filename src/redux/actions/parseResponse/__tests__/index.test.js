@@ -16,7 +16,7 @@ const output = {
 
 
 const input = parseResponse(params);
-const assertion = () => expect(input).resolves.toEqual(output);
+const assertion = () => expect(input).resolves.toEqual({ remote: output });
 
 
 test('parseResponse', assertion);
