@@ -3,8 +3,9 @@
     "version": 0
   },
   "user": {
-    "language": "eng",
-    "id": null
+    "language": null,
+    "id": null,
+    "notifications": null
   },
   "tasks": {
     "progress": {},
