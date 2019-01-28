@@ -1,24 +1,29 @@
-import generateUniqueKey from 'uuid/v4';
-import languages from '../../../config/languages.json';
+import { auth } from '../../../helpers/firebase';
+import createDispatchPipe from '../../../helpers/createDispatchPipe';
+import createUserInDatabasePromise from './createUserInDatabasePromise';
 
-
-const SET_LANGUAGE = 'user/SET_LANGUAGE';
+const REPLACE_STATE = 'user/REPLACE_STATE';
 const SET_ID = 'user/SET_ID';
-
-
-const isoKeys = Object.keys(languages);
+const REPLACE_VALUE = 'users/REPLACE_VALUE';
+const LOG_NEW_GUEST_ACCOUNT = 'user/LOG_NEW_GUEST_ACCOUNT';
+const LOG_USER_DB_OBJECT_CREATED = 'user/LOG_USER_DB_OBJECT_CREATED';
 
 
 export default (state = {}, action = {}) => {
   switch (action.type) {
-    case SET_LANGUAGE: return {
-      ...state,
-      language: action.payload.isoKey,
-    };
+    case REPLACE_STATE: return action.payload.state;
 
     case SET_ID: return {
       ...state,
-      id: action.payload.id,
+      id: action.payload,
+    };
+
+    case REPLACE_VALUE: return {
+      ...state,
+      [action.payload.key]: {
+        timestamp: action.payload.time,
+        value: action.payload.value,
+      },
     };
 
     default: return state;
@@ -26,23 +31,43 @@ export default (state = {}, action = {}) => {
 };
 
 
-export const changeLanguage = ({ isoKey }) => {
-  if (isoKeys.filter(key => key === isoKey).length < 1) {
-    return new Error('Invalid ISO 639-2 language Code supplied to "isoKey"');
-  }
+export const replaceEntireState = ({ state }) => ({
+  type: REPLACE_STATE,
+  payload: {
+    state,
+  },
+});
+
+
+export const setUserValue = (object) => {
+  const key = Object.keys(object)[0];
+  const value = object[key];
 
   return {
-    type: SET_LANGUAGE,
+    type: REPLACE_VALUE,
     payload: {
-      isoKey,
+      time: new Date().getTime(),
+      key,
+      value,
     },
   };
 };
 
 
-export const createUserId = () => ({
-  type: SET_ID,
-  payload: {
-    id: generateUniqueKey(),
-  },
-});
+export const createGuestAccount = () => (dispatch) => {
+  const dispatchPipe = createDispatchPipe(dispatch);
+  const logNewGuestAccount = dispatchPipe({ type: LOG_NEW_GUEST_ACCOUNT });
+  const logUserDbObjectCreated = dispatch({ type: LOG_USER_DB_OBJECT_CREATED });
+
+  const promise = new Promise((resolve) => {
+    const result = auth
+      .signInAnonymously()
+      .then(logNewGuestAccount)
+      .then(createUserInDatabasePromise)
+      .then(logUserDbObjectCreated)
+      .then(resolve);
+    return result;
+  });
+
+  return promise;
+};

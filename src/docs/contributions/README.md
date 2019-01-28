@@ -1,6 +1,6 @@
 ---
 name: Contributions
-menu: Overview
+menu: Project Overview
 ---
 
 # ❤️ Contributions

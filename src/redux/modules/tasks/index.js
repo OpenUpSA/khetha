@@ -1,6 +1,7 @@
 import { omit } from 'lodash';
 
 
+const REPLACE_STATE = 'tasks/REPLACE_STATE';
 const MARK_DONE = 'tasks/MARK_DONE';
 const UPDATE_PROGRESS = 'tasks/UPDATE_PROGRESS';
 const REMOVE_PROGRESS = 'tasks/REMOVE_PROGRESS';
@@ -8,6 +9,8 @@ const REMOVE_PROGRESS = 'tasks/REMOVE_PROGRESS';
 
 export default (state = {}, action = {}) => {
   switch (action.type) {
+    case REPLACE_STATE: return action.payload.state;
+
     case MARK_DONE: return {
       ...state,
       completed: [
@@ -34,6 +37,14 @@ export default (state = {}, action = {}) => {
     default: return state;
   }
 };
+
+
+export const replaceEntireState = ({ state }) => ({
+  type: REPLACE_STATE,
+  payload: {
+    state,
+  },
+});
 
 
 export const markAsDone = ({ id }) => ({

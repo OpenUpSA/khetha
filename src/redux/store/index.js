@@ -4,9 +4,10 @@ import persistState from 'redux-localstorage';
 import thunk from 'redux-thunk';
 
 import initialState from './initialState.json';
-import user from './modules/user';
-import tasks from './modules/tasks';
-import storage from './modules/storage';
+import user from '../modules/user';
+import tasks from '../modules/tasks';
+import storage from '../modules/storage';
+import errors from '../modules/errors';
 
 
 const persistKeys = [
@@ -24,6 +25,7 @@ const rawReducers = {
   storage,
   user,
   tasks,
+  errors,
 };
 
 

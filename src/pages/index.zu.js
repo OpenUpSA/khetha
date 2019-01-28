@@ -1,4 +1,5 @@
 import { createElement } from 'react';
+import OnBoarding from '../views/Onboarding';
 
 
-export default () => createElement('div', {}, 'Zu');
+export default () => createElement(OnBoarding);
