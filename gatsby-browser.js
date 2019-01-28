@@ -2,10 +2,12 @@
 
 import { createElement } from 'react';
 import { Provider } from 'react-redux';
+import { navigate } from 'gatsby';
+
 import { version as targetStorageVersion } from './src/config/storage.json';
-import store from './src/redux/store';
 import { setVersion as setStorageVersion } from './src/redux/modules/storage';
-import { createUserId } from './src/redux/modules/user';
+import { initStateFromRemote, syncWithRemote } from './src/redux/actions';
+import store from './src/redux/store';
 
 
 export const wrapRootElement = ({ element }) => (
@@ -19,17 +21,26 @@ const wipeStorage = ({ version }) => {
 };
 
 
-export const onClientEntry = () => {
-  const { storage, user } = store.getState();
+export const onInitialClientRender = () => {
+  const { user } = store.getState();
+  const { language } = user;
 
+  if (!language) {
+    return navigate('/en/');
+  }
+
+  return navigate(`/${language}/start`);
+};
+
+
+export const onClientEntry = () => {
+  const { storage } = store.getState();
   const { version: storageVersion } = storage;
-  const { id } = user;
 
   if (storageVersion < targetStorageVersion) {
     wipeStorage({ version: targetStorageVersion });
   }
 
-  if (!id) {
-    store.dispatch(createUserId());
-  }
+  store.dispatch(initStateFromRemote())
+    .then(() => store.dispatch(syncWithRemote()));
 };
