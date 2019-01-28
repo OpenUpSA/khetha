@@ -1,6 +1,6 @@
 ---
 name: Integrations
-menu: Overview
+menu: Project Overview
 ---
 
 # 🔌 Integrations
