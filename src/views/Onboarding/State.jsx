@@ -34,8 +34,3 @@ export default class State extends Component {
     return <Markup {...passedProps} />;
   }
 }
-
-
-State.propTypes = {
-  changeLanguagePromise: PropTypes.func.isRequired,
-};

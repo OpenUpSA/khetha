@@ -80,7 +80,6 @@ export default Markup;
 
 Markup.propTypes = {
   language: PropTypes.string,
-  selectLanguage: PropTypes.func.isRequired,
 };
 
 Markup.defaultProps = {
