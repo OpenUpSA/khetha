@@ -39,100 +39,32 @@
   },
 
   "zu": {
-    "title": "Community",
-    "description": "It is important to know what those around you think about the upcoming 2019 election. In this challenge you will need to speak to them.",
+    "title": "ZZ Community",
+    "description": "ZZ It is important to know what those around you think about the upcoming 2019 election. In this challenge you will need to speak to them.",
     "tasks": [
       {
-        "title": "Question 1",
+        "title": "ZZ Question 1",
         "description": "This is the description text that will get shown",
         "format": "string"
       },
       {
-        "title": "Question 2",
+        "title": "ZZ Question 2",
         "description": "This is the description text that will get shown",
         "format": "textarea"
       },
       {
-        "title": "Question 3",
+        "title": "ZZ Question 3",
         "description": "This is the description text that will get shown",
         "format": "boolean"
       },
       {
-        "title": "Question 4",
+        "title": "ZZ Question 4",
         "description": "This is the description text that will get shown",
         "format": "select",
         "options": ["one", "two", "three"]
       },
       {
-        "title": "Question 4",
-        "description": "This is the description text that will get shown",
-        "format": "checkbox",
-        "options": ["one", "two", "three"]
-      }
-    ]
-  },
-
-  "af": {
-    "title": "Community",
-    "description": "It is important to know what those around you think about the upcoming 2019 election. In this challenge you will need to speak to them.",
-    "tasks": [
-      {
-        "title": "Question 1",
-        "description": "This is the description text that will get shown",
-        "format": "string"
-      },
-      {
-        "title": "Question 2",
-        "description": "This is the description text that will get shown",
-        "format": "textarea"
-      },
-      {
-        "title": "Question 3",
-        "description": "This is the description text that will get shown",
-        "format": "boolean"
-      },
-      {
-        "title": "Question 4",
-        "description": "This is the description text that will get shown",
-        "format": "select",
-        "options": ["one", "two", "three"]
-      },
-      {
-        "title": "Question 4",
-        "description": "This is the description text that will get shown",
-        "format": "checkbox",
-        "options": ["one", "two", "three"]
-      }
-    ]
-  },
-
-  "xh": {
-    "title": "Community",
-    "description": "It is important to know what those around you think about the upcoming 2019 election. In this challenge you will need to speak to them.",
-    "tasks": [
-      {
-        "title": "Question 1",
-        "description": "This is the description text that will get shown",
-        "format": "string"
-      },
-      {
-        "title": "Question 2",
-        "description": "This is the description text that will get shown",
-        "format": "textarea"
-      },
-      {
-        "title": "Question 3",
-        "description": "This is the description text that will get shown",
-        "format": "boolean"
-      },
-      {
-        "title": "Question 4",
-        "description": "This is the description text that will get shown",
-        "format": "select",
-        "options": ["one", "two", "three"]
-      },
-      {
-        "title": "Question 4",
+        "title": "ZZ Question 4",
         "description": "This is the description text that will get shown",
         "format": "checkbox",
         "options": ["one", "two", "three"]
