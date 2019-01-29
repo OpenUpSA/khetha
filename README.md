@@ -1,4 +1,4 @@
-# 🗳 Kheta
+# 📋 Khetha
 
 [![](https://badges.gitter.im/OpenUpSA/kheta.svg)](https://gitter.im/OpenUpSA/kheta?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![](https://travis-ci.org/OpenUpSA/kheta.svg?branch=master)](https://travis-ci.org/OpenUpSA/kheta)
 
