@@ -6,11 +6,11 @@ import Faq from '../../../views/Faq';
 const createProps = ({ allFaqsYaml, allViewsJson }) => {
   const faqs = allFaqsYaml.edges.map(({ node }) => node.en);
 
-  const view = allViewsJson.edges[0].node.en;
+  const translate = allViewsJson.edges[0].node.en;
 
   return {
     faqs,
-    view,
+    translate,
   };
 };
 
