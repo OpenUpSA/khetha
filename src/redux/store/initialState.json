@@ -27,5 +27,9 @@
   "tasks": {
     "progress": {},
     "completed": []
+  },
+  "errors": {},
+  "queue": {
+    "list": []
   }
 }

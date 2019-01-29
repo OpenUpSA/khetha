@@ -8,11 +8,11 @@ export default class Start extends Component {
   };
 
   componentDidMount() {
-    this.setState({ loading: false })
+    this.setState({ loading: false });
   }
 
   render() {
-    const { state, props } = this.state;
+    const { state, props } = this;
 
     const passedProps = {
       loading: state.loading,
