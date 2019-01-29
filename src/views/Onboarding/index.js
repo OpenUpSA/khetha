@@ -3,13 +3,11 @@ import State from './State';
 import { setUserValue } from '../../redux/modules/user';
 
 
-const mapStateToProps = ({ user }, ownProps) => {
-  return {
-    language: user.language.value,
-    onboardingLevel: user.onboarding.value,
-    ...ownProps,
-  };
-};
+const mapStateToProps = ({ user }, ownProps) => ({
+  language: user.language.value,
+  onboardingLevel: user.onboarding.value,
+  ...ownProps,
+});
 
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
