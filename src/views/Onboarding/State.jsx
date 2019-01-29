@@ -1,36 +1,78 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Markup from './Markup';
+import { navigate } from 'gatsby';
+import Step0 from './Step0';
+import Step1 from './Step1';
+
+
+const parseOnboardingLevel = (level) => {
+  const stringStep = level.toString();
+
+  switch (stringStep) {
+    case '0': return { step: 0, alert: false };
+    case '1': return { step: 1, alert: false };
+    case '2': return { step: 1, alert: true };
+    default: return 0;
+  }
+};
+
+
+const steps = [
+  Step0,
+  Step1,
+];
 
 
 export default class State extends Component {
-  state = {
-    step: 0,
+  progressOnboarding = () => {
+    const {
+      onboardingLevel,
+      changeOnboarding,
+      language,
+    } = this.props;
+
+    if (onboardingLevel >= 2) {
+      navigate(`/${language}/start/`);
+    }
+
+    return changeOnboarding(onboardingLevel + 1);
   }
 
   selectLanguage = (event) => {
+    const { value } = event.target;
+    const { progressOnboarding } = this;
+    const { changeLanguage, changeOnboarding } = this.props;
 
-    // const { changeLanguagePromise } = this.props;
-    // const { value } = event.target;
+    changeLanguage(value);
+    if (value === 'en') {
+      return progressOnboarding();
+    }
 
-    // if (value === 'english') {
-    //   this.setState({ step: 1 });
-    // }
-
-    // return changeLanguagePromise(value)
-    //   .then(console.log)
-    //   .catch(throwError);
+    return navigate(`/${value}/`);
   }
 
   render() {
-    const { state, props, selectLanguage } = this;
+    const {
+      props,
+      ...events
+    } = this;
+
+    const { step, alert } = parseOnboardingLevel(props.onboardingLevel);
 
     const passedProps = {
-      step: state.step,
-      language: props.langauge,
-      selectLanguage,
+      language: props.language,
+      selectLanguage: events.selectLanguage,
+      translation: props.translation,
+      progressOnboarding: events.progressOnboarding,
+      alert,
     };
 
+    const Markup = steps[step];
     return <Markup {...passedProps} />;
   }
 }
+
+
+State.propTypes = {
+  changeLanguage: PropTypes.func.isRequired,
+};
