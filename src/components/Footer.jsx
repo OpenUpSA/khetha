@@ -13,6 +13,8 @@ const FooterWrapper = styled.div`
   z-index: 999;
 `;
 
+
+
 const FooterBar = styled.div`
   top: auto;
   bottom: 0;
@@ -23,8 +25,9 @@ const FooterBar = styled.div`
   color: rgba(255, 255, 255, 0.7);
   @media (min-width: 760px) 
   {
-    width: 52%;
-    margin: auto
+    width: 95%;
+    margin-right: 1px;
+    margin-left: 4px;
   }
   :hover, :active {
     color: rgba(255, 255, 255, 1);
@@ -42,7 +45,7 @@ const FooterList = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
-  width: 100%;
+  width: 94%;
   display: flex;
   justify-content: space-between;
 `;
@@ -76,6 +79,31 @@ const FooterButton = styled.a`
   }
 `;
 
+
+//----Footer starter buttoon----
+
+const FooterButtonForStartPage = styled.a`
+color: lightgreen: //i changed the coloure over here 
+text-decoration: none;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-transform: uppercase;
+font-weight: 500;
+font-family: "Roboto", sans-serif;
+width: 100%;
+height: 100%;
+text-align: center;
+:hover, :active {
+ color: lightBlue; // i chenged the coloure over here
+ border-radius: 0;
+ border-bottom: 2px solid #FF005C;
+}
+`;
+
+//starter buttion
+
 const Footer = () => (
   <FooterWrapper>
     <FooterBar position="fixed">
@@ -87,6 +115,11 @@ const Footer = () => (
               Progress
             </FooterButton>
           </FooterItem>
+
+          {/* {ButtonStarter Page} */}
+
+          {/* { Button Starter Page} */}
+
           <FooterItem>
             <FooterButton href="/start">
               <AddIcon />
@@ -106,3 +139,5 @@ const Footer = () => (
 );
 
 export default Footer;
+
+

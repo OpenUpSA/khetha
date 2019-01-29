@@ -11,10 +11,8 @@ import FaceIcon from '@material-ui/icons/Face';
 import CityIcon from '@material-ui/icons/LocationCity';
 import ThumbIcon from '@material-ui/icons/ThumbUp';
 
-
 const CardWrapper = styled.ul`
-  @media (min-width: 760px) 
-  {
+  @media (min-width: 760px) {
     width: 50%;
     margin: auto;
   }
@@ -22,14 +20,14 @@ const CardWrapper = styled.ul`
   justify-content: flex-start;
   flex-direction: column;
   padding: 0;
-  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   position: relative;
 `;
 
 const CardItem = styled.li`
-   list-style-type: none;
-   width: 100%;
-   margin-bottom: 10px;
+  list-style-type: none;
+  width: 100%;
+  margin-bottom: 10px;
 `;
 
 const CardLink = styled(Link)`
@@ -38,7 +36,7 @@ const CardLink = styled(Link)`
 
 const TopicCard = styled(Card)`
   && {
-    color: #0575E6;
+    color: #0575e6;
     background-color: ${props => props.background || '#FFFFFF'};
     height: 100px;
     box-shadow: ${props => props.boxShadow || ''};
@@ -47,7 +45,10 @@ const TopicCard = styled(Card)`
 `;
 
 const StyledHeader = styled(({ headline, subtitle, ...other }) => (
-  <CardHeader classes={{ title: 'headline', subheader: 'subtitle' }} {...other} />
+  <CardHeader
+    classes={{ title: 'headline', subheader: 'subtitle' }}
+    {...other}
+  />
 ))`
   && {
     padding: 10px 16px 20px;
@@ -57,7 +58,7 @@ const StyledHeader = styled(({ headline, subtitle, ...other }) => (
     font-size: 12px;
     line-height: 20px;
   }
-  
+
   & .subtitle {
     color: ${props => props.color || 'rgba(0, 0, 0, 0.87)'};
     font-size: 18px;
@@ -78,7 +79,7 @@ const HeaderProgress = styled(({ barColorPrimary, ...other }) => (
     margin: 0 16px;
     height: 4px;
   }
-  
+
   & .barColor {
     background: ${props => props.barColorPrimary};
   }
@@ -90,15 +91,19 @@ const ProgressCards = () => (
       <CardLink to="/">
         <TopicCard>
           <StyledHeader
-            action={(
+            action={
               <IconButton>
                 <FaceIcon color="primary" fontSize="large" />
               </IconButton>
-            )}
+            }
             title="11 Points Remaining"
             subheader="Introductory Questions"
           />
-          <HeaderProgress variant="determinate" value={68} barColorPrimary="linear-gradient(177.9deg, #00F260 0%, #0575E6 83.33%), #0576E6;" />
+          <HeaderProgress
+            variant="determinate"
+            value={68}
+            barColorPrimary="linear-gradient(177.9deg, #00F260 0%, #0575E6 83.33%), #0576E6;"
+          />
         </TopicCard>
       </CardLink>
     </CardItem>
@@ -106,15 +111,19 @@ const ProgressCards = () => (
       <CardLink to="/">
         <TopicCard>
           <StyledHeader
-            action={(
+            action={
               <IconButton>
                 <CityIcon color="primary" fontSize="large" />
               </IconButton>
-            )}
+            }
             title="31 Points Remaining"
             subheader="Survey Your Community"
           />
-          <HeaderProgress variant="determinate" value={25} barColorPrimary="linear-gradient(177.9deg, #00F260 0%, #0575E6 83.33%), #0576E6;" />
+          <HeaderProgress
+            variant="determinate"
+            value={25}
+            barColorPrimary="linear-gradient(177.9deg, #00F260 0%, #0575E6 83.33%), #0576E6;"
+          />
         </TopicCard>
       </CardLink>
     </CardItem>
@@ -122,16 +131,20 @@ const ProgressCards = () => (
       <CardLink to="/">
         <TopicCard background="transparent" boxShadow="none" border="#AFAFAF">
           <StyledHeader
-            action={(
+            action={
               <IconButton>
                 <ThumbIcon fontSize="large" />
               </IconButton>
-            )}
+            }
             title="Completed!"
             subheader="Voting Preferences"
             color="#AFAFAF"
           />
-          <HeaderProgress variant="determinate" value={100} barColorPrimary="#AFAFAF" />
+          <HeaderProgress
+            variant="determinate"
+            value={100}
+            barColorPrimary="#AFAFAF"
+          />
         </TopicCard>
       </CardLink>
     </CardItem>

@@ -17,7 +17,7 @@ const SubHeading = (props) => {
   const title = props.text;
   return (
     <Heading>
-      { title }
+      {title}
     </Heading>
   );
 };

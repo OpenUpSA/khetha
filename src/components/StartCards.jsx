@@ -11,10 +11,8 @@ import FaceIcon from '@material-ui/icons/Face';
 import CityIcon from '@material-ui/icons/LocationCity';
 import ThumbIcon from '@material-ui/icons/ThumbUp';
 
-
 const CardWrapper = styled.ul`
-  @media (min-width: 760px) 
-  {
+  @media (min-width: 760px) {
     width: 50%;
     margin: auto;
   }
@@ -22,14 +20,14 @@ const CardWrapper = styled.ul`
   justify-content: flex-start;
   flex-direction: column;
   padding: 0;
-  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   position: relative;
 `;
 
 const CardItem = styled.li`
-   list-style-type: none;
-   width: 100%;
-   margin-bottom: 10px;
+  list-style-type: none;
+  width: 100%;
+  margin-bottom: 10px;
 `;
 
 const CardLink = styled(Link)`
@@ -38,13 +36,16 @@ const CardLink = styled(Link)`
 
 const TopicCard = styled(Card)`
   && {
-    color: #0575E6;
-    background-color: #FFFFFF;
+    color: #0575e6;
+    background-color: #ffffff;
   }
 `;
 
 const StyledHeader = styled(({ headline, subtitle, ...other }) => (
-  <CardHeader classes={{ title: 'headline', subheader: 'subtitle' }} {...other} />
+  <CardHeader
+    classes={{ title: 'headline', subheader: 'subtitle' }}
+    {...other}
+  />
 ))`
   && {
     padding: 10px 16px 0px;
@@ -52,13 +53,13 @@ const StyledHeader = styled(({ headline, subtitle, ...other }) => (
   & .headline {
     color: ${props => props.color || '#0575E6'};
     font-size: 12px;
-    line-height: 20px;
+    line-height: 2px;
   }
-  
+
   & .subtitle {
     color: ${props => props.color || 'rgba(0, 0, 0, 0.87)'};
     font-size: 18px;
-    line-height: 20px;
+    line-height: 2px;
     font-weight: bold;
   }
 `;
@@ -66,8 +67,8 @@ const StyledHeader = styled(({ headline, subtitle, ...other }) => (
 const CardText = styled.p`
   margin: 0;
   color: rgba(0, 0, 0, 0.54);
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 6px;
+  line-height: 2px;
 `;
 
 const StartCards = () => (
@@ -76,19 +77,19 @@ const StartCards = () => (
       <CardLink to="/">
         <TopicCard>
           <StyledHeader
-            action={(
+            action={
               <IconButton>
                 <FaceIcon color="primary" fontSize="large" />
               </IconButton>
-            )}
+            }
             title="12 Kheta Points"
             subheader="Introductory Questions"
           />
           <CardContent>
             <CardText>
               Tell us a bit about yourself, we are interested in your age,
-              gender and preferences. This will help us get a better idea
-              of who is filling in the questions.
+              gender and preferences. This will help us get a better idea of who
+              is filling in the questions.
             </CardText>
           </CardContent>
         </TopicCard>
@@ -98,19 +99,19 @@ const StartCards = () => (
       <CardLink to="/">
         <TopicCard>
           <StyledHeader
-            action={(
+            action={
               <IconButton>
                 <CityIcon color="primary" fontSize="large" />
               </IconButton>
-            )}
+            }
             title="32 Kheta Points"
             subheader="Survey Your Community"
           />
           <CardContent>
             <CardText>
-              It is important to know what those around you think about
-              the upcoming 2019 election. In this challenge you will need
-              to speak to them.
+              It is important to know what those around you think about the
+              upcoming 2019 election. In this challenge you will need to speak
+              to them.
             </CardText>
           </CardContent>
         </TopicCard>
@@ -120,19 +121,19 @@ const StartCards = () => (
       <CardLink to="/">
         <TopicCard>
           <StyledHeader
-            action={(
+            action={
               <IconButton>
                 <ThumbIcon color="primary" fontSize="large" />
               </IconButton>
-            )}
+            }
             title="8 Kheta Points"
             subheader="Voting Preferences"
           />
           <CardContent>
             <CardText>
               Tell us a bit about whether you will be voting in the 2019
-              election, and if so what are the choice that determine who
-              you vote for.
+              election, and if so what are the choice that determine who you
+              vote for.
             </CardText>
           </CardContent>
         </TopicCard>
