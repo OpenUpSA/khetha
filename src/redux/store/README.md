@@ -1,3 +1,8 @@
+---
+name: store
+menu: Redux
+---
+
 # store
 
 **This file builds the entire Redux store and exports it as is for usage throughout project. **

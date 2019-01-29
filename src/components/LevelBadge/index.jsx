@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import schema from './schema';
+import PropTypes from 'prop-types';
 import SvgIcon from './SvgIcon';
 import ShieldIcon from './ShieldIcon';
 
@@ -24,8 +24,10 @@ export default LevelBadge;
 LevelBadge.propTypes = {
   /** User level number to determine what icon
    * and number in the shield gets returned  */
-  level: schema.propTypes.level,
+  level: PropTypes.number,
 };
 
 
-LevelBadge.defaultProps = schema.defaultProps;
+LevelBadge.defaultProps = {
+  level: 0,
+};

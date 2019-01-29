@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import schema from './schema';
+import PropTypes from 'prop-types';
 import iconLevels from './iconLevels.json';
 
 
@@ -93,7 +93,7 @@ const iconsList = {
 };
 
 
-const iconKeys = Object.keys(iconLevels).reverse();
+const iconKeys = Object.keys(iconLevels);
 const iconValues = iconKeys.map(key => iconLevels[key]);
 
 
@@ -104,6 +104,8 @@ const calcIconKey = level => iconKeys.reduce(
 
 const SvgIcon = ({ level }) => {
   const iconKey = calcIconKey(level);
+
+  console.log(iconKey)
 
   return (
     <svg
@@ -123,5 +125,11 @@ const SvgIcon = ({ level }) => {
 export default SvgIcon;
 
 
-SvgIcon.propTypes = schema.propTypes;
-SvgIcon.defaultProps = schema.defaultProps;
+SvgIcon.propTypes = {
+  level: PropTypes.number,
+};
+
+
+SvgIcon.defaultProps = {
+  level: 0,
+};
