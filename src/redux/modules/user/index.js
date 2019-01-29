@@ -3,7 +3,6 @@ import createDispatchPipe from '../../../helpers/createDispatchPipe';
 import createUserInDatabasePromise from './createUserInDatabasePromise';
 
 const REPLACE_STATE = 'user/REPLACE_STATE';
-const SET_ID = 'user/SET_ID';
 const REPLACE_VALUE = 'users/REPLACE_VALUE';
 const LOG_NEW_GUEST_ACCOUNT = 'user/LOG_NEW_GUEST_ACCOUNT';
 const LOG_USER_DB_OBJECT_CREATED = 'user/LOG_USER_DB_OBJECT_CREATED';
@@ -12,11 +11,6 @@ const LOG_USER_DB_OBJECT_CREATED = 'user/LOG_USER_DB_OBJECT_CREATED';
 export default (state = {}, action = {}) => {
   switch (action.type) {
     case REPLACE_STATE: return action.payload.state;
-
-    case SET_ID: return {
-      ...state,
-      id: action.payload,
-    };
 
     case REPLACE_VALUE: return {
       ...state,

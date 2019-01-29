@@ -4,10 +4,14 @@ import createDispatchPipe from '../../helpers/createDispatchPipe';
 import { createGuestAccount, setUserValue } from '../modules/user';
 import parseResponse from './parseResponse';
 import updateEntireState from './updateEntireState';
+import { checkQueue } from '../../helpers/offlineQueue';
+
 
 const PARSE_REMOTE = 'PARSE_REMOTE';
 const LOG_MERGED_DATA = 'LOG_MERGED_DATA';
 const SYNCED_WITH_REMOTE = 'SYNCED_WITH_REMOTE';
+const CHECK_OFFLINE_QUEUE = 'CHECK_OFFLINE_QUEUE';
+const RAN_QUEUED_OFFLINE_ITEM = 'RAN_QUEUED_OFFLINE_ITEM';
 
 
 export const syncWithRemote = () => (dispatch, getState) => {
@@ -80,7 +84,29 @@ export const initStateFromRemote = () => (dispatch, getState) => {
 };
 
 
+export const checkOfflineQueue = () => (dispatch) => {
+  dispatch({ type: CHECK_OFFLINE_QUEUE });
+
+  const promise = new Promise((resolve) => {
+    checkQueue(
+      (callback, params) => dispatch({
+        type: RAN_QUEUED_OFFLINE_ITEM,
+        meta: {
+          callback,
+          params,
+        },
+      }),
+    );
+
+    return resolve();
+  });
+
+  return promise;
+};
+
+
 export default {
   updateEntireState,
   initStateFromRemote,
+  checkOfflineQueue,
 };
