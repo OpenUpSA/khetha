@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { navigate } from 'gatsby';
 import Step0 from './Step0';
 import Step1 from './Step1';
+import Shell from './Shell';
 
 
 const parseOnboardingLevel = (level) => {
@@ -12,7 +13,7 @@ const parseOnboardingLevel = (level) => {
     case '0': return { step: 0, alert: false };
     case '1': return { step: 1, alert: false };
     case '2': return { step: 1, alert: true };
-    default: return 0;
+    default: return { step: 0, alert: true };
   }
 };
 
@@ -41,7 +42,7 @@ export default class State extends Component {
   selectLanguage = (event) => {
     const { value } = event.target;
     const { progressOnboarding } = this;
-    const { changeLanguage, changeOnboarding } = this.props;
+    const { changeLanguage } = this.props;
 
     changeLanguage(value);
     if (value === 'en') {
@@ -67,7 +68,7 @@ export default class State extends Component {
       alert,
     };
 
-    const Markup = steps[step];
+    const Markup = steps[step] || Shell;
     return <Markup {...passedProps} />;
   }
 }
@@ -75,4 +76,7 @@ export default class State extends Component {
 
 State.propTypes = {
   changeLanguage: PropTypes.func.isRequired,
+  onboardingLevel: PropTypes.number.isRequired,
+  changeOnboarding: PropTypes.func.isRequired,
+  language: PropTypes.string.isRequired,
 };
