@@ -1,12 +1,28 @@
 {
   "storage": {
     "version": 0,
-    "synced": null
+    "synced": {
+      "timestamp": null,
+      "value": null
+    }
   },
   "user": {
-    "language": null,
-    "id": null,
-    "notifications": null
+    "language": {
+      "timestamp": null,
+      "value": null
+    },
+    "id": {
+      "timestamp": null,
+      "value": null
+    },
+    "notifications": {
+      "timestamp": null,
+      "value": null
+    },
+    "onboarding": {
+      "timestamp": null,
+      "value": 0
+    }
   },
   "tasks": {
     "progress": {},
