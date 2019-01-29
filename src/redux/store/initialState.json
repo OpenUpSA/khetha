@@ -1,0 +1,15 @@
+{
+  "storage": {
+    "version": 0,
+    "synced": null
+  },
+  "user": {
+    "language": null,
+    "id": null,
+    "notifications": null
+  },
+  "tasks": {
+    "progress": {},
+    "completed": []
+  }
+}

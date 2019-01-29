@@ -25,6 +25,7 @@ module.exports = ({ name, theme, background }) => {
         background_color: background,
         theme_color: theme,
         display: 'minimal-ui',
+        gcm_sender_id: '103953800507',
       },
     },
   ];
