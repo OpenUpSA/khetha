@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
-import schema from './schema';
+import PropTypes from 'prop-types';
 
 
 const ShieldSvg = styled.svg`
@@ -44,5 +44,11 @@ const ShieldIcon = ({ level }) => (
 export default ShieldIcon;
 
 
-ShieldIcon.propTypes = schema.propTypes;
-ShieldIcon.defaultProps = schema.defaultProps;
+ShieldIcon.propTypes = {
+  level: PropTypes.number,
+};
+
+
+ShieldIcon.defaultProps = {
+  level: 0,
+};
