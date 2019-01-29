@@ -16,11 +16,11 @@ const createProps = ({ allTasksJson, allViewsJson }) => {
     ...node.zu,
   }));
 
-  const view = allViewsJson.edges[0].node.zu;
+  const translation = allViewsJson.edges[0].node.zu;
 
   return {
     tasks,
-    view,
+    translation,
   };
 };
 
