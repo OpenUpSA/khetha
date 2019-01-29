@@ -5,10 +5,10 @@ import SvgIcon from './SvgIcon';
 import ShieldIcon from './ShieldIcon';
 
 
+
 const PositionWrapper = styled.div`
   position: relative;
 `;
-
 
 const LevelBadge = ({ level = 0 }) => (
   <PositionWrapper>
@@ -26,6 +26,7 @@ LevelBadge.propTypes = {
    * and number in the shield gets returned  */
   level: schema.propTypes.level,
 };
+
 
 
 LevelBadge.defaultProps = schema.defaultProps;

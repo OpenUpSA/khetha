@@ -2,7 +2,7 @@
 
 import { createElement } from 'react';
 import { Provider } from 'react-redux';
-import { navigate } from 'gatsby';
+// import { navigate } from 'gatsby';
 
 import { version as targetStorageVersion } from './src/config/storage.json';
 import { setVersion as setStorageVersion } from './src/redux/modules/storage';
@@ -26,10 +26,10 @@ export const onInitialClientRender = () => {
   const { language } = user;
 
   if (!language) {
-    return navigate('/en/');
+    // return navigate('/en/');
   }
 
-  return navigate(`/${language}/start`);
+  // return navigate(`/${language}/start`);
 };
 
 

@@ -1,35 +1,32 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import styled from 'styled-components';
-import MainHeading from '../MainHeading';
-// import logo from '../../images/logo.svg';
 
-
-const HeaderMenu = styled.div`
-  display: flex;
-  width: 100%;
+const HeadingTitle = styled.div`
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 38.13%;
+        right: 6.75%;
+        top: 4.57%;
+        font-weight: bold;
+        line-height: 32px;
+        font-size: 26px;
+        text-align: right;
+        color: #5F5F5F;
+        opacity: 0.8;     
 `;
 
-const Brand = styled.img`
-  padding: 24px 16px;
-  height: 58.79px;
-  right: 80.23%;
-`;
-
-const Text = styled.div`
-  flex-grow: 1
-`;
-
-
-const MenuHeader = () => (
-  <HeaderMenu>
-    <Brand>
-      {/* <img width={100} height={100} src={logo} alt="" /> */}
-    </Brand>
-    <Text>
-      <MainHeading title="Honey Bee Level" />
-    </Text>
-  </HeaderMenu>
+const MenuHeader = ({text}) => (
+      <HeadingTitle>
+            {text}
+     </HeadingTitle>
 );
 
-
 export default MenuHeader;
+
+MenuHeader.propTypes = {
+    title: PropTypes.string.isRequired,
+  };
+  
