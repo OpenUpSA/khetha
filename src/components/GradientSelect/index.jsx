@@ -8,14 +8,8 @@ class GradientSelect extends Component {
     selected: null,
   }
 
-  changeSelected = (event, force) => {
+  changeSelected = (value) => {
     const { callback } = this.props;
-    const { value } = event.target;
-
-    if (force) {
-      return this.setState({ selected: force });
-    }
-
     this.setState({ selected: value });
     return callback && callback();
   }
@@ -28,6 +22,7 @@ class GradientSelect extends Component {
       placeholder: props.placeholder,
       options: props.options,
       filled: props.filled,
+      full: props.full,
       changeSelected: events.changeSelected,
     };
 
@@ -53,6 +48,9 @@ GradientSelect.propTypes = {
   /** Whether to replace the normal background colour
    * with the brand gradient */
   filled: PropTypes.bool,
+  /** Whether the button should span the entirity (100%)
+   * of the width of it's parent. */
+  full: PropTypes.bool,
   /** Calls this function with the value of selection
    * option as first parameter */
   callback: PropTypes.func,
@@ -63,4 +61,5 @@ GradientSelect.defaultProps = {
   placeholder: 'Select an option',
   filled: false,
   callback: null,
+  full: false,
 };
