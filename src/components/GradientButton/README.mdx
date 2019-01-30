@@ -1,0 +1,52 @@
+---
+name: GradientButton
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz'
+import Icon from '@material-ui/icons/Close';
+import GradientButton from './index';
+
+
+
+# GradientButton
+
+![stability-wip](https://img.shields.io/badge/stability-work_in_progress-lightgrey.svg)
+
+**The basic branded Button that will be used throughout the project.**
+
+### Demo
+
+#### Default
+
+<Playground>
+  <GradientButton text="Hello World!" />
+</Playground>
+
+#### Filled
+
+<Playground>
+  <GradientButton filled text="Hello World!" />
+</Playground>
+
+#### With Prefix
+
+<Playground>
+  <GradientButton prefix="Test" text="Hello World!" />
+</Playground>
+
+#### With Icon
+
+<Playground>
+  <GradientButton icon={Icon} text="Hello World!" />
+</Playground>
+
+#### Amalgamated
+
+<Playground>
+  <GradientButton filled prefix="filtered by" icon={Icon} text="Hard" />
+</Playground>
+
+### Props
+
+<PropsTable of={GradientButton} />

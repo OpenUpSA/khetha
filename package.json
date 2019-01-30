@@ -25,6 +25,7 @@
     "gatsby": "^2.0.76",
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "indent-string": "^3.2.0",
+    "lint-fix": "^0.24.0",
     "lodash": "^4.17.11",
     "moment": "^2.24.0",
     "prop-types": "^15.6.2",
