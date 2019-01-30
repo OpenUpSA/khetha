@@ -8,10 +8,43 @@ import { Playground } from 'docz';
 
 # Layout
 
-## Demos
+**A component that wraps all views to include the header and footer.**
 
-### Basic
+## index.jsx
+
+### Demos
+
+#### **Basic**
 
 <Playground>
   <Layout point={31} />
 </Playground>
+
+## calcLevelInfo.js
+
+### Overview
+
+Returns an object that contains a `level` property (the name of the current level) and a `remainingPoints` property (the amount of points still needed for the next level). Note that if a user is currently at the top level (meaning there is no next level) then `remainingPoints` will return `false`.
+
+### Props
+
+|Property|Type|Required|Default|Description|
+|---|---|---|---|---|
+|points|number|true||The current user points that should be evaluated|
+
+### Demos
+
+#### **Basic**
+
+```
+import calcLevelInfo from './calcLevelInfo';
+
+console.log(calcLevelInfo({ points: 3 })) 
+// { level: 'Honey Bee', remainingPoints: 7 }
+
+console.log(calcLevelInfo({ points: 142 })) 
+// { level: 'Elephant', remainingPoints: false }
+
+console.log(calcLevelInfo({ points: 51 })) 
+// { level: 'Zebra', remainingPoints: 9 }
+```
