@@ -1,16 +1,16 @@
 {
   "scripts": {
-    "build": "npm run build:gatsby",
+    "build": "yarn build:gatsby",
     "build:gatsby": "gatsby build",
     "build:docs": "docz build",
-    "start": "npm run start:gatsby:open",
+    "start": "yarn start:gatsby:open",
     "start:docs": "docz dev",
     "start:gatsby": "gatsby develop",
     "start:gatsby:open": "gatsby develop -o",
-    "test": "npm run test:jest && npm run test:lint",
-    "test:husky": "npm run test && npm run test:gatsby",
+    "test": "yarn test:jest && yarn test:lint",
+    "test:husky": "yarn test && yarn test:gatsby",
     "test:jest": "jest",
-    "test:gatsby": "npm run build:gatsby",
+    "test:gatsby": "yarn build:gatsby",
     "test:jest:watch": "jest --watchAll",
     "test:lint": "eslint src",
     "test:lint:fix": "eslint src --fix"
@@ -78,7 +78,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "npm run test:husky"
+      "pre-push": "yarn test:husky"
     }
   },
   "license": "ISC"
