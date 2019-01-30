@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import schema from './schema';
-import iconLevels from './iconLevels.json';
+import iconLevels from '../../config/rewardLevels.json';
 
 
 const honeyBee = (
