@@ -6,9 +6,9 @@ import PropTypesLibrary, { checkPropTypes } from 'prop-types';
 
 
 const propsCheck = (props) => {
-  propsCheck({ check: propsCheck, props });
-  const { check, props: innerProps } = props;
-  return checkPropTypes(innerProps, check.propTypes, 'property', check.name);
+  // propsCheck({ check: propsCheck, props });
+  // const { check, props: innerProps } = props;
+  // return checkPropTypes(innerProps, check.propTypes, 'property', check.name);
 };
 
 

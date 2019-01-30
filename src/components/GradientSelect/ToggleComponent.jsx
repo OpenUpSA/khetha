@@ -9,6 +9,8 @@ const ToggleComponent = (props) => {
   const {
     selected,
     filled,
+    changeSelected,
+    full,
   } = props;
 
   if (!selected) {
@@ -17,7 +19,8 @@ const ToggleComponent = (props) => {
 
   return (
     <GradientButton
-      filled={filled}
+      {...{ filled, full }}
+      clickAction={() => changeSelected(null)}
       text={selected}
       prefix="Filtered by"
       icon={CloseIcon}
@@ -40,6 +43,7 @@ ToggleComponent.propTypes = {
   filled: PropTypes.bool,
   changeSelected: PropTypes.func,
   selected: PropTypes.string,
+  full: PropTypes.bool,
 };
 
 
@@ -48,4 +52,5 @@ ToggleComponent.defaultProps = {
   placeholder: 'Select an option',
   filled: false,
   changeSelected: null,
+  full: false,
 };

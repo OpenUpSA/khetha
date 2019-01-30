@@ -9,7 +9,7 @@ import GradientSelect from './index';
 
 # GradientSelect
 
-![stability-wip](https://img.shields.io/badge/stability-work_in_progress-lightgrey.svg)
+![stability-experimental](https://img.shields.io/badge/stability-experimental-orange.svg)
 
 **The basic branded `<Select>` component that will be used throughout the project.**
 
@@ -19,6 +19,26 @@ import GradientSelect from './index';
 
 <Playground>
   <GradientSelect
+    options={[
+      {
+        value: 1,
+        text: 'Option 1',
+        callback: () => console.log('Option 1 selected!'),
+      },
+      {
+        value: 2,
+        text: 'Option 2',
+        callback: () => console.log('Option 1 selected!'),
+      }
+    ]}
+  />
+</Playground>
+
+#### As Full
+
+<Playground>
+  <GradientSelect
+    full
     options={[
       {
         value: 1,

@@ -5,11 +5,11 @@ menu: Helpers
 
 # propsCheck
 
-![stability-stable](https://img.shields.io/badge/stability-stable-green.svg)
+![stability-wip](https://img.shields.io/badge/stability-work_in_progress-lightgrey.svg)
 
 **A helper function to check prop types of non-react functions.**
 
-## Overview
+## Notes
 
 In addition to the default export also exports `PropTypes` itself as a named export.
 

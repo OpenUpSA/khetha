@@ -11,42 +11,94 @@ import GradientButton from './index';
 
 # GradientButton
 
-![stability-wip](https://img.shields.io/badge/stability-work_in_progress-lightgrey.svg)
+![stability-experimental](https://img.shields.io/badge/stability-experimental-orange.svg)
 
 **The basic branded Button that will be used throughout the project.**
 
-### Demo
+### Notes
 
-#### Default
+Also exposes a named export called `createComponentWithLink`. This can be used via the [principle of currying](https://en.wikipedia.org/wiki/Currying)
 
-<Playground>
-  <GradientButton text="Hello World!" />
-</Playground>
+### Demos
 
-#### Filled
+#### **Default**
 
 <Playground>
-  <GradientButton filled text="Hello World!" />
+  <GradientButton text="Hello World!" clickAction={() => console.log('Clicked!')} />
 </Playground>
 
-#### With Prefix
+#### **Filled**
 
 <Playground>
-  <GradientButton prefix="Test" text="Hello World!" />
+  <GradientButton 
+    filled
+    text="Hello World!"
+    clickAction={() => console.log('Clicked!')}
+  />
 </Playground>
 
-#### With Icon
+#### **As Full**
 
 <Playground>
-  <GradientButton icon={Icon} text="Hello World!" />
+  <GradientButton
+    full
+    text="Hello World!"
+    clickAction={() => console.log('Clicked!')}
+  />
 </Playground>
 
-#### Amalgamated
+#### **With Prefix**
 
 <Playground>
-  <GradientButton filled prefix="filtered by" icon={Icon} text="Hard" />
+  <GradientButton
+    prefix="Test"
+    text="Hello World!"
+    clickAction={() => console.log('Clicked!')}
+  />
 </Playground>
+
+#### **With Icon**
+
+<Playground>
+  <GradientButton
+    icon={Icon}
+    text="Hello World!"
+    clickAction={() => console.log('Clicked!')}
+  />
+</Playground>
+
+#### **Amalgamated**
+
+<Playground>
+  <GradientButton 
+    full
+    filled
+    prefix="filtered by"
+    icon={Icon}
+    text="Hard"
+    clickAction={() => console.log('Clicked!')} 
+  />
+</Playground>
+
+#### **Using createComponentWithLink**
+
+You can use `createComponentWithLink` if you don't want to pass in `Link` all the time.
+
+```jsx
+import React from 'react';
+import { Link as link } from 'gatsby';
+import { createComponentWithLink } from './src/components/GradientButton';
+
+const ButtonWithLink = createComponentWithLink({ link });
+
+return () => (
+  <div>
+    <ButtonWithLink clickAction="https://google.com/example-1" /> {/* Opens new tab */}
+    <ButtonWithLink clickAction="/example-3" /> {/* Does not open new tab */}
+    <ButtonWithLink clickAction="//www.google.com" /> {/* Opens new tab */}
+    <ButtonWithLink clickAction="folder/example-3" /> {/* Does not open new tab */}
+  </div>
+)
+```
 
 ### Props
-
-<PropsTable of={GradientButton} />
