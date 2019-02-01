@@ -70,4 +70,4 @@ yarn-error.log
 
 # Additional Ignores
 .docz
-static/admin/config.yml
+server.auth.json

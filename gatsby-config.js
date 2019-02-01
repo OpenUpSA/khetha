@@ -1,19 +1,10 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const { config } = require('dotenv');
-
-const starterpack = require('./starterpack.json');
 const createFilesystemConfig = require('./src/tooling/gatsby-config/createFilesystemConfig');
-const buildManifestConfig = require('./src/tooling/gatsby-config/buildManifestConfig');
+const manifestConfig = require('./src/tooling/gatsby-config/manifestConfig');
 const createHotjarConfig = require('./src/tooling/gatsby-config/createHotjarConfig');
 const createAnalyticsConfig = require('./src/tooling/gatsby-config/createAnalyticsConfig');
 const createSentryConfig = require('./src/tooling/gatsby-config/createSentryConfig');
-
-
-const {
-  name: nameValue,
-  background: backgroundValue,
-  theme: themeValue,
-} = starterpack;
 
 
 const {
@@ -26,16 +17,13 @@ const {
 
 module.exports = {
   siteMetadata: {
-    title: nameValue,
-    siteUrl: 'https://kheta.org.za',
+    title: 'Khetha',
+    siteUrl: 'https://khetha.org.za',
   },
   plugins: [
+    'gatsby-plugin-polyfill-io',
     createFilesystemConfig(__dirname),
-    ...(buildManifestConfig({
-      name: nameValue,
-      theme: themeValue,
-      background: backgroundValue,
-    })),
+    manifestConfig,
     ...(createHotjarConfig({ id: HOTJAR_ID, sv: HOTJAR_SNIPPET_VERSION })),
     ...(createAnalyticsConfig({ trackingId: GOOGLE_ANALYTICS_ID })),
     ...(createSentryConfig({ dsn: SENTRY_DNS })),
