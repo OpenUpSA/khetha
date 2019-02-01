@@ -1,6 +1,6 @@
 # 📋 Khetha
 
-[![](https://badges.gitter.im/OpenUpSA/kheta.svg)](https://gitter.im/OpenUpSA/kheta?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![](https://travis-ci.org/OpenUpSA/kheta.svg?branch=master)](https://travis-ci.org/OpenUpSA/kheta)
+[![](https://badges.gitter.im/OpenUpSA/kheta.svg)](https://gitter.im/OpenUpSA/kheta?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![](https://travis-ci.org/OpenUpSA/kheta.svg?branch=master)](https://travis-ci.org/OpenUpSA/kheta) [![Netlify Status](https://api.netlify.com/api/v1/badges/f6f9212e-38e3-4a26-8998-9698b5b2bd08/deploy-status)](https://app.netlify.com/sites/kheta/deploys)
 
 Kheta is an open-source tool created in partnership with Social Surveys Africa to engagement in the 2019 national election
 
