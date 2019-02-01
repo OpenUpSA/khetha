@@ -32,15 +32,13 @@ const createResolvers = firestore => ({
 });
 
 
-const api = ({ auth }) => (request, response) => {
+const api = ({ auth }) => {
   const { databaseURL, ...serviceAccount } = auth;
 
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
     databaseURL,
   });
-
-  console.log(firebase.apps)
   const firestore = admin.firestore();
   const resolvers = createResolvers(firestore);
 
