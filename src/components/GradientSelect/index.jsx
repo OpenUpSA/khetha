@@ -1,17 +1,24 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import ToggleComponent from './ToggleComponent';
+import Dropdown from './Dropdown';
 
 
 class GradientSelect extends Component {
   state = {
-    selected: null,
+    selected: this.props.value || null,
   }
 
   changeSelected = (value) => {
-    const { callback } = this.props;
-    this.setState({ selected: value });
-    return callback && callback();
+    const { options } = this.props;
+    const { callback, reset } = options.find(({ text }) => text === value) || {};
+    const selected = reset ? null : value;
+    this.setState({ selected });
+
+    if (callback) {
+      return callback(selected);
+    }
+
+    return null;
   }
 
   render() {
@@ -24,9 +31,10 @@ class GradientSelect extends Component {
       filled: props.filled,
       full: props.full,
       changeSelected: events.changeSelected,
+      prefix: props.prefix,
     };
 
-    return <ToggleComponent {...passedProps} />;
+    return <Dropdown {...passedProps} />;
   }
 }
 
@@ -41,6 +49,7 @@ GradientSelect.propTypes = {
     PropTypes.shape({
       text: PropTypes.string,
       callback: PropTypes.func,
+      reset: PropTypes.bool,
     }),
   ).isRequired,
   /** The text to show when no option has been selected */
@@ -54,6 +63,9 @@ GradientSelect.propTypes = {
   /** Calls this function with the value of selection
    * option as first parameter */
   callback: PropTypes.func,
+  /* String applied before (styled as lable) value
+  in button when a value is selected */
+  prefix: PropTypes.string,
 };
 
 
@@ -62,4 +74,5 @@ GradientSelect.defaultProps = {
   filled: false,
   callback: null,
   full: false,
+  prefix: null,
 };

@@ -105,8 +105,6 @@ const calcIconKey = level => iconKeys.reduce(
 const SvgIcon = ({ level }) => {
   const iconKey = calcIconKey(level);
 
-  console.log(iconKey)
-
   return (
     <svg
       version="1"
