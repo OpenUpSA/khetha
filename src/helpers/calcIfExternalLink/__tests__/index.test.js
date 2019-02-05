@@ -7,6 +7,7 @@ const tests = [
   { url: '/example-3', output: false },
   { url: '//www.google.com', output: true },
   { url: 'folder/example-3', output: false },
+  { url: '/', output: false },
 ];
 
 
