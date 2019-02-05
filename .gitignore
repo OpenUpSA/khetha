@@ -71,3 +71,4 @@ yarn-error.log
 # Additional Ignores
 .docz
 server.auth.json
+private-key.json

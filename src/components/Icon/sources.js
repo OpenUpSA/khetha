@@ -47,9 +47,23 @@ import VolumeUp from '@material-ui/icons/VolumeUp';
 import Work from '@material-ui/icons/Work';
 import Grade from '@material-ui/icons/Grade';
 import Info from '@material-ui/icons/Info';
+import Check from '@material-ui/icons/Check';
+import Close from '@material-ui/icons/Close';
+import CheckBoxOutlineBlank from '@material-ui/icons/CheckBoxOutlineBlank';
+import CheckBox from '@material-ui/icons/CheckBox';
+import Warning from '@material-ui/icons/Warning';
 
 
-const iconsObject = {
+import createIcon from './createIcon';
+
+
+const customIcons = {
+  Phone: createIcon('phone'),
+  Mystery: createIcon('mystery'),
+};
+
+
+const materialIcons = {
   Public,
   School,
   Poll,
@@ -99,7 +113,18 @@ const iconsObject = {
   Work,
   Grade,
   Info,
+  Check,
+  Close,
+  CheckBoxOutlineBlank,
+  CheckBox,
+  Warning,
 };
 
 
-export default iconsObject;
+const sources = {
+  ...materialIcons,
+  ...customIcons,
+};
+
+
+export default sources;

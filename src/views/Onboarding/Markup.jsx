@@ -1,86 +1,92 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import posed from 'react-pose';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import Select from '@material-ui/core/Select';
-import FormControl from '@material-ui/core/FormControl';
-import InputLabel from '@material-ui/core/InputLabel';
-import Button from '@material-ui/core/Button';
-import MenuItem from '@material-ui/core/MenuItem';
-
-import MainHeading from '../../components/MainHeading';
-import SubHeading from '../../components/SubHeading';
+import t from 'prop-types';
+import ToggleContent from './ToggleContent';
+import Hero from './Hero';
+import Info from './Info';
 
 
-const StyledWrapper = styled.div`
-  font-family: "Roboto", sans-serif;
-  position: relative;
-  height: 100vh;
-  left: 0px;
-  right: 0px;
-  padding: 0 40px;
-  @media (min-width: 760px) 
-  {
-    max-width: 400px;
-    margin: auto
-  }
-  
+const Animate = posed.div({
+  start: { y: 0 },
+  end: { y: -360 },
+});
+
+
+const Wrapper = styled(Animate)`
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 `;
 
-const StyledFormControl = styled(FormControl)`
-  width: 100%;
-`;
+
+const Markup = (props) => {
+  const {
+    step,
+    language,
+    changeLanguage,
+    nextStep,
+    complete,
+    translation,
+  } = props;
+
+  const toggleProps = {
+    step,
+    language,
+    changeLanguage,
+    nextStep,
+    complete,
+    text: translation,
+  };
 
 
-const LanguageDropdown = (language, changeLanguage) => (
-  <StyledFormControl>
-    <InputLabel htmlFor="select-language">Select Language</InputLabel>
-    <Select
-      onChange={changeLanguage}
-      value={language || ''}
-      inputProps={{
-        name: 'language',
-        id: 'select-language',
-      }}
-    >
-      <MenuItem value="en">English</MenuItem>
-      <MenuItem value="zu">Zulu</MenuItem>
-    </Select>
-  </StyledFormControl>
-);
-
-
-const buildCta = (language, selectLanguage) => {
-  if (language) {
-    return <Button>Start</Button>;
-  }
-
-  return LanguageDropdown(language, selectLanguage);
+  return (
+    <Wrapper pose={step >= 1 ? 'end' : 'start'}>
+      <Hero />
+      <Info
+        title={step > 0 ? translation.prizes.title : translation.intro.title}
+        description={step > 0 ? translation.prizes.description : translation.intro.description}
+      >
+        <ToggleContent {...toggleProps} />
+      </Info>
+    </Wrapper>
+  );
 };
-
-
-const Markup = ({ language, selectLanguage }) => (
-  <Fragment>
-    <StyledWrapper>
-      <MainHeading title="What is Kheta?" />
-      <SubHeading
-        text="Kheta is a platform that allows you and your community to make your voice heard during the 2019 election."
-      />
-      {buildCta(language, selectLanguage)}
-    </StyledWrapper>
-  </Fragment>
-);
 
 
 export default Markup;
 
 
 Markup.propTypes = {
-  language: PropTypes.string,
+  step: t.number.isRequired,
+  changeLanguage: t.func.isRequired,
+  nextStep: t.func.isRequired,
+  complete: t.func.isRequired,
+  language: t.string,
+  translation: t.shape({
+    intro: t.shape({
+      title: t.string,
+      description: t.string,
+      primary: t.string,
+    }),
+    prizes: t.shape({
+      title: t.string,
+      description: t.string,
+      primary: t.string,
+      list: t.arrayOf(t.shape({
+        title: t.string,
+        description: t.string,
+      })),
+    }),
+    alert: t.shape({
+      title: t.string,
+      description: t.string,
+      primary: t.string,
+    }),
+  }).isRequired,
 };
+
 
 Markup.defaultProps = {
   language: null,

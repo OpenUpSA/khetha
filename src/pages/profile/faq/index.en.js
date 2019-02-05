@@ -1,52 +1,57 @@
 import { createElement } from 'react';
-import { graphql } from 'gatsby';
-import Faq from '../../../views/Faq';
+
+export default () => createElement('div', {}, 'Placeholder');
 
 
-const createProps = ({ allFaqsYaml, allViewsJson }) => {
-  const faqs = allFaqsYaml.edges.map(({ node }) => node.en);
-
-  const translate = allViewsJson.edges[0].node.en;
-
-  return {
-    faqs,
-    translate,
-  };
-};
+// import { createElement } from 'react';
+// import { graphql } from 'gatsby';
+// import Faq from '../../../views/Faq';
 
 
-export default ({ data }) => createElement(Faq, createProps(data));
+// const createProps = ({ allFaqsYaml, allViewsJson }) => {
+//   const faqs = allFaqsYaml.edges.map(({ node }) => node.en);
+
+//   const translate = allViewsJson.edges[0].node.en;
+
+//   return {
+//     faqs,
+//     translate,
+//   };
+// };
 
 
-export const query = graphql`query {
-  allFaqsYaml {
-    edges {
-      node {
-        en {
-          title
-          body
-        }
-      }
-    }
-  }
-  allViewsJson (
-    filter: {
-      type: {
-        eq: "views"
-      }
-      id: {
-        eq: "faq"
-      }
-    }
-  ) {
-    edges {
-      node {
-        en {
-          title
-          confused
-          chat
-        }
-      }
-    }
-  }
-}`;
+// export default ({ data }) => createElement(Faq, createProps(data));
+
+
+// export const query = graphql`query {
+//   allFaqsYaml {
+//     edges {
+//       node {
+//         en {
+//           title
+//           body
+//         }
+//       }
+//     }
+//   }
+//   allViewsJson (
+//     filter: {
+//       type: {
+//         eq: "views"
+//       }
+//       id: {
+//         eq: "faq"
+//       }
+//     }
+//   ) {
+//     edges {
+//       node {
+//         en {
+//           title
+//           confused
+//           chat
+//         }
+//       }
+//     }
+//   }
+// }`;

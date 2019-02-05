@@ -15,6 +15,13 @@ import GradientButton from './index';
 
 **The basic branded Button that will be used throughout the project.**
 
+### Overview
+
+#### Browser Support
+|Browser|Limitation|
+|---|---|
+|Internet Explorer 10+|Limitation description pending...|
+
 ### Notes
 
 Also exposes a named export called `createComponentWithLink`. This can be used via the [principle of currying](https://en.wikipedia.org/wiki/Currying)
@@ -32,6 +39,16 @@ Also exposes a named export called `createComponentWithLink`. This can be used v
 <Playground>
   <GradientButton 
     filled
+    text="Hello World!"
+    clickAction={() => console.log('Clicked!')}
+  />
+</Playground>
+
+#### **Selected**
+
+<Playground>
+  <GradientButton 
+    selected
     text="Hello World!"
     clickAction={() => console.log('Clicked!')}
   />
@@ -61,9 +78,19 @@ Also exposes a named export called `createComponentWithLink`. This can be used v
 
 <Playground>
   <GradientButton
-    icon={Icon}
+    icon="Grade"
     text="Hello World!"
     clickAction={() => console.log('Clicked!')}
+  />
+</Playground>
+
+#### **Page Change**
+
+<Playground>
+  <GradientButton
+    icon="Grade"
+    text="Hello World!"
+    clickAction="/src-components-gradient-button-readme"
   />
 </Playground>
 
@@ -74,7 +101,7 @@ Also exposes a named export called `createComponentWithLink`. This can be used v
     full
     filled
     prefix="filtered by"
-    icon={Icon}
+    icon="Grade"
     text="Hard"
     clickAction={() => console.log('Clicked!')} 
   />
@@ -102,3 +129,5 @@ return () => (
 ```
 
 ### Props
+
+<PropsTable of={GradientButton} />

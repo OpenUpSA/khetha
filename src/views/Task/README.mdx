@@ -1,0 +1,69 @@
+---
+name: Task
+menu: Views
+---
+
+import { Playground } from 'docz';
+import Task from './index';
+
+# Start
+
+Looking for a specific file?
+
+- [Task.jsx](#taskjsx)
+
+## `State.jsx`
+
+### Demos
+
+### **Basic**
+
+<Playground style={{ background: '#EDEDED', position: 'relative' }}>
+  <Task
+    progress={false}
+    questions={[
+      {
+        title: "Example 1",
+        description: "This is the description text that will get shown",
+        format: 'string'
+      },
+    ]}
+  />
+</Playground>
+
+### **Formats**
+
+<Playground style={{ background: '#EDEDED', position: 'relative' }}>
+  <Task
+    progress={false}
+    questions={[
+      {
+        title: 'String',
+        description: "This is the description text that will get shown",
+        format: 'string'
+      },
+      {
+        title: 'Text',
+        description: "This is the description text that will get shown",
+        format: 'text'
+      },
+      {
+        title: 'Boolean',
+        description: "This is the description text that will get shown",
+        format: 'boolean'
+      },
+      {
+        title: 'Select',
+        format: 'select',
+        description: "This is the description text that will get shown",
+        options: ['one', 'two', 'three']
+      },
+      {
+        title: 'Checkboxes',
+        format: 'checkboxes',
+        description: "This is the description text that will get shown",
+        options: ['one', 'two', 'three']
+      },
+    ]}
+  />
+</Playground>

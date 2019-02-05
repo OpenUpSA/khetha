@@ -4,7 +4,8 @@
     "airbnb"
   ],
   "plugins": [
-    "jest"
+    "jest",
+    "compat"
   ],
   "env": {
     "jest/globals": true,

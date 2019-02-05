@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Select from '@material-ui/core/Select';
@@ -14,7 +14,7 @@ const StyledSelect = styled(Select)`
 && {
   background: ${({ variant }) => (variant === 'filled' ? gradientBg : 'none')};
   border: ${({ variant }) => (variant === 'filled' ? 'none' : outline)};
-  width: ${({ full }) => (full ? '100%' : 'auto')};
+  width: ${({ fullWidth }) => (fullWidth ? '100%' : 'auto')};
   height: 42px;
   border-radius: 4px;
   color: ${({ variant }) => (variant === 'filled' ? 'white' : '#0B5FFF')};
@@ -47,15 +47,33 @@ const StyledSelect = styled(Select)`
 
 
 const buildOptions = options => options.map(
-  ({ text, callback }) => (
-    <MenuItem
-      value={text}
-      key={text}
-      onClick={callback}
-    >
-      {text}
-    </MenuItem>
-  ),
+  ({ text, reset }) => {
+    const content = reset ? <em>{text}</em> : <span>{text}</span>;
+
+    return (
+      <MenuItem
+        value={text}
+        key={text}
+      >
+        {content}
+      </MenuItem>
+    );
+  },
+);
+
+
+const ForceNormalWeight = styled.span(`
+  && {
+    font-weight: 400;
+  }
+`);
+
+
+const addPrefix = (prefix, value) => (
+  <Fragment>
+    {prefix && <ForceNormalWeight>{`${prefix}: `}</ForceNormalWeight>}
+    <span>{value}</span>
+  </Fragment>
 );
 
 
@@ -65,20 +83,23 @@ const Dropdown = (props) => {
     options = [],
     filled,
     changeSelected,
-    full,
+    full: fullWidth,
+    selected,
+    prefix,
   } = props;
 
   const changeSelectedWrapper = event => changeSelected(event.target.value);
+  const toggleRender = value => (value !== '' ? addPrefix(prefix, value) : placeholder);
 
   return (
     <StyledSelect
-      {...{ full }}
       variant={filled ? 'filled' : 'outlined'}
       displayEmpty
-      value=""
+      {...{ fullWidth }}
+      value={selected || ''}
       onChange={changeSelectedWrapper}
       classes={{ icon: 'icon', selectMenu: 'selectMenu' }}
-      renderValue={() => placeholder}
+      renderValue={toggleRender}
       inputProps={{
         name: 'age',
         id: 'age-simple',
@@ -98,12 +119,15 @@ Dropdown.propTypes = {
     PropTypes.shape({
       text: PropTypes.string,
       callback: PropTypes.func,
+      reset: PropTypes.bool,
     }),
   ).isRequired,
   changeSelected: PropTypes.func.isRequired,
   placeholder: PropTypes.string,
   filled: PropTypes.bool,
   full: PropTypes.bool,
+  prefix: PropTypes.string,
+  selected: PropTypes.string,
 };
 
 
@@ -111,4 +135,6 @@ Dropdown.defaultProps = {
   placeholder: 'Select an option',
   filled: false,
   full: false,
+  prefix: null,
+  selected: null,
 };

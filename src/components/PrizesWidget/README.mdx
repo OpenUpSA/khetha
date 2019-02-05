@@ -1,0 +1,211 @@
+---
+name: PrizesWidget
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz'
+import PrizesWidget from './index.jsx';
+import rewards from './__mocks__/README.mock.rewards.json';
+
+# PrizesWidget
+
+![stability-experimental](https://img.shields.io/badge/stability-experimental-orange.svg)
+
+**Component to visualise a percentage through a circle outline**
+
+### Props
+
+<PropsTable of={PrizesWidget} />
+
+### Demos
+
+All examples use the following value for the `rewards` prop:
+
+```
+[
+  {
+    "id": "prize-1",
+    "points": 100,
+    "title": "Prize 1",
+    "description": "Laborum excepteur qui nulla eu duis cillum cillum voluptate ullamco. Magna aliquip nostrud duis adipisicing ex exercitation culpa ut magna. Est Lorem amet ex cupidatat incididunt velit cillum.",
+    "dates": [
+      "15 March 2001"
+    ]
+  },
+  {
+    "id": "prize-2",
+    "points": 30,
+    "title": "Prize 2",
+    "description": "Occaecat Lorem adipisicing adipisicing Lorem esse nostrud mollit. Qui sunt sit ex minim elit aliquip. Veniam nisi minim enim qui ut dolore. Lorem id adipisicing irure elit commodo velit Lorem deserunt commodo sunt minim consequat minim ad.",
+    "dates": [
+      "10 January 2019",
+      "20 February 2019",
+      "15 March 2019",
+      "15 April 2019",
+      "15 June 2019",
+      "15 August 2019",
+      "15 January 2027"
+    ]
+  },
+  {
+    "id": "prize-3",
+    "points": 50,
+    "title": "Prize 3",
+    "description": "Eiusmod sit et id sunt magna nisi anim laborum duis duis dolor qui ut pariatur. Dolore velit qui adipisicing consectetur ipsum labore dolore consequat est officia incididunt. Amet proident qui officia do nulla nulla et pariatur aliqua.",
+    "dates": [
+      "15 January 2019",
+      "15 February 2019",
+      "15 March 2019",
+      "15 April 2019",
+      "15 June 2019",
+      "15 August 2019",
+      "15 January 2020",
+      "15 January 2021",
+      "15 January 2022",
+      "15 January 2023",
+      "15 January 2024",
+      "15 January 2025",
+      "15 January 2026",
+      "15 January 2027"
+    ]
+  },
+  {
+    "id": "prize-4",
+    "points": 100,
+    "title": "Prize 4",
+    "description": "Irure quis est duis culpa ea elit. Voluptate ullamco in voluptate ex ea laborum eiusmod. Reprehenderit magna eiusmod anim excepteur eiusmod eiusmod eu. Est non laboris non tempor cillum.",
+    "dates": [
+      "15 January 2019",
+      "15 February 2019",
+      "15 March 2019",
+      "15 April 2019",
+      "15 June 2019",
+      "15 August 2019",
+      "15 January 2020",
+      "15 January 2021",
+      "15 January 2022",
+      "15 January 2023",
+      "15 January 2024",
+      "15 January 2025",
+      "15 January 2026",
+      "15 January 2027"
+    ]
+  },
+  {
+    "id": "prize-5",
+    "points": 10,
+    "title": "Prize 5",
+    "description": "Veniam officia amet aute officia est laboris duis eu proident nulla. Ullamco ad aliquip eu consectetur deserunt sint culpa quis adipisicing nulla. Lorem excepteur ea ullamco mollit do ex commodo ut eiusmod. Aliqua velit laboris esse ut nisi mollit. Duis Lorem minim cupidatat irure sunt velit ullamco do occaecat pariatur. Velit culpa veniam velit anim consectetur eiusmod excepteur quis.",
+    "dates": [
+      "15 January 2027"
+    ]
+  }
+]
+```
+
+#### **Default**
+
+<Playground>
+  <PrizesWidget
+    id="example"
+    points={40}
+    rewards={rewards}
+    text={{
+      description: 'Sit excepteur consequat pariatur eu excepteur voluptate reprehenderit. Ad ex proident est non non voluptate eu duis eiusmod do veniam cupidatat duis reprehenderit. Eiusmod irure fugiat aute cillum enim id commodo voluptate sint aute dolor. In est ad ad enim nisi magna qui pariatur eu elit anim duis nisi. Dolor enim aute minim ut consequat duis cupidatat amet incididunt id fugiat pariatur ullamco',
+      qualify: ({ nextDraw }) => `You qualify for the next draw in ${nextDraw}!`,
+      noQualify: ({ nextDraw, remaining }) => `${remaining} more points needed to qualify upcoming draw in ${nextDraw}`,
+    }}
+  />
+</Playground>
+
+#### **Next Goal**
+
+<Playground>
+  <PrizesWidget
+    id="example"
+    points={40}
+    rewards={rewards}
+    text={{
+      description: 'Sit excepteur consequat pariatur eu excepteur voluptate reprehenderit. Ad ex proident est non non voluptate eu duis eiusmod do veniam cupidatat duis reprehenderit. Eiusmod irure fugiat aute cillum enim id commodo voluptate sint aute dolor. In est ad ad enim nisi magna qui pariatur eu elit anim duis nisi. Dolor enim aute minim ut consequat duis cupidatat amet incididunt id fugiat pariatur ullamco',
+      qualify: ({ nextDraw }) => `You qualify for the next draw in ${nextDraw}!`,
+      noQualify: ({ nextDraw, remaining }) => `${remaining} more points needed to qualify upcoming draw in ${nextDraw}`,
+    }}
+    filters={{
+      dates: 'upcoming',
+      completion: 'outstanding',
+      index: 0,
+    }}
+  />
+</Playground>
+
+#### **Completed**
+
+<Playground>
+  <PrizesWidget
+    id="example"
+    points={40}
+    rewards={rewards}
+    text={{
+      description: 'Sit excepteur consequat pariatur eu excepteur voluptate reprehenderit. Ad ex proident est non non voluptate eu duis eiusmod do veniam cupidatat duis reprehenderit. Eiusmod irure fugiat aute cillum enim id commodo voluptate sint aute dolor. In est ad ad enim nisi magna qui pariatur eu elit anim duis nisi. Dolor enim aute minim ut consequat duis cupidatat amet incididunt id fugiat pariatur ullamco',
+      qualify: ({ nextDraw }) => `You qualify for the next draw in ${nextDraw}!`,
+      noQualify: ({ nextDraw, remaining }) => `${remaining} more points needed to qualify upcoming draw in ${nextDraw}`,
+    }}
+    filters={{
+      completion: 'completed',
+    }}
+  />
+</Playground>
+
+#### **Outstanding**
+
+<Playground>
+  <PrizesWidget
+    id="example"
+    points={40}
+    rewards={rewards}
+    text={{
+      description: 'Sit excepteur consequat pariatur eu excepteur voluptate reprehenderit. Ad ex proident est non non voluptate eu duis eiusmod do veniam cupidatat duis reprehenderit. Eiusmod irure fugiat aute cillum enim id commodo voluptate sint aute dolor. In est ad ad enim nisi magna qui pariatur eu elit anim duis nisi. Dolor enim aute minim ut consequat duis cupidatat amet incididunt id fugiat pariatur ullamco',
+      qualify: ({ nextDraw }) => `You qualify for the next draw in ${nextDraw}!`,
+      noQualify: ({ nextDraw, remaining }) => `${remaining} more points needed to qualify upcoming draw in ${nextDraw}`,
+    }}
+    filters={{
+      completion: 'outstanding',
+    }}
+  />
+</Playground>
+
+#### **Past**
+
+<Playground>
+  <PrizesWidget
+    id="example"
+    points={40}
+    rewards={rewards}
+    text={{
+      description: 'Sit excepteur consequat pariatur eu excepteur voluptate reprehenderit. Ad ex proident est non non voluptate eu duis eiusmod do veniam cupidatat duis reprehenderit. Eiusmod irure fugiat aute cillum enim id commodo voluptate sint aute dolor. In est ad ad enim nisi magna qui pariatur eu elit anim duis nisi. Dolor enim aute minim ut consequat duis cupidatat amet incididunt id fugiat pariatur ullamco',
+      qualify: ({ nextDraw }) => `You qualify for the next draw in ${nextDraw}!`,
+      noQualify: ({ nextDraw, remaining }) => `${remaining} more points needed to qualify upcoming draw in ${nextDraw}`,
+    }}
+    filters={{
+      dates: 'past',
+    }}
+  />
+</Playground>
+
+#### **Upcoming**
+
+<Playground>
+  <PrizesWidget
+    id="example"
+    points={40}
+    rewards={rewards}
+    text={{
+      description: 'Sit excepteur consequat pariatur eu excepteur voluptate reprehenderit. Ad ex proident est non non voluptate eu duis eiusmod do veniam cupidatat duis reprehenderit. Eiusmod irure fugiat aute cillum enim id commodo voluptate sint aute dolor. In est ad ad enim nisi magna qui pariatur eu elit anim duis nisi. Dolor enim aute minim ut consequat duis cupidatat amet incididunt id fugiat pariatur ullamco',
+      qualify: ({ nextDraw }) => `You qualify for the next draw in ${nextDraw}!`,
+      noQualify: ({ nextDraw, remaining }) => `${remaining} more points needed to qualify upcoming draw in ${nextDraw}`,
+    }}
+    filters={{
+      dates: 'upcoming',
+    }}
+  />
+</Playground>
