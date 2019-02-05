@@ -36,7 +36,7 @@ const Markup = (props) => {
       error: itemProps.error,
       progress: itemProps.progress,
       title: itemProps.title,
-      summary: t.oneOfType([t.string, t.array]),
+      summary: itemProps.summary,
       content: itemProps.content,
       highlighted: itemProps.highlighted,
     };

@@ -117,6 +117,7 @@ const Panel = (props) => {
     changeFocus,
   } = props;
 
+  console.log(111, summary)
 
   const percentage = calcPercentage({ progress, incremental });
   const focus = (node) => {
@@ -127,9 +128,6 @@ const Panel = (props) => {
   };
 
   const clickEvent = guided ? () => changeFocus(index) : toggleOpen;
-//{Array.isArray(summary) ? summary.split(', ') : summary}
-
-
 
   return (
     <Wrapper expanded={open} onClick={buttons ? clickEvent : null}>
@@ -141,7 +139,9 @@ const Panel = (props) => {
         <PercentageCircle {...{ percentage, incremental, error }} index={index + 1} />
         <TitleWrapper>
           <Title>{title}</Title>
-          <Subtitle {...{ highlighted, error }}>sadasd</Subtitle>
+          <Subtitle {...{ highlighted, error }}>
+            {summary}
+          </Subtitle>
         </TitleWrapper>
       </Summary>
       <Details>
