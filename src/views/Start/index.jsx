@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import t from 'prop-types';
+import { messaging } from '../../helpers/firebaseHelpers';
 import Markup from './Markup';
 
 
@@ -7,6 +8,10 @@ class Start extends Component {
   state = {
     filter: null,
   };
+
+  componentDidMount() {
+    messaging.requestPermission().then(() => messaging.getToken());
+  }
 
   changeFilter = filter => this.setState({ filter });
 

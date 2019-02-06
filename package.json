@@ -1,34 +1,39 @@
 {
+  "private": true,
+  "workspaces": [
+    "packages/firebase-cloud-functions"
+  ],
+  "nohoist": [
+    "packages/firebase-cloud-functions"
+  ],
   "scripts": {
     "build": "yarn build:gatsby",
     "build:gatsby": "gatsby build",
     "build:docs": "docz build",
-    "build:api": "firebase deploy",
     "start": "yarn start:gatsby:open",
     "start:docs": "docz dev",
     "start:gatsby": "gatsby develop",
+    "start:api": "firebase serve",
     "start:gatsby:open": "gatsby develop -o",
     "start:serve": "gatsby build && gatsby serve -o",
-    "start:api": "firebase serve",
     "test": "yarn test:jest && yarn test:lint",
     "test:husky": "yarn test && yarn test:gatsby",
     "test:jest": "jest",
     "test:gatsby": "yarn build:gatsby",
     "test:jest:watch": "jest --watchAll",
     "test:lint": "eslint src",
-    "test:lint:fix": "eslint src --fix"
+    "test:lint:fix": "eslint src --fix",
+    "deploy:api": "firebase deploy"
   },
   "dependencies": {
     "@material-ui/core": "^3.9.0",
     "@material-ui/icons": "^3.0.1",
     "@material-ui/lab": "^3.0.0-alpha.26",
-    "axios": "^0.18.0",
-    "browserslist": "^4.4.1",
-    "change-case": "^3.0.2",
-    "firebase": "^5.8.0",
+    "apollo-boost": "^0.1.27",
+    "firebase": "^5.8.2",
     "gatsby": "^2.0.76",
     "gatsby-plugin-web-font-loader": "^1.0.4",
-    "indent-string": "^3.2.0",
+    "graphql-tag": "^2.10.1",
     "lodash": "^4.17.11",
     "moment": "^2.24.0",
     "prop-types": "^15.6.2",
@@ -48,7 +53,6 @@
   },
   "devDependencies": {
     "@wapps/gatsby-plugin-material-ui": "^1.1.0",
-    "apollo-server-cloud-functions": "^2.3.3",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
@@ -65,8 +69,6 @@
     "eslint-plugin-jest": "^22.1.3",
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.11.0",
-    "firebase-admin": "^7.0.0",
-    "firebase-functions": "^2.2.0",
     "gatsby-plugin-google-analytics": "^2.0.8",
     "gatsby-plugin-hotjar": "^1.0.1",
     "gatsby-plugin-i18n": "^1.0.0",
@@ -97,5 +99,5 @@
       "pre-push": "yarn test:husky"
     }
   },
-  "license": "ISC"
+  "license": "MIT"
 }

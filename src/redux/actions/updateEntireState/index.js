@@ -1,11 +1,11 @@
-import { replaceEntireState as replaceUser } from '../../modules/user';
+import { replaceEntireState as replaceUser } from '../../modules/info';
 import { replaceEntireState as replaceStorage } from '../../modules/storage';
 import { replaceEntireState as replaceTasks } from '../../modules/tasks';
 
 
-export default ({ storage, user, tasks }) => (dispatch) => {
+export default ({ storage, info, tasks }) => (dispatch) => {
   dispatch(replaceStorage({ state: storage }));
-  dispatch(replaceUser({ state: user }));
+  dispatch(replaceUser({ state: info }));
   dispatch(replaceTasks({ state: tasks }));
-  return { storage, user, tasks };
+  return { storage, info, tasks };
 };

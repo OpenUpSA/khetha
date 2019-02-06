@@ -5,9 +5,15 @@ import { Typography } from '@material-ui/core';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
+import SectionHeading from '../../components/SectionHeading';
 import ProgressList from '../../components/ProgressList';
 import GradientButton from '../../components/GradientButton';
 import GradientSelect from '../../components/GradientSelect';
+
+
+const Section = styled.div`
+  padding-bottom: 40px;
+`;
 
 
 class FormBinder extends Component {
@@ -202,7 +208,30 @@ const calcInput = (type, value, options, focus, next, changeAnswer, index) => {
             filled
           />
         </ButtonWrap>
+        <ButtonWrap>
+          <GradientButton
+            text="I don't know"
+            clickAction={() => {
+              next(index, "I don't know");
+            }}
+            filled
+          />
+        </ButtonWrap>
       </FlexWrap>
+    );
+  }
+
+  if (type === 'gps') {
+    return (
+      <GradientButton
+        text="Calculate Location via GPS"
+        clickAction={() => (
+          navigator.geolocation.getCurrentPosition(
+            ({ coords }) => next(index, `${coords.latitude}, ${coords.longitude}`),
+          )
+        )}
+        filled
+      />
     );
   }
 
@@ -240,11 +269,24 @@ const createItems = (questions, answers, changeAnswer) => {
 };
 
 
-const Markup = ({ questions, answers, changeAnswer }) => {
+const Markup = ({ questions, answers, changeAnswer, completeAction }) => {
   const items = createItems(questions, answers);
   return (
     <Fragment>
-      <ProgressList {...{ items }} guided updateCallback={changeAnswer} />
+      <Section>
+        <SectionHeading gutter text="What is this Task?" />
+        <Typography gutterBottom component="p">To get started, tell us a bit about yourself. We are interested in hearing whether you've voted in previous South African national elections and whether you will be voting in the upcoming national election.</Typography>
+        <Typography style={{ marginTop: '20px' }} component="p">Complete this task by filling in the questions below:</Typography>
+      </Section>
+
+      <Section>
+        <SectionHeading gutter text="Start this Task" />
+        <ProgressList
+          {...{ items }}
+          guided={completeAction}
+          updateCallback={changeAnswer}
+        />
+      </Section>
     </Fragment>
   );
 };

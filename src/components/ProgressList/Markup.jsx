@@ -51,14 +51,14 @@ const Markup = (props) => {
 
   const submit = (
     <SubmitWrapper>
-      <GradientButton filled text="Submit Answers" clickAction="#" />
+      <GradientButton filled text="Submit Answers" clickAction={guided} />
     </SubmitWrapper>
   );
 
   return (
     <Fragment>
       {createPanels}
-      {items.filter(({ summary }) => !summary).length <= 0 && submit}
+      {guided && items.filter(({ summary }) => !summary).length <= 0 && submit}
     </Fragment>
   );
 };

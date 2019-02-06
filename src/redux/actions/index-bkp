@@ -1,0 +1,148 @@
+import { merge } from 'lodash';
+import { get, send } from '../../helpers/apolloHelpers';
+import { auth } from '../../helpers/firebaseHelpers';
+import {
+  setUserValue,
+  replaceEntireState as replaceInfo,
+} from '../modules/info';
+import { replaceEntireState as replaceStorage } from '../modules/storage';
+import { replaceEntireState as replaceTasks } from '../modules/tasks';
+
+
+const SYNC_TO_REMOTE = 'SYNC_TO_REMOTE';
+const SYNC_TO_REMOTE_MUTATION = `mutation ($id: String!, $jsonString: String!, $create: Boolean!)
+{
+  updateUserString(
+    id: $id
+    jsonString: $jsonString
+    create: $create
+  )
+}
+`;
+
+
+const SYNC_FROM_REMOTE = 'SYNC_FROM_REMOTE';
+const SYNC_FROM_REMOTE_QUERY = `query ($id: String!)
+{
+  userStrings(id: $id)
+}
+`;
+
+
+const getId = ({ create, local, dispatch }) => new Promise((resolve) => {
+  const { info } = local || {};
+  const { id } = info || {};
+
+  if (create) {
+    return auth.signInAnonymously()
+      .then((response) => {
+        const newId = response.user.uid;
+        dispatch(setUserValue({ key: 'id', value: newId }));
+        return newId;
+      })
+      .then((newId) => {
+        dispatch(setUserValue({ key: 'joined', value: new Date().getTime() }));
+        return newId;
+      })
+      .then(resolve);
+  }
+
+  return resolve(id);
+});
+
+
+// const customMerge = (remote, local) => console.log(remote, local);
+const mergeViaTimestamps = ({ remote, local }) => new Promise((resolve) => {
+  resolve(merge(remote, local));
+});
+
+
+const replaceEntireState = ({ dispatch, newState }) => {
+  dispatch(replaceInfo({ state: newState.info }));
+  dispatch(replaceStorage({ state: newState.storage }));
+  dispatch(replaceTasks({ state: newState.tasks }));
+  return null;
+};
+
+
+const mergeStateFromRemote = ({ create }) => (dispatch, getState) => new Promise((resolve) => {
+  const local = getState();
+  const params = {
+    dispatch,
+    create,
+    local,
+  };
+
+  getId(params)
+    .then(id => new Promise((innerResolve) => {
+      if (!create) {
+        console.log({
+          query: SYNC_FROM_REMOTE_QUERY,
+          variables: {
+            id,
+          },
+        });
+
+        return get({
+          query: SYNC_FROM_REMOTE_QUERY,
+          variables: {
+            id,
+          },
+        }).then(response => innerResolve(response));
+      }
+
+      return {
+
+      };
+
+
+      return innerResolve({});
+    }))
+    .then(remote => mergeViaTimestamps({ remote, local }))
+    .then(newState => new Promise((innerResolve) => {
+      replaceEntireState({ dispatch, newState });
+      dispatch({ type: SYNC_FROM_REMOTE });
+      return innerResolve(newState);
+    }));
+});
+
+
+const overrideRemoteState = ({ create }) => (dispatch, getState) => {
+  const local = getState() || {};
+
+  const params = {
+    dispatch,
+    create,
+    local,
+  };
+
+  return getId(params)
+    .then((id) => {
+      send({
+        mutation: SYNC_TO_REMOTE_MUTATION,
+        variables: {
+          id,
+          jsonString: JSON.stringify(local),
+          create,
+        },
+      });
+
+      return local;
+    })
+    .then((newState) => {
+      dispatch({ type: SYNC_TO_REMOTE });
+      return updatedState;
+    });
+};
+
+export {
+  mergeStateFromRemote,
+  overrideRemoteState,
+  replaceEntireState,
+};
+
+export default {
+  mergeStateFromRemote,
+  overrideRemoteState,
+  replaceEntireState,
+};

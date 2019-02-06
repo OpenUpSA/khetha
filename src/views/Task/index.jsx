@@ -32,6 +32,7 @@ class Task extends Component {
       questions: props.questions,
       progress: props.progress,
       changeAnswer: events.changeAnswer,
+      completeAction: props.completeAction,
     };
 
     return <Markup {...passedProps} />;

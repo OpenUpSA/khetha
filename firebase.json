@@ -1,5 +1,5 @@
 {
   "functions": {
-    "source": "src/functions"
+    "source": "packages/firebase-cloud-functions"
   }
 }
