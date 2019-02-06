@@ -83,7 +83,7 @@ const Markup = (props) => {
       </Section>
 
       <Section>
-        <SectionHeading gutter text="Tasks" />
+        <SectionHeading gutter text="Start a New Task" />
         <GradientSelect
           {...{ options }}
           value={filter}

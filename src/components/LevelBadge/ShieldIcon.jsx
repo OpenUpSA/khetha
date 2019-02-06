@@ -11,6 +11,7 @@ const ShieldSvg = styled.svg`
 
 
 const Number = styled.div`
+  font-family: Roboto, sans-serif;
   color: white;
   position: absolute;
   left: 0;

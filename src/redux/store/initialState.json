@@ -3,13 +3,14 @@
     "version": 0,
     "synced": null
   },
-  "user": {
-    "language": null,
+  "info": {
+    "language": {
+      "timestamp": null,
+      "value": null
+    },
+    "joined": null,
     "id": null,
-    "notifications": null
+    "notifications": []
   },
-  "tasks": {
-    "progress": {},
-    "completed": []
-  }
+  "tasks": []
 }

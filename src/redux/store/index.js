@@ -4,7 +4,7 @@ import persistState from 'redux-localstorage';
 import thunk from 'redux-thunk';
 
 import initialState from './initialState.json';
-import user from '../modules/user';
+import info from '../modules/info';
 import tasks from '../modules/tasks';
 import storage from '../modules/storage';
 import errors from '../modules/errors';
@@ -12,7 +12,7 @@ import errors from '../modules/errors';
 
 const persistKeys = [
   'storage',
-  'user',
+  'info',
   'tasks',
 ];
 
@@ -23,7 +23,7 @@ const isNode = typeof window === 'undefined';
 
 const rawReducers = {
   storage,
-  user,
+  info,
   tasks,
   errors,
 };

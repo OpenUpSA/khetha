@@ -1,23 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import { navigate } from 'gatsby';
 import AddIcon from '@material-ui/icons/Add';
 import PersonIcon from '@material-ui/icons/Person';
-import CheckIcon from '@material-ui/icons/Check';
+// import CheckIcon from '@material-ui/icons/Check';
 
 const FooterWrapper = styled.div`
   position: fixed;
-  bottom: 0px;
-  left: 0px;
+  bottom: 0;
+  left: 0;
   width: 100%;
   z-index: 999;
 `;
 
-
-
 const FooterBar = styled.div`
-  top: auto;
   bottom: 0;
+  left: 0;
   height: 75px;
   width: 100%;
   position: initial;
@@ -25,9 +23,9 @@ const FooterBar = styled.div`
   color: rgba(255, 255, 255, 0.7);
   @media (min-width: 760px) 
   {
-    width: 95%;
-    margin-right: 1px;
-    margin-left: 4px;
+    width: 100%;
+    // margin-right: 1px;
+    // margin-left: 4px;
   }
   :hover, :active {
     color: rgba(255, 255, 255, 1);
@@ -45,13 +43,13 @@ const FooterList = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
-  width: 94%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
 `;
 
 const FooterItem = styled.li`
-  width: 33.33%;
+  width: 50%;
   font-size: 14px;
   line-height: 16px;
   :hover, :active {
@@ -59,7 +57,8 @@ const FooterItem = styled.li`
   }
 `;
 
-const FooterButton = styled.a`
+const FooterButton = styled.span`
+  cursor: pointer;
   color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   display: flex;
@@ -79,8 +78,6 @@ const FooterButton = styled.a`
   }
 `;
 
-
-//----Footer starter buttoon----
 
 const FooterButtonForStartPage = styled.a`
 color: lightgreen: //i changed the coloure over here 
@@ -109,25 +106,25 @@ const Footer = () => (
     <FooterBar position="fixed">
       <FooterToolbar>
         <FooterList>
-          <FooterItem>
+          {/* <FooterItem>
             <FooterButton href="/progress">
               <CheckIcon />
               Progress
             </FooterButton>
-          </FooterItem>
+          </FooterItem> */}
 
           {/* {ButtonStarter Page} */}
 
           {/* { Button Starter Page} */}
 
           <FooterItem>
-            <FooterButton href="/start">
+            <FooterButton onClick={() => navigate('/start')}>
               <AddIcon />
               Start
             </FooterButton>
           </FooterItem>
           <FooterItem>
-            <FooterButton href="/">
+            <FooterButton onClick={() => navigate('/profile')}>
               <PersonIcon />
               Profile
             </FooterButton>

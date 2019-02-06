@@ -38,28 +38,24 @@ const Profile = (props) => {
           placeholder=""
           filled
           full
-          value={language}
-          prefix={view.language.prefix}
+          value="English"
+          prefix="Selected Language"
           options={[
             {
               text: 'English',
               callback: () => console.log('en'),
             },
-            {
-              text: 'isiZulu',
-              callback: () => console.log('zu'),
-            },
           ]}
         />
       </Section>
-      <Section>
+      {/* <Section>
         <SectionHeading text={view.help.title} gutter />
         <GradientButton
           text={view.help.primary}
           full
           clickAction="/src-views-profile-readme"
         />
-      </Section>
+      </Section> */}
       {rewards && createPrizeSection(rewardsText, rewards, points)}
       {winners && rewards && <Winners {...{ winners, rewards }} text={translation.view.winners} />}
     </Fragment>
