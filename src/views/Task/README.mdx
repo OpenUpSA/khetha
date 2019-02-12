@@ -3,24 +3,24 @@ name: Task
 menu: Views
 ---
 
-import { Playground } from 'docz';
+
+import { Playground, PropsTable } from 'docz';
 import Task from './index';
+
 
 # Start
 
-Looking for a specific file?
+## Props
 
-- [Task.jsx](#taskjsx)
+<PropsTable of={Task} />
 
-## `State.jsx`
-
-### Demos
+## Demos
 
 ### **Basic**
 
 <Playground style={{ background: '#EDEDED', position: 'relative' }}>
   <Task
-    progress={false}
+    onComplete={() => console.log('Completed')}
     questions={[
       {
         title: "Example 1",
@@ -35,7 +35,7 @@ Looking for a specific file?
 
 <Playground style={{ background: '#EDEDED', position: 'relative' }}>
   <Task
-    progress={false}
+    onComplete={() => console.log('Completed')}
     questions={[
       {
         title: 'String',
@@ -72,7 +72,7 @@ Looking for a specific file?
 
 <Playground style={{ background: '#EDEDED', position: 'relative' }}>
   <Task
-    progress={false}
+    onComplete={() => console.log('Completed')}
     questions={[
       {
         title: 'What will your gaming name be?',
