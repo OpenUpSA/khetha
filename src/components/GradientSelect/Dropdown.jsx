@@ -11,7 +11,7 @@ const outline = '1px solid #0B5FFF';
 
 
 const StyledItem = styled(MenuItem)`
-  &&&& {
+  && {
     color: ${({ disabled }) => (disabled ? '#CCC' : 'black')};
   }
 `;
