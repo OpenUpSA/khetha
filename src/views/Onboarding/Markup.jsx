@@ -2,6 +2,7 @@ import React from 'react';
 import posed from 'react-pose';
 import styled from 'styled-components';
 import t from 'prop-types';
+import Layout from '../../components/Layout';
 import ToggleContent from './ToggleContent';
 import Hero from './Hero';
 import Info from './Info';
@@ -42,15 +43,17 @@ const Markup = (props) => {
 
 
   return (
-    <Wrapper pose={step >= 1 ? 'end' : 'start'}>
-      <Hero />
-      <Info
-        title={step > 0 ? translation.prizes.title : translation.intro.title}
-        description={step > 0 ? translation.prizes.description : translation.intro.description}
-      >
-        <ToggleContent {...toggleProps} />
-      </Info>
-    </Wrapper>
+    <Layout header={false} footer={false}>
+      <Wrapper pose={step >= 1 ? 'end' : 'start'}>
+        <Hero />
+        <Info
+          title={step > 0 ? translation.prizes.title : translation.intro.title}
+          description={step > 0 ? translation.prizes.description : translation.intro.description}
+        >
+          <ToggleContent {...toggleProps} />
+        </Info>
+      </Wrapper>
+    </Layout>
   );
 };
 
@@ -62,7 +65,7 @@ Markup.propTypes = {
   step: t.number.isRequired,
   changeLanguage: t.func.isRequired,
   nextStep: t.func.isRequired,
-  complete: t.func.isRequired,
+  complete: t.oneOfType([t.func, t.string]).isRequired,
   language: t.string,
   translation: t.shape({
     intro: t.shape({

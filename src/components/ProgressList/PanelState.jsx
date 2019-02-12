@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
+import scrollIntoView from 'scroll-into-view';
 import Panel from './Panel';
 
 
@@ -15,21 +16,27 @@ const calcOpenState = (open, index, guided, focused) => {
 };
 
 
-const calcFocused = (guided, index, focused) => {
-  if (!guided) {
-    return false;
-  }
-
-  if (index === focused) {
-    return true;
-  }
-};
-
-
 class PanelState extends Component {
-  state = {
-    open: false,
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      open: false,
+    };
+
+    this.values = {
+      focusElement: createRef(),
+    };
+  }
+
+  componentWillReceiveProps() {
+    const { current } = this.values.focusElement;
+
+    if (current && current.focus) {
+      current.focus();
+    }
+  }
+
 
   toggleOpen = () => {
     const { open } = this.state;
@@ -37,7 +44,12 @@ class PanelState extends Component {
   }
 
   render() {
-    const { props, state, ...events } = this;
+    const {
+      props,
+      state,
+      values,
+      ...events
+    } = this;
 
     const passedProps = {
       incremental: props.incremental,
@@ -48,12 +60,13 @@ class PanelState extends Component {
       content: props.content,
       highlighted: props.highlighted,
       open: calcOpenState(state.open, props.index, props.guided, props.focused),
-      guided: props.guided,
       toggleOpen: events.toggleOpen,
       index: props.index,
       error: props.error,
       next: props.next,
+      focusElement: values.focusElement,
       changeFocus: props.changeFocus,
+      guided: props.guided,
     };
 
     return <Panel {...passedProps} />;

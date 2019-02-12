@@ -15,7 +15,9 @@ class ProgressList extends Component {
     const forward = focused + 1;
 
     if (value === true && forward <= limit) {
-      updateCallback(index, newValue);
+      if (updateCallback) {
+        updateCallback(index, newValue);
+      }
       return this.setState({ focused: forward });
     }
 
@@ -30,7 +32,7 @@ class ProgressList extends Component {
     const { props, state, ...events } = this;
 
     const passedProps = {
-      guided: props.guided,
+      onComplete: props.onComplete,
       incremental: props.incremental,
       buttons: props.buttons,
       items: props.items,
@@ -48,8 +50,16 @@ export default ProgressList;
 
 
 ProgressList.propTypes = {
-  /** Whether user should be guided through the panels or should be able to visit them at will */
-  guided: t.bool,
+  /** If this Progresslist is guided (by means of 'onComplete') then you can
+   * fire this callback everytime a value is selected in a panel */
+  updateCallback: t.func,
+  /** If a function is passed, then a user is expected to complete all items inside
+   * the panels. Once all items are completed a 'submit' button will appear that
+   * triggers this function as a callback when clicked. If a function is passed,
+   * then users will be guided through the panels in a linear fashion. This means
+   * that only one item can be opened at a time and that the first item starts
+   * openend. */
+  onComplete: t.func,
   /** Whether progress is tracked incrementally. If true
    * then progress is indicate by percentage (0 - 100),
    * if false then progress can only be true or false */
@@ -64,7 +74,7 @@ ProgressList.propTypes = {
       progress: t.oneOfType([t.number, t.bool]),
       title: t.string,
       summary: t.oneOfType([t.string, t.array]),
-      content: t.oneOfType([t.node, t.func]),
+      content: t.func,
       highlighted: t.bool,
     }),
   ),
@@ -72,7 +82,8 @@ ProgressList.propTypes = {
 
 
 ProgressList.defaultProps = {
-  guided: false,
+  updateCallback: null,
+  onComplete: null,
   incremental: false,
   buttons: false,
   items: null,

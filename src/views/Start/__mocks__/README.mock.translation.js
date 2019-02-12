@@ -1,6 +1,6 @@
 export default {
   view: {
-    points: 'Kheta Points',
+    points: points => `${points} Khetha Point${points > 1 ? 's' : ''}`,
     filter: {
       title: 'Filter tasks',
       active: 'Filtered by',

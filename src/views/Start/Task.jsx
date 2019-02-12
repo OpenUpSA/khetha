@@ -97,7 +97,7 @@ const Heading = (props) => {
   const {
     points,
     title,
-    icon,
+    icon = 'Grade',
   } = props;
 
   return (
@@ -113,9 +113,15 @@ const Heading = (props) => {
 
 
 Heading.propTypes = {
-  points: t.number.isRequired,
+  points: t.number,
   title: t.string.isRequired,
-  icon: t.string.isRequired,
+  icon: t.string,
+};
+
+
+Heading.defaultProps = {
+  icon: null,
+  points: null,
 };
 
 
@@ -123,7 +129,7 @@ const ComponentWrapper = ({ source: Source, children }) => <Source>{children}</S
 
 
 ComponentWrapper.propTypes = {
-  source: t.func.isRequired,
+  source: t.oneOfType([t.func, t.string]).isRequired,
   children: t.node.isRequired,
 };
 
@@ -162,9 +168,17 @@ export default Task;
 Task.propTypes = {
   title: t.string.isRequired,
   description: t.string.isRequired,
-  icon: t.string.isRequired,
-  transparent: t.bool.isRequired,
+  icon: t.string,
+  transparent: t.bool,
   id: t.string.isRequired,
-  points: t.number.isRequired,
-  clickAction: t.func.isRequired,
+  points: t.number,
+  clickAction: t.func,
+};
+
+
+Task.defaultProps = {
+  icon: null,
+  transparent: null,
+  points: null,
+  clickAction: null,
 };

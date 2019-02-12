@@ -1,7 +1,6 @@
 import { createElement } from 'react';
 import Profile from '../../views/Profile';
 import Layout from '../../components/Layout';
-import { navigate }  from 'gatsby';
 
 
 const props = {

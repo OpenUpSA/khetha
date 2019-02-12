@@ -1,7 +1,6 @@
 import { createElement } from 'react';
 import { navigate } from 'gatsby';
 import OnBoarding from '../views/Onboarding';
-import './global.css';
 
 
 const props = {

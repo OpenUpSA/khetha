@@ -5,7 +5,7 @@ import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import scrollIntoView from 'scroll-into-view';
+import t from 'prop-types';
 import PercentageCircle from './PercentageCircle';
 import removeProps from '../../helpers/removeProps';
 
@@ -31,7 +31,7 @@ const calcSubtitleColor = (error, highlighted) => {
 };
 
 
-const SanitisedTypography = removeProps({ 
+const SanitisedTypography = removeProps({
   component: Typography,
   blacklist: ['highlighted', 'error'],
 });
@@ -62,9 +62,10 @@ const Summary = styled(ExpansionPanelSummary)`
   }
 `;
 
-const Wrapper = styled(ExpansionPanel)`
+const SanitisedExpansionPanel = removeProps({ component: ExpansionPanel, blacklist: 'buttons' });
+const Wrapper = styled(SanitisedExpansionPanel)`
   && {
-    cursor: pointer;
+    cursor: ${({ buttons }) => (buttons ? 'pointer' : 'default')};
   }
 `;
 
@@ -106,31 +107,25 @@ const Panel = (props) => {
     progress,
     title,
     summary,
-    content,
+    content: Content,
     highlighted,
     open,
     toggleOpen,
     index,
     error,
-    guided,
     next,
+    focusElement,
+    guided,
     changeFocus,
   } = props;
 
-  console.log(111, summary)
 
   const percentage = calcPercentage({ progress, incremental });
-  const focus = (node) => {
-    if (guided && node && open) {
-      scrollIntoView(node);
-      return node.focus && node.focus();
-    }
-  };
-
   const clickEvent = guided ? () => changeFocus(index) : toggleOpen;
 
+
   return (
-    <Wrapper expanded={open} onClick={buttons ? clickEvent : null}>
+    <Wrapper expanded={open} onClick={buttons ? clickEvent : null} {...{ buttons }}>
       <Summary
         onClick={!buttons ? clickEvent : null}
         expandIcon={<ExpandMoreIcon />}
@@ -145,7 +140,7 @@ const Panel = (props) => {
         </TitleWrapper>
       </Summary>
       <Details>
-        {guided ? content({ next, focus }) : content}
+        <Content {...{ next, focusElement }} />
       </Details>
     </Wrapper>
   );
@@ -153,3 +148,37 @@ const Panel = (props) => {
 
 
 export default Panel;
+
+
+Panel.propTypes = {
+  incremental: t.bool,
+  buttons: t.bool,
+  progress: t.oneOfType([t.number, t.bool]).isRequired,
+  title: t.string.isRequired,
+  summary: t.string,
+  content: t.func.isRequired,
+  highlighted: t.bool,
+  open: t.bool,
+  toggleOpen: t.func.isRequired,
+  index: t.number.isRequired,
+  error: t.bool,
+  guided: t.bool,
+  next: t.func,
+  changeFocus: t.func,
+  focusElement: t.shape({
+    current: t.node,
+  }).isRequired,
+};
+
+
+Panel.defaultProps = {
+  changeFocus: null,
+  incremental: false,
+  buttons: false,
+  highlighted: false,
+  open: false,
+  error: false,
+  guided: null,
+  next: null,
+  summary: null,
+};

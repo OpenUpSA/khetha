@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import t from 'prop-types';
 import Markup from './Markup';
 
 
@@ -12,6 +13,7 @@ class Task extends Component {
     };
   }
 
+
   changeAnswer = (index, answer) => {
     const { answers: currentAnswers } = this.state;
 
@@ -24,6 +26,7 @@ class Task extends Component {
     return this.setState({ answers });
   }
 
+
   render() {
     const { props, state, ...events } = this;
 
@@ -32,7 +35,7 @@ class Task extends Component {
       questions: props.questions,
       progress: props.progress,
       changeAnswer: events.changeAnswer,
-      completeAction: props.completeAction,
+      onComplete: props.onComplete,
     };
 
     return <Markup {...passedProps} />;
@@ -41,3 +44,22 @@ class Task extends Component {
 
 
 export default Task;
+
+
+Task.propTypes = {
+  onComplete: t.func.isRequired,
+  questions: t.arrayOf(
+    t.shape({
+      title: t.string,
+      description: t.string,
+      format: t.oneOf([
+        'string',
+        'text',
+        'boolean',
+        'select',
+        'checkboxes',
+        'gps',
+      ]),
+    }),
+  ).isRequired,
+};

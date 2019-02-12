@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
+import t from 'prop-types';
 import styled from 'styled-components';
 import Button from '@material-ui/core/Button';
 import CircularProgress from '@material-ui/core/CircularProgress';
@@ -90,12 +90,13 @@ const ActionWrapper = (props) => {
 
 
 ActionWrapper.propTypes = {
-  clickAction: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.func,
+  clickAction: t.oneOfType([
+    t.string,
+    t.func,
   ]).isRequired,
-  children: PropTypes.node.isRequired,
-  link: PropTypes.func,
+  children: t.node.isRequired,
+  link: t.func,
+  startLoading: t.func.isRequired,
 };
 
 
@@ -142,6 +143,7 @@ const Markup = (props) => {
     full,
     startLoading,
     loading,
+    buttonRef,
   } = props;
 
 
@@ -156,11 +158,20 @@ const Markup = (props) => {
   `;
 
 
-  const innerContent = invisible => (
+  const createIcon = (type, fill) => (
+    <StyledIcon
+      {...{ type }}
+      size="small"
+      color={fill === 'contained' ? 'white' : 'blue'}
+    />
+  );
+
+
+  const innerContent = (invisible, fill) => (
     <ContentWrap {...{ invisible }}>
       {prefix && createPrefix(prefix)}
       <span>{text}</span>
-      {icon && <StyledIcon type={icon} size="small" />}
+      {icon && createIcon(icon, fill)}
     </ContentWrap>
   );
 
@@ -170,7 +181,7 @@ const Markup = (props) => {
       <StyledButton
         size="large"
         fullWidth={full}
-        {...{ variant }}
+        {...{ variant, buttonRef }}
       >
         {innerContent(true)}
         <CustomProg size={15} thickness={7} fill={filled} />
@@ -186,7 +197,7 @@ const Markup = (props) => {
         fullWidth={full}
         {...{ variant }}
       >
-        {innerContent(false)}
+        {innerContent(false, variant)}
       </StyledButton>
     </ActionWrapper>
   );
@@ -197,41 +208,30 @@ export default Markup;
 
 
 Markup.propTypes = {
-  /** If function is passed it will be called when button is clicked,
-   * if string is passed url will be hotloaded via AJAX when button is
-   * clicked. However if string links to an external domain a url will
-   * be opened in new tab when button is clicked */
-  clickAction: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.func,
+  buttonRef: t.shape({
+    current: t.node,
+  }),
+  clickAction: t.oneOfType([
+    t.string,
+    t.func,
   ]).isRequired,
-  /** The text to display in the button */
-  text: PropTypes.string,
-  /** Whether the background should have
-   * the branded gradient backgrounds */
-  filled: PropTypes.bool,
-  /** Whether the button should span the entirity (100%)
-   * of the width of it's parent. */
-  full: PropTypes.bool,
-  /** Whether button should have an additional
-   * label prefixed to the text. Useful if you
-   * want to communicate state */
-  prefix: PropTypes.string,
-  /** A icon that should be used on the right side
-   * of the button. Preferably an icon imported
-   * from `@material-ui/icons` */
-  icon: PropTypes.string,
-  /** You need to pass a component that handles routing
-   * and history state for page transitions in your React app.
-   * In our case we need to pass `Link` from `import { Link } from 'gatsby'. */
-  link: PropTypes.func,
+  text: t.string,
+  filled: t.bool,
+  full: t.bool,
+  prefix: t.string,
+  icon: t.string,
+  link: t.func,
+  startLoading: t.func.isRequired,
+  loading: t.bool,
 };
 
 Markup.defaultProps = {
+  buttonRef: null,
   text: null,
   filled: false,
   prefix: null,
   icon: null,
   link: null,
   full: false,
+  loading: false,
 };

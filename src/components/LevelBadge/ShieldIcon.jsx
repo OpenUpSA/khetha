@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import Icon from '../Icon';
 
 
 const ShieldSvg = styled.svg`
@@ -14,13 +15,22 @@ const Number = styled.div`
   font-family: Roboto, sans-serif;
   color: white;
   position: absolute;
-  left: 0;
-  bottom: 6px;
+  left: ${({ level }) => (level > 99 ? '3px' : '0')};
+  bottom: ${({ level }) => (level > 99 ? '10px' : '6px')};
   width: 22.8px;
   text-align: center;
   font-weight: bold;
   font-size: 15px;
 `;
+
+
+const buildNumber = (level) => {
+  if (level > 99) {
+    return <Icon type="Grade" size="small" color="white" />;
+  }
+
+  return level.toString();
+};
 
 
 const ShieldIcon = ({ level }) => (
@@ -37,7 +47,9 @@ const ShieldIcon = ({ level }) => (
         d="M19 4l-8-3h-1L1 4v7c0 8 1 11 9 15a1 1 0 0 0 1 0c8-4 9-7 9-15V4h-1z"
       />
     </ShieldSvg>
-    <Number>{level}</Number>
+    <Number {...{ level }}>
+      {buildNumber(level)}
+    </Number>
   </Fragment>
 );
 

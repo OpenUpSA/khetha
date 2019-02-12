@@ -1,18 +1,18 @@
 import React from 'react';
 import { Typography } from '@material-ui/core';
 import styled from 'styled-components';
+import t from 'prop-types';
 import LevelBadge from '../LevelBadge';
 import calcLevelInfo from './calcLevelInfo';
 
 
 const Level = styled(Typography)`
-&& {
-  font-weight: bold;
-  font-size: 26px;
-  line-height: 32px;
-  color: #5f5f5f;
-}
-
+  && {
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 32px;
+    color: #5f5f5f;
+  }
 `;
 
 const Next = styled(Typography)`
@@ -27,11 +27,6 @@ const HeaderMenu = styled.div`
 
 `;
 
-const Brand = styled.img`
-  padding: 24px 16px;
-  height: 58.79px;
-  right: 80.23%;
-`;
 
 const Text = styled.div`
   flex-grow: 1;
@@ -50,7 +45,7 @@ const MenuHeader = ({ points }) => {
       <LevelBadge level={points} />
       <Text>
         <Level>{level} Level</Level>
-        <Next>9 points required to unlock next level</Next>
+        <Next>{remainingPoints} points required to unlock next level</Next>
       </Text>
     </HeaderMenu>
   );
@@ -58,3 +53,8 @@ const MenuHeader = ({ points }) => {
 
 
 export default MenuHeader;
+
+
+MenuHeader.propTypes = {
+  points: t.number.isRequired,
+};

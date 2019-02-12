@@ -20,7 +20,7 @@ const Markup = (props) => {
     items,
     focused,
     changeFocus,
-    guided,
+    onComplete,
     next,
   } = props;
 
@@ -31,7 +31,7 @@ const Markup = (props) => {
       index,
       focused,
       changeFocus,
-      guided,
+      guided: !!onComplete,
       next,
       error: itemProps.error,
       progress: itemProps.progress,
@@ -49,16 +49,17 @@ const Markup = (props) => {
     );
   });
 
-  const submit = (
+  const buildSubmit = () => (
     <SubmitWrapper>
-      <GradientButton filled text="Submit Answers" clickAction={guided} />
+      <GradientButton filled text="Submit Answers" clickAction={onComplete} />
     </SubmitWrapper>
   );
+
 
   return (
     <Fragment>
       {createPanels}
-      {guided && items.filter(({ summary }) => !summary).length <= 0 && submit}
+      {!!onComplete && items.filter(({ summary }) => !summary).length <= 0 && buildSubmit()}
     </Fragment>
   );
 };
@@ -68,7 +69,7 @@ export default Markup;
 
 
 Markup.propTypes = {
-  guided: t.bool,
+  onComplete: t.func,
   focused: t.number,
   changeFocus: t.func.isRequired,
   incremental: t.bool,
@@ -87,7 +88,7 @@ Markup.propTypes = {
 
 
 Markup.defaultProps = {
-  guided: false,
+  onComplete: null,
   focused: null,
   incremental: false,
   buttons: false,

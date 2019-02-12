@@ -13,7 +13,11 @@ import GradientSelect from './index';
 
 **The basic branded `<Select>` component that will be used throughout the project.**
 
-### Demo
+### Props
+
+<PropsTable of={GradientSelect} />
+
+### Demos
 
 #### Default
 
@@ -33,6 +37,17 @@ import GradientSelect from './index';
     options={[
       { text: 'None', reset: true },
       { text: 'Option 1' },
+      { text: 'Option 2' },
+    ]}
+  />
+</Playground>
+
+#### With Disabled
+
+<Playground>
+  <GradientSelect
+    options={[
+      { text: 'Option 1', disabled: true },
       { text: 'Option 2' },
     ]}
   />
@@ -103,7 +118,3 @@ import GradientSelect from './index';
     ]}
   />
 </Playground>
-
-### Props
-
-<PropsTable of={GradientSelect} />

@@ -3,7 +3,7 @@ import t from 'prop-types';
 import Markup from './Markup';
 
 
-export default class State extends Component {
+export default class Onboarding extends Component {
   constructor(props) {
     super(props);
     const { step: startingStep, language: startingLanguage } = this.props;
@@ -52,7 +52,7 @@ export default class State extends Component {
 }
 
 
-State.propTypes = {
+Onboarding.propTypes = {
   /** The current language that the user has selected, usually starts as `null` */
   language: t.oneOf(['en', 'zu']),
   /** Accepts a callback that get triggered whenever language
@@ -70,7 +70,7 @@ State.propTypes = {
   /** Component that should be used to create link that completes onboarding.
    * Expected to be from `import { Link } from 'gatsby'`.
   */
-  link: t.func.isRequired,
+  link: t.func,
   /** Language specific text to be used in this view */
   translation: t.shape({
     intro: t.shape({
@@ -96,8 +96,9 @@ State.propTypes = {
 };
 
 
-State.defaultProps = {
+Onboarding.defaultProps = {
   language: null,
   selectLanguage: null,
   step: 0,
+  link: null,
 };
