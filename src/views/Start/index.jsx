@@ -13,7 +13,14 @@ class Start extends Component {
     messaging.requestPermission().then(() => messaging.getToken());
   }
 
-  changeFilter = filter => this.setState({ filter });
+  changeFilter = (value) => {
+    if (value <= 0) {
+      return this.setState({ filter: null })
+    }
+
+    const filter = value.toString();
+    return this.setState({ filter });
+  }
 
   render() {
     const { state, props, ...events } = this;
@@ -58,7 +65,7 @@ Start.propTypes = {
       points: t.func,
       filter: t.shape({
         title: t.string,
-        active: t.bool,
+        active: t.string,
         difficulty: t.arrayOf(t.string),
       }),
       more: t.shape({

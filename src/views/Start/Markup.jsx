@@ -24,7 +24,7 @@ const CardWrap = styled(Animate)`
 `;
 
 
-const createCard = (filter, clickAction, text) => (cardProps) => {
+const createCard = (filter, clickAction, text, options) => (cardProps) => {
   const {
     points,
     title,
@@ -33,7 +33,8 @@ const createCard = (filter, clickAction, text) => (cardProps) => {
     id,
   } = cardProps;
 
-  if (filter === null || filter === calcDifficulty(points, text)) {
+
+  if (filter === null || filter === calcDifficulty(points)) {
     return (
       <CardWrap key={title}>
         <Task
@@ -65,7 +66,17 @@ const Markup = (props) => {
     points,
   } = props;
 
-  const options = createOptions(changeFilter, translation.view);
+  const amounts = [
+    tasks.length,
+    tasks.filter(task => task.points <= 1).length,
+    tasks.filter(task => task.points >= 2 && task.points < 4).length,
+    tasks.filter(task => task.points >= 4 && task.points < 8).length,
+    tasks.filter(task => task.points >= 8).length,
+  ];
+
+
+  const options = createOptions(changeFilter, translation.view, amounts);
+
 
   return (
     <Fragment>
@@ -94,10 +105,11 @@ const Markup = (props) => {
         />
         <TasksWrap>
           <PoseGroup>
-            {tasks.map(createCard(filter, clickAction, translation.view))}
+            {tasks.map(createCard(filter, clickAction, translation.view, options))}
           </PoseGroup>
           <CardWrap>
             <Task
+              id="need-more-tasks"
               transparent
               title={translation.view.more.title}
               description={translation.view.more.description}
@@ -132,7 +144,7 @@ Markup.propTypes = {
       points: t.func,
       filter: t.shape({
         title: t.string,
-        active: t.bool,
+        active: t.string,
         difficulty: t.arrayOf(t.string),
       }),
       more: t.shape({
