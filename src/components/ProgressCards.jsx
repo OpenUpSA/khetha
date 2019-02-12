@@ -9,7 +9,7 @@ import IconButton from '@material-ui/core/es/IconButton/IconButton';
 import FaceIcon from '@material-ui/icons/Face';
 import CityIcon from '@material-ui/icons/LocationCity';
 import ThumbIcon from '@material-ui/icons/ThumbUp';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 const CardWrapper = styled.ul`
   @media (min-width: 760px) {
@@ -86,7 +86,7 @@ const HeaderProgress = styled(({ barColorPrimary, ...other }) => (
 `;
 
 const tasks = [
-  { 
+  {
     total: 100,
     link: '/',
     icon: 'faceIcon',
@@ -114,10 +114,10 @@ const tasks = [
     icon: 'cityIcon',
     title: '31 Points Remaining',
     subheader: 'Survey Your Community',
-    color: '',
+    color: '#AFAFAF',
     variant: 'determinate',
     value: 100,
-    barColorPrimary: 'linear-gradient(177.9deg, #00F260 0%, #0575E6 83.33%), #0576E6;'
+    barColorPrimary: '#AFAFAF',
   },
   {
     total: 100,
@@ -132,10 +132,36 @@ const tasks = [
   },
 ];
 
-const ProgressCards = ({ linkUrl }) => (
+const ProgressCards = () => (
   <CardWrapper>
-    <CardItem>
-      <CardLink to={linkUrl}>
+    {tasks.map(task => (
+      <CardItem>
+        <CardLink to={task.link}>
+          <TopicCard>
+            <StyledHeader
+              action={
+                (
+                  <IconButton>
+                    <FaceIcon color="primary" fontSize="large" />
+                  </IconButton>
+                )
+              }
+              title={task.title}
+              subheader={task.subheader}
+              color={task.color}
+            />
+            <HeaderProgress
+              variant={task.variant}
+              value={task.value}
+              barColorPrimary={task.barColorPrimary}
+            />
+          </TopicCard>
+        </CardLink>
+      </CardItem>
+    ))}
+
+    {/* <CardItem>
+      <CardLink to="/">
         <TopicCard>
           <StyledHeader
             action={
@@ -157,7 +183,7 @@ const ProgressCards = ({ linkUrl }) => (
       </CardLink>
     </CardItem>
     <CardItem>
-      <CardLink to={linkUrl}>
+      <CardLink to="/">
         <TopicCard>
           <StyledHeader
             action={
@@ -178,8 +204,8 @@ const ProgressCards = ({ linkUrl }) => (
         </TopicCard>
       </CardLink>
     </CardItem>
-    <CardItem complete>
-      <CardLink to={linkUrl}>
+    <CardItem>
+      <CardLink to="/">
         <TopicCard background="transparent" boxShadow="none" border="#AFAFAF">
           <StyledHeader
             action={
@@ -202,7 +228,7 @@ const ProgressCards = ({ linkUrl }) => (
       </CardLink>
     </CardItem>
     <CardItem>
-      <CardLink to={linkUrl}>
+      <CardLink to="/">
         <TopicCard>
           <StyledHeader
             action={
@@ -223,11 +249,11 @@ const ProgressCards = ({ linkUrl }) => (
         </TopicCard>
       </CardLink>
     </CardItem>
-  </CardWrapper>
+  </CardWrapper> */}
 );
 
-ProgressCards.propTypes = {
-  linkUrl: PropTypes.string.isRequired,
-};
+// ProgressCards.propTypes = {
+//   linkUrl: PropTypes.string.isRequired,
+// };
 
 export default ProgressCards;
