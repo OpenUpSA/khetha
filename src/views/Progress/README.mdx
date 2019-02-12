@@ -4,10 +4,17 @@ menu: Views
 ---
 
 import { Playground } from 'docz';
-import Progress from './index';
+import Progress from './Progress';
 
 # Progress
+
+Page should show progress of points based off surveys taken
 
 ## Demo
 
 ### Single Item
+
+<Playground>
+  <Progress
+    clickAction={() => console.log(clicked)} />
+</Playground>
