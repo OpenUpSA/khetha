@@ -32,6 +32,7 @@ const calcFill = (color) => {
     case 'blue': return '#0B5FFF';
     case 'red': return 'red';
     case 'grey': return 'grey';
+    case 'white': return 'white';
     default: return 'black';
   }
 };
