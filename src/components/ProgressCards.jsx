@@ -85,6 +85,53 @@ const HeaderProgress = styled(({ barColorPrimary, ...other }) => (
   }
 `;
 
+const tasks = [
+  { 
+    total: 100,
+    link: '/',
+    icon: 'faceIcon',
+    title: '11 Points Remaining',
+    subheader: 'Introductory Questions',
+    color: '',
+    variant: 'determinate',
+    value: 68,
+    barColorPrimary: 'linear-gradient(177.9deg, #00F260 0%, #0575E6 83.33%), #0576E6;'
+  },
+  {
+    total: 100,
+    link: '/',
+    icon: 'cityIcon',
+    title: '31 Points Remaining',
+    subheader: 'Survey Your Community',
+    color: '',
+    variant: 'determinate',
+    value: 68,
+    barColorPrimary: 'linear-gradient(177.9deg, #00F260 0%, #0575E6 83.33%), #0576E6;'
+  },
+  {
+    total: 100,
+    link: '/',
+    icon: 'cityIcon',
+    title: '31 Points Remaining',
+    subheader: 'Survey Your Community',
+    color: '',
+    variant: 'determinate',
+    value: 100,
+    barColorPrimary: 'linear-gradient(177.9deg, #00F260 0%, #0575E6 83.33%), #0576E6;'
+  },
+  { 
+    total: 100,
+    link: '/',
+    icon: 'faceIcon',
+    title: '11 Points Remaining',
+    subheader: 'Introductory Questions',
+    color: '',
+    variant: 'determinate',
+    value: 0,
+    barColorPrimary: 'linear-gradient(177.9deg, #00F260 0%, #0575E6 83.33%), #0576E6;'
+  },
+];
+
 const ProgressCards = ({ linkUrl }) => (
   <CardWrapper>
     <CardItem>
@@ -150,28 +197,6 @@ const ProgressCards = ({ linkUrl }) => (
             variant="determinate"
             value={100}
             barColorPrimary="#AFAFAF"
-          />
-        </TopicCard>
-      </CardLink>
-    </CardItem>
-    <CardItem>
-      <CardLink to={linkUrl}>
-        <TopicCard>
-          <StyledHeader
-            action={
-              (
-                <IconButton>
-                  <CityIcon color="primary" fontSize="large" />
-                </IconButton>
-              )
-            }
-            title="31 Points Remaining"
-            subheader="Survey Your Community"
-          />
-          <HeaderProgress
-            variant="determinate"
-            value={100}
-            barColorPrimary="linear-gradient(177.9deg, #00F260 0%, #0575E6 83.33%), #0576E6;"
           />
         </TopicCard>
       </CardLink>
