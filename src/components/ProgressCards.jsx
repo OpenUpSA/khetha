@@ -248,8 +248,8 @@ const ProgressCards = () => (
           />
         </TopicCard>
       </CardLink>
-    </CardItem>
-  </CardWrapper> */}
+    </CardItem> */}
+  </CardWrapper>
 );
 
 // ProgressCards.propTypes = {
