@@ -5,7 +5,7 @@ import Layout from '../../components/Layout';
 
 
 const props = {
-  completeAction: () => {
+  onComplete: () => {
     setTimeout(
       () => navigate('/start/done'),
       2000,
@@ -55,6 +55,6 @@ const props = {
 
 export default () => createElement(
   Layout,
-  { points: 0 },
+  { points: 0, callback: navigate },
   createElement(Task, props),
 );
