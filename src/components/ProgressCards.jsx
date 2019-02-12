@@ -92,7 +92,7 @@ const tasks = [
     icon: 'faceIcon',
     title: '11 Points Remaining',
     subheader: 'Introductory Questions',
-    color: '',
+    color: 'primary',
     variant: 'determinate',
     value: 68,
     barColorPrimary: 'linear-gradient(177.9deg, #00F260 0%, #0575E6 83.33%), #0576E6;',
@@ -103,7 +103,7 @@ const tasks = [
     icon: 'cityIcon',
     title: '31 Points Remaining',
     subheader: 'Survey Your Community',
-    color: '',
+    color: 'primary',
     variant: 'determinate',
     value: 68,
     barColorPrimary: 'linear-gradient(177.9deg, #00F260 0%, #0575E6 83.33%), #0576E6;',
@@ -112,12 +112,12 @@ const tasks = [
     total: 100,
     link: '/',
     icon: 'cityIcon',
-    title: '31 Points Remaining',
+    title: 'Completed',
     subheader: 'Survey Your Community',
-    color: '#AFAFAF',
+    color: 'primary',
     variant: 'determinate',
     value: 100,
-    barColorPrimary: '#AFAFAF',
+    barColorPrimary: 'linear-gradient(177.9deg, #00F260 0%, #0575E6 83.33%), #0576E6;',
   },
   {
     total: 100,
@@ -125,18 +125,18 @@ const tasks = [
     icon: 'thumbIcon',
     title: '11 Points Remaining',
     subheader: 'Introductory Questions',
-    color: '',
+    color: 'primary',
     variant: 'determinate',
     value: 0,
     barColorPrimary: 'linear-gradient(177.9deg, #00F260 0%, #0575E6 83.33%), #0576E6;',
   },
 ];
 
-const iconChange = (iconItems) => {
+const iconChange = (iconItems, color, value, total) => {
   switch (iconItems) {
-    case 'faceIcon': return <FaceIcon color="primary" fontSize="large" />;
-    case 'cityIcon': return <CityIcon color="primary" fontSize="large" />;
-    case 'thumbIcon': return <ThumbIcon color="primary" fontSize="large" />;
+    case 'faceIcon': return <FaceIcon color={value === total ? '#AFAFAF' : color} fontSize="large" />;
+    case 'cityIcon': return <CityIcon color={value === total ? '#AFAFAF' : color} fontSize="large" />;
+    case 'thumbIcon': return <ThumbIcon color={value === total ? '#AFAFAF' : color} fontSize="large" />;
     default: return <FaceIcon color="primary" fontSize="large" />;
   }
 };
@@ -151,18 +151,18 @@ const ProgressCards = () => (
               action={
                 (
                   <IconButton>
-                    {iconChange(task.icon)}
+                    {iconChange(task.icon, task.color, task.value, task.total)}
                   </IconButton>
                 )
               }
               title={task.title}
               subheader={task.subheader}
-              color={task.color}
+              color={task.value === task.total ? '#AFAFAF' : ''}
             />
             <HeaderProgress
               variant={task.variant}
               value={task.value}
-              barColorPrimary={task.barColorPrimary}
+              barColorPrimary={task.value === task.total ? '#AFAFAF' : task.barColorPrimary}
             />
           </TopicCard>
         </CardLink>
