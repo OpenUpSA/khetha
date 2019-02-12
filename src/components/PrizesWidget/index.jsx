@@ -13,9 +13,17 @@ const BodyText = styled(Typography)`
 `;
 
 
+const calcSummary = (nextDraw, text, progress, remaining) => {
+  if (progress < 100) {
+    return text.noQualify({ nextDraw, remaining });
+  }
+
+  return text.qualify({ nextDraw });
+};
+
+
 const createItems = (rewards, userPoints, text) => rewards.map((rewardItem) => {
   const {
-    remaining,
     lessThanWeek: highlighted,
     text: nextDraw,
   } = rewardItem.drawn || {};
@@ -23,15 +31,15 @@ const createItems = (rewards, userPoints, text) => rewards.map((rewardItem) => {
 
   const pointsLeft = rewardItem.points - userPoints;
   const progress = userPoints / rewardItem.points * 100;
-  const summaryRaw = progress < 100 ? text.noQualify({ nextDraw, remaining: pointsLeft }) : text.qualify({ nextDraw });
-  const summary = !!rewardItem.drawn && summaryRaw;
+  const summaryRaw = calcSummary(nextDraw, text, progress, pointsLeft);
+  const summary = rewardItem.drawn ? summaryRaw : null;
 
   return {
     progress,
     highlighted,
     summary,
     title: rewardItem.title,
-    content: <BodyText>{rewardItem.description}</BodyText>,
+    content: () => <BodyText>{rewardItem.description}</BodyText>,
 
   };
 });
@@ -61,7 +69,7 @@ const PrizesWidget = (props) => {
     return null;
   }
 
-  const items = createItems(filteredRewards, userPoints, text)
+  const items = createItems(filteredRewards, userPoints, text);
   return <ProgressList {...{ items }} incremental />;
 };
 
