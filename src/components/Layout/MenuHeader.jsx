@@ -38,7 +38,9 @@ const MenuHeader = ({ points }) => {
   const {
     level,
     remainingPoints,
-  } = calcLevelInfo(0);
+  } = calcLevelInfo(points);
+
+  console.log(remainingPoints)
 
   return (
     <HeaderMenu>

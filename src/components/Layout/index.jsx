@@ -1,15 +1,8 @@
 import React, { Fragment } from 'react';
-import styled, { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
 import t from 'prop-types';
 import MenuHeader from './MenuHeader';
 import Footer from './Footer';
-
-
-const GlobalStyling = createGlobalStyle`
-  html {
-    overflow-y: scroll !important;
-  }
-`;
 
 
 const Wrapper = styled.div`
@@ -23,7 +16,6 @@ const InnerWrapper = styled.div`
   max-width: 600px;
   margin: 0 auto;
 `;
-
 
 const FooterWrapper = styled.div`
   position: ${({ demo }) => (demo ? 'absolute' : 'fixed')};
@@ -54,7 +46,6 @@ const Layout = (props) => {
 
   return (
     <Fragment>
-      <GlobalStyling />
       <Wrapper {...{ demo }}>
         <InnerWrapper>
           {header && <MenuHeader {...{ points }} />}

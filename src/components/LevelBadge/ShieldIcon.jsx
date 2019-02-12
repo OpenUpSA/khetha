@@ -16,7 +16,7 @@ const Number = styled.div`
   color: white;
   position: absolute;
   left: ${({ level }) => (level > 99 ? '3px' : '0')};
-  bottom: ${({ level }) => (level > 99 ? '10px' : '6px')};
+  bottom: ${({ level }) => (level > 99 ? '10px' : '8px')};
   width: 22.8px;
   text-align: center;
   font-weight: bold;

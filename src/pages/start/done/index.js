@@ -52,6 +52,6 @@ const props = {
 
 export default () => createElement(
   Layout,
-  { points: 1 },
+  { points: 1, callback: navigate },
   createElement(Start, props),
 );
