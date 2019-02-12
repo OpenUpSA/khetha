@@ -1,4 +1,5 @@
 import { createElement } from 'react';
+import { navigate } from 'gatsby';
 import Start from '../../../views/Start';
 import Layout from '../../../components/Layout';
 
