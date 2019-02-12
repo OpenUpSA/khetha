@@ -154,6 +154,50 @@ const ProgressCards = ({ linkUrl }) => (
         </TopicCard>
       </CardLink>
     </CardItem>
+    <CardItem>
+      <CardLink to={linkUrl}>
+        <TopicCard>
+          <StyledHeader
+            action={
+              (
+                <IconButton>
+                  <CityIcon color="primary" fontSize="large" />
+                </IconButton>
+              )
+            }
+            title="31 Points Remaining"
+            subheader="Survey Your Community"
+          />
+          <HeaderProgress
+            variant="determinate"
+            value={100}
+            barColorPrimary="linear-gradient(177.9deg, #00F260 0%, #0575E6 83.33%), #0576E6;"
+          />
+        </TopicCard>
+      </CardLink>
+    </CardItem>
+    <CardItem>
+      <CardLink to={linkUrl}>
+        <TopicCard>
+          <StyledHeader
+            action={
+              (
+                <IconButton>
+                  <CityIcon color="primary" fontSize="large" />
+                </IconButton>
+              )
+            }
+            title="31 Points Remaining"
+            subheader="Survey Your Community"
+          />
+          <HeaderProgress
+            variant="determinate"
+            value={0}
+            barColorPrimary="linear-gradient(177.9deg, #00F260 0%, #0575E6 83.33%), #0576E6;"
+          />
+        </TopicCard>
+      </CardLink>
+    </CardItem>
   </CardWrapper>
 );
 
