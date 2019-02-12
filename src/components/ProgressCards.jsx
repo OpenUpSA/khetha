@@ -95,7 +95,7 @@ const tasks = [
     color: '',
     variant: 'determinate',
     value: 68,
-    barColorPrimary: 'linear-gradient(177.9deg, #00F260 0%, #0575E6 83.33%), #0576E6;'
+    barColorPrimary: 'linear-gradient(177.9deg, #00F260 0%, #0575E6 83.33%), #0576E6;',
   },
   {
     total: 100,
@@ -106,7 +106,7 @@ const tasks = [
     color: '',
     variant: 'determinate',
     value: 68,
-    barColorPrimary: 'linear-gradient(177.9deg, #00F260 0%, #0575E6 83.33%), #0576E6;'
+    barColorPrimary: 'linear-gradient(177.9deg, #00F260 0%, #0575E6 83.33%), #0576E6;',
   },
   {
     total: 100,
@@ -122,15 +122,24 @@ const tasks = [
   {
     total: 100,
     link: '/',
-    icon: 'faceIcon',
+    icon: 'thumbIcon',
     title: '11 Points Remaining',
     subheader: 'Introductory Questions',
     color: '',
     variant: 'determinate',
     value: 0,
-    barColorPrimary: 'linear-gradient(177.9deg, #00F260 0%, #0575E6 83.33%), #0576E6;'
+    barColorPrimary: 'linear-gradient(177.9deg, #00F260 0%, #0575E6 83.33%), #0576E6;',
   },
 ];
+
+const iconChange = (iconItems) => {
+  switch (iconItems) {
+    case 'faceIcon': return <FaceIcon color="primary" fontSize="large" />;
+    case 'cityIcon': return <CityIcon color="primary" fontSize="large" />;
+    case 'thumbIcon': return <ThumbIcon color="primary" fontSize="large" />;
+    default: return <FaceIcon color="primary" fontSize="large" />;
+  }
+};
 
 const ProgressCards = () => (
   <CardWrapper>
@@ -142,7 +151,7 @@ const ProgressCards = () => (
               action={
                 (
                   <IconButton>
-                    <FaceIcon color="primary" fontSize="large" />
+                    {iconChange(task.icon)}
                   </IconButton>
                 )
               }
