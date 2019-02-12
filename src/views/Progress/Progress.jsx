@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
 
-import MainHeading from '../components/MainHeading';
-import ProgressCards from '../components/ProgressCards';
-import Footer from '../components/Footer';
+
+import ProgressCards from '../../components/ProgressCards';
+
 
 const StyledWrapper = styled.div`
   font-family: 'Roboto', sans-serif;
@@ -25,9 +25,7 @@ const StyledWrapper = styled.div`
 export default () => (
   <Fragment>
     <StyledWrapper>
-      <MainHeading title="Kheta" color="#5F5F5F" />
       <ProgressCards />
     </StyledWrapper>
-    <Footer />
   </Fragment>
 );
