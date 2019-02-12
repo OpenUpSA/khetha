@@ -9,7 +9,6 @@ import IconButton from '@material-ui/core/es/IconButton/IconButton';
 import FaceIcon from '@material-ui/icons/Face';
 import CityIcon from '@material-ui/icons/LocationCity';
 import ThumbIcon from '@material-ui/icons/ThumbUp';
-// import PropTypes from 'prop-types';
 
 const CardWrapper = styled.ul`
   @media (min-width: 760px) {
@@ -168,101 +167,7 @@ const ProgressCards = () => (
         </CardLink>
       </CardItem>
     ))}
-
-    {/* <CardItem>
-      <CardLink to="/">
-        <TopicCard>
-          <StyledHeader
-            action={
-              (
-                <IconButton>
-                  <FaceIcon color="primary" fontSize="large" />
-                </IconButton>
-              )
-            }
-            title="11 Points Remaining"
-            subheader="Introductory Questions"
-          />
-          <HeaderProgress
-            variant="determinate"
-            value={68}
-            barColorPrimary="linear-gradient(177.9deg, #00F260 0%, #0575E6 83.33%), #0576E6;"
-          />
-        </TopicCard>
-      </CardLink>
-    </CardItem>
-    <CardItem>
-      <CardLink to="/">
-        <TopicCard>
-          <StyledHeader
-            action={
-              (
-                <IconButton>
-                  <CityIcon color="primary" fontSize="large" />
-                </IconButton>
-              )
-            }
-            title="31 Points Remaining"
-            subheader="Survey Your Community"
-          />
-          <HeaderProgress
-            variant="determinate"
-            value={25}
-            barColorPrimary="linear-gradient(177.9deg, #00F260 0%, #0575E6 83.33%), #0576E6;"
-          />
-        </TopicCard>
-      </CardLink>
-    </CardItem>
-    <CardItem>
-      <CardLink to="/">
-        <TopicCard background="transparent" boxShadow="none" border="#AFAFAF">
-          <StyledHeader
-            action={
-              (
-                <IconButton>
-                  <ThumbIcon fontSize="large" />
-                </IconButton>
-              )
-            }
-            title="Completed!"
-            subheader="Voting Preferences"
-            color="#AFAFAF"
-          />
-          <HeaderProgress
-            variant="determinate"
-            value={100}
-            barColorPrimary="#AFAFAF"
-          />
-        </TopicCard>
-      </CardLink>
-    </CardItem>
-    <CardItem>
-      <CardLink to="/">
-        <TopicCard>
-          <StyledHeader
-            action={
-              (
-                <IconButton>
-                  <CityIcon color="primary" fontSize="large" />
-                </IconButton>
-              )
-            }
-            title="31 Points Remaining"
-            subheader="Survey Your Community"
-          />
-          <HeaderProgress
-            variant="determinate"
-            value={0}
-            barColorPrimary="linear-gradient(177.9deg, #00F260 0%, #0575E6 83.33%), #0576E6;"
-          />
-        </TopicCard>
-      </CardLink>
-    </CardItem> */}
   </CardWrapper>
 );
-
-// ProgressCards.propTypes = {
-//   linkUrl: PropTypes.string.isRequired,
-// };
 
 export default ProgressCards;
