@@ -13,7 +13,7 @@ import PropTypes from 'prop-types';
 
 const CardWrapper = styled.ul`
   @media (min-width: 760px) {
-    width: 50%;
+    width: 60%;
     margin: auto;
   }
   display: flex;
