@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import t from 'prop-types';
 import GradientSelect from '../../components/GradientSelect';
 import SectionHeading from '../../components/SectionHeading';
-import GradientButton from '../../components/GradientButton';
 import PrizesWidget from '../../components/PrizesWidget';
 import Winners from './Winners';
 import { Section } from './styled';
@@ -105,10 +104,10 @@ Profile.propTypes = {
         description: t.string,
       }),
     }),
-    rewards: {
+    rewards: t.shape({
       qualify: t.func,
       notQualifyText: t.func,
-    },
+    }),
   }).isRequired,
 };
 
