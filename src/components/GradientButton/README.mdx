@@ -22,9 +22,9 @@ import GradientButton from './index';
 |---|---|
 |Internet Explorer 10+|Limitation description pending...|
 
-### Notes
+### Props
 
-Also exposes a named export called `createComponentWithLink`. This can be used via the [principle of currying](https://en.wikipedia.org/wiki/Currying)
+<PropsTable of={GradientButton} />
 
 ### Demos
 
@@ -106,28 +106,3 @@ Also exposes a named export called `createComponentWithLink`. This can be used v
     clickAction={() => console.log('Clicked!')} 
   />
 </Playground>
-
-#### **Using createComponentWithLink**
-
-You can use `createComponentWithLink` if you don't want to pass in `Link` all the time.
-
-```jsx
-import React from 'react';
-import { Link as link } from 'gatsby';
-import { createComponentWithLink } from './src/components/GradientButton';
-
-const ButtonWithLink = createComponentWithLink({ link });
-
-return () => (
-  <div>
-    <ButtonWithLink clickAction="https://google.com/example-1" /> {/* Opens new tab */}
-    <ButtonWithLink clickAction="/example-3" /> {/* Does not open new tab */}
-    <ButtonWithLink clickAction="//www.google.com" /> {/* Opens new tab */}
-    <ButtonWithLink clickAction="folder/example-3" /> {/* Does not open new tab */}
-  </div>
-)
-```
-
-### Props
-
-<PropsTable of={GradientButton} />
