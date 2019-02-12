@@ -119,7 +119,7 @@ const tasks = [
     value: 100,
     barColorPrimary: 'linear-gradient(177.9deg, #00F260 0%, #0575E6 83.33%), #0576E6;'
   },
-  { 
+  {
     total: 100,
     link: '/',
     icon: 'faceIcon',
