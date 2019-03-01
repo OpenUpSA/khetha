@@ -3,6 +3,9 @@
   "extends": [
     "airbnb"
   ],
+  "rules": {
+    "linebreak-style": 0
+  },
   "plugins": [
     "jest",
     "compat"
