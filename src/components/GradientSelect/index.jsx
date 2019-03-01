@@ -59,6 +59,8 @@ GradientSelect.propTypes = {
   ).isRequired,
   /** Forces the dropdown to have a certain value selected when it renders  */
   value: t.string,
+  /** The text to show when an option has been selected */
+  selected: t.string,
   /** The text to show when no option has been selected */
   placeholder: t.string,
   /** Whether to replace the normal background colour
@@ -70,10 +72,12 @@ GradientSelect.propTypes = {
   /** Calls this function with the value of selection
    * option as first parameter */
   callback: t.func,
+  /** Calls this function to change the value of selection
+   * option as first parameter */
+  changeCallback: t.func.isRequired,
   /** String applied before (styled as lable) value
   in button when a value is selected */
   prefix: t.string,
-  selected: t.string,
 };
 
 
