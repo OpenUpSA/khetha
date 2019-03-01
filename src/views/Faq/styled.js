@@ -19,7 +19,7 @@ const FlexQuestion = styled.div`
   font-weight: 500;
   line-height: normal;
   font-size: 14px;
-  color: #01C98B;
+  color: #0575E6;
   padding-bottom: 16px;
 
   @media screen and (min-width: 450px) {
