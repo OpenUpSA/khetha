@@ -96,5 +96,9 @@ export default Footer;
 
 
 Footer.propTypes = {
-  callback: t.func.isRequired,
+  callback: t.func,
+};
+
+Footer.defaultProps = {
+  callback: null
 };
