@@ -18,7 +18,7 @@ const calcLevelInfo = (points) => {
     };
   }
 
-  const nextPoints = iconKeys.length >= rewardLevels[iconKeys[index + 1]];
+  const nextPoints = rewardLevels[iconKeys[index + 1]];
 
   return {
     level,
