@@ -35,7 +35,7 @@ const Title = styled(Typography)`
 
 const Paragraph = styled(Typography)`
   padding-bottom: 24px;
-  
+
   && {
     font-family: Roboto;
     font-weight: normal;
@@ -62,6 +62,14 @@ const ButtonContainer = styled.div`
   @media screen and (min-width: 450px) {
     margin-bottom: none;
   }
+`;
+
+const ConfusingContainer = styled.div`
+  margin-top: 50px;
+`;
+
+const ConfuseButtonContainer = styled.div`
+  margin-top: 15px;;
 `;
 
 const actionsMarkup = (
@@ -97,11 +105,21 @@ const FaqCard = ({ title, body }) => (
   </CardWrapper>
 );
 
+const callConfusingSection = () => (
+  <ConfusingContainer>
+    <SubHeading text="Still confused?" />
+    <ConfuseButtonContainer>
+      <GradientButton text="USE OUR ONLINE CHAT" fullWidth />
+    </ConfuseButtonContainer>
+  </ConfusingContainer>
+);
+
 
 const Faq = ({ faqs = [], points }) => (
   <Layout {...{ points }}>
     <SubHeading text="Frequently Asked Questions" />
     {faqs.map(({ title, body }) => <FaqCard {...{ title, body }} key={title} />)}
+    {callConfusingSection()}
   </Layout>
 );
 
