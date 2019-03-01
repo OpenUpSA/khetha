@@ -6,11 +6,13 @@
 
 ## Contributor instructions:
 
+_If you have any questions about the following instructions please get in touch with us via [our core-team Slack workspace](https://openupsa.slack.com) (if you have access) or the following [public Gitter channel](#)._
+
 ### 🌱 1. Set up local environment
-1. Clone repository by running `git clone https://help.github.com/OpenUpSA/khetha/`.
+1. Clone the repository by running `git clone https://help.github.com/OpenUpSA/khetha/`.
 2. Make sure you have the latest release of [NodeJS](https://nodejs.org/en/) installed.
 3. Make sure you have the latest release of [Yarn](https://yarnpkg.com/en/docs/install) installed.
-4. Run `yarn` in the root folder of the repository.
+4. Run `yarn` in the root folder of the repository to install all dependancies.
 
 ### 👓 2. Read our documentation
 1. Please review the [branches](https://github.com/agis/git-style-guide) and [commits](https://github.com/agis/git-style-guide) sections in the following [documentation](https://github.com/agis/git-style-guide).
@@ -19,15 +21,14 @@
 
 ### ❤️ 3. Contribute
 1. Create a new branch in accordance with the above (skip this step if you are contributing on a specific branch)
-2. Make sure to do as many small commits as possible in accordance with [the above documentation].
 3. If you are adding a new component/module make sure to follow the supplied [new component/module instructions](#).
 4. If you are modifying an existing component make sure to develop against `yarn start:storybook` to sandbox components from business logic.
-5. Make sure to run occasionally run `yarn test` to see introduced errors and confirm scope of changes.
-6. If you have any questions about the above free to ask in [our core-team Slack workspace](https://openupsa.slack.com) or the following [Gitter channel](#).
+5. Make sure to run `yarn test` as often as possible to catch any errors you introduced and confirm the scope of your changes.
+6. If your changes broke any tests or any of the Storybook demos then make sure to include updated tests.
 
 ### 🚀 3. Make a pull request
-1. If you are making a public pull request (no write access) use the [forking Git workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow).
-2. If you are a project contributor (write access) use the [feature branch Git workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow).
+1. If you are making a public pull request (i.e. you do not have write access) use the [forking Git workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow).
+2. If you are a project contributor (.e. you have write access) use the [feature branch Git workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow).
 3. Make a [pull request](https://www.atlassian.com/git/tutorials/making-a-pull-request) via the [Github](#github) dashboard to the `master` branch.
 4. The designated owner of the repository will automatically be tagged in all pull requests via the `docs/CODEOWNERS` file.
 5. Once your code has been accepted and merged into `master` [Netlify](#netlify) will automatically deploy the changes to [khetha.org.zaa](http://khetha.org.za).
