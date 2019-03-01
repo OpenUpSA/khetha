@@ -12,12 +12,14 @@
 3. Make sure you have the latest release of [Yarn](https://yarnpkg.com/en/docs/install) installed.
 4. Run `yarn` in the root folder of the repository.
 
-### ❤️ 2. Contribute
+### 👓 2. Read our documentation
 1. Please review the [branches](https://github.com/agis/git-style-guide) and [commits](https://github.com/agis/git-style-guide) sections in the following [documentation](https://github.com/agis/git-style-guide).
-2. Create a new branch in accordance with the above (skip this step if you are contributing on a specific branch)
 3. Please read the following [document outlinging Khetha's code-architecture](#).
 4. Run `yarn start:docs` to review component/module level documentation as needed.
-5. Make sure to do as many small commits as possible in accordance with [the above documentation].
+
+### ❤️ 3. Contribute
+1. Create a new branch in accordance with the above (skip this step if you are contributing on a specific branch)
+2. Make sure to do as many small commits as possible in accordance with [the above documentation].
 3. If you are adding a new component/module make sure to follow the supplied [new component/module instructions](#).
 4. If you are modifying an existing component make sure to develop against `yarn start:storybook` to sandbox components from business logic.
 5. Make sure to run occasionally run `yarn test` to see introduced errors and confirm scope of changes.
