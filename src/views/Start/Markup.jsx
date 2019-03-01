@@ -75,7 +75,7 @@ const Markup = (props) => {
   ];
 
 
-  const options = createOptions(changeFilter, translation.view, amounts);
+  const options = createOptions(changeFilter, translation, amounts);
 
 
   return (
@@ -98,8 +98,8 @@ const Markup = (props) => {
         <GradientSelect
           {...{ options }}
           value={filter}
-          placeholder={translation.view.filter.title}
-          prefix={translation.view.filter.active}
+          placeholder={translation.filter.title}
+          prefix={translation.filter.active}
           filled
           full
         />
@@ -111,8 +111,8 @@ const Markup = (props) => {
             <Task
               id="need-more-tasks"
               transparent
-              title={translation.view.more.title}
-              description={translation.view.more.description}
+              title={translation.more.title}
+              description={translation.more.description}
             />
           </CardWrap>
         </TasksWrap>
