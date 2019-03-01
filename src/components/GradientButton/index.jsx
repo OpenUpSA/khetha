@@ -1,20 +1,49 @@
 import React, { Component } from 'react';
 import t from 'prop-types';
+
+
 import Markup from './Markup';
 
 
-class GradientButton extends Component {
-  state = {
-    loading: false,
+const convertResolveToMs = (resolve) => {
+  switch (resolve) {
+    case 'medium': return 2500;
+    case 'short': return 1000;
+    case 'long': return 5000;
+    default: return 0;
+  }
+};
+
+
+const calcForceResolve = (resolve = null) => {
+  if (resolve === true || resolve === false) {
+    return resolve;
   }
 
-  startLoading = (autoKill) => {
-    this.setState({ loading: true });
+  return null;
+};
 
-    if (autoKill) {
+
+class GradientButton extends Component {
+  constructor(props) {
+    super(props);
+
+    const { resolve } = this.props;
+
+    this.state = {
+      loading: calcForceResolve(resolve),
+    };
+  }
+
+  startLoading = () => {
+    const { resolve } = this.props;
+
+    if (resolve !== true && resolve !== false) {
+      this.setState({ loading: true });
+
       setTimeout(
-        () => this.setState({ loading: false }),
-        2000,
+        () => this.setState({ loading: null }),
+        convertResolveToMs(resolve),
       );
     }
   };
