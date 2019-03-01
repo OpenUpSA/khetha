@@ -20,20 +20,20 @@ const createProps = (seed) => {
 };
 
 
-const basic = () => <GradientButton {...createProps()} filled click={() => console.log('click')} />;
-const primary = () => <GradientButton {...createProps()} primary click={() => console.log('click')} />;
-const fullWidth = () => <GradientButton {...createProps()} fullWidth click={() => console.log('click')} />;
-const withIcon = () => <GradientButton {...createProps()} fullWidth icon="Grade" click={() => console.log('click')} />;
+const basic = () => <GradientButton {...createProps()} filled onButtonClick={() => console.log('click')} />;
+const primary = () => <GradientButton {...createProps()} primary onButtonClick={() => console.log('click')} />;
+const fullWidth = () => <GradientButton {...createProps()} fullWidth onButtonClick={() => console.log('click')} />;
+const withIcon = () => <GradientButton {...createProps()} fullWidth icon="Grade" onButtonClick={() => console.log('click')} />;
 
 
 const withResolvers = () => (
   <div>
-    <GradientButton text="Unresolved Forced" resolve={false} />
-    <GradientButton text="Resolved Forced" resolve />
-    <GradientButton text="Resolve Short" resolve="short" />
-    <GradientButton text="Resolve Medium" resolve="medium" />
-    <GradientButton text="Resolve Long" resolve="long" />
-    <GradientButton text="Resolve Infinite" resolve="infinite" />
+    <GradientButton text="Unresolved Forced" resolve={false} onButtonClick={() => console.log('click')} />
+    <GradientButton text="Resolved Forced" resolve  onButtonClick={() => console.log('click')}/>
+    <GradientButton text="Resolve Short" resolve="short" onButtonClick={() => console.log('click')} />
+    <GradientButton text="Resolve Medium" resolve="medium" onButtonClick={() => console.log('click')} />
+    <GradientButton text="Resolve Long" resolve="long" onButtonClick={() => console.log('click')} />
+    <GradientButton text="Resolve Infinite" resolve="infinite" onButtonClick={() => console.log('click')}/>
   </div>
 );
 

@@ -22,7 +22,7 @@ const createProps = (seed) => {
 
 
 const basic = () => (
-  <Layout {...createProps()}>
+  <Layout {...createProps()} onMenuClick={console.log}>
     {randomLengthBlankArray(1, 10).map(() => (
       <p key={faker.random.uuid()}>{faker.lorem.paragraphs()}</p>
     ))}
@@ -31,7 +31,7 @@ const basic = () => (
 
 
 const noHeader = () => (
-  <Layout {...createProps()} header={false}>
+  <Layout {...createProps()} header={false} onMenuClick={console.log}>
     {randomLengthBlankArray(1, 10).map(() => (
       <p key={faker.random.uuid()}>{faker.lorem.paragraphs()}</p>
     ))}
@@ -40,7 +40,7 @@ const noHeader = () => (
 
 
 const noFooter = () => (
-  <Layout {...createProps()} footer={false}>
+  <Layout {...createProps()} footer={false} onMenuClick={console.log}>
     {randomLengthBlankArray(1, 10).map(() => (
       <p key={faker.random.uuid()}>{faker.lorem.paragraphs()}</p>
     ))}

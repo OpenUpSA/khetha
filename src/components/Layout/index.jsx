@@ -12,9 +12,9 @@ import {
   InnerWrapper,
 } from './styled';
 
-const buildFooter = (callback, demo) => (
+const buildFooter = (onMenuClick, demo) => (
   <FooterWrapper {...{ demo }}>
-    <Footer {...{ callback }} />
+    <Footer {...{ onMenuClick }} />
   </FooterWrapper>
 );
 
@@ -25,7 +25,7 @@ const Layout = (props) => {
     points,
     header = true,
     footer = true,
-    clickCallback,
+    onMenuClick,
     fullscreen,
   } = props;
 
@@ -39,7 +39,7 @@ const Layout = (props) => {
           {header && <Header {...{ points }} />}
           {children}
         </InnerWrapper>
-        {footer && buildFooter(clickCallback)}
+        {footer && buildFooter(onMenuClick)}
       </Wrapper>
     </Fragment>
   );
@@ -65,13 +65,12 @@ Layout.propTypes = {
    * on a button in the footer. Function will take one of
    * the following as it's first parameter: 'progress', 'start'
    * or 'profile'. This will likely be 'navigate' from import { navigate } from 'gatsby' */
-  clickCallback: t.func,
+  onMenuClick: t.func.isRequired,
 };
 
 
 Layout.defaultProps = {
   header: true,
   footer: true,
-  clickCallback: null,
   points: 0,
 };

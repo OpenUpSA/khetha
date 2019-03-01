@@ -70,18 +70,18 @@ const FooterButton = styled.span`
 `;
 
 
-const Footer = ({ callback }) => (
+const Footer = ({ onMenuClick }) => (
   <FooterBar>
     <FooterToolbar>
       <FooterList>
         <FooterItem>
-          <FooterButton onClick={() => callback('/start')}>
+          <FooterButton onClick={() => onMenuClick('/start')}>
             <AddIcon />
             Start
           </FooterButton>
         </FooterItem>
         <FooterItem>
-          <FooterButton onClick={() => callback('/profile')}>
+          <FooterButton onClick={() => onMenuClick('/profile')}>
             <PersonIcon />
             Profile
           </FooterButton>
@@ -96,9 +96,5 @@ export default Footer;
 
 
 Footer.propTypes = {
-  callback: t.func,
-};
-
-Footer.defaultProps = {
-  callback: null
+  onMenuClick: t.func.isRequired,
 };

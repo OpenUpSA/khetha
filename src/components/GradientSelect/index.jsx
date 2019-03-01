@@ -73,6 +73,7 @@ GradientSelect.propTypes = {
   /** String applied before (styled as lable) value
   in button when a value is selected */
   prefix: t.string,
+  selected: t.string,
 };
 
 
@@ -83,4 +84,5 @@ GradientSelect.defaultProps = {
   full: false,
   prefix: null,
   value: null,
+  selected: null,
 };

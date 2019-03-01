@@ -12,14 +12,14 @@ import {
 
 const ActionWrapper = (props) => {
   const {
-    clickAction,
+    onButtonClick,
     children,
     startLoading,
   } = props;
 
   const autoKillLoading = () => {
     startLoading(true);
-    clickAction();
+    onButtonClick();
   };
 
   return (
@@ -51,7 +51,7 @@ const Markup = (props) => {
     primary: filled,
     prefix,
     icon,
-    click: clickAction,
+    onButtonClick,
     link,
     fullWidth: full,
     startLoading,
@@ -95,7 +95,7 @@ const Markup = (props) => {
   }
 
   return (
-    <ActionWrapper {...{ clickAction, link, startLoading }}>
+    <ActionWrapper {...{ onButtonClick, link, startLoading }}>
       <StyledButton
         size="large"
         fullWidth={full}
@@ -115,7 +115,7 @@ Markup.propTypes = {
   buttonRef: t.shape({
     current: t.node,
   }),
-  clickAction: t.oneOfType([
+  onButtonClick: t.oneOfType([
     t.string,
     t.func,
   ]).isRequired,
@@ -142,7 +142,7 @@ Markup.defaultProps = {
 
 
 ActionWrapper.propTypes = {
-  clickAction: t.oneOfType([
+  onButtonClick: t.oneOfType([
     t.string,
     t.func,
   ]).isRequired,

@@ -75,7 +75,7 @@ GradientButton.propTypes = {
    * if string is passed url will be hotloaded via AJAX when button is
    * clicked. However if string links to an external domain a url will
    * be opened in new tab when button is clicked */
-  clickAction: t.oneOfType([
+  onButtonClick: t.oneOfType([
     t.string,
     t.func,
   ]).isRequired,
