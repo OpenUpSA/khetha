@@ -1,19 +1,18 @@
 import React from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
+import t from 'prop-types';
+
+
 import SvgIcon from './SvgIcon';
 import ShieldIcon from './ShieldIcon';
+import {
+  PositionWrapper,
+} from './styled';
 
 
-const PositionWrapper = styled.div`
-  position: relative;
-`;
-
-
-const LevelBadge = ({ level = 0 }) => (
-  <PositionWrapper>
-    <SvgIcon {...{ level }} />
-    <ShieldIcon {...{ level }} />
+const LevelBadge = ({ points = 0, size = 'medium' }) => (
+  <PositionWrapper {...{ size }}>
+    <SvgIcon {...{ points, size }} />
+    {size === 'medium' && <ShieldIcon {...{ points }} />}
   </PositionWrapper>
 );
 
@@ -24,10 +23,12 @@ export default LevelBadge;
 LevelBadge.propTypes = {
   /** User level number to determine what icon
    * and number in the shield gets returned  */
-  level: PropTypes.number,
+  points: t.number,
+  size: t.oneOf(['small', 'medium'])
 };
 
 
 LevelBadge.defaultProps = {
-  level: 0,
+  points: 0,
+  size: 'medium',
 };
