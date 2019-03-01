@@ -32,9 +32,17 @@ class PanelState extends Component {
   componentWillReceiveProps() {
     const { current } = this.values.focusElement;
 
-    if (current && current.focus) {
-      current.focus();
+    if (current) {
+      scrollIntoView(current);
+
+      if (current.focus) {
+        return current.focus({
+          preventScroll: true,
+        });
+      }
     }
+
+    return null;
   }
 
 
