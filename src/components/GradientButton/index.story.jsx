@@ -20,10 +20,10 @@ const createProps = (seed) => {
 };
 
 
-const basic = () => <GradientButton {...createProps()} filled />;
-const primary = () => <GradientButton {...createProps()} primary />;
-const fullWidth = () => <GradientButton {...createProps()} fullWidth />;
-const withIcon = () => <GradientButton {...createProps()} fullWidth icon="Grade" />;
+const basic = () => <GradientButton {...createProps()} filled click={() => console.log('click')} />;
+const primary = () => <GradientButton {...createProps()} primary click={() => console.log('click')} />;
+const fullWidth = () => <GradientButton {...createProps()} fullWidth click={() => console.log('click')} />;
+const withIcon = () => <GradientButton {...createProps()} fullWidth icon="Grade" click={() => console.log('click')} />;
 
 
 const withResolvers = () => (
