@@ -6,13 +6,13 @@
 
 ## Contributor instructions:
 
-### 1. Set up local environment
+### 🌱 1. Set up local environment
 1. Clone repository by running `git clone https://help.github.com/OpenUpSA/khetha/`.
 2. Make sure you have the latest release of [NodeJS](https://nodejs.org/en/) installed.
 3. Make sure you have the latest release of [Yarn](https://yarnpkg.com/en/docs/install) installed.
 4. Run `yarn` in the root folder of the repository.
 
-### 2. Contributing
+### ❤️ 2. Contribute
 1. Please review the [branches](https://github.com/agis/git-style-guide) and [commits](https://github.com/agis/git-style-guide) sections in the following [documentation](https://github.com/agis/git-style-guide).
 2. Create a new branch in accordance with the above (skip this step if you are contributing on a specific branch)
 3. Please read the following [document outlinging Khetha's code-architecture](#).
@@ -23,7 +23,7 @@
 5. Make sure to run occasionally run `yarn test` to see introduced errors and confirm scope of changes.
 6. If you have any questions about the above free to ask in [our core-team Slack workspace](https://openupsa.slack.com) or the following [Gitter channel](#).
 
-### 3. Making a pull request
+### 🚀 3. Make a pull request
 1. If you are making a public pull request (no write access) use the [forking Git workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow).
 2. If you are a project contributor (write access) use the [feature branch Git workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow).
 3. Make a [pull request](https://www.atlassian.com/git/tutorials/making-a-pull-request) via the [Github](#github) dashboard to the `master` branch.
