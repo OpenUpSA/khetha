@@ -1,35 +1,19 @@
 import React, { Fragment } from 'react';
 import t from 'prop-types';
-import styled from 'styled-components';
-import Button from '@material-ui/core/Button';
-import CircularProgress from '@material-ui/core/CircularProgress';
-import calcIfExternalLink from '../../helpers/calcIfExternalLink';
-import Icon from '../Icon';
-import removeProps from '../../helpers/removeProps';
 
 
-const gradientBg = 'linear-gradient(162.21deg, #00F260 0%, #0575E6 83.33%), red';
-
-const StyledButton = styled(Button)`
-  && {
-    background: ${({ variant }) => (variant === 'contained' ? gradientBg : 'white')};
-    color: ${({ variant }) => (variant === 'contained' ? 'white' : '#0B5FFF')};
-    border-color: ${({ variant }) => (variant === 'contained' ? 'transparent' : '#0B5FFF')};
-    min-height: 44px;
-  }
-`;
-
-
-const NoUnderlinkNativeLink = styled.a`
-  text-decoration: none;
-`;
+import {
+  StyledButton,
+  ContentWrap,
+  StyledIcon,
+  CustomProg,
+} from './styled';
 
 
 const ActionWrapper = (props) => {
   const {
     clickAction,
     children,
-    link,
     startLoading,
   } = props;
 
@@ -38,70 +22,16 @@ const ActionWrapper = (props) => {
     clickAction();
   };
 
-  const noKillLoading = () => startLoading(false);
-
-
-  if (typeof clickAction === 'function') {
-    return (
-      <span
-        tabIndex="0"
-        onClick={autoKillLoading}
-        onKeyDown={autoKillLoading}
-        role="button"
-      >
-        {children}
-      </span>
-    );
-  }
-
-  if (!link) {
-    return (
-      <NoUnderlinkNativeLink href={clickAction} onClick={noKillLoading}>
-        {children}
-      </NoUnderlinkNativeLink>
-    );
-  }
-
-  if (calcIfExternalLink(clickAction)) {
-    return (
-      <NoUnderlinkNativeLink
-        href={clickAction}
-        target="_blank"
-        rel="noopener noreferrer"
-        onClick={noKillLoading}
-      >
-        {children}
-      </NoUnderlinkNativeLink>
-    );
-  }
-
-  const StyledLink = styled(link)`
-    && {
-      text-decoration: none;
-    }
-  `;
-
   return (
-    <StyledLink to={clickAction} onClick={noKillLoading}>
+    <span
+      tabIndex="0"
+      onClick={autoKillLoading}
+      onKeyDown={autoKillLoading}
+      role="button"
+    >
       {children}
-    </StyledLink>
+    </span>
   );
-};
-
-
-ActionWrapper.propTypes = {
-  clickAction: t.oneOfType([
-    t.string,
-    t.func,
-  ]).isRequired,
-  children: t.node.isRequired,
-  link: t.func,
-  startLoading: t.func.isRequired,
-};
-
-
-ActionWrapper.defaultProps = {
-  link: null,
 };
 
 
@@ -115,32 +45,15 @@ const createPrefix = string => (
 );
 
 
-const styleIcon = icon => styled(icon)`
-  margin-left: 10px;
-  position: relative;
-  left: 10px;
-  bottom: 2px;
-  flex-grow: 1,
-`;
-
-
-const ContentWrap = styled.div`
-  opacity: ${({ invisible }) => (invisible ? 0 : 1)};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-
 const Markup = (props) => {
   const {
     text,
-    filled,
+    primary: filled,
     prefix,
     icon,
-    clickAction,
+    click: clickAction,
     link,
-    full,
+    fullWidth: full,
     startLoading,
     loading,
     buttonRef,
@@ -148,14 +61,6 @@ const Markup = (props) => {
 
 
   const variant = filled ? 'contained' : 'outlined';
-  const StyledIcon = styleIcon(Icon);
-
-
-  const SanitisedProgress = removeProps({ component: CircularProgress, blacklist: 'fill' });
-  const CustomProg = styled(SanitisedProgress)`
-    color: ${({ fill }) => (fill ? 'white' : '#0B5FFF')};
-    position: absolute;
-  `;
 
 
   const createIcon = (type, fill) => (
@@ -189,7 +94,6 @@ const Markup = (props) => {
     );
   }
 
-
   return (
     <ActionWrapper {...{ clickAction, link, startLoading }}>
       <StyledButton
@@ -216,7 +120,7 @@ Markup.propTypes = {
     t.func,
   ]).isRequired,
   text: t.string,
-  filled: t.bool,
+  primary: t.bool,
   full: t.bool,
   prefix: t.string,
   icon: t.string,
@@ -228,10 +132,20 @@ Markup.propTypes = {
 Markup.defaultProps = {
   buttonRef: null,
   text: null,
-  filled: false,
+  primary: false,
   prefix: null,
   icon: null,
   link: null,
   full: false,
   loading: false,
+};
+
+
+ActionWrapper.propTypes = {
+  clickAction: t.oneOfType([
+    t.string,
+    t.func,
+  ]).isRequired,
+  children: t.node.isRequired,
+  startLoading: t.func.isRequired,
 };
