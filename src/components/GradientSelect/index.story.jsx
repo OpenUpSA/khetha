@@ -10,106 +10,6 @@ import GradientSelect from './index';
 import { randomLengthBlankArray } from '../../helpers/randomizer';
 
 
-// <Playground>
-//   <GradientSelect
-//     options={[
-//       { text: 'Option 1' },
-//       { text: 'Option 2' },
-//     ]}
-//   />
-// </Playground>
-
-// #### With Reset
-
-// <Playground>
-//   <GradientSelect
-//     options={[
-//       { text: 'None', reset: true },
-//       { text: 'Option 1' },
-//       { text: 'Option 2' },
-//     ]}
-//   />
-// </Playground>
-
-// #### With Disabled
-
-// <Playground>
-//   <GradientSelect
-//     options={[
-//       { text: 'Option 1', disabled: true },
-//       { text: 'Option 2' },
-//     ]}
-//   />
-// </Playground>
-
-// #### With Existing Selection
-
-// <Playground>
-//   <GradientSelect
-//     value="Option 2"
-//     options={[
-//       { text: 'Option 1' },
-//       { text: 'Option 2' },
-//     ]}
-//   />
-// </Playground>
-
-// #### With Callback
-
-// <Playground>
-//   <GradientSelect
-//     options={[
-//       {
-//         text: 'Option 1',
-//         callback: console.warn,
-//       },
-//       {
-//         text: 'Option 2',
-//         callback: () => console.log('Hello!'),
-//       }
-//     ]}
-//   />
-// </Playground>
-
-// #### As Full
-
-// <Playground>
-//   <GradientSelect
-//     full
-//     options={[
-//       { text: 'Option 1' },
-//       { text: 'Option 2' },
-//     ]}
-//   />
-// </Playground>
-
-// #### Filled
-
-// <Playground>
-//   <GradientSelect
-//     filled
-//     options={[
-//       { text: 'Option 1' },
-//       { text: 'Option 2' },
-//     ]}
-//   />
-// </Playground>
-
-// #### Prefix
-
-// <Playground>
-//   <GradientSelect
-//     filled
-//     
-//     options={[
-//       { text: 'Option 1' },
-//       { text: 'Option 2' },
-//     ]}
-//   />
-// </Playground>
-
-
-
 const createProps = (seed) => {
   if (seed) {
     faker.seed(seed);
@@ -117,6 +17,7 @@ const createProps = (seed) => {
 
   return {
     options: randomLengthBlankArray(1, 6).map((value, index) => ({
+      id: index,
       text: `${faker.commerce.department()} ${index}`,
     })),
   };
@@ -126,6 +27,7 @@ const createProps = (seed) => {
 const propsWithReset = {
   options: [
     {
+      id: 'reset',
       text: 'Reset',
       reset: true,
     },
@@ -136,6 +38,7 @@ const propsWithReset = {
 const propsWithSelected = {
   options: [
     {
+      id: 'disabled',
       text: 'Hello World!',
     },
     ...createProps().options,
@@ -154,31 +57,31 @@ const propsWithDisabled = {
 
 
 const basic = () => {
-  const result = <GradientSelect {...createProps()} changeCallback={console.log} />;
+  const result = <GradientSelect {...createProps()} onSelectionChange={console.log} />;
   return result;
 };
 
 
 const primary = () => {
-  const result = <GradientSelect {...createProps()} primary changeCallback={console.log} />;
+  const result = <GradientSelect {...createProps()} primary onSelectionChange={console.log} />;
   return result;
 };
 
 
 const fullWidth = () => {
-  const result = <GradientSelect {...createProps()} fullWidth changeCallback={console.log} />;
+  const result = <GradientSelect {...createProps()} fullWidth onSelectionChange={console.log} />;
   return result;
 };
 
 
 const disabled = () => {
-  const result = <GradientSelect {...propsWithDisabled} changeCallback={console.log} />;
+  const result = <GradientSelect {...propsWithDisabled} onSelectionChange={console.log} />;
   return result;
 };
 
 
 const reset = () => {
-  const result = <GradientSelect {...propsWithReset} changeCallback={console.log} />;
+  const result = <GradientSelect {...propsWithReset} onSelectionChange={console.log} />;
   return result;
 };
 
@@ -187,7 +90,7 @@ const selected = () => {
     <GradientSelect
       {...propsWithSelected}
       selected="Hello World!"
-      changeCallback={console.log}
+      onSelectionChange={console.log}
     />
   );
 
