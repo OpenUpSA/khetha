@@ -35,7 +35,7 @@ const Markup = (props) => {
           <GradientButton
             primary
             text={translation[step].primary}
-            click={nextStep}
+            onButtonPress={nextStep}
             resolve={step > 1 ? 'infinite' : 'short'}
           />
         </Info>

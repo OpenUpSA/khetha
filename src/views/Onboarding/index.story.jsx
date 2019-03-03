@@ -44,7 +44,7 @@ const createProps = (seed) => {
 const basic = () => (
   <Onboarding
     {...createProps()}
-    completeCallback={() => console.log('completed!')}
+    onCompleteOnboarding={() => console.log('completed!')}
   />
 );
 
