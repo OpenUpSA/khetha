@@ -1,28 +1,48 @@
 import React, { Component } from 'react';
 import t from 'prop-types';
+
+
 import Markup from './Markup';
 
 
 class ProgressList extends Component {
-  state = {
-    focused: 0,
+  constructor(props) {
+    super(props);
+
+    const { advance, items } = this.props;
+
+    const pendingList = !advance ? [] : items
+      .filter(({ progress }) => progress !== true && !(progress >= 100))
+      .map(({ id: itemId }) => itemId);
+
+    this.state = {
+      focused: pendingList[0],
+    };
   }
 
-  changeFocus = (value, index, newValue) => {
-    const { items, updateCallback } = this.props;
+  changeFocus = (value, id, itemValue) => {
+    const { items, onSaveAnswer, advance } = this.props;
     const { focused } = this.state;
-    const limit = items.length;
-    const forward = focused + 1;
 
-    if (value === true && forward <= limit) {
-      if (updateCallback) {
-        updateCallback(index, newValue);
-      }
-      return this.setState({ focused: forward });
+    if (onSaveAnswer) {
+      onSaveAnswer({ id, value: itemValue });
     }
 
-    if (value <= limit) {
+    if (value || value === 0) {
       return this.setState({ focused: value });
+    }
+
+    const pendingList = !advance ? [] : items
+      .filter(({ progress }) => progress !== true && !(progress >= 100))
+      .map(({ id: itemId }) => itemId);
+
+    const nextIndex = pendingList.findIndex(focusValue => focusValue > focused);
+
+    const nextItem = pendingList[nextIndex] || pendingList[0];
+
+    if (advance && nextItem) {
+      this.setState({ focused: nextItem });
+      return null;
     }
 
     return null;
@@ -31,14 +51,17 @@ class ProgressList extends Component {
   render() {
     const { props, state, ...events } = this;
 
+    const focused = props.overrideFocused || state.focused;
+
     const passedProps = {
-      onComplete: props.onComplete,
+      focused,
+      pendingList: props.pendingList,
+      advance: props.advance,
       incremental: props.incremental,
       buttons: props.buttons,
       items: props.items,
-      focused: state.focused,
       changeFocus: events.changeFocus,
-      next: (index, value) => events.changeFocus(true, index, value),
+      next: id => value => events.changeFocus(null, id, value),
     };
 
     return <Markup {...passedProps} />;
@@ -53,13 +76,10 @@ ProgressList.propTypes = {
   /** If this Progresslist is guided (by means of 'onComplete') then you can
    * fire this callback everytime a value is selected in a panel */
   updateCallback: t.func,
-  /** If a function is passed, then a user is expected to complete all items inside
-   * the panels. Once all items are completed a 'submit' button will appear that
-   * triggers this function as a callback when clicked. If a function is passed,
-   * then users will be guided through the panels in a linear fashion. This means
+  /** If true then users will be guided through the panels in a linear fashion. This means
    * that only one item can be opened at a time and that the first item starts
    * openend. */
-  onComplete: t.func,
+  guided: t.bool,
   /** Whether progress is tracked incrementally. If true
    * then progress is indicate by percentage (0 - 100),
    * if false then progress can only be true or false */
@@ -83,7 +103,7 @@ ProgressList.propTypes = {
 
 ProgressList.defaultProps = {
   updateCallback: null,
-  onComplete: null,
+  guided: false,
   incremental: false,
   buttons: false,
   items: null,

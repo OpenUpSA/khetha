@@ -1,19 +1,9 @@
 import React, { Component, createRef } from 'react';
 import scrollIntoView from 'scroll-into-view';
-import Panel from './Panel';
 
 
-const calcOpenState = (open, index, guided, focused) => {
-  if (!guided) {
-    return open;
-  }
-
-  if (focused === index) {
-    return true;
-  }
-
-  return false;
-};
+import calcOpenState from './calcOpenState';
+import Markup from './Markup';
 
 
 class PanelState extends Component {
@@ -29,23 +19,6 @@ class PanelState extends Component {
     };
   }
 
-  componentWillReceiveProps() {
-    const { current } = this.values.focusElement;
-
-    if (current) {
-      scrollIntoView(current);
-
-      if (current.focus) {
-        return current.focus({
-          preventScroll: true,
-        });
-      }
-    }
-
-    return null;
-  }
-
-
   toggleOpen = () => {
     const { open } = this.state;
     this.setState({ open: !open });
@@ -59,25 +32,39 @@ class PanelState extends Component {
       ...events
     } = this;
 
+    const htmlElement = values.focusElement.current;
+
+    const open = calcOpenState(
+      state.open,
+      props.index,
+      props.advance,
+      props.focused,
+    );
+
+    if (props.advance && htmlElement && open) {
+      scrollIntoView(htmlElement);
+    }
+
     const passedProps = {
       incremental: props.incremental,
       buttons: props.buttons,
       progress: props.progress,
+      id: props.id,
       title: props.title,
       summary: props.summary,
       content: props.content,
       highlighted: props.highlighted,
-      open: calcOpenState(state.open, props.index, props.guided, props.focused),
       toggleOpen: events.toggleOpen,
       index: props.index,
       error: props.error,
       next: props.next,
-      focusElement: values.focusElement,
       changeFocus: props.changeFocus,
-      guided: props.guided,
+      advance: props.advance,
+      focusElement: values.focusElement,
+      open,
     };
 
-    return <Panel {...passedProps} />;
+    return <Markup {...passedProps} />;
   }
 }
 

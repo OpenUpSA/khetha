@@ -1,16 +1,8 @@
 import React, { Fragment } from 'react';
 import t from 'prop-types';
-import styled from 'styled-components';
-import PanelState from './PanelState';
-import GradientButton from '../GradientButton';
 
 
-const SubmitWrapper = styled.div`
-  width: 100%;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-`;
+import Panel from './Panel';
 
 
 const Markup = (props) => {
@@ -20,7 +12,7 @@ const Markup = (props) => {
     items,
     focused,
     changeFocus,
-    onComplete,
+    advance,
     next,
   } = props;
 
@@ -31,8 +23,9 @@ const Markup = (props) => {
       index,
       focused,
       changeFocus,
-      guided: !!onComplete,
-      next,
+      advance,
+      next: next(itemProps.id),
+      id: itemProps.id,
       error: itemProps.error,
       progress: itemProps.progress,
       title: itemProps.title,
@@ -42,24 +35,17 @@ const Markup = (props) => {
     };
 
     return (
-      <PanelState
+      <Panel
         {...passedProps}
         key={itemProps.title}
       />
     );
   });
 
-  const buildSubmit = () => (
-    <SubmitWrapper>
-      <GradientButton filled text="Submit Answers" clickAction={onComplete} />
-    </SubmitWrapper>
-  );
-
 
   return (
     <Fragment>
       {createPanels}
-      {!!onComplete && items.filter(({ summary }) => !summary).length <= 0 && buildSubmit()}
     </Fragment>
   );
 };
@@ -69,7 +55,6 @@ export default Markup;
 
 
 Markup.propTypes = {
-  onComplete: t.func,
   focused: t.number,
   changeFocus: t.func.isRequired,
   incremental: t.bool,
@@ -88,7 +73,6 @@ Markup.propTypes = {
 
 
 Markup.defaultProps = {
-  onComplete: null,
   focused: null,
   incremental: false,
   buttons: false,
