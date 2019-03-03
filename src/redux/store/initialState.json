@@ -4,13 +4,11 @@
     "synced": null
   },
   "info": {
-    "language": {
-      "timestamp": null,
-      "value": null
-    },
     "joined": null,
     "id": null,
-    "notifications": []
+    "points": 0,
+    "notification": null
   },
-  "tasks": []
+  "answers": null,
+  "errors": []
 }
