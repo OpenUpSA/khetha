@@ -1,41 +1,40 @@
 /* eslint-disable import/prefer-default-export */
-// import { createElement } from 'react';
-// import { Provider } from 'react-redux';
-// import { navigate } from 'gatsby';
-// import { version as targetStorageVersion } from './src/config/storage.json';
-// import { setVersion as setStorageVersion } from './src/redux/modules/storage';
-// import { mergeStateFromRemote, overrideRemoteState } from './src/redux/actions';
-// import store from './src/redux/store';
 
 
-// const wrapRootElement = ({ element }) => (
-//   createElement(Provider, { store }, element)
-// );
+import { createElement } from 'react';
+import { Provider } from 'react-redux';
+import { navigate } from 'gatsby';
 
 
-// const wipeStorage = ({ version }) => {
-//   window.localStorage.clear();
-//   store.dispatch(setStorageVersion({ version }));
-// };
+import { createUser } from './src/redux/actions';
+import store from './src/redux/store';
 
 
-// const onInitialClientRender = () => {
-//   const { storage } = store.getState();
-//   const { version: storageVersion } = storage;
-
-//   if (storageVersion < targetStorageVersion) {
-//     wipeStorage({ version: targetStorageVersion });
-//   }
-// };
+const wrapRootElement = ({ element }) => (
+  createElement(Provider, { store }, element)
+);
 
 
-// export {
-//   wrapRootElement,
-//   onInitialClientRender,
-// };
+const onInitialClientRender = () => {
+  const { info } = store.getState();
+  const { id } = info;
+
+  if (!id) {
+    navigate('/intro/');
+    return store.dispatch(createUser());
+  }
+
+  return null;
+};
 
 
-// export default {
-//   wrapRootElement,
-//   onInitialClientRender,
-// };
+export {
+  wrapRootElement,
+  onInitialClientRender,
+};
+
+
+export default {
+  wrapRootElement,
+  onInitialClientRender,
+};
