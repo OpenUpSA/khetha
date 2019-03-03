@@ -22,7 +22,7 @@ const connectToReduxStore = connect(stateToProps, dispatchToProps);
 
 class Page extends Component {
   componentDidMount() {
-    const { allAnswers } = this.props;
+    // const { allAnswers } = this.props;
 
     // if (allAnswers) {
     //   return navigate('/progress/');

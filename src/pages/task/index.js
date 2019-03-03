@@ -84,9 +84,9 @@ const createProps = (props, id) => {
   const {
     data,
     allAnswers,
-    allTasks,
+    // allTasks,
     points,
-    title,
+    // title,
     changeAnswer,
     submit,
   } = props;
@@ -106,8 +106,11 @@ const createProps = (props, id) => {
     onMenuButtonPress: navigate,
     questions: task.questions,
     answers: answers && answers.map(item => (item ? item.value : null)),
-    onQuestionSave: ({ index, value }) => changeAnswer(id, formatForSave({ answers, index, value })),
-    onTaskSubmit: ({ index, value }) => {
+    onQuestionSave: ({ index, value }) => changeAnswer(
+      id,
+      formatForSave({ answers, index, value }),
+    ),
+    onTaskSubmit: () => {
       submit(id, points);
       return navigate('/start/');
     },
