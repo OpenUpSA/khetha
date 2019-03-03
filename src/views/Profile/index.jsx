@@ -9,10 +9,10 @@ import Winners from './Winners';
 import { Section } from './styled';
 
 
-const createPrizeSection = (text, rewards, points) => (
+const createPrizeSection = (translation, rewards, points) => (
   <Section>
-    <SectionHeading text={text.title} gutter />
-    <PrizesWidget {...{ rewards, points, text }} />
+    <SectionHeading text={translation.title} gutter />
+    <PrizesWidget {...{ rewards, points, translation }} />
   </Section>
 );
 
@@ -23,10 +23,11 @@ const Profile = (props) => {
     winners,
     rewards,
     points,
+    onMenuButtonPress,
   } = props;
 
   return (
-    <Layout {...{ points }}>
+    <Layout {...{ points, onMenuButtonPress }}>
       {rewards && createPrizeSection(translation.rewards, rewards, points)}
       {winners && rewards && <Winners {...{ winners, rewards }} text={translation.winners} />}
     </Layout>
