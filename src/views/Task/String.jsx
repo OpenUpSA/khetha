@@ -1,3 +1,6 @@
+import React from 'react';
+
+
 class FormBinder extends Component {
   constructor(props) {
     super(props);
