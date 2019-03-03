@@ -25,7 +25,7 @@ const Layout = (props) => {
     points,
     header = true,
     footer = true,
-    clickCallback,
+    onMenuButtonPress,
     fullscreen,
   } = props;
 
@@ -39,7 +39,7 @@ const Layout = (props) => {
           {header && <Header {...{ points }} />}
           {children}
         </InnerWrapper>
-        {footer && buildFooter(clickCallback)}
+        {footer && buildFooter(onMenuButtonPress)}
       </Wrapper>
     </Fragment>
   );

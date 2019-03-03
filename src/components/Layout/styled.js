@@ -3,17 +3,18 @@ import { Typography } from '@material-ui/core';
 
 
 const GlobalStyling = createGlobalStyle`
-html {
-  overflow-y: scroll;
-}
+  body {
+    padding: 0 !important; 
+    overflow-y: scroll !important;
+  }
 `;
 
 
 const Wrapper = styled.div`
-background: #EDEDED;
-min-height: 100vh;
-padding: ${({ fullscreen }) => (fullscreen ? '0' : '30px')};
-padding-bottom: 200px;
+  background: #EDEDED;
+  min-height: 100vh;
+  padding: ${({ fullscreen }) => (fullscreen ? '0' : '30px')};
+  padding-bottom: 200px;
 `;
 
 
