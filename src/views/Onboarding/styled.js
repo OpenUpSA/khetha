@@ -4,6 +4,7 @@ import { Typography } from '@material-ui/core';
 
 
 import Icon from '../../components/Icon';
+import { secondary } from '../../tokens/colors';
 
 
 const Animate = posed.div({
@@ -130,7 +131,7 @@ const PrizesWrapper = styled.div`
 
 const GreenIcon = styled(Icon)`
   && {
-    fill: red !important;
+    fill: ${secondary} !important;
   }
 `;
 

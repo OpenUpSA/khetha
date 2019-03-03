@@ -26,14 +26,14 @@ export default class Onboarding extends Component {
   };
 
   nextStep = () => {
-    const { completeCallback } = this.props;
+    const { onCompleteOnboarding } = this.props;
     const { step } = this.state;
 
     if (step < 2) {
       return this.setState({ step: step + 1 });
     }
 
-    return completeCallback();
+    return onCompleteOnboarding();
   }
 
   render() {
