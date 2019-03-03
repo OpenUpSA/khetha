@@ -27,6 +27,7 @@ module.exports = {
     ...(createHotjarConfig({ id: HOTJAR_ID, sv: HOTJAR_SNIPPET_VERSION })),
     ...(createAnalyticsConfig({ trackingId: GOOGLE_ANALYTICS_ID })),
     ...(createSentryConfig({ dsn: SENTRY_DNS })),
+    'gatsby-plugin-polyfill-io',
     '@wapps/gatsby-plugin-material-ui',
     'gatsby-plugin-i18n',
     'gatsby-transformer-json',

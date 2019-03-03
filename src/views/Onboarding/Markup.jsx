@@ -1,25 +1,14 @@
 import React from 'react';
-import posed from 'react-pose';
-import styled from 'styled-components';
 import t from 'prop-types';
+
+
+import GradientButton from '../../components/GradientButton';
 import Layout from '../../components/Layout';
-import ToggleContent from './ToggleContent';
 import Hero from './Hero';
 import Info from './Info';
-
-
-const Animate = posed.div({
-  start: { y: 0 },
-  end: { y: -360 },
-});
-
-
-const Wrapper = styled(Animate)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-`;
+import Prizes from './Prizes';
+import pushImage from './prompt-example.png';
+import { Wrapper, Image } from './styled';
 
 
 const Markup = (props) => {
@@ -32,25 +21,23 @@ const Markup = (props) => {
     translation,
   } = props;
 
-  const toggleProps = {
-    step,
-    language,
-    changeLanguage,
-    nextStep,
-    complete,
-    text: translation,
-  };
-
 
   return (
-    <Layout header={false} footer={false}>
-      <Wrapper pose={step >= 1 ? 'end' : 'start'}>
+    <Layout header={false} footer={false} fullscreen>
+      <Wrapper pose={step}>
         <Hero />
         <Info
-          title={step > 0 ? translation.prizes.title : translation.intro.title}
-          description={step > 0 ? translation.prizes.description : translation.intro.description}
+          title={translation[step].title}
+          description={translation[step].description}
         >
-          <ToggleContent {...toggleProps} />
+          {step === 1 && <Prizes text={translation[1].list} />}
+          {step === 2 && <Image alt="" src={pushImage} />}
+          <GradientButton
+            primary
+            text={translation[step].primary}
+            onButtonPress={nextStep}
+            resolve={step > 1 ? 'infinite' : 'short'}
+          />
         </Info>
       </Wrapper>
     </Layout>

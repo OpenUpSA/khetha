@@ -6,8 +6,16 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import t from 'prop-types';
-import { Section } from './styled';
+
+
+import LevelBadge from '../../components/LevelBadge';
 import SectionHeading from '../../components/SectionHeading';
+import {
+  Section,
+  OptionalCell,
+  NameWrapper,
+  NameText,
+} from './styled';
 
 
 const Winners = ({ winners, rewards, text = {} }) => {
@@ -22,14 +30,17 @@ const Winners = ({ winners, rewards, text = {} }) => {
     return (
       <TableRow key={id}>
         <TableCell component="th" scope="row">
-          {name}
+          <NameWrapper>
+            <LevelBadge {...{ points }} size="small" />
+            <NameText>{name}</NameText>
+          </NameWrapper>
         </TableCell>
-        <TableCell component="th" scope="row">
+        <OptionalCell component="th" scope="row">
           {points}
-        </TableCell>
-        <TableCell component="th" scope="row">
+        </OptionalCell>
+        <OptionalCell component="th" scope="row">
           {rewards.find(({ id: objectId }) => objectId === prize).title}
-        </TableCell>
+        </OptionalCell>
       </TableRow>
     );
   };
@@ -42,8 +53,8 @@ const Winners = ({ winners, rewards, text = {} }) => {
           <TableHead>
             <TableRow>
               <TableCell>{text.name}</TableCell>
-              <TableCell>{text.points}</TableCell>
-              <TableCell>{text.prize}</TableCell>
+              <OptionalCell>{text.points}</OptionalCell>
+              <OptionalCell>{text.prize}</OptionalCell>
             </TableRow>
           </TableHead>
           <TableBody>

@@ -1,5 +1,7 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
+
+
 import iconLevels from './iconLevels.json';
 
 
@@ -97,21 +99,21 @@ const iconKeys = Object.keys(iconLevels);
 const iconValues = iconKeys.map(key => iconLevels[key]);
 
 
-const calcIconKey = level => iconKeys.reduce(
-  (result, key, index) => (level >= iconValues[index] ? key : result),
+const calcIconKey = points => iconKeys.reduce(
+  (result, key, index) => (points >= iconValues[index] ? key : result),
   null,
 );
 
-const SvgIcon = ({ level }) => {
-  const iconKey = calcIconKey(level);
+const SvgIcon = ({ points, size }) => {
+  const iconKey = calcIconKey(points);
 
   return (
     <svg
       version="1"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 512 512"
-      width="60"
-      height="60"
+      width={size === 'small' ? 24 : 60}
+      height={size === 'small' ? 24 : 60}
       fill="#5F5F5F"
     >
       {iconsList[iconKey]}
@@ -124,10 +126,10 @@ export default SvgIcon;
 
 
 SvgIcon.propTypes = {
-  level: PropTypes.number,
+  points: PropTypes.number,
 };
 
 
 SvgIcon.defaultProps = {
-  level: 0,
+  points: 0,
 };

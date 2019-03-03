@@ -1,44 +1,31 @@
 import React from 'react';
-import styled from 'styled-components';
+
+
 import Blurb from './Blurb';
+import { PrizesWrapper } from './styled';
 
 
-const createList = text => [
-  {
-    title: text.prizes.list[0].title,
-    description: text.prizes.list[0].description,
-    icon: {
-      type: 'Phone',
-      size: 'massive',
-    },
+const createList = text => text.map((props, index) => ({
+  ...props,
+  icon: {
+    type: index < 1 ? 'Phone' : 'Mystery',
+    size: index < 1 ? 'massive' : 'huge',
   },
-  {
-    title: text.prizes.list[1].title,
-    description: text.prizes.list[1].description,
-    icon: {
-      type: 'Mystery',
-      size: 'huge',
-    },
-  },
-];
+}));
 
-
-const Wrapper = styled.div`
-  margin-bottom: 35px;
-`;
 
 const Prizes = ({ text }) => (
-  <Wrapper>
+  <PrizesWrapper>
     {
-      createList(text).map((props, index) => (
+      createList(text).map(({ title, description, icon }, index) => (
         <Blurb
-          {...props}
-          key={props.title}  
+          {...{ title, description, icon }}
+          key={title}
           order={index}
         />
       ))
     }
-  </Wrapper>
+  </PrizesWrapper>
 );
 
 

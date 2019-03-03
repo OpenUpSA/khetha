@@ -1,15 +1,12 @@
-const createItem = (changeFilter, text) => (amount, index) => ({
+const createItem = text => (amount, index) => ({
   text: `${text.filter.difficulty[index]} (${amount})`,
-  callback: () => changeFilter(index),
   reset: index === 0,
   disabled: amount <= 0,
+  id: index,
 });
 
 
-const createOptions = (changeFilter, text, amounts) => {
-  const result = amounts.map(createItem(changeFilter, text));
-  return result;
-};
+const createOptions = (text, amounts) => amounts.map(createItem(text));
 
 
 export default createOptions;

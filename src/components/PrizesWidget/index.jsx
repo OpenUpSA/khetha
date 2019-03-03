@@ -1,61 +1,25 @@
 import React from 'react';
 import t from 'prop-types';
-import styled from 'styled-components';
-import { Typography } from '@material-ui/core';
+
+
 import applyFilters from './applyFilters';
 import ProgressList from '../ProgressList';
-
-
-const BodyText = styled(Typography)`
-  && {
-    color: #666;
-  }
-`;
-
-
-const calcSummary = (nextDraw, text, progress, remaining) => {
-  if (progress < 100) {
-    return text.noQualify({ nextDraw, remaining });
-  }
-
-  return text.qualify({ nextDraw });
-};
-
-
-const createItems = (rewards, userPoints, text) => rewards.map((rewardItem) => {
-  const {
-    lessThanWeek: highlighted,
-    text: nextDraw,
-  } = rewardItem.drawn || {};
-
-
-  const pointsLeft = rewardItem.points - userPoints;
-  const progress = userPoints / rewardItem.points * 100;
-  const summaryRaw = calcSummary(nextDraw, text, progress, pointsLeft);
-  const summary = rewardItem.drawn ? summaryRaw : null;
-
-  return {
-    progress,
-    highlighted,
-    summary,
-    title: rewardItem.title,
-    content: () => <BodyText>{rewardItem.description}</BodyText>,
-
-  };
-});
+import createItems from './createItems';
 
 
 const PrizesWidget = (props) => {
   const {
     rewards,
-    text,
+    translation: text,
     points: userPoints,
     filters,
   } = props;
 
 
   const passedProps = {
-    ...filters,
+    completion: filters.progress,
+    date: filters.date,
+    index: filters.index,
     rewards,
     points: userPoints,
   };
@@ -99,7 +63,7 @@ PrizesWidget.propTypes = {
   /** points */
   points: t.number.isRequired,
   /** text */
-  text: t.shape({
+  translation: t.shape({
     qualify: t.func,
     notQualifyText: t.func,
   }).isRequired,
