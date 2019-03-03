@@ -20,20 +20,25 @@ const createProps = (seed) => {
 };
 
 
-const basic = () => <GradientButton {...createProps()} filled />;
-const primary = () => <GradientButton {...createProps()} primary />;
-const fullWidth = () => <GradientButton {...createProps()} fullWidth />;
-const withIcon = () => <GradientButton {...createProps()} fullWidth icon="Grade" />;
+const basic = () => <GradientButton {...createProps()} filled onButtonPress={() => console.log('clicked')} />;
+const primary = () => <GradientButton {...createProps()} primary onButtonPress={() => console.log('clicked')} />;
+const active = () => <GradientButton {...createProps()} active onButtonPress={() => console.log('clicked')} />;
+const fullWidth = () => <GradientButton {...createProps()} fullWidth onButtonPress={() => console.log('clicked')} />;
+const withIcon = () => <GradientButton {...createProps()} fullWidth icon="Grade" onButtonPress={() => console.log('clicked')} />;
 
 
 const withResolvers = () => (
   <div>
-    <GradientButton text="Unresolved Forced" resolve={false} />
-    <GradientButton text="Resolved Forced" resolve />
-    <GradientButton text="Resolve Short" resolve="short" />
-    <GradientButton text="Resolve Medium" resolve="medium" />
-    <GradientButton text="Resolve Long" resolve="long" />
-    <GradientButton text="Resolve Infinite" resolve="infinite" />
+    <GradientButton
+      text="Unresolved Forced"
+      resolve={false}
+      onButtonPress={() => console.log('clicked')}
+    />
+    <GradientButton text="Resolved Forced" resolve onButtonPress={() => console.log('clicked')} />
+    <GradientButton text="Resolve Short" resolve="short" onButtonPress={() => console.log('clicked')} />
+    <GradientButton text="Resolve Medium" resolve="medium" onButtonPress={() => console.log('clicked')} />
+    <GradientButton text="Resolve Long" resolve="long" onButtonPress={() => console.log('clicked')} />
+    <GradientButton text="Resolve Infinite" resolve="infinite" onButtonPress={() => console.log('clicked')} />
   </div>
 );
 
@@ -41,6 +46,7 @@ const withResolvers = () => (
 storiesOf('component.GradientButton', module)
   .add('Basic', basic)
   .add('Primary', primary)
+  .add('Active', active)
   .add('Full Width', fullWidth)
   .add('With Icon', withIcon)
   .add('Different resolve times', withResolvers);

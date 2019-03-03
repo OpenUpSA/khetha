@@ -51,12 +51,13 @@ const Markup = (props) => {
     primary: filled,
     prefix,
     icon,
-    click: clickAction,
+    onButtonPress: clickAction,
     link,
     fullWidth: full,
     startLoading,
     loading,
     buttonRef,
+    active,
   } = props;
 
 
@@ -86,7 +87,7 @@ const Markup = (props) => {
       <StyledButton
         size="large"
         fullWidth={full}
-        {...{ variant, buttonRef }}
+        {...{ variant, buttonRef, active }}
       >
         {innerContent(true)}
         <CustomProg size={15} thickness={7} fill={filled} />
@@ -99,7 +100,7 @@ const Markup = (props) => {
       <StyledButton
         size="large"
         fullWidth={full}
-        {...{ variant }}
+        {...{ variant, active }}
       >
         {innerContent(false, variant)}
       </StyledButton>
