@@ -21,7 +21,8 @@ const createProps = (seed) => {
 
   return {
     points: randomNumber(0, 110),
-    tasks: randomLengthBlankArray(1, 30).map(() => ({
+    tasks: randomLengthBlankArray(1, 30).map((value, index) => ({
+      id: index,
       points: randomNumber(1, 8),
       title: faker.commerce.productName(),
       description: faker.hacker.phrase(),
@@ -39,7 +40,7 @@ const createProps = (seed) => {
       filter: {
         title: faker.commerce.productName(),
         active: faker.commerce.productName(),
-        difficulty: [null, null, null, null].map(() => faker.commerce.department()),
+        difficulty: [null, null, null, null, null].map(() => faker.commerce.department()),
       },
       more: {
         title: faker.commerce.productName(),
@@ -54,7 +55,7 @@ const createProps = (seed) => {
 };
 
 
-const basic = () => <Start {...createProps()} />;
+const basic = () => <Start {...createProps()} onCardPress={console.log} />;
 
 
 storiesOf('view.Start', module)

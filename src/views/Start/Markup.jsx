@@ -1,58 +1,17 @@
 import React, { Fragment } from 'react';
-import styled from 'styled-components';
 import t from 'prop-types';
-import posed, { PoseGroup } from 'react-pose';
+import { PoseGroup } from 'react-pose';
+
+
+import CardWrapper from './CardWrapper';
 import SectionHeading from '../../components/SectionHeading';
 import GradientSelect from '../../components/GradientSelect';
 import PrizesWidget from '../../components/PrizesWidget';
+import addProps from '../../helpers/addProps';
 import Task from './Task';
 import createOptions from './createOptions';
-import calcDifficulty from './calcDifficulty';
-
-
-const Section = styled.div`
-  padding-bottom: 40px;
-`;
-
-const TasksWrap = styled.div`
-  padding-top: 15px;
-`;
-
-const Animate = posed.div();
-const CardWrap = styled(Animate)`
-  padding: 5px 0;
-`;
-
-
-const createCard = (filter, clickAction, text, options) => (cardProps) => {
-  const {
-    points,
-    title,
-    icon,
-    description,
-    id,
-  } = cardProps;
-
-
-  if (filter === null || filter === calcDifficulty(points)) {
-    return (
-      <CardWrap key={title}>
-        <Task
-          {...{
-            points,
-            title,
-            description,
-            icon,
-            clickAction,
-            id,
-          }}
-        />
-      </CardWrap>
-    );
-  }
-
-  return null;
-};
+import { Section, TasksWrap, CardWrap } from './styled';
+import Layout from '../../components/Layout';
 
 
 const Markup = (props) => {
@@ -61,7 +20,8 @@ const Markup = (props) => {
     changeFilter,
     tasks,
     translation,
-    clickAction,
+    onCardPress,
+    onMenuButtonPress,
     rewards,
     points,
   } = props;
@@ -74,17 +34,15 @@ const Markup = (props) => {
     tasks.filter(task => task.points >= 8).length,
   ];
 
-
-  const options = createOptions(changeFilter, translation, amounts);
-
+  const options = createOptions(translation, amounts);
 
   return (
-    <Fragment>
+    <Layout {...{ points, onMenuButtonPress }}>
       <Section>
         <SectionHeading gutter text="Next Goal" />
         <PrizesWidget
           {...{ rewards, points }}
-          text={translation.rewards}
+          translation={translation.rewards}
           filters={{
             dates: 'upcoming',
             completion: 'outstanding',
@@ -97,19 +55,20 @@ const Markup = (props) => {
         <SectionHeading gutter text="Start a New Task" />
         <GradientSelect
           {...{ options }}
+          onSelectionChange={changeFilter}
           value={filter}
           placeholder={translation.filter.title}
           prefix={translation.filter.active}
-          filled
-          full
+          primary
+          fullWidth
         />
+
         <TasksWrap>
           <PoseGroup>
-            {tasks.map(createCard(filter, clickAction, translation.view, options))}
+            {tasks.map(addProps(CardWrapper, { filter, onCardPress }, 'id'))}
           </PoseGroup>
           <CardWrap>
             <Task
-              id="need-more-tasks"
               transparent
               title={translation.more.title}
               description={translation.more.description}
@@ -117,7 +76,7 @@ const Markup = (props) => {
           </CardWrap>
         </TasksWrap>
       </Section>
-    </Fragment>
+    </Layout>
   );
 };
 
