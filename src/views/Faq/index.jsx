@@ -45,8 +45,8 @@ const FaqCard = ({ title, body }) => (
 );
 
 
-const Faq = ({ faqs = [], points }) => (
-  <Layout {...{ points }}>
+const Faq = ({ faqs = [], points, onMenuButtonPress }) => (
+  <Layout {...{ points, onMenuButtonPress }}>
     {faqs.map(({ title, body }) => <FaqCard {...{ title, body }} key={title} />)}
   </Layout>
 );
