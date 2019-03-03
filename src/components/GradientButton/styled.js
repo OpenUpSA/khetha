@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Button from '@material-ui/core/Button';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import { darken } from 'polished';
 
 
 import removeProps from '../../helpers/removeProps';
@@ -22,9 +23,21 @@ const secondaryButton = `
 `;
 
 
+const activeStyles = `
+  color: white;
+  background: ${primary};
+  border-color: ${primary};
+
+  &:hover {
+    background: ${darken(0.2, primary)};
+  }
+`;
+
+
 const StyledButton = styled(Button)`
   && {
     ${({ variant }) => (variant === 'contained' ? primaryButton : secondaryButton)}
+    ${({ active }) => (active ? activeStyles : '')}
     min-height: 44px;
   }
 `;
