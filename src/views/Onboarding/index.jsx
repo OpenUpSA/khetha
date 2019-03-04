@@ -34,7 +34,7 @@ export default class Onboarding extends Component {
     }
 
     return onCompleteOnboarding();
-  }
+  };
 
   render() {
     const { state, props, ...events } = this;
@@ -94,6 +94,7 @@ Onboarding.propTypes = {
       primary: t.string,
     }),
   }).isRequired,
+  onCompleteOnboarding: t.func,
 };
 
 
@@ -102,4 +103,5 @@ Onboarding.defaultProps = {
   selectLanguage: null,
   step: 0,
   link: null,
+  onCompleteOnboarding: null,
 };

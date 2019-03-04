@@ -71,12 +71,14 @@ export default Winners;
 
 
 Winners.propTypes = {
+  /** Array of winners' names */
   winners: t.arrayOf(t.shape({
     id: t.string,
     name: t.string,
     points: t.number,
     prize: t.string,
   })).isRequired,
+  /** Array of rewards */
   rewards: t.arrayOf(
     t.shape({
       id: t.string,
@@ -86,7 +88,7 @@ Winners.propTypes = {
       dates: t.arrayOf(t.string),
     }),
   ).isRequired,
-  /** The text to display */
+  /** The text to display in the table */
   text: t.shape({
     points: t.string,
     filter: t.shape({

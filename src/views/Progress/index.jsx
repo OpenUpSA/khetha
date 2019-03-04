@@ -1,4 +1,5 @@
 import React from 'react';
+import t from 'prop-types';
 
 
 import Layout from '../../components/Layout';
@@ -22,7 +23,22 @@ const Progress = (props) => {
       </pre>
     </Layout>
   );
-}
+};
 
 
 export default Progress;
+
+Progress.propTypes = {
+  /** The points that have been accumulated */
+  points: t.number,
+  /** Function that is executed once the button has been clicked */
+  onMenuButtonPress: t.func,
+  /** Function that is executed once the card has been clicked */
+  onCardPress: t.func,
+};
+
+Progress.defaultProps = {
+  onMenuButtonPress: null,
+  points: 0,
+  onCardPress: null,
+};
