@@ -9,6 +9,9 @@ import createFilterOption from './createFilterOption';
 import Markup from './Markup';
 
 
+const getTimestamp = () => new Date().getTime();
+
+
 class Task extends Component {
   constructor(props) {
     super(props);
@@ -54,9 +57,23 @@ class Task extends Component {
       onQuestionSave({ index: id, value });
     }
 
+
+    const baseAnswer = currentAnswers[id];
+    const isFirstUpdate = !currentAnswers[id];
+
+
+    const newAnswer = {
+      value: value.value,
+      answered: isFirstUpdate ? getTimestamp() : currentAnswers[id],
+      edits: !isFirstUpdate ? baseAnswer.edits : 0,
+      lastEdit: !isFirstUpdate ? getTimestamp() : null,
+    };
+
+    console.log(newAnswer);
+
     const answers = [
       ...currentAnswers.slice(0, id),
-      value.value,
+      newAnswer,
       ...currentAnswers.slice(id + 1),
     ];
 
