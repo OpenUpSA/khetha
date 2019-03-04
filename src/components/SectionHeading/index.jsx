@@ -1,7 +1,8 @@
 import React from 'react';
-
+import t from 'prop-types';
 
 import { Text, Wrapper } from './styled';
+import ProgressList from "../ProgressList";
 
 
 const SectionHeading = ({ text, id, gutter }) => (
@@ -12,3 +13,20 @@ const SectionHeading = ({ text, id, gutter }) => (
 
 
 export default SectionHeading;
+
+SectionHeading.propTypes = {
+  /** The text that should appear in the section heading */
+  text: t.string,
+  /** Id that is injected into the component to differentiate
+   * between similar components on a page */
+  id: t.number,
+  /** Wheter or not to include a gutter (bottom margin)
+   * for this component */
+  gutter: t.bool,
+};
+
+SectionHeading.defaultProps = {
+  text: '',
+  id: null,
+  gutter: true,
+};
