@@ -20,7 +20,7 @@ SectionHeading.propTypes = {
   /** Id that is injected into the component to differentiate
    * between similar components on a page */
   id: t.number,
-  /** Wheter or not to include a gutter (bottom margin)
+  /** Whether or not to include a gutter (bottom margin)
    * for this component */
   gutter: t.bool,
 };
