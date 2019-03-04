@@ -56,10 +56,12 @@ export default Heading;
 
 
 Heading.propTypes = {
+  /** Total number of points that have been accumulated */
   points: t.number,
+  /** The title that will be displayed in the header */
   title: t.string.isRequired,
   /** An icon that should be used on the right side
-   * of the button. Preferably an icon imported
+   * of the heading. Preferably an icon imported
    * from `@material-ui/icons` */
   icon: t.string,
 };
