@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 
 import Layout from '../../components/Layout';
 import ProgressCards from '../../components/ProgressCards';
@@ -7,16 +7,13 @@ import ProgressCards from '../../components/ProgressCards';
 
 const Progress = (props) => {
   const {
-    onMenuButtonPress,
-    points,
     onCardPress,
     tasks,
   } = props;
 
 
   return (
-    <Layout {...{ points, tasks}}>
-      <button onClick={() => onCardPress(3)}>example card click - should return id (example 3)</button>
+    <Layout>
       {tasks.map(({
         id,
         title,
@@ -28,12 +25,23 @@ const Progress = (props) => {
           title={title}
           icon={icon}
           progress={progress}
-          onCardPress={() => onCardPress(3)}
+          onCardPress={() => onCardPress(progress, id)}
         />
       ))}
     </Layout>
   );
 }
 
+ProgressCards.propTypes = {
+  onCardPress: PropTypes.func.isRequired,
+  tasks: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      title: PropTypes.string,
+      icon: PropTypes.string,
+      progress: PropTypes.number,
+    }),
+  ).isRequired,
+};
 
 export default Progress;
