@@ -1,30 +1,16 @@
 import React, { Fragment } from 'react';
-import styled from 'styled-components';
 import t from 'prop-types';
-import MenuHeader from './MenuHeader';
+import CssBaseline from '@material-ui/core/CssBaseline';
+
+
+import Header from './Header';
 import Footer from './Footer';
-
-
-const Wrapper = styled.div`
-  background: #EDEDED;
-  min-height: ${({ demo }) => (demo ? '100px' : '100vh')};
-  padding: 30px;
-  padding-bottom: 200px;
-`;
-
-const InnerWrapper = styled.div`
-  max-width: 600px;
-  margin: 0 auto;
-`;
-
-const FooterWrapper = styled.div`
-  position: ${({ demo }) => (demo ? 'absolute' : 'fixed')};
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  z-index: 999;
-`;
-
+import {
+  FooterWrapper,
+  GlobalStyling,
+  Wrapper,
+  InnerWrapper,
+} from './styled';
 
 const buildFooter = (callback, demo) => (
   <FooterWrapper {...{ demo }}>
@@ -39,19 +25,21 @@ const Layout = (props) => {
     points,
     header = true,
     footer = true,
-    callback,
-    demo,
+    clickCallback,
+    fullscreen,
   } = props;
 
 
   return (
     <Fragment>
-      <Wrapper {...{ demo }}>
-        <InnerWrapper>
-          {header && <MenuHeader {...{ points }} />}
+      <CssBaseline />
+      <GlobalStyling />
+      <Wrapper {...{ fullscreen }}>
+        <InnerWrapper {...{ fullscreen }}>
+          {header && <Header {...{ points }} />}
           {children}
         </InnerWrapper>
-        {footer && buildFooter(callback, demo)}
+        {footer && buildFooter(clickCallback)}
       </Wrapper>
     </Fragment>
   );
@@ -77,21 +65,13 @@ Layout.propTypes = {
    * on a button in the footer. Function will take one of
    * the following as it's first parameter: 'progress', 'start'
    * or 'profile'. This will likely be 'navigate' from import { navigate } from 'gatsby' */
-  callback: t.func,
-  /** Whether you are using the component for demo purposes.
-   * If set to true footer will be set to 'absolute' and not
-   * 'fixed' (in order to respect the constraints of the
-   * demo window). In addition, min-height will be set to
-   * 100px instead of 100vh (in order to make scroll easier
-   * in documentation) */
-  demo: t.bool,
+  clickCallback: t.func,
 };
 
 
 Layout.defaultProps = {
   header: true,
   footer: true,
-  demo: false,
-  callback: null,
+  clickCallback: null,
   points: 0,
 };
