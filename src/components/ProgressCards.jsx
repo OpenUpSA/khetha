@@ -87,7 +87,7 @@ const ProgressCards = ({
               <Progress {...{ progress }}>{progress >= 100 ? 'Completed' : 'In progress'}</Progress>
               <Title {...{ progress }}>{title}</Title>
             </ProgressAndTitle>
-            <Icon type={icon} size="huge" color={progress >= 100 ? 'grey' : 'blue'} />
+            <Icon type={icon} size="huge" color={progress >= 100 ? 'light-grey' : 'blue'} />
           </TextWrapper>
           <HeaderProgress
             variant="determinate"
