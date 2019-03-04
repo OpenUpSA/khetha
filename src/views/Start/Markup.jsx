@@ -86,6 +86,10 @@ export default Markup;
 
 Markup.propTypes = {
   changeFilter: t.func.isRequired,
+  /** If function is passed it will be called when button is clicked,
+   * if string is passed url will be hotloaded via AJAX when button is
+   * clicked. However if string links to an external domain a url will
+   * be opened in new tab when button is clicked */
   clickAction: t.func.isRequired,
   points: t.number.isRequired,
   rewards: t.arrayOf(

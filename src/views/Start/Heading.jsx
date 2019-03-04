@@ -58,6 +58,9 @@ export default Heading;
 Heading.propTypes = {
   points: t.number,
   title: t.string.isRequired,
+  /** An icon that should be used on the right side
+   * of the button. Preferably an icon imported
+   * from `@material-ui/icons` */
   icon: t.string,
 };
 

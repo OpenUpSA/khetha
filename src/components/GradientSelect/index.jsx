@@ -70,7 +70,7 @@ GradientSelect.propTypes = {
   /** Calls this function with the value of selection
    * option as first parameter */
   callback: t.func,
-  /** String applied before (styled as lable) value
+  /** String applied before (styled as label) value
   in button when a value is selected */
   prefix: t.string,
 };

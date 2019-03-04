@@ -86,6 +86,7 @@ Winners.propTypes = {
       dates: t.arrayOf(t.string),
     }),
   ).isRequired,
+  /** The text to display */
   text: t.shape({
     points: t.string,
     filter: t.shape({

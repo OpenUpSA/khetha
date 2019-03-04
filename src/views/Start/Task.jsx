@@ -53,10 +53,16 @@ export default Task;
 Task.propTypes = {
   title: t.string.isRequired,
   description: t.string.isRequired,
+  /** An icon that will be used in the heading. See Heading for more details.
+   * Preferably an icon imported from `@material-ui/icons` */
   icon: t.string,
   transparent: t.bool,
   id: t.string.isRequired,
   points: t.number,
+  /** If function is passed it will be called when button is clicked,
+   * if string is passed url will be hotloaded via AJAX when button is
+   * clicked. However if string links to an external domain a url will
+   * be opened in new tab when button is clicked */
   clickAction: t.func,
 };
 

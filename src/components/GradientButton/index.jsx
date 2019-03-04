@@ -92,7 +92,7 @@ GradientButton.propTypes = {
    * label prefixed to the text. Useful if you
    * want to communicate state */
   prefix: t.string,
-  /** A icon that should be used on the right side
+  /** An icon that should be used on the right side
    * of the button. Preferably an icon imported
    * from `@material-ui/icons` */
   icon: t.string,

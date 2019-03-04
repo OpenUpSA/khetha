@@ -113,17 +113,29 @@ export default Markup;
 
 
 Markup.propTypes = {
+  /** Accepts a React ref created via 'React.createRef' to link the underlying HTML
+   * node to a React state */
   buttonRef: t.shape({
     current: t.node,
   }),
+  /** If function is passed it will be called when button is clicked,
+   * if string is passed url will be hotloaded via AJAX when button is
+   * clicked. However if string links to an external domain a url will
+   * be opened in new tab when button is clicked */
   clickAction: t.oneOfType([
     t.string,
     t.func,
   ]).isRequired,
+  /** The text to display in the button */
   text: t.string,
   primary: t.bool,
+  /** Whether the button should span the entirity (100%)
+   * of the width of it's parent. */
   full: t.bool,
   prefix: t.string,
+  /** An icon that should be used on the right side
+   * of the button. Preferably an icon imported
+   * from `@material-ui/icons` */
   icon: t.string,
   link: t.func,
   startLoading: t.func.isRequired,

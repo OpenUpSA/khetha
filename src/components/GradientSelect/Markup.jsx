@@ -65,7 +65,11 @@ Markup.propTypes = {
   ).isRequired,
   changeSelected: t.func.isRequired,
   placeholder: t.string,
+  /** Whether the background should have
+   * the branded gradient backgrounds */
   filled: t.bool,
+  /** Whether the button should span the full width (100%)
+   * of it's parent. */
   full: t.bool,
   prefix: t.string,
   selected: t.string,
