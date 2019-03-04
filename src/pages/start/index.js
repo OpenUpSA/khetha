@@ -6,7 +6,7 @@ import { difference } from 'lodash';
 
 import { create } from '../../redux/modules/answers';
 import Loading from '../../views/Loading';
-import { requestNotificationAccess } from '../../redux/actions';
+import { requestNotificationAccess, createUser } from '../../redux/actions';
 import Start from '../../views/Start';
 
 
@@ -71,6 +71,7 @@ const stateToProps = (state, ownProps) => ({
 
 
 const dispatchToProps = (dispatch, ownProps) => ({
+  registerUser: () => dispatch(createUser()),
   startTask: (id, amount) => dispatch(create(id, amount)),
   onMount: () => dispatch(requestNotificationAccess()),
   ...ownProps,
@@ -82,6 +83,7 @@ const connectToReduxStore = connect(stateToProps, dispatchToProps);
 
 const createProps = (props) => {
   const {
+    registerUser,
     tasks,
     rewards,
     points,
@@ -93,6 +95,7 @@ const createProps = (props) => {
   const validTasks = difference(tasks.map(({ id }) => id), activeTasks);
 
   return {
+    registerUser,
     rewards,
     tasks: validTasks.map(id => tasks.find(({ id: taskId }) => id === taskId)),
     points,
@@ -132,6 +135,8 @@ class Page extends Component {
   }
 
   componentDidMount() {
+    const { registerUser } = this.props;
+    registerUser();
     return this.setState({ loading: false });
   }
 
@@ -143,6 +148,7 @@ class Page extends Component {
     }
 
     const passedProps = createProps({
+      registerUser: props.registerUser,
       startTask: props.startTask,
       activeTasks: props.activeTasks,
       points: props.points,
