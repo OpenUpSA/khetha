@@ -6,7 +6,6 @@ import { Provider } from 'react-redux';
 import { navigate } from 'gatsby';
 
 
-import { createUser } from './src/redux/actions';
 import store from './src/redux/store';
 
 
@@ -21,7 +20,6 @@ const onInitialClientRender = () => {
 
   if (!id) {
     navigate('/intro/');
-    return store.dispatch(createUser());
   }
 
   return null;
