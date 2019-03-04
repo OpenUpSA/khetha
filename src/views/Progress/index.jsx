@@ -10,7 +10,7 @@ const Progress = (props) => {
     tasks,
   } = props;
   return (
-    <Layout>
+    <Layout {...{ points, onMenuButtonPress }}>
       {tasks.map(({
         id,
         title,
