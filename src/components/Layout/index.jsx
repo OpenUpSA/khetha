@@ -66,6 +66,10 @@ Layout.propTypes = {
    * the following as it's first parameter: 'progress', 'start'
    * or 'profile'. This will likely be 'navigate' from import { navigate } from 'gatsby' */
   clickCallback: t.func,
+  /** TODO */
+  onMenuButtonPress: t.func,
+  /** Determines whether the layout should be rendered at full screen width */
+  fullscreen: t.bool,
 };
 
 
@@ -74,4 +78,6 @@ Layout.defaultProps = {
   footer: true,
   clickCallback: null,
   points: 0,
+  fullscreen: true,
+  onMenuButtonPress: null,
 };

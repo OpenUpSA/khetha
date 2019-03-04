@@ -42,6 +42,7 @@ export default PrizesWidget;
 
 
 PrizesWidget.propTypes = {
+  /** TODO: I'm not sure what this component should do exactly */
   /** single */
   range: t.bool,
   /** single */

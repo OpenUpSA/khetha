@@ -72,6 +72,7 @@ Markup.propTypes = {
    * of it's parent. */
   full: t.bool,
   prefix: t.string,
+  /** The value of the selected option */
   selected: t.string,
 };
 

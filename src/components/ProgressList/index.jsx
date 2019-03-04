@@ -74,7 +74,7 @@ export default ProgressList;
 
 ProgressList.propTypes = {
   /** If this Progresslist is guided (by means of 'onComplete') then you can
-   * fire this callback everytime a value is selected in a panel */
+   * fire this callback every time a value is selected in a panel */
   updateCallback: t.func,
   /** If true then users will be guided through the panels in a linear fashion. This means
    * that only one item can be opened at a time and that the first item starts
@@ -98,6 +98,11 @@ ProgressList.propTypes = {
       highlighted: t.bool,
     }),
   ),
+  /** Property given to list when progress is complete and user can advance to
+   * the next stage/level */
+  advance: t.bool,
+  /** Function that is called to automatically save an answer if input value changes */
+  onSaveAnswer: t.func,
 };
 
 
@@ -107,4 +112,6 @@ ProgressList.defaultProps = {
   incremental: false,
   buttons: false,
   items: null,
+  advance: false,
+  onSaveAnswer: null,
 };

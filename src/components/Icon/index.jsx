@@ -119,9 +119,12 @@ Icon.propTypes = {
     'huge',
     'massive',
   ]),
+  /** Specify the color that the icon should be when rendered. */
+  color: PropTypes.string,
 };
 
 
 Icon.defaultProps = {
   size: 'standard',
+  color: 'green',
 };
