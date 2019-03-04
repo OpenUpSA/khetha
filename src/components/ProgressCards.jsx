@@ -1,173 +1,107 @@
 import React from 'react';
 import styled from 'styled-components';
-
-import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
+import PropTypes from 'prop-types';
+import {
+  Card,
+  CardContent,
+  Typography,
+  CardActionArea,
+} from '@material-ui/core';
 import LinearProgress from '@material-ui/core/LinearProgress';
-import IconButton from '@material-ui/core/es/IconButton/IconButton';
+import Icon from './Icon';
 
-import FaceIcon from '@material-ui/icons/Face';
-import CityIcon from '@material-ui/icons/LocationCity';
-import ThumbIcon from '@material-ui/icons/ThumbUp';
-
-const CardWrapper = styled.ul`
-  @media (min-width: 760px) {
-    width: 60%;
-    margin: auto;
-  }
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
-  padding: 0;
-  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  position: relative;
-`;
-
-const CardItem = styled.li`
-  list-style-type: none;
-  width: 100%;
-  margin-bottom: 10px;
-`;
-
-const CardLink = styled.a`
-  text-decoration: none;
-`;
-
-const TopicCard = styled(Card)`
-  && {
-    color: #0575e6;
-    background-color: ${props => props.background || '#FFFFFF'};
-    height: 100px;
-    box-shadow: ${props => props.boxShadow || ''};
-    border: ${props => `1px solid ${props.border}` || ''};
-  }
-`;
-
-const StyledHeader = styled(({ headline, subtitle, ...other }) => (
-  <CardHeader
-    classes={{ title: 'headline', subheader: 'subtitle' }}
-    {...other}
-  />
-))`
-  && {
-    padding: 10px 16px 20px;
-  }
-  & .headline {
-    color: ${props => props.color || '#0575E6'};
-    font-size: 12px;
-    line-height: 20px;
-  }
-
-  & .subtitle {
-    color: ${props => props.color || 'rgba(0, 0, 0, 0.87)'};
-    font-size: 18px;
-    line-height: 20px;
-    font-weight: bold;
-  }
-`;
-
-const HeaderProgress = styled(({ barColorPrimary, ...other }) => (
+const HeaderProgress = styled(({ ...other }) => (
   <LinearProgress classes={{ barColorPrimary: 'barColor' }} {...other} />
 ))`
   && {
     background: #f5f5f5;
     border: 0;
     color: white;
-    height: 48px;
-    padding: 0 30px;
-    margin: 0 16px;
     height: 4px;
   }
 
   & .barColor {
-    background: ${props => props.barColorPrimary};
+    background: linear-gradient(177.9deg, #00F260 0%, #0575E6 83.33%), #0576E6;
   }
 `;
 
-const tasks = [
-  {
-    total: 100,
-    link: '/',
-    icon: 'faceIcon',
-    title: '11 Points Remaining',
-    subheader: 'Introductory Questions',
-    color: 'primary',
-    variant: 'determinate',
-    value: 68,
-    barColorPrimary: 'linear-gradient(177.9deg, #00F260 0%, #0575E6 83.33%), #0576E6;',
-  },
-  {
-    total: 100,
-    link: '/',
-    icon: 'cityIcon',
-    title: '31 Points Remaining',
-    subheader: 'Survey Your Community',
-    color: 'primary',
-    variant: 'determinate',
-    value: 68,
-    barColorPrimary: 'linear-gradient(177.9deg, #00F260 0%, #0575E6 83.33%), #0576E6;',
-  },
-  {
-    total: 100,
-    link: '/',
-    icon: 'cityIcon',
-    title: 'Completed',
-    subheader: 'Survey Your Community',
-    color: 'primary',
-    variant: 'determinate',
-    value: 100,
-    barColorPrimary: 'linear-gradient(177.9deg, #00F260 0%, #0575E6 83.33%), #0576E6;',
-  },
-  {
-    total: 100,
-    link: '/',
-    icon: 'thumbIcon',
-    title: '11 Points Remaining',
-    subheader: 'Introductory Questions',
-    color: 'primary',
-    variant: 'determinate',
-    value: 0,
-    barColorPrimary: 'linear-gradient(177.9deg, #00F260 0%, #0575E6 83.33%), #0576E6;',
-  },
-];
+const Wrapper = styled.div`
+/* Margin top to be removed */
+  margin-top: 20px;
+`;
 
-const iconChange = (iconItems, color, value, total) => {
-  switch (iconItems) {
-    case 'faceIcon': return <FaceIcon color={value === total ? '#AFAFAF' : color} fontSize="large" />;
-    case 'cityIcon': return <CityIcon color={value === total ? '#AFAFAF' : color} fontSize="large" />;
-    case 'thumbIcon': return <ThumbIcon color={value === total ? '#AFAFAF' : color} fontSize="large" />;
-    default: return <FaceIcon color="primary" fontSize="large" />;
+const CardWrapper = styled(Card)`
+  && {
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.24);
   }
-};
+`;
 
-const ProgressCards = () => (
-  <CardWrapper>
-    {tasks.map(task => (
-      <CardItem>
-        <CardLink to={task.link}>
-          <TopicCard>
-            <StyledHeader
-              action={
-                (
-                  <IconButton>
-                    {iconChange(task.icon, task.color, task.value, task.total)}
-                  </IconButton>
-                )
-              }
-              title={task.title}
-              subheader={task.subheader}
-              color={task.value === task.total ? '#AFAFAF' : ''}
-            />
-            <HeaderProgress
-              variant={task.variant}
-              value={task.value}
-              barColorPrimary={task.value === task.total ? '#AFAFAF' : task.barColorPrimary}
-            />
-          </TopicCard>
-        </CardLink>
-      </CardItem>
-    ))}
-  </CardWrapper>
+const CardContentStyled = styled(CardContent)`
+  &&& {
+    padding: 16px;
+  }
+`;
+
+const TextWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const ProgressAndTitle = styled.div`
+  padding-bottom: 22px;
+`;
+
+const Progress = styled(Typography)`
+  && {
+    color: #0575E6;
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: normal;
+    padding-bottom: 6px;
+  }
+`;
+
+const Title = styled(Typography)`
+  && {
+    font-weight: 700;
+    line-height: 20px;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.87);
+    text-transform: Capitalize;
+  }
+`;
+
+const ProgressCards = ({
+  title,
+  icon,
+  progress,
+  onCardPress,
+}) => (
+  <Wrapper>
+    <CardWrapper>
+      <CardActionArea onClick={onCardPress}>
+        <CardContentStyled>
+          <TextWrapper>
+            <ProgressAndTitle>
+              <Progress>In progress</Progress>
+              <Title>{title}</Title>
+            </ProgressAndTitle>
+            <Icon type={icon} size="huge" color="blue" />
+          </TextWrapper>
+          <HeaderProgress
+            variant="determinate"
+            value={progress}
+          />
+        </CardContentStyled>
+      </CardActionArea>
+    </CardWrapper>
+  </Wrapper>
 );
+
+ProgressCards.propTypes = {
+  title: PropTypes.string.isRequired,
+  icon: PropTypes.string.isRequired,
+  progress: PropTypes.number.isRequired,
+};
 
 export default ProgressCards;

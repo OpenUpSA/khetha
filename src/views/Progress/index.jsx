@@ -1,31 +1,39 @@
-import React, { Fragment } from 'react';
-import styled from 'styled-components';
+import React from 'react';
 
 
+import Layout from '../../components/Layout';
 import ProgressCards from '../../components/ProgressCards';
 
 
-const StyledWrapper = styled.div`
-  font-family: 'Roboto', sans-serif;
-  position: relative;
-  min-height: 100vh;
-  overflow: scroll;
-  left: 0px;
-  right: 0px;
-  padding: 20px 15px;
-  @media (min-width: 760px) {
-    max-width: 400px;
-    margin: auto;
-  }
-  background: #e5e5e5;
-  display: flex;
-  flex-direction: column;
-`;
+const Progress = (props) => {
+  const {
+    onMenuButtonPress,
+    points,
+    onCardPress,
+    tasks,
+  } = props;
 
-export default () => (
-  <Fragment>
-    <StyledWrapper>
-      <ProgressCards />
-    </StyledWrapper>
-  </Fragment>
-);
+
+  return (
+    <Layout {...{ points, tasks}}>
+      <button onClick={() => onCardPress(3)}>example card click - should return id (example 3)</button>
+      {tasks.map(({
+        id,
+        title,
+        icon,
+        progress,
+      }) => (
+        <ProgressCards
+          key={id}
+          title={title}
+          icon={icon}
+          progress={progress}
+          onCardPress={() => onCardPress(3)}
+        />
+      ))}
+    </Layout>
+  );
+}
+
+
+export default Progress;
