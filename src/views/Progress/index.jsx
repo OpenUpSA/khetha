@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import Layout from '../../components/Layout';
 import ProgressCards from '../../components/ProgressCards';
 
-
 const Progress = (props) => {
   const {
     onCardPress,
