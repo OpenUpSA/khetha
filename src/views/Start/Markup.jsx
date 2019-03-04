@@ -102,6 +102,7 @@ Markup.propTypes = {
     }),
   ).isRequired,
   filter: t.string,
+  /** Language specific text to be used in this view */
   translation: t.shape({
     view: t.shape({
       points: t.func,

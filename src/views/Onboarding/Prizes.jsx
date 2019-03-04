@@ -1,4 +1,5 @@
 import React from 'react';
+import t from 'prop-types';
 
 
 import Blurb from './Blurb';
@@ -30,3 +31,16 @@ const Prizes = ({ text }) => (
 
 
 export default Prizes;
+
+Prizes.propTypes = {
+  /** Text properties that describe the prizes */
+  text: t.shape({
+    title: t.string,
+    description: t.string,
+    icon: t.string,
+  }),
+};
+
+Prizes.defaultProps = {
+  text: {},
+};

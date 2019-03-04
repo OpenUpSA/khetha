@@ -56,17 +56,24 @@ export default Faq;
 
 
 Faq.propTypes = {
+  /** Array of questions and answers, including the title and body associated with each card */
   faqs: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string,
       body: PropTypes.string,
     }),
   ),
+  /** The point value associated with each card */
+  points: PropTypes.number,
+  /** Function that is passed on button click. Feedback (helpful or not) will be sent */
+  onMenuButtonPress: PropTypes.func,
 };
 
 
 Faq.defaultProps = {
   faqs: [],
+  points: 0,
+  onMenuButtonPress: null,
 };
 
 

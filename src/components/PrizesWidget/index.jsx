@@ -63,7 +63,7 @@ PrizesWidget.propTypes = {
   ).isRequired,
   /** points */
   points: t.number.isRequired,
-  /** text */
+  /** Language specific text to be used in this view */
   translation: t.shape({
     qualify: t.func,
     notQualifyText: t.func,
