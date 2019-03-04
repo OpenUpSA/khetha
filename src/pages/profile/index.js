@@ -1,4 +1,5 @@
 import { createElement } from 'react';
+import { navigate } from 'gatsby';
 import Profile from '../../views/Profile';
 import Layout from '../../components/Layout';
 
@@ -45,6 +46,6 @@ const props = {
 
 export default () => createElement(
   Layout,
-  { points: 0 },
+  { points: 0, callback: navigate },
   createElement(Profile, props),
 );

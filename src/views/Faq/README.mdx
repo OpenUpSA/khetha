@@ -3,45 +3,11 @@ name: Faq
 menu: Views
 ---
 
-import { Playground } from 'docz';
+import { PropsTable } from 'docz';
 import Faq from './index';
 
 # Faq
 
-## Demo
+## Props
 
-### Single Item
-
-<Playground>
-  <Faq 
-    noLayout
-    faqs={[
-      {
-        title: 'Example Title',
-        body: 'Example Body'
-      }
-    ]}
-  />
-</Playground>
-
-### Multiple Items
-
-<Playground>
-  <Faq 
-    noLayout
-    faqs={[
-      {
-        title: 'Example Title 1',
-        body: 'Example Body 1'
-      },
-      {
-        title: 'Example Title 2',
-        body: 'Example Body 2'
-      },
-      {
-        title: 'Example Title 3',
-        body: 'Example Body 3'
-      }
-    ]}
-  />
-</Playground>
+<PropsTable of={Faq} />

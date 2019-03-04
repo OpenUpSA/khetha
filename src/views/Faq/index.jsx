@@ -1,7 +1,5 @@
-
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
@@ -10,18 +8,10 @@ import Button from '@material-ui/core/Button';
 import Layout from '../../components/Layout';
 
 
-const FlexWrapper = styled.div`
-  display: flex;
-  width: 100%;
-  align-items: center;
-`;
-
-const FlexQuestion = styled.div`
-  flex-grow: 1;
-`;
+import { FlexWrapper, FlexQuestion } from './styled';
 
 
-const ActionsBar = () => (
+const actionsMarkup = (
   <FlexWrapper>
     <FlexQuestion>
       Was this helpful?
@@ -49,32 +39,20 @@ const FaqCard = ({ title, body }) => (
       </Typography>
     </CardContent>
     <CardActions>
-      <ActionsBar />
+      {actionsMarkup}
     </CardActions>
   </Card>
 );
 
 
-FaqCard.propTypes = {
-  title: PropTypes.string.isRequired,
-  body: PropTypes.string.isRequired,
-};
+const Faq = ({ faqs = [], points, onMenuButtonPress }) => (
+  <Layout {...{ points, onMenuButtonPress }}>
+    {faqs.map(({ title, body }) => <FaqCard {...{ title, body }} key={title} />)}
+  </Layout>
+);
 
-const Faq = ({ faqs = [], noLayout }) => {
-  if (noLayout) {
-    return (
-      <Fragment>
-        {faqs.map(({ title, body }) => <FaqCard {...{ title, body }} key={title} />)}
-      </Fragment>
-    );
-  }
 
-  return (
-    <Layout>
-      {faqs.map(({ title, body }) => <FaqCard {...{ title, body }} key={title} />)}
-    </Layout>
-  );
-};
+export default Faq;
 
 
 Faq.propTypes = {
@@ -84,14 +62,15 @@ Faq.propTypes = {
       body: PropTypes.string,
     }),
   ),
-  noLayout: PropTypes.bool,
 };
 
 
 Faq.defaultProps = {
   faqs: [],
-  noLayout: false,
 };
 
 
-export default Faq;
+FaqCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  body: PropTypes.string.isRequired,
+};

@@ -1,16 +1,18 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import t from 'prop-types';
-import GradientSelect from '../../components/GradientSelect';
+
+
+import Layout from '../../components/Layout';
 import SectionHeading from '../../components/SectionHeading';
 import PrizesWidget from '../../components/PrizesWidget';
 import Winners from './Winners';
 import { Section } from './styled';
 
 
-const createPrizeSection = (text, rewards, points) => (
+const createPrizeSection = (translation, rewards, points) => (
   <Section>
-    <SectionHeading text={text.title} gutter />
-    <PrizesWidget {...{ rewards, points, text }} />
+    <SectionHeading text={translation.title} gutter />
+    <PrizesWidget {...{ rewards, points, translation }} />
   </Section>
 );
 
@@ -18,46 +20,17 @@ const createPrizeSection = (text, rewards, points) => (
 const Profile = (props) => {
   const {
     translation,
-    language,
     winners,
-    rewards = [],
+    rewards,
     points,
+    onMenuButtonPress,
   } = props;
 
-  const {
-    view,
-    rewards: rewardsText,
-  } = translation;
-
   return (
-    <Fragment>
-      <Section>
-        <SectionHeading text={view.language.title} gutter />
-        <GradientSelect
-          placeholder=""
-          filled
-          full
-          value="English"
-          prefix="Selected Language"
-          options={[
-            {
-              text: 'English',
-              callback: () => console.log('en'),
-            },
-          ]}
-        />
-      </Section>
-      {/* <Section>
-        <SectionHeading text={view.help.title} gutter />
-        <GradientButton
-          text={view.help.primary}
-          full
-          clickAction="/src-views-profile-readme"
-        />
-      </Section> */}
-      {rewards && createPrizeSection(rewardsText, rewards, points)}
-      {winners && rewards && <Winners {...{ winners, rewards }} text={translation.view.winners} />}
-    </Fragment>
+    <Layout {...{ points, onMenuButtonPress }}>
+      {rewards && createPrizeSection(translation.rewards, rewards, points)}
+      {winners && rewards && <Winners {...{ winners, rewards }} text={translation.winners} />}
+    </Layout>
   );
 };
 

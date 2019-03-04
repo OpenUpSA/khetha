@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import t from 'prop-types';
-import { messaging } from '../../helpers/firebaseHelpers';
 import Markup from './Markup';
 
 
@@ -10,12 +9,16 @@ class Start extends Component {
   };
 
   componentDidMount() {
-    messaging.requestPermission().then(() => messaging.getToken());
+    const { onMount } = this.props;
+
+    if (onMount) {
+      onMount();
+    }
   }
 
   changeFilter = (value) => {
     if (value <= 0) {
-      return this.setState({ filter: null })
+      return this.setState({ filter: null });
     }
 
     const filter = value.toString();
@@ -30,9 +33,10 @@ class Start extends Component {
       changeFilter: events.changeFilter,
       tasks: props.tasks || [],
       translation: props.translation,
-      clickAction: props.clickAction,
+      onCardPress: props.onCardPress,
       rewards: props.rewards,
       points: props.points,
+      onMenuButtonPress: props.onMenuButtonPress,
     };
 
     return <Markup {...passedProps} />;
@@ -44,6 +48,8 @@ export default Start;
 
 
 Start.propTypes = {
+  /** Function that gets called when the component mounts */
+  onMount: t.func,
   /** Value passed to the 'PrizesWidget' component.
    * Visit component for more information. */
   points: t.number.isRequired,
@@ -91,5 +97,6 @@ Start.propTypes = {
 
 
 Start.defaultProps = {
+  onMount: null,
   tasks: [],
 };

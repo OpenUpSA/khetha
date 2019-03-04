@@ -3,7 +3,7 @@ name: GradientButton
 menu: Components
 ---
 
-import { Playground, PropsTable } from 'docz'
+import { PropsTable } from 'docz'
 import Icon from '@material-ui/icons/Close';
 import GradientButton from './index';
 
@@ -25,84 +25,3 @@ import GradientButton from './index';
 ### Props
 
 <PropsTable of={GradientButton} />
-
-### Demos
-
-#### **Default**
-
-<Playground>
-  <GradientButton text="Hello World!" clickAction={() => console.log('Clicked!')} />
-</Playground>
-
-#### **Filled**
-
-<Playground>
-  <GradientButton 
-    filled
-    text="Hello World!"
-    clickAction={() => console.log('Clicked!')}
-  />
-</Playground>
-
-#### **Selected**
-
-<Playground>
-  <GradientButton 
-    selected
-    text="Hello World!"
-    clickAction={() => console.log('Clicked!')}
-  />
-</Playground>
-
-#### **As Full**
-
-<Playground>
-  <GradientButton
-    full
-    text="Hello World!"
-    clickAction={() => console.log('Clicked!')}
-  />
-</Playground>
-
-#### **With Prefix**
-
-<Playground>
-  <GradientButton
-    prefix="Test"
-    text="Hello World!"
-    clickAction={() => console.log('Clicked!')}
-  />
-</Playground>
-
-#### **With Icon**
-
-<Playground>
-  <GradientButton
-    icon="Grade"
-    text="Hello World!"
-    clickAction={() => console.log('Clicked!')}
-  />
-</Playground>
-
-#### **Page Change**
-
-<Playground>
-  <GradientButton
-    icon="Grade"
-    text="Hello World!"
-    clickAction="/src-components-gradient-button-readme"
-  />
-</Playground>
-
-#### **Amalgamated**
-
-<Playground>
-  <GradientButton 
-    full
-    filled
-    prefix="filtered by"
-    icon="Grade"
-    text="Hard"
-    clickAction={() => console.log('Clicked!')} 
-  />
-</Playground>

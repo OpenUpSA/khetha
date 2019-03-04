@@ -3,7 +3,7 @@ name: Onboarding
 menu: Views
 ---
 
-import { Playground, PropsTable } from 'docz';
+import { PropsTable } from 'docz';
 import Onboarding from './index';
 
 
@@ -15,81 +15,3 @@ import Onboarding from './index';
 ### Props
 
 <PropsTable of={Onboarding} />
-
-
-### Demos
-
-#### **Default**
-
-<Playground style={{ overflow: 'hidden', position: 'relative' }}>
-  <Onboarding
-    complete="/src-views-onboarding-readme"
-    link={null}
-    translation={{
-      "intro": {
-        "title": "What is Kheta?",
-        "description": "Kheta is a platform that allows you and your community to make you voice heard during the 2019 election.",
-        "primary": "Select a language",
-        "secondary": "Start"
-      },
-      "prizes": {
-        "title": "Want to win?",
-        "description": "As you complete tasks you earn Khata points towards prizes",
-        "primary": "Continue",
-        "list": [
-          {
-            "title": "Samsung Galaxy S4",
-            "description": "One lucky user will stand a chance to win a brand new Samsung smartphone."
-          },
-          {
-            "title": "Weekly Mystery Prize",
-            "description": "One lucky user will stand a chance to win a brand new Samsung smartphone."
-          }
-        ]
-      },
-      "alert": {
-          "title": "Very Important!",
-          "description": "In order to be notified when you qualify for a prize you need to enable web notifications on the next screen.",
-          "primary": "I understand"
-      }
-    }}
-  />
-</Playground>
-
-#### **Translation Language**
-
-<Playground style={{ overflow: 'hidden', position: 'relative' }}>
-  <Onboarding
-    complete="/src-views-onboarding-readme"
-    link={null}
-    language="zu"
-    translation={{
-      "intro": {
-        "title": "What is Kheta? (Zulu)",
-        "description": "Kheta is a platform that allows you and your community to make you voice heard during the 2019 election. (Zulu)",
-        "primary": "Select a language (Zulu)",
-        "secondary": "Start (Zulu)"
-      },
-      "prizes": {
-        "title": "Want to win? (Zulu)",
-        "description": "As you complete tasks you earn Khata points towards prizes (Zulu)",
-        "primary": "Continue (Zulu)",
-        "list": [
-          {
-            "title": "Samsung Galaxy S4 (Zulu)",
-            "description": "One lucky user will stand a chance to win a brand new Samsung smartphone. (Zulu)"
-          },
-          {
-            "title": "Weekly Mystery Prize (Zulu)",
-            "description": "One lucky user will stand a chance to win a brand new Samsung smartphone. (Zulu)"
-          }
-        ]
-      },
-      "alert": {
-          "title": "Very Important! (Zulu)",
-          "description": "In order to be notified when you qualify for a prize you need to enable web notifications on the next screen. (Zulu)",
-          "primary": "I understand (Zulu)"
-      }
-    }}
-  />
-</Playground>

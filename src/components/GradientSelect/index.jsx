@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import t from 'prop-types';
-import Dropdown from './Dropdown';
+import Markup from './Markup';
 
 
 class GradientSelect extends Component {
   constructor(props) {
     super(props);
-    const { value } = this.props;
+    const { selected: value } = this.props;
 
     this.state = {
       selected: value || null,
@@ -14,13 +14,13 @@ class GradientSelect extends Component {
   }
 
   changeSelected = (value) => {
-    const { options } = this.props;
-    const { callback, reset } = options.find(({ text }) => text === value) || {};
+    const { options, onSelectionChange } = this.props;
+    const { reset } = options.find(({ text }) => text === value) || {};
     const selected = reset ? null : value;
     this.setState({ selected });
 
-    if (callback) {
-      return callback(selected);
+    if (onSelectionChange) {
+      return onSelectionChange(selected);
     }
 
     return null;
@@ -33,13 +33,13 @@ class GradientSelect extends Component {
       selected: state.selected,
       placeholder: props.placeholder,
       options: props.options,
-      filled: props.filled,
-      full: props.full,
+      filled: props.primary,
+      full: props.fullWidth,
       changeSelected: events.changeSelected,
       prefix: props.prefix,
     };
 
-    return <Dropdown {...passedProps} />;
+    return <Markup {...passedProps} />;
   }
 }
 
@@ -52,8 +52,8 @@ GradientSelect.propTypes = {
    * and what should happen when it is clicked */
   options: t.arrayOf(
     t.shape({
+      id: t.string,
       text: t.string,
-      callback: t.func,
       reset: t.bool,
     }),
   ).isRequired,
