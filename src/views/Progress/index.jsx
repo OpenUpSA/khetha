@@ -72,6 +72,8 @@ export default Progress;
 
 Progress.propTypes = {
   onCardPress: PropTypes.func.isRequired,
+  points: PropTypes.number.isRequired,
+  onMenuButtonPress: PropTypes.func.isRequired,
   tasks: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number,
