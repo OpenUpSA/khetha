@@ -8,6 +8,8 @@ const Progress = (props) => {
   const {
     onCardPress,
     tasks,
+    points,
+    onMenuButtonPress
   } = props;
   return (
     <Layout {...{ points, onMenuButtonPress }}>
