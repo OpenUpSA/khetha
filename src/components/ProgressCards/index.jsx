@@ -8,7 +8,7 @@ import {
   CardActionArea,
 } from '@material-ui/core';
 import LinearProgress from '@material-ui/core/LinearProgress';
-import Icon from './Icon';
+import Icon from '../Icon';
 
 const HeaderProgress = styled(({ ...other }) => (
   <LinearProgress classes={{ barColorPrimary: 'barColor' }} {...other} />
