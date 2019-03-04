@@ -33,6 +33,7 @@ const CardWrapper = styled(Card)`
   && {
     box-shadow: ${({ progress }) => (progress >= 100 ? 'none' : '0px 2px 3px rgba(0, 0, 0, 0.24)')};
     border:  ${({ progress }) => (progress >= 100 ? '1px solid #A2A2A2' : 'none')};
+    background: ${({ progress }) => (progress >= 100 ? 'none' : '#FFF')};
   }
 `;
 
