@@ -10,8 +10,6 @@ const Progress = (props) => {
     onCardPress,
     tasks,
   } = props;
-
-
   return (
     <Layout>
       {tasks.map(({
@@ -32,7 +30,7 @@ const Progress = (props) => {
   );
 }
 
-ProgressCards.propTypes = {
+Progress.propTypes = {
   onCardPress: PropTypes.func.isRequired,
   tasks: PropTypes.arrayOf(
     PropTypes.shape({
