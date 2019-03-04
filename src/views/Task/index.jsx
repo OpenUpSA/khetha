@@ -34,11 +34,12 @@ class Task extends Component {
 
 
   completeTask = () => {
-    const { onTaskSubmit } = this.props;
+    const { onTaskSubmit, taskPoints: points } = this.props;
     const { answers } = this.state;
 
+    console.log(answers, points);
     if (onTaskSubmit) {
-      return onTaskSubmit(answers);
+      return onTaskSubmit(answers, points);
     }
 
     return null;
@@ -48,36 +49,32 @@ class Task extends Component {
   changeAnswer = ({ id, value }) => {
     const { onQuestionSave } = this.props;
     const { answers: currentAnswers } = this.state;
+    const baseAnswer = currentAnswers[id];
+    const isFirstUpdate = !currentAnswers[id];
+
 
     if (!value) {
       return null;
     }
 
-    if (onQuestionSave) {
-      onQuestionSave({ index: id, value });
-    }
+    const answers = [
+      ...currentAnswers.slice(0, id),
+      value.value,
+      ...currentAnswers.slice(id + 1),
+    ];
 
+    this.setState({ answers });
 
-    const baseAnswer = currentAnswers[id];
-    const isFirstUpdate = !currentAnswers[id];
-
-
-    const newAnswer = {
+    const answerObject = {
       value: value.value,
       answered: isFirstUpdate ? getTimestamp() : currentAnswers[id],
       edits: !isFirstUpdate ? baseAnswer.edits : 0,
       lastEdit: !isFirstUpdate ? getTimestamp() : null,
     };
 
-    console.log(newAnswer);
-
-    const answers = [
-      ...currentAnswers.slice(0, id),
-      newAnswer,
-      ...currentAnswers.slice(id + 1),
-    ];
-
-    return this.setState({ answers });
+    if (onQuestionSave) {
+      return onQuestionSave({ index: id, value: answerObject });
+    }
   }
 
 
