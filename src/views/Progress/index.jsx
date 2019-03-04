@@ -1,31 +1,28 @@
-import React, { Fragment } from 'react';
-import styled from 'styled-components';
+import React from 'react';
 
 
-import ProgressCards from '../../components/ProgressCards';
+import Layout from '../../components/Layout';
 
 
-const StyledWrapper = styled.div`
-  font-family: 'Roboto', sans-serif;
-  position: relative;
-  min-height: 100vh;
-  overflow: scroll;
-  left: 0px;
-  right: 0px;
-  padding: 20px 15px;
-  @media (min-width: 760px) {
-    max-width: 400px;
-    margin: auto;
-  }
-  background: #e5e5e5;
-  display: flex;
-  flex-direction: column;
-`;
+const Progress = (props) => {
+  const {
+    onMenuButtonPress,
+    points,
+    onCardPress,
+  } = props;
 
-export default () => (
-  <Fragment>
-    <StyledWrapper>
-      <ProgressCards />
-    </StyledWrapper>
-  </Fragment>
-);
+
+  return (
+    <Layout {...{ points, onMenuButtonPress}}>
+      <pre>
+        <code style={{ display: 'block', background: 'black', color: 'white', whiteSpace: 'pre-wrap' }}>
+          {JSON.stringify(props, 0, 2)}
+        </code>
+        <button onClick={() => onCardPress(3)}>example card click - should return id (example 3)</button>
+      </pre>
+    </Layout>
+  );
+}
+
+
+export default Progress;
