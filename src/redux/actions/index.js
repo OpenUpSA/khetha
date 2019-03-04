@@ -23,6 +23,7 @@ const requestNotificationAccess = () => (dispatch) => {
 
 
 const completeTask = (id, points) => (dispatch) => {
+  console.log(id, points);
   dispatch(complete(id));
   dispatch(addPoints(points));
   return null;
