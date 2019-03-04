@@ -12,18 +12,28 @@ import {
 } from './styled';
 
 
+const calcIfHighestLevel = (points, remainingPoints) => {
+  if (points >= 100) {
+    return 'You are currently in the top tier';
+  }
+
+  return `${remainingPoints} points required to unlock next level`
+};
+
+
 const Header = ({ points }) => {
   const {
     level,
     remainingPoints,
   } = calcLevelInfo(points);
 
+
   return (
     <HeaderMenu>
       <LevelBadge {...{ points }} />
       <Text>
         <Level>{`${level} Level`}</Level>
-        <Next>{`${remainingPoints} points required to unlock next level`}</Next>
+        <Next>{calcIfHighestLevel(points, remainingPoints)}</Next>
       </Text>
     </HeaderMenu>
   );
