@@ -66,6 +66,7 @@ export default GradientButton;
 
 
 GradientButton.propTypes = {
+  /** TODO */
   active: t.bool,
   /** Accepts a React ref created via 'React.createRef' to link the underlying HTML
    * node to a React state */
@@ -100,6 +101,8 @@ GradientButton.propTypes = {
    * and history state for page transitions in your React app.
    * In our case we need to pass `Link` from `import { Link } from 'gatsby'. */
   link: t.func,
+  /** TODO */
+  resolve: t.bool,
 };
 
 GradientButton.defaultProps = {
@@ -111,4 +114,5 @@ GradientButton.defaultProps = {
   icon: null,
   link: null,
   full: false,
+  resolve: null,
 };

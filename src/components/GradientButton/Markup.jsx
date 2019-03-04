@@ -137,9 +137,16 @@ Markup.propTypes = {
    * of the button. Preferably an icon imported
    * from `@material-ui/icons` */
   icon: t.string,
+  /** You need to pass a component that handles routing
+   * and history state for page transitions in your React app.
+   * In our case we need to pass `Link` from `import { Link } from 'gatsby'. */
   link: t.func,
   startLoading: t.func.isRequired,
   loading: t.bool,
+  active: t.bool,
+  /** TODO: @schalk not sure if this should be included since they refer to other types */
+  onButtonPress: t.func,
+  fullWidth: t.bool,
 };
 
 Markup.defaultProps = {
@@ -151,6 +158,7 @@ Markup.defaultProps = {
   link: null,
   full: false,
   loading: false,
+  active: false,
 };
 
 

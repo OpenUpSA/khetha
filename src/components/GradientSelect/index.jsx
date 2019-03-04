@@ -73,6 +73,11 @@ GradientSelect.propTypes = {
   /** String applied before (styled as label) value
   in button when a value is selected */
   prefix: t.string,
+  /** The value of the selected option */
+  selected: t.string,
+  /** Calls this function when the value of the selection
+   * option has been changed */
+  onSelectionChange: t.func,
 };
 
 
@@ -83,4 +88,6 @@ GradientSelect.defaultProps = {
   full: false,
   prefix: null,
   value: null,
+  selected: null,
+  onSelectionChange: null,
 };
