@@ -17,6 +17,7 @@ const SanitisedExpansionPanel = removeProps({ component: ExpansionPanel, blackli
 
 const Wrapper = styled(SanitisedExpansionPanel)`
   && {
+    ${({ firstPanel }) => (firstPanel ? 'margin-top: 0' : '')};
     cursor: ${({ buttons }) => (buttons ? 'pointer' : 'default')};
     ${({ advance, open }) => ((advance && open) ? `border: 1px solid ${primary}` : '')};
   }

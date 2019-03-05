@@ -1,11 +1,25 @@
-import { createElement } from 'react';
+import { createElement, Component } from 'react';
 import { navigate } from 'gatsby';
+import { connect } from 'react-redux';
 
 
-import OnBoarding from '../../views/Onboarding';
+import { completeOnboarding } from '../../redux/modules/info';
+import Onboarding from '../../views/Onboarding';
+import Loading from '../../views/Loading';
 
 
-const props = {
+const stateToProps = (state, ownProps) => ({
+  ...ownProps,
+});
+
+
+const dispatchToProps = (dispatch, ownProps) => ({
+  logOnboarded: () => dispatch(completeOnboarding()),
+  ...ownProps,
+});
+
+
+const createProps = props => ({
   translation: [
     {
       title: 'What is Khetha?',
@@ -33,8 +47,43 @@ const props = {
       primary: 'I understand',
     },
   ],
-  onCompleteOnboarding: () => navigate('./start/'),
-};
+  onCompleteOnboarding: () => {
+    props.logOnboarded();
+    return navigate('./start/');
+  },
+});
 
 
-export default () => createElement(OnBoarding, props);
+const connectToReduxStore = connect(stateToProps, dispatchToProps);
+
+
+class Page extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      loading: true,
+    };
+  }
+
+  componentDidMount() {
+    return this.setState({ loading: false });
+  }
+
+  render() {
+    const { props, state } = this;
+
+    if (state.loading) {
+      return createElement(Loading);
+    }
+
+    const passedProps = createProps(props);
+    return createElement(Onboarding, passedProps);
+  }
+}
+
+
+const connectedPage = connectToReduxStore(Page);
+
+
+export default connectedPage;

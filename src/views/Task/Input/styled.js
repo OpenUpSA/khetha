@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Typography } from '@material-ui/core';
 import Checkbox from '@material-ui/core/Checkbox';
 import { primary } from '../../../tokens/colors';
 
@@ -19,6 +20,14 @@ const NextWrapper = styled.div`
 `;
 
 
+const PromptText = styled(Typography)`
+  && {
+    margin-top: 20px;
+    color: ${primary};
+  }
+`;
+
+
 const StyledCheckbox = styled(Checkbox)`
   &&&.icon {
     color: ${primary};
@@ -31,6 +40,7 @@ export {
   ButtonWrap,
   NextWrapper,
   StyledCheckbox,
+  PromptText,
 };
 
 export default {
@@ -38,4 +48,5 @@ export default {
   ButtonWrap,
   NextWrapper,
   StyledCheckbox,
+  PromptText,
 };

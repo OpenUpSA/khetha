@@ -2,6 +2,8 @@ const REPLACE_STATE = 'info/REPLACE_STATE';
 const SET_ID = 'info/SET_ID';
 const ADD_NOTIFICATION_TOKEN = 'info/ADD_NOTIFICATION_TOKEN';
 const ADD_POINTS = 'info/ADD_POINTS';
+const COMPLETE_ONBOARDING = 'info/COMPLETE_ONBOARDING';
+
 
 const reducer = (state = {}, action = {}) => {
   switch (action.type) {
@@ -12,6 +14,11 @@ const reducer = (state = {}, action = {}) => {
       ...state,
       id: action.payload.id,
       joined: action.payload.timestamp,
+    };
+
+    case COMPLETE_ONBOARDING: return {
+      ...state,
+      onboarded: true,
     };
 
 
@@ -42,6 +49,11 @@ const addUser = id => ({
 });
 
 
+const completeOnboarding = () => ({
+  type: COMPLETE_ONBOARDING,
+});
+
+
 const addNotificationToken = token => ({
   type: ADD_NOTIFICATION_TOKEN,
   payload: {
@@ -61,6 +73,7 @@ export {
   addUser,
   addNotificationToken,
   addPoints,
+  completeOnboarding,
 };
 
 

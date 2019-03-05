@@ -6,6 +6,7 @@ import { secondary } from '../../tokens/colors';
 
 
 const Wrapper = styled.div`
+  background: #0575E6;
   height: 100vh;
   width: 100%;
   display: flex;

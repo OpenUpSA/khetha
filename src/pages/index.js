@@ -9,7 +9,7 @@ import Loading from '../views/Loading';
 
 const stateToProps = (state, ownProps) => ({
   allAnswers: state.answers,
-  id: state.info.id,
+  onboarded: state.info.onboarded,
   ...ownProps,
 });
 
@@ -24,13 +24,9 @@ const connectToReduxStore = connect(stateToProps, dispatchToProps);
 
 class Page extends Component {
   componentDidMount() {
-    const { id, allAnswers } = this.props;
+    const { onboarded, allAnswers } = this.props;
 
-    if (allAnswers) {
-      return navigate('/start/');
-    }
-
-    if (id) {
+    if (onboarded && allAnswers) {
       return navigate('/start/');
     }
 
@@ -50,12 +46,12 @@ export default PageWithRedux;
 
 
 Page.propTypes = {
-  id: t.string,
+  onboarded: t.bool,
   allAnswers: t.arrayOf(t.object),
 };
 
 
 Page.defaultProps = {
-  id: null,
+  onboarded: null,
   allAnswers: null,
 };

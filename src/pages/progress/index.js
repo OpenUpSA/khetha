@@ -27,17 +27,20 @@ export const query = graphql`query {
 }`;
 
 
-const buildTasks = tasks => tasks.edges.map(({ node }) => {
-  const total = node.eng.questions.length;
-  const answered = node.eng.questions.filter(item => !!item).length;
+const buildTask = (allAnswers, allTasks) => (key) => {
+  const answersArray = allAnswers[key].data;
+  const taskObject = allTasks.find(({ node }) => node.id === key);
+
+  const total = answersArray.length;
+  const validAnswers = answersArray.filter(({ value }) => !!value).length;
 
   return {
-    id: node.id,
-    title: node.eng.title,
-    icon: node.icon,
-    progress: Math.floor(answered / total * 100),
+    id: taskObject.node.id,
+    title: taskObject.node.eng.title,
+    icon: taskObject.node.icon,
+    progress: Math.floor(validAnswers / total * 100),
   };
-});
+};
 
 
 const stateToProps = (state, ownProps) => ({
@@ -75,12 +78,16 @@ class Page extends Component {
       return createElement(Loading);
     }
 
+    const allAnswerKeys = props.taskAnswers ? Object.keys(props.taskAnswers) : null;
 
     const passedProps = {
       points: props.points,
       onMenuButtonPress: navigate,
       onCardPress: id => navigate(`/task?id=${id}`),
-      tasks: buildTasks(props.data.tasks),
+      tasks: allAnswerKeys && allAnswerKeys.map(buildTask(
+        props.taskAnswers,
+        props.data.tasks.edges,
+      )),
     };
 
     return createElement(Progress, passedProps);

@@ -28,7 +28,7 @@ const types = [
 
 const createOptions = (type) => {
   if (type !== 'select' && type !== 'checkboxes' && type !== 'buttons') {
-    return null;
+    return [];
   }
 
   return randomLengthBlankArray(2, 10).map(() => faker.commerce.productName());
@@ -41,7 +41,10 @@ const singleItem = format => ({
     title: faker.hacker.phrase(),
     description: faker.hacker.phrase(),
     format,
-    options: createOptions(format),
+    options: [
+      ...createOptions(format),
+      ...(format === 'select' ? ['Other'] : []),
+    ],
   }],
 });
 
@@ -152,6 +155,9 @@ const average = () => <Task {...createProps(6, 12)} onTaskSubmit={console.log} o
 const massive = () => <Task {...createProps(30, 35)} onTaskSubmit={console.log} onQuestionSave={console.log} points={randomNumber(0, 110)} />;
 
 const partial = () => <Task {...partialProps()} onTaskSubmit={console.log} onQuestionSave={console.log} points={randomNumber(0, 110)} />;
+
+const isolated = () => <Task {...createProps(6, 12)} onTaskSubmit={console.log} onQuestionSave={console.log} points={randomNumber(0, 110)} isolated />;
+
 const completed = () => <Task {...completedProps()} onTaskSubmit={console.log} onQuestionSave={console.log} points={randomNumber(0, 110)} />;
 
 
@@ -166,5 +172,6 @@ storiesOf('view.Task', module)
   .add('Small task', small)
   .add('Average task', average)
   .add('Massive task', massive)
+  .add('Isolated task', isolated)
   .add('Partially completed task', partial)
   .add('Completed task', completed);

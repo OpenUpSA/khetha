@@ -3,7 +3,6 @@
 
 import { createElement } from 'react';
 import { Provider } from 'react-redux';
-import { navigate } from 'gatsby';
 
 
 import { createUser } from './src/redux/actions';
@@ -15,13 +14,25 @@ const wrapRootElement = ({ element }) => (
 );
 
 
-const onInitialClientRender = () => {
+const onClientEntry = () => {
   const { info } = store.getState();
-  const { id } = info;
+  const { onboarded, id } = info;
 
   if (!id) {
-    navigate('/intro/');
     return store.dispatch(createUser());
+  }
+
+  const isDebateUrl = /^\/bigdebate\/?$/i.test(window.location.pathname);
+  const isLoadingUrl = /^\/\/?$/i.test(window.location.pathname);
+  const isIntroUrl = /^\/intro\/?$/i.test(window.location.pathname);
+  const isOnboarding = isLoadingUrl || isIntroUrl;
+
+  if (isDebateUrl) {
+    return null;
+  }
+
+  if (!onboarded && !isOnboarding) {
+    window.location = '/';
   }
 
   return null;
@@ -30,11 +41,11 @@ const onInitialClientRender = () => {
 
 export {
   wrapRootElement,
-  onInitialClientRender,
+  onClientEntry,
 };
 
 
 export default {
   wrapRootElement,
-  onInitialClientRender,
+  onClientEntry,
 };
