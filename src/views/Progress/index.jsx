@@ -52,18 +52,22 @@ const Progress = (props) => {
         title,
         icon,
         progress,
-      }) => (
-        <Wrapper key={id}>
-          <CardWrapper {...{ progress }}>
-            <CardActionArea onClick={onCardPress}>
-              <CardContentStyled>
-                {createTaskInfo(progress, title, icon)}
-                {createProgressBar(progress)}
-              </CardContentStyled>
-            </CardActionArea>
-          </CardWrapper>
-        </Wrapper>
-      ))}
+      }) => {
+        const CardInner = progress >= 100 ? 'div' : CardActionArea;
+
+        return (
+          <Wrapper key={id}>
+            <CardWrapper {...{ progress }}>
+              <CardInner onClick={progress >= 100 ? onCardPress : null}>
+                <CardContentStyled>
+                  {createTaskInfo(progress, title, icon)}
+                  {createProgressBar(progress)}
+                </CardContentStyled>
+              </CardInner>
+            </CardWrapper>
+          </Wrapper>
+        );
+      })}
     </Layout>
   );
 };
