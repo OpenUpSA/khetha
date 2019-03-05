@@ -34,11 +34,11 @@ class Task extends Component {
 
 
   completeTask = () => {
-    const { onTaskSubmit } = this.props;
+    const { onTaskSubmit, taskPoints: points } = this.props;
     const { answers } = this.state;
 
     if (onTaskSubmit) {
-      return onTaskSubmit(answers);
+      return onTaskSubmit(answers, points);
     }
 
     return null;
@@ -48,17 +48,25 @@ class Task extends Component {
   changeAnswer = ({ id, value }) => {
     const { onQuestionSave } = this.props;
     const { answers: currentAnswers } = this.state;
+    const baseAnswer = currentAnswers[id];
+    const isFirstUpdate = !currentAnswers[id];
+
 
     if (!value) {
       return null;
     }
 
-    if (onQuestionSave) {
-      onQuestionSave({ index: id, value });
-    }
+    const answers = [
+      ...currentAnswers.slice(0, id),
+      value.value,
+      ...currentAnswers.slice(id + 1),
+    ];
 
-    const baseAnswer = currentAnswers[id];
-    const isFirstUpdate = !currentAnswers[id];
+    this.setState({ answers });
+
+    if (!onQuestionSave) {
+      return null;
+    }
 
     const newAnswer = {
       value: value.value,
@@ -67,14 +75,8 @@ class Task extends Component {
       lastEdit: !isFirstUpdate ? getTimestamp() : null,
     };
 
-    const answers = [
-      ...currentAnswers.slice(0, id),
-      newAnswer,
-      ...currentAnswers.slice(id + 1),
-    ];
-
-    return this.setState({ answers });
-  }
+    return onQuestionSave({ index: id, value: newAnswer });
+  };
 
 
   changeFilter = filter => this.setState({ filter });

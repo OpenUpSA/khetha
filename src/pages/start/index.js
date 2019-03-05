@@ -3,6 +3,7 @@ import t from 'prop-types';
 import { createElement, Component } from 'react';
 import { navigate, graphql } from 'gatsby';
 import { difference } from 'lodash';
+import { parse } from 'query-string';
 
 
 import { create } from '../../redux/modules/answers';
@@ -81,6 +82,7 @@ const connectToReduxStore = connect(stateToProps, dispatchToProps);
 
 const createProps = (props) => {
   const {
+    id,
     registerUser,
     tasks,
     rewards,
@@ -90,12 +92,13 @@ const createProps = (props) => {
     startTask,
   } = props;
 
-  const validTasks = difference(tasks.map(({ id }) => id), activeTasks);
+  const validTasks = difference(tasks.map(({ id: taskId }) => taskId), activeTasks);
 
   return {
+    id,
     registerUser,
     rewards,
-    tasks: validTasks.map(id => tasks.find(({ id: taskId }) => id === taskId)),
+    tasks: validTasks.map(validId => tasks.find(({ id: taskId }) => validId === taskId)),
     points,
     onMenuButtonPress: navigate,
     onMount,
@@ -133,8 +136,14 @@ class Page extends Component {
   }
 
   componentDidMount() {
-    const { registerUser } = this.props;
-    registerUser();
+    const { registerUser, id } = this.props;
+    const { user } = parse(window.location.search);
+
+    if (!id) {
+      registerUser();
+      return this.setState({ loading: false });
+    }
+
     return this.setState({ loading: false });
   }
 
@@ -146,6 +155,7 @@ class Page extends Component {
     }
 
     const passedProps = createProps({
+      id: props.id,
       registerUser: props.registerUser,
       startTask: props.startTask,
       activeTasks: props.activeTasks,
@@ -168,4 +178,10 @@ export default connectedPage;
 
 Page.propTypes = {
   registerUser: t.func.isRequired,
+  id: t.string,
+};
+
+
+Page.defaultProps = {
+  id: null,
 };

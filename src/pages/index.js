@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import t from 'prop-types';
 import { createElement, Component } from 'react';
 import { navigate } from 'gatsby';
 
@@ -8,6 +9,7 @@ import Loading from '../views/Loading';
 
 const stateToProps = (state, ownProps) => ({
   allAnswers: state.answers,
+  id: state.info.id,
   ...ownProps,
 });
 
@@ -22,13 +24,17 @@ const connectToReduxStore = connect(stateToProps, dispatchToProps);
 
 class Page extends Component {
   componentDidMount() {
-    // const { allAnswers } = this.props;
+    const { id, allAnswers } = this.props;
 
-    // if (allAnswers) {
-    //   return navigate('/progress/');
-    // }
+    if (allAnswers) {
+      return navigate('/start/');
+    }
 
-    return navigate('/start/');
+    if (id) {
+      return navigate('/start/');
+    }
+
+    return navigate('/intro/');
   }
 
   render() {
@@ -41,3 +47,15 @@ const PageWithRedux = connectToReduxStore(Page);
 
 
 export default PageWithRedux;
+
+
+Page.propTypes = {
+  id: t.string,
+  allAnswers: t.arrayOf(t.object),
+};
+
+
+Page.defaultProps = {
+  id: null,
+  allAnswers: null,
+};

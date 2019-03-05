@@ -15,6 +15,7 @@ export const query = graphql`query {
     edges {
       node {
         id
+        points
         eng {
           title
           questions {
@@ -36,6 +37,7 @@ const addId = (values, index) => ({ ...values, id: index });
 const buildTasks = ({ edges }) => edges.map(({ node }) => ({
   id: node.id,
   title: node.eng.title,
+  points: node.points,
   questions: node.eng.questions.map(addId),
 }));
 
@@ -102,14 +104,14 @@ const createProps = (props, id) => {
     points,
     onMenuButtonPress: navigate,
     questions: task.questions,
-    answers: answers && answers.map(item => (item ? item.value : null)),
+    answers: !!answers && answers.map(item => (item ? item.value : null)),
     onQuestionSave: ({ index, value }) => changeAnswer(
       id,
       formatForSave({ answers, index, value }),
     ),
     onTaskSubmit: () => {
-      submit(id, points);
-      return navigate('/progress/');
+      submit(id, task.points);
+      return navigate('/start/');
     },
   };
 };
