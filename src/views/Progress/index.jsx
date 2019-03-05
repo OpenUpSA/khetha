@@ -70,9 +70,11 @@ const Progress = (props) => {
     points,
     onMenuButtonPress,
   } = props;
+
+
   return (
     <Layout {...{ points, onMenuButtonPress }}>
-      {createTasks(tasks, onCardPress)}
+      {!!tasks && createTasks(tasks, onCardPress)}
     </Layout>
   );
 };
