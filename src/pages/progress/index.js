@@ -1,8 +1,6 @@
 import { connect } from 'react-redux';
-import t from 'prop-types';
 import { createElement, Component } from 'react';
 import { navigate, graphql } from 'gatsby';
-import { intersection } from 'lodash';
 
 
 import Loading from '../../views/Loading';
@@ -94,8 +92,3 @@ const connectedPage = connectToReduxStore(Page);
 
 
 export default connectedPage;
-
-
-Page.propTypes = {
-  registerUser: t.func.isRequired,
-};

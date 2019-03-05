@@ -46,7 +46,7 @@ const ProgressAndTitle = styled.div`
   padding-bottom: 22px;
 `;
 
-const Progress = styled(Typography)`
+const ProgressWrapper = styled(Typography)`
   && {
     color: ${({ progress }) => (progress >= 100 ? '#AFAFAF' : '#0575E6')};
     font-size: 12px;
@@ -73,7 +73,7 @@ export {
   CardContentStyled,
   TextWrapper,
   ProgressAndTitle,
-  Progress,
+  ProgressWrapper,
   Title,
 };
 
@@ -85,6 +85,6 @@ export default {
   CardContentStyled,
   TextWrapper,
   ProgressAndTitle,
-  Progress,
+  ProgressWrapper,
   Title,
 };
