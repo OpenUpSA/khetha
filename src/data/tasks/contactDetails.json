@@ -1,0 +1,39 @@
+{
+  "id": "contactDetails",
+  "points": 3,
+  "icon": "Public",
+
+  "eng": {
+    "title": "Contact Details",
+    "description": "We would like to know how to contact you. This will help us get in touch should you win some of our prizes",
+    "questions": [
+      {
+        "title": "What is your phone number?",
+        "description": "We would like your phone number to get in touch should you win a prize",
+        "format": "string"
+      },
+      {
+        "title": "What is your main network provider?",
+        "description": "This information will be used for airtime prizes",
+        "format": "select",
+        "options": ["Cell C", "MTN", "Rain", "Telkom (8ta)", "Virgin Mobile", "Vodacom"]
+      },
+      {
+        "title": "What do you prefer as a reward for playing?",
+        "description": "Pick one of the following:",
+        "format": "buttons",
+        "options": ["Airtime", "Data"]
+      },
+      {
+        "title": "What will your gaming name be?",
+        "description": "You can choose an alias name if you want",
+        "format": "string"
+      },
+      {
+        "title": "Do you give us permission to save your information?",
+        "format": "buttons",
+        "options": ["Yes", "No"]
+      }
+    ]
+  }
+}
