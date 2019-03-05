@@ -74,16 +74,16 @@ const Footer = ({ callback }) => (
   <FooterBar>
     <FooterToolbar>
       <FooterList>
-        {/* <FooterItem>
+        <FooterItem>
           <FooterButton onClick={() => callback('/progress')}>
             <CheckIcon />
-            Progress
+            <span>Progress</span>
           </FooterButton>
-        </FooterItem> */}
+        </FooterItem>
         <FooterItem>
           <FooterButton onClick={() => callback('/start')}>
             <AddIcon />
-            Start
+            <span>Start</span>
           </FooterButton>
         </FooterItem>
         {/* <FooterItem>
