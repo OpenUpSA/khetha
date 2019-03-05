@@ -14,7 +14,7 @@ const reducer = (state = {}, action = {}) => {
     case CREATE: return {
       ...state,
       [action.payload.id]: {
-        data: blankArray(action.payload.length),
+        data: blankArray(action.payload.length, {}),
         completed: null,
         started: getTimestamp(),
       },
