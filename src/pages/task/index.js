@@ -63,7 +63,6 @@ const getIdTasks = (allTasks, id) => buildTasks(allTasks)
 
 const getIdAnswers = (allAnswers, id) => {
   const answersObjects = allAnswers[id];
-  // const answersObjects = allAnswers.find(({ id: answersId }) => answersId === id);
 
   if (!answersObjects) {
     return null;
@@ -84,9 +83,7 @@ const createProps = (props, id) => {
   const {
     data,
     allAnswers,
-    // allTasks,
     points,
-    // title,
     changeAnswer,
     submit,
   } = props;
@@ -112,7 +109,7 @@ const createProps = (props, id) => {
     ),
     onTaskSubmit: () => {
       submit(id, points);
-      return navigate('/start/');
+      return navigate('/progress/');
     },
   };
 };

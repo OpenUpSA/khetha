@@ -63,10 +63,7 @@ const buildTasks = tasks => tasks.edges.map(({ node }) => ({
 
 const stateToProps = (state, ownProps) => ({
   points: state.info.points,
-  activeTasks: state.answers
-    ? Object.keys(state.answers).filter(key => !!state.answers[key].completed)
-    : [],
-  // activeTasks: state.answers ? Object.keys(state.answers) : [],
+  activeTasks: state.answers ? Object.keys(state.answers) : [],
   ...ownProps,
 });
 
