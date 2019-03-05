@@ -1,0 +1,68 @@
+{
+  "id": "electionsImportance",
+  "points": 10,
+  "icon": "Public",
+
+  "eng": {
+    "title": "How important are elections to you?",
+    "description": "Tell us a bit about yourself, we are interested in your age, gender and preferences. This will help us get a better idea of who is filling in the questions.",
+    "questions": [
+      {
+        "title": "What is your current location?",
+        "format": "gps",
+        "options": []
+      },
+      {
+        "title": "Which province do you live in? Which municipality does your area fall under?",
+        "format": "string"
+      },
+      {
+        "title": "What is your date of birth?",
+        "format": "string"
+      },
+      {
+        "title": "What is your gender?",
+        "format": "buttons",
+        "options": ["Yes", "No"]
+      },
+      {
+        "title": "What is your ethnicity?",
+        "format": "buttons",
+        "options": ["Black African", "White African", "Coloured African", "Indian Africa", "I would rather not answer"]
+      },
+      {
+        "title": "What is your highest level of education?",
+        "format": "buttons",
+        "options": [
+          "Some primary schooling (grade 0-7)",
+          "High school (grade 9-11)",
+          "Matric (grade 12)",
+          "TVET college (incomplete or complete)",
+          "University/ college undergraduate (incomplete or complete)",
+          "University/ college post-graduate (incomplete or complete)"
+        ]
+      },
+      {
+        "title": "What do you do at the moment?",
+        "format": "buttons",
+        "options": [
+          "In high school",
+          "In college/ university",
+          "Employed",
+          "Self-Employed",
+          "Unemployed and not looking",
+          "Unemployed and seeking employment"
+        ]
+      },
+      {
+        "title": "In which sector do you work?",
+        "format": "buttons",
+        "options": [
+          "Government",
+          "Private company or household",
+          "NGO or community organisation"
+        ]
+      }
+    ]
+  }
+}
