@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 
-import Layout from '../../components/Layout';
 import {
   Wrapper,
   Loader,
@@ -9,9 +9,10 @@ import {
 
 
 export default () => (
-  <Layout header={false} footer={false}>
+  <Fragment>
+    <CssBaseline />
     <Wrapper>
-      <Loader size={65} />
+      <Loader size={150} />
     </Wrapper>
-  </Layout>
+  </Fragment>
 );
