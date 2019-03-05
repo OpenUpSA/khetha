@@ -65,7 +65,6 @@ const getIdTasks = (allTasks, id) => buildTasks(allTasks)
 
 const getIdAnswers = (allAnswers, id) => {
   const answersObjects = allAnswers[id];
-  // const answersObjects = allAnswers.find(({ id: answersId }) => answersId === id);
 
   if (!answersObjects) {
     return null;
