@@ -41,7 +41,7 @@ const Markup = (props) => {
       <Layout {...{ points, onMenuButtonPress }}>
         <Section>
           <SectionHeading gutter text={title} />
-          <FilterWrapper gutter={filter !== 0 || (items[0] && items[0].progress)}>
+          <FilterWrapper>
             <GradientSelect
               options={filterOptions}
               fullWidth

@@ -39,7 +39,6 @@ const Buttons = (props) => {
   const {
     answer,
     saveAnswer,
-    focusElement,
     options,
     id,
   } = props;
@@ -49,7 +48,6 @@ const Buttons = (props) => {
   const addedProps = {
     answer,
     saveAnswer,
-    focusElement,
   };
 
   return (

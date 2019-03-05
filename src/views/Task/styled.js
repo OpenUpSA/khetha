@@ -43,7 +43,7 @@ const ActionsWrapper = styled(DialogActions)`
 `;
 
 const FilterWrapper = styled.div`
-  margin-bottom: ${({ gutter }) => (gutter ? '16px' : '0')};
+  margin-bottom: 16px;
 `;
 
 

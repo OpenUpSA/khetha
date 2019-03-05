@@ -28,7 +28,7 @@ const types = [
 
 const createOptions = (type) => {
   if (type !== 'select' && type !== 'checkboxes' && type !== 'buttons') {
-    return null;
+    return [];
   }
 
   return randomLengthBlankArray(2, 10).map(() => faker.commerce.productName());
@@ -41,7 +41,10 @@ const singleItem = format => ({
     title: faker.hacker.phrase(),
     description: faker.hacker.phrase(),
     format,
-    options: createOptions(format),
+    options: [
+      ...createOptions(format),
+      ...(format === 'select' ? ['Other'] : []),
+    ],
   }],
 });
 
