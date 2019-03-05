@@ -3,7 +3,6 @@ import t from 'prop-types';
 import { createElement, Component } from 'react';
 import { navigate, graphql } from 'gatsby';
 import { difference } from 'lodash';
-import { parse } from 'query-string';
 
 
 import { create } from '../../redux/modules/answers';
@@ -102,9 +101,9 @@ const createProps = (props) => {
     points,
     onMenuButtonPress: navigate,
     onMount,
-    onCardPress: ({ amountOfQuestions, id }) => {
+    onCardPress: ({ amountOfQuestions, id: cardPressId }) => {
       startTask(id, amountOfQuestions);
-      return navigate(`/task/index.html?id=${id}`);
+      return navigate(`/task/index.html?id=${cardPressId}`);
     },
     translation: {
       points: 'Khetha Points',
@@ -137,7 +136,6 @@ class Page extends Component {
 
   componentDidMount() {
     const { registerUser, id } = this.props;
-    const { user } = parse(window.location.search);
 
     if (!id) {
       registerUser();
