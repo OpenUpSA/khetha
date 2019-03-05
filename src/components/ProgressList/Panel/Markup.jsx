@@ -48,11 +48,19 @@ const Markup = (props) => {
   const percentage = calcPercentage({ progress, incremental });
   const clickEvent = advance ? () => changeFocus(index) : toggleOpen;
 
+  const firstPanel = id === 0;
+
+  const wrapperProps = {
+    buttons,
+    open,
+    advance,
+    firstPanel,
+  };
 
   return (
     <Wrapper
       key={id}
-      {...{ buttons, open, advance }}
+      {...wrapperProps}
       expanded={open}
       onClick={buttons ? clickEvent : null}
     >
