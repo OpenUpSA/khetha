@@ -5,62 +5,131 @@
 
   "eng": {
     "title": "How important are elections to you?",
-    "description": "Tell us a bit about yourself, we are interested in your age, gender and preferences. This will help us get a better idea of who is filling in the questions.",
+    "description": "Tell us about your reasons for voting, and what influences your choices. This will help us get a better idea of who is filling in the questions.",
     "questions": [
       {
-        "title": "What is your current location?",
-        "format": "gps",
-        "options": []
-      },
-      {
-        "title": "Which province do you live in? Which municipality does your area fall under?",
-        "format": "string"
-      },
-      {
-        "title": "What is your date of birth?",
-        "format": "string"
-      },
-      {
-        "title": "What is your gender?",
-        "format": "buttons",
-        "options": ["Yes", "No"]
-      },
-      {
-        "title": "What is your ethnicity?",
-        "format": "buttons",
-        "options": ["Black African", "White African", "Coloured African", "Indian Africa", "I would rather not answer"]
-      },
-      {
-        "title": "What is your highest level of education?",
-        "format": "buttons",
+        "title": "What are your reasons for not planning to vote?",
+        "description": "Choose the one that MOST explains your reasons.",
+        "format": "select",
         "options": [
-          "Some primary schooling (grade 0-7)",
-          "High school (grade 9-11)",
-          "Matric (grade 12)",
-          "TVET college (incomplete or complete)",
-          "University/ college undergraduate (incomplete or complete)",
-          "University/ college post-graduate (incomplete or complete)"
+          "Not interested in politics",
+          "Voting doesn't make a difference",
+          "No party addresses the issues I am most interested in",
+          "Not registered/ missed registration deadline",
+          "I don't believe anything the politicians say",
+          "I don't trust that the voting process will keep my vote secret",
+          "I am worried that there will be violence on voting day",
+          "All politicians are corrupt or only interested in benefiting themselves",
+          "None of the above"
         ]
       },
       {
-        "title": "What do you do at the moment?",
-        "format": "buttons",
+        "title": "What are your reasons for planning to vote?",
+        "description": "Choose the one that MOST explains your reasons.",
+        "format": "select",
         "options": [
-          "In high school",
-          "In college/ university",
-          "Employed",
-          "Self-Employed",
-          "Unemployed and not looking",
-          "Unemployed and seeking employment"
+          "I want to support the party that has helped me and  my family",
+          "I want to support the party I feel has done the most for the country",
+          "I want the policies that interest me to be actioned",
+          "We need a change in leadership",
+          "I HAVE to vote (no particular reason)",
+          "My family and friends expect me to vote"
         ]
       },
       {
-        "title": "In which sector do you work?",
-        "format": "buttons",
+        "title": "What are your reasons for not knowing whether you’ll vote or not?",
+        "description": "Choose the one that MOST explains your reasons.",
+        "format": "select",
         "options": [
-          "Government",
-          "Private company or household",
-          "NGO or community organisation"
+          "I don't know which party to vote for",
+          "I'm not sure if it’s going to be safe to vote in my area",
+          "I'm not sure if I will be able to make it to the voting station",
+          "None of the above"
+        ]
+      },
+      {
+        "title": "How important are elections in changing your life?",
+        "format": "buttons",
+        "options": ["Have no impact at all", "Have a big impact"]
+      },
+      {
+        "title": "How important are elections in changing living conditions in my community?",
+        "format": "buttons",
+        "options": ["Have no impact at all", "Have a big impact"]
+      },
+      {
+        "title": "How important are elections in changing living conditions for other people in the country?",
+        "format": "buttons",
+        "options": ["Have no impact at all", "Have a big impact"]
+      },
+      {
+        "title": "What influenced your decision to register to vote?",
+        "description": "Choose the one that MOST explains your reasons.",
+        "format": "select",
+        "options": [
+          "IEC efforts (adverts on media)",
+          "Political party door-to-door/ telephonic/ media campaigning",
+          "Family and friends",
+          "Peers and teachers at school/ college/ university",
+          "Colleagues",
+          "Potential/ current employment is dependent on this"
+        ]
+      },
+      {
+        "title": "What influenced your decision to not register to vote?",
+        "description": "Choose the one that MOST explains your reasons.",
+        "format": "select",
+        "options": [
+          "I moved to a different place from where I initially registered",
+          "I couldn't make time to go register",
+          "I didn't know my local voting station",
+          "I couldn't get to my local voting station",
+          "I don't care about voting"
+        ]
+      },
+      {
+        "title": "In the past 12 months, for how many parties have you attended a political rally?",
+        "format": "buttons",
+        "options": ["None", "One", "More than one"]
+      },
+      {
+        "title": "In the past 12 months, how many times did you listen to a political rally?",
+        "description": "(on radio and other forms of media)",
+        "format": "buttons",
+        "options": ["None", "One", "More than one"]
+      },
+      {
+        "title": "In the past 12 months, for how many parties have you attended a political party manifesto launch?",
+        "format": "buttons",
+        "options": ["None", "One", "More than one"]
+      },
+      {
+        "title": "In the past 12 months, how many times did you listen to political party manifesto launch?",
+        "description": "(on radio and other forms of media)",
+        "format": "buttons",
+        "options": ["None", "One", "More than one"]
+      },
+      {
+        "title": "In the past 12 months, how many times did you listen to speeches/ interviews/ comments made by political party representatives?",
+        "format": "buttons",
+        "options": ["None", "One", "More than one"]
+      },
+      {
+        "title": "How do you get updates on political matters?",
+        "format": "checkboxes",
+        "options": [
+          "Radio news",
+          "Talk radio",
+          "Television",
+          "Local newspapers",
+          "Local elected leaders (councillors)",
+          "Local traditional leaders",
+          "Provincial/ national newspaper",
+          "Political party representatives",
+          "Family",
+          "Friends",
+          "Social media (by following political organisations/ people or news)",
+          "Social media (friends)"
         ]
       }
     ]
