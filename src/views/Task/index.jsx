@@ -125,6 +125,7 @@ class Task extends Component {
       points: props.points,
       completeTask: events.completeTask,
       onMenuButtonPress: props.onMenuButtonPress,
+      isolated: props.isolated,
     };
 
     return <Markup {...passedProps} />;

@@ -25,6 +25,7 @@ const Markup = (props) => {
     completeTask,
     completed,
     onMenuButtonPress,
+    isolated,
   } = props;
 
   const items = createItems(Content);
@@ -38,7 +39,7 @@ const Markup = (props) => {
   return (
     <Fragment>
       <Modal {...modalProps} />
-      <Layout {...{ points, onMenuButtonPress }}>
+      <Layout {...{ points, onMenuButtonPress, isolated }}>
         <Section>
           <SectionHeading gutter text={title} />
           <FilterWrapper>
