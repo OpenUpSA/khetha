@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { createElement, Component } from 'react';
 import { navigate, graphql } from 'gatsby';
 import { parse } from 'query-string';
+import t from 'prop-types';
 
 
 import { update } from '../../redux/modules/answers';
@@ -158,3 +159,17 @@ const connectedPage = connectToReduxStore(Page);
 
 
 export default connectedPage;
+
+
+Page.propTypes = {
+  allAnswers: t.arrayOf(t.shape({
+    data: t.arrayOf(t.object),
+    completed: t.number,
+    started: t.number,
+  })),
+};
+
+
+Page.defaultProps = {
+  allAnswers: null,
+};
