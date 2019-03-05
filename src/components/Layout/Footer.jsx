@@ -4,6 +4,8 @@ import t from 'prop-types';
 import AddIcon from '@material-ui/icons/Add';
 import PersonIcon from '@material-ui/icons/Person';
 import CheckIcon from '@material-ui/icons/Check';
+import CloseIcon from '@material-ui/icons/Close';
+
 
 const FooterBar = styled.div`
   bottom: 0;
@@ -83,13 +85,19 @@ const Footer = ({ callback }) => (
         <FooterItem>
           <FooterButton onClick={() => callback('/start')}>
             <AddIcon />
-            <span>Start</span>
+            <span>New Task</span>
           </FooterButton>
         </FooterItem>
         {/* <FooterItem>
           <FooterButton onClick={() => callback('/profile')}>
             <PersonIcon />
-            Profile
+            <span>Profile</span>
+          </FooterButton>
+        </FooterItem>
+        <FooterItem>
+          <FooterButton onClick={typeof window !== 'undefined' && window.close}>
+            <CloseIcon />
+            <span>Close App</span>
           </FooterButton>
         </FooterItem> */}
       </FooterList>
