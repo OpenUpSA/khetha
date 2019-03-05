@@ -27,6 +27,7 @@ const createProps = (seed) => {
       title: faker.commerce.productName(),
       description: faker.hacker.phrase(),
       icon: names[randomNumber(0, namesLength)],
+      amountOfQuestions: randomNumber(1, 8),
     })),
     rewards: randomLengthBlankArray(1, 10).map(() => ({
       id: faker.random.uuid(),
