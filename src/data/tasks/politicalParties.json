@@ -1,0 +1,17 @@
+{
+  "id": "politicalParties",
+  "points": 2,
+  "icon": "Public",
+
+  "eng": {
+    "title": "Politcal Parties",
+    "description": "Question regarding the elections",
+    "questions": [
+      {
+        "title": "How many political parties are competing in the 2019 national and provincial elections? ",
+        "format": "buttons",
+        "options": ["10", "16", "25", "176", "285", "465", "584"]
+      }
+    ]
+  }
+}
