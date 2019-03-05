@@ -24,7 +24,7 @@ const Progress = (props) => {
           title={title}
           icon={icon}
           progress={progress}
-          onCardPress={() => onCardPress(progress, id)}
+          onCardPress={() => onCardPress(id)}
         />
       ))}
     </Layout>
