@@ -1,30 +1,25 @@
 import { connect } from 'react-redux';
 import { createElement, Component } from 'react';
 import { navigate, graphql } from 'gatsby';
-import { parse } from 'query-string';
 
 
-import { update } from '../../redux/modules/answers';
+import { update, create } from '../../redux/modules/answers';
 import { completeTask } from '../../redux/actions';
 import Loading from '../../views/Loading';
 import Task from '../../views/Task';
 
 
 export const query = graphql`query {
-  allTasks: allTasksJson {
-    edges {
-      node {
-        id
-        points
-        eng {
-          title
-          questions {
-            title
-            description
-            format
-            options
-          }
-        }
+  rawTask: tasksJson(id: { eq: "big-debate" }) {
+    id
+    points
+    eng {
+      title
+      questions {
+        title
+        description
+        format
+        options
       }
     }
   }
@@ -34,12 +29,12 @@ export const query = graphql`query {
 const addId = (values, index) => ({ ...values, id: index });
 
 
-const buildTasks = ({ edges }) => edges.map(({ node }) => ({
-  id: node.id,
-  title: node.eng.title,
-  points: node.points,
-  questions: node.eng.questions.map(addId),
-}));
+const buildTask = rawTask => ({
+  id: rawTask.id,
+  title: rawTask.eng.title,
+  points: rawTask.points,
+  questions: rawTask.eng.questions.map(addId),
+});
 
 
 const stateToProps = (state, ownProps) => ({
@@ -50,17 +45,14 @@ const stateToProps = (state, ownProps) => ({
 
 
 const dispatchToProps = (dispatch, ownProps) => ({
-  changeAnswer: (id, answers) => dispatch(update(id, answers)),
-  submit: (id, points) => dispatch(completeTask(id, points)),
+  changeAnswer: (id, answers) => dispatch(update('big-debate', answers)),
+  submit: () => dispatch(completeTask('big-debate', 1)),
+  markTaskAsActive: () => dispatch(create('big-debate', 2)),
   ...ownProps,
 });
 
 
 const connectToReduxStore = connect(stateToProps, dispatchToProps);
-
-
-const getIdTasks = (allTasks, id) => buildTasks(allTasks)
-  .find(({ id: taskId }) => taskId === id);
 
 
 const formatForSave = ({ answers, index, value }) => {
@@ -71,36 +63,35 @@ const formatForSave = ({ answers, index, value }) => {
 
 
 const createProps = (props, id) => {
-  const {
-    data,
-    allAnswers,
-    points,
-    changeAnswer,
-    submit,
-  } = props;
-
-  const task = getIdTasks(data.allTasks, id);
+  const task = buildTask(props.data.rawTask);
 
   if (!task) {
     return navigate('/');
   }
 
-  const answers = allAnswers[id] ? allAnswers[id].data : null;
+  if (!props.allAnswers || !props.allAnswers['big-debate']) {
+    props.markTaskAsActive();
+  }
+
+  const calcAnswers = !!props.allAnswers && props.allAnswers['big-debate'] && props.allAnswers['big-debate'].data;
+
+  const answers = calcAnswers || [{}, {}];
 
   return {
-    id,
+    id: 'big-debate',
     title: task.title,
-    points,
+    points: props.points,
     onMenuButtonPress: navigate,
+    isolated: true,
     questions: task.questions,
     answers: !!answers && answers.map(({ value }) => value),
-    onQuestionSave: ({ index, value }) => changeAnswer(
+    onQuestionSave: ({ index, value }) => props.changeAnswer(
       id,
       formatForSave({ answers, index, value }),
     ),
     onTaskSubmit: () => {
-      submit(id, task.points);
-      return navigate('/start/');
+      props.submit(id, 1);
+      return navigate('/');
     },
   };
 };
@@ -111,22 +102,16 @@ class Page extends Component {
     super(props);
 
     this.state = {
-      id: null,
       loading: true,
     };
   }
 
 
   componentDidMount() {
-    const { id } = parse(window.location.search);
     const { allAnswers } = this.props;
+    const calcAnswers = !!allAnswers && allAnswers['big-debate'] && allAnswers['big-debate'].data;
 
-    const answers = (allAnswers && allAnswers[id]) ? allAnswers[id].data : null;
-
-    if (!answers) {
-      return navigate('/');
-    }
-
+    const answers = calcAnswers || [{}, {}];
     const total = answers.length;
     const answered = answers.filter(({ value }) => !!value).length;
     const finished = total - answered <= 0;
@@ -136,13 +121,12 @@ class Page extends Component {
     }
 
     return this.setState({
-      id,
       loading: false,
     });
   }
 
   render() {
-    const { props, state } = this;
+    const { props = {}, state } = this;
 
     if (state.loading) {
       return createElement(Loading);

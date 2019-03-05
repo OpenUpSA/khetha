@@ -102,7 +102,7 @@ const createProps = (props) => {
     onMenuButtonPress: navigate,
     onMount,
     onCardPress: ({ amountOfQuestions, id: cardPressId }) => {
-      startTask(id, amountOfQuestions);
+      startTask(cardPressId, amountOfQuestions);
       return navigate(`/task/index.html?id=${cardPressId}`);
     },
     translation: {
