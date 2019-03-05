@@ -51,7 +51,7 @@ const createTasks = (tasks, onCardPress) => tasks.map((props) => {
   return (
     <Wrapper key={id}>
       <CardWrapper {...{ progress }}>
-        <CardInner onClick={progress >= 100 ? onCardPress : null}>
+        <CardInner onClick={progress >= 100 ? null : () => onCardPress(id)}>
           <CardContentStyled>
             {createTaskInfo(progress, title, icon)}
             {createProgressBar(progress)}
