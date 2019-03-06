@@ -17,7 +17,7 @@ const firestore = admin.firestore();
 
 
 const corsOptions = {
-  origin: '//khetha.org.za',
+  origin: 'https://khetha.org.za',
   optionsSuccessStatus: 200,
 };
 
