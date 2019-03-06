@@ -51,6 +51,11 @@ Profile.propTypes = {
     points: t.number,
     prize: t.string,
   })),
+  /** A callback function that will be fired when a user clicks
+   * on a button in the footer. Function will take one of
+   * the following as it's first parameter: 'progress', 'start'
+   * or 'profile'. This will likely be 'navigate' from import { navigate } from 'gatsby' */
+  onMenuButtonPress: t.func.isRequired,
   /** Value passed to the 'PrizesWidget' component.
    * Visit component for more information. */
   rewards: t.arrayOf(

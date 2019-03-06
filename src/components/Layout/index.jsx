@@ -85,8 +85,11 @@ Layout.propTypes = {
    * the following as it's first parameter: 'progress', 'start'
    * or 'profile'. This will likely be 'navigate' from import { navigate } from 'gatsby' */
   clickCallback: t.func,
-  /** TODO */
-  onMenuButtonPress: t.func,
+  /** A callback function that will be fired when a user clicks
+ * on a button in the footer. Function will take one of
+ * the following as it's first parameter: 'progress', 'start'
+ * or 'profile'. This will likely be 'navigate' from import { navigate } from 'gatsby' */
+  onMenuButtonPress: t.func.isRequired,
   /** Determines whether the layout should be rendered at full screen width */
   fullscreen: t.bool,
 };
@@ -98,5 +101,4 @@ Layout.defaultProps = {
   clickCallback: null,
   points: 0,
   fullscreen: true,
-  onMenuButtonPress: null,
 };

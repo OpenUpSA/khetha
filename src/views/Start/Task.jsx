@@ -67,6 +67,8 @@ Task.propTypes = {
    * clicked. However if string links to an external domain a url will
    * be opened in new tab when button is clicked */
   clickAction: t.func,
+  /** Function that is executed once the card has been clicked */
+  onCardPress: t.func.isRequired,
 };
 
 
