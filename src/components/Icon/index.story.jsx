@@ -11,17 +11,6 @@ import { names } from '../../config/icons';
 import Icon from './index';
 
 
-const createProps = (seed) => {
-  if (seed) {
-    faker.seed(seed);
-  }
-
-  return {
-    text: faker.hacker.verb(),
-  };
-};
-
-
 const randomIcon = () => randomNumber(0, names.length > 0 ? names.length - 1 : 0);
 
 
