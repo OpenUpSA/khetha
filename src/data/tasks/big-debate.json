@@ -1,14 +1,14 @@
 {
   "id": "big-debate",
-  "points": 1,
+  "points": 2,
   "icon": "Public",
 
   "eng": {
     "title": "Land redistribution",
-    "description": "A set of questions dealing with the subject of modern day land redistribution in South Africa, specifically as related to expropriation without compensation.",
+    "description": "A set of questions dealing with the subject of modern-day land redistribution in South Africa, specifically as related to expropriation without compensation.",
     "questions": [
       {
-        "title": "Do you believe in expropriating wihtout compensation?",
+        "title": "Do you believe in expropriating without compensation?",
         "description": "Do you think that land expropriation without compensation is good for South Africa?",
         "format": "buttons",
         "options": [
@@ -19,11 +19,11 @@
       },
       {
         "title": "Which land plan is best?",
-        "format": "select",
+        "format": "buttons",
         "options": [
-          "Nationalise all land now",
-          "Do it carefully, don't harm the economy",
-          "State should buy the land from willing sellers "
+          "Nationalise land now",
+          "Protect the economy",
+          "Willing buyer/ seller"
         ]
       }
     ]

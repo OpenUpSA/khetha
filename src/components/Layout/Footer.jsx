@@ -1,10 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import t from 'prop-types';
-import AddIcon from '@material-ui/icons/Add';
+import HomeIcon from '@material-ui/icons/Home';
 import PersonIcon from '@material-ui/icons/Person';
 import CheckIcon from '@material-ui/icons/Check';
-import CloseIcon from '@material-ui/icons/Close';
 
 
 const FooterBar = styled.div`
@@ -77,15 +76,15 @@ const Footer = ({ callback }) => (
     <FooterToolbar>
       <FooterList>
         <FooterItem>
-          <FooterButton onClick={() => callback('/progress')}>
-            <CheckIcon />
-            <span>Progress</span>
+          <FooterButton onClick={() => callback('/start')}>
+            <HomeIcon />
+            <span>Home</span>
           </FooterButton>
         </FooterItem>
         <FooterItem>
-          <FooterButton onClick={() => callback('/start')}>
-            <AddIcon />
-            <span>New Task</span>
+          <FooterButton onClick={() => callback('/progress')}>
+            <CheckIcon />
+            <span>Progress</span>
           </FooterButton>
         </FooterItem>
         {/* <FooterItem>

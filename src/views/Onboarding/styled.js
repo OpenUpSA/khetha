@@ -9,8 +9,8 @@ import { secondary } from '../../tokens/colors';
 
 const Animate = posed.div({
   0: { y: 0 },
-  1: { y: -360 },
-  2: { y: -440 },
+  1: { y: -270 },
+  2: { y: -270 },
 });
 
 
@@ -56,22 +56,35 @@ const IconWrap = styled.div`
 
 
 const Image = styled.img`
-  display: block;
-  max-height: 343px;
+  max-height: 250px;
   margin-bottom: 40px;
   border-radius: 4px;
+
+  @media screen and (min-height: 700px) {
+    display: block;
+    max-height: 343px;
+  }
 `;
 
 const HeroWrapper = styled.div`
-  height: 440px;
+  height: 270px;
   align-items: flex-start;
   overflow: hidden;
   background: #00C77B;
   flex-grow: 1;
   width: 100%;
-  padding: 100px 20px 0;
+  padding: 20px 20px 0;
   justify-content: center;
-  display: flex;
+  display: none;
+
+  @media screen and (min-height: 550px) {
+    display: flex;
+  }
+
+  @media screen and (min-height: 700px) {
+    padding: 100px 20px 0;
+    height: 440px;
+  }
 `;
 
 
@@ -109,8 +122,10 @@ const ButtonWrapper = styled.div`
 
 
 const ModalImage = styled.img`
-  width: 400px;
+  background: grey;
+  max-width: 400px;
   height: 172px;
+  width: 100%;
 `;
 
 

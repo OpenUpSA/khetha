@@ -87,11 +87,13 @@ const createProps = (props, id) => {
   }
 
   const answers = allAnswers[id] ? allAnswers[id].data : null;
+  const completed = allAnswers[id] ? allAnswers[id].completed : null;
 
   return {
     id,
     title: task.title,
     points,
+    submitted: completed,
     onMenuButtonPress: navigate,
     questions: task.questions,
     answers: !!answers && answers.map(({ value }) => value),
@@ -125,14 +127,6 @@ class Page extends Component {
     const answers = (allAnswers && allAnswers[id]) ? allAnswers[id].data : null;
 
     if (!answers) {
-      return navigate('/');
-    }
-
-    const total = answers.length;
-    const answered = answers.filter(({ value }) => !!value).length;
-    const finished = total - answered <= 0;
-
-    if (finished) {
       return navigate('/');
     }
 

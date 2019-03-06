@@ -20,8 +20,7 @@ const GlobalStyling = createGlobalStyle`
 const Wrapper = styled.div`
   background: #EDEDED;
   min-height: 100vh;
-  padding: ${({ fullscreen }) => (fullscreen ? '0' : '30px')};
-  padding-bottom: 200px;
+  padding: ${({ fullscreen }) => (fullscreen ? '0' : '30px 14px 110px')};
 `;
 
 
@@ -32,11 +31,11 @@ const InnerWrapper = styled.div`
 
 
 const FooterWrapper = styled.div`
-position: fixed;
-bottom: 0;
-left: 0;
-width: 100%;
-z-index: 999;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
 `;
 
 

@@ -4,7 +4,17 @@ import 'firebase/messaging';
 import firebaseConfig from '../../config/firebaseConfig.json';
 
 
+const initMessaging = (isClient, messaging) => {
+  if (!isClient || !messaging.isSupported()) {
+    return {};
+  }
+
+  return messaging();
+};
+
+
 const isClient = typeof window !== 'undefined';
+
 
 if (isClient) {
   firebase.initializeApp(firebaseConfig);
@@ -12,7 +22,8 @@ if (isClient) {
 
 
 const auth = isClient ? firebase.auth() : {};
-const messaging = isClient ? firebase.messaging() : {};
+const messaging = initMessaging(isClient, firebase.messaging);
+
 
 export { auth, messaging };
 export default { auth, messaging };

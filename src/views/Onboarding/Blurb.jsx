@@ -10,7 +10,9 @@ import {
 } from './styled';
 
 
-const Blurb = ({ title, description, icon, order }) => (
+const Blurb = ({
+  title, description, icon, order,
+}) => (
   <BlurbWrapper key={title} {...{ order }}>
     <div>
       <Title>{title}</Title>

@@ -2,8 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { CardActionArea } from '@material-ui/core';
 
+
+import SectionHeading from '../../components/SectionHeading';
 import Layout from '../../components/Layout';
 import Icon from '../../components/Icon';
+
 
 import {
   HeaderProgress,
@@ -17,23 +20,23 @@ import {
 } from './styled';
 
 
-const createProgressBar = progress => (
+const createProgressBar = (completed, progress) => (
   <HeaderProgress
     classes={{ barColorPrimary: 'barColor' }}
     variant="determinate"
     value={progress}
-    {...{ progress }}
+    {...{ completed }}
   />
 );
 
 
-const createTaskInfo = (progress, title, icon) => (
+const createTaskInfo = (completed, title, icon) => (
   <TextWrapper>
     <ProgressAndTitle>
-      <ProgressWrapper {...{ progress }}>{progress >= 100 ? 'Completed' : 'In progress'}</ProgressWrapper>
-      <Title {...{ progress }}>{title}</Title>
+      <ProgressWrapper {...{ completed }}>{completed ? 'Submitted' : 'In progress'}</ProgressWrapper>
+      <Title {...{ completed }}>{title}</Title>
     </ProgressAndTitle>
-    <Icon type={icon} size="huge" color={progress >= 100 ? 'light-grey' : 'blue'} />
+    <Icon type={icon} size="huge" color={completed ? 'light-grey' : 'blue'} />
   </TextWrapper>
 );
 
@@ -44,17 +47,18 @@ const createTasks = (tasks, onCardPress) => tasks.map((props) => {
     title,
     icon,
     progress,
+    completed,
   } = props;
 
-  const CardInner = progress >= 100 ? 'div' : CardActionArea;
+  const CardInner = completed ? 'div' : CardActionArea;
 
   return (
     <Wrapper key={id}>
-      <CardWrapper {...{ progress }}>
-        <CardInner onClick={progress >= 100 ? null : () => onCardPress(id)}>
+      <CardWrapper {...{ completed }}>
+        <CardInner onClick={completed ? null : () => onCardPress(id)}>
           <CardContentStyled>
-            {createTaskInfo(progress, title, icon)}
-            {createProgressBar(progress)}
+            {createTaskInfo(completed, title, icon)}
+            {createProgressBar(completed, progress)}
           </CardContentStyled>
         </CardInner>
       </CardWrapper>
@@ -66,15 +70,20 @@ const createTasks = (tasks, onCardPress) => tasks.map((props) => {
 const Progress = (props) => {
   const {
     onCardPress,
-    tasks,
+    active,
+    completed,
     points,
     onMenuButtonPress,
   } = props;
 
+  console.log(completed)
 
   return (
-    <Layout {...{ points, onMenuButtonPress }}>
-      {!!tasks && createTasks(tasks, onCardPress)}
+    <Layout {...{ points, onMenuButtonPress }} forceMenu>
+      {!!active.length > 0 && <SectionHeading gutter text="Active Tasks" />}
+      {!!active.length > 0 && createTasks(active, onCardPress)}
+      {!!completed.length > 0 && <SectionHeading gutter text="Completed Tasks" />}
+      {!!completed.length > 0 && createTasks(completed, onCardPress)}
     </Layout>
   );
 };

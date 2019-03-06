@@ -39,6 +39,7 @@ const buildTask = (allAnswers, allTasks) => (key) => {
     title: taskObject.node.eng.title,
     icon: taskObject.node.icon,
     progress: Math.floor(validAnswers / total * 100),
+    completed: !!allAnswers[key].completed,
   };
 };
 
@@ -79,15 +80,21 @@ class Page extends Component {
     }
 
     const allAnswerKeys = props.taskAnswers ? Object.keys(props.taskAnswers) : null;
+    const rawTasks = allAnswerKeys && allAnswerKeys.map(
+      buildTask(
+        props.taskAnswers,
+        props.data.tasks.edges,
+      ),
+    );
+
+    const tasks = rawTasks || [];
 
     const passedProps = {
       points: props.points,
       onMenuButtonPress: navigate,
       onCardPress: id => navigate(`/task?id=${id}`),
-      tasks: allAnswerKeys && allAnswerKeys.map(buildTask(
-        props.taskAnswers,
-        props.data.tasks.edges,
-      )),
+      active: tasks.filter(({ completed }) => !completed) || [],
+      completed: tasks.filter(({ completed }) => !!completed) || [],
     };
 
     return createElement(Progress, passedProps);

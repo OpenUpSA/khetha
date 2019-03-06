@@ -24,7 +24,7 @@ LevelBadge.propTypes = {
   /** User level number to determine what icon
    * and number in the shield gets returned  */
   points: t.number,
-  size: t.oneOf(['small', 'medium'])
+  size: t.oneOf(['small', 'medium']),
 };
 
 

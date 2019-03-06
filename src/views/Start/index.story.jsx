@@ -12,7 +12,7 @@ import Start from './index';
 import { names } from '../../config/icons';
 
 
-const createProps = (seed) => {
+const createProps = (noTasks, seed) => {
   if (seed) {
     faker.seed(seed);
   }
@@ -21,7 +21,7 @@ const createProps = (seed) => {
 
   return {
     points: randomNumber(0, 110),
-    tasks: randomLengthBlankArray(1, 30).map((value, index) => ({
+    tasks: noTasks ? [] : randomLengthBlankArray(1, 30).map((value, index) => ({
       id: index,
       points: randomNumber(1, 8),
       title: faker.commerce.productName(),
@@ -57,7 +57,9 @@ const createProps = (seed) => {
 
 
 const basic = () => <Start {...createProps()} onCardPress={console.log} />;
+const noTasks = () => <Start {...createProps(true)} onCardPress={console.log} />;
 
 
 storiesOf('view.Start', module)
-  .add('Basic', basic);
+  .add('Basic', basic)
+  .add('No tasks', noTasks);

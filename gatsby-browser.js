@@ -18,14 +18,14 @@ const onClientEntry = () => {
   const { info } = store.getState();
   const { onboarded, id } = info;
 
-  if (!id) {
-    return store.dispatch(createUser());
-  }
-
   const isDebateUrl = /^\/bigdebate\/?$/i.test(window.location.pathname);
   const isLoadingUrl = /^\/\/?$/i.test(window.location.pathname);
   const isIntroUrl = /^\/intro\/?$/i.test(window.location.pathname);
   const isOnboarding = isLoadingUrl || isIntroUrl;
+
+  if (!id) {
+    store.dispatch(createUser());
+  }
 
   if (isDebateUrl) {
     return null;

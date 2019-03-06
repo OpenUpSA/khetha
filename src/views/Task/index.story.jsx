@@ -162,6 +162,8 @@ const logo = () => <Task {...createProps(6, 12)} onTaskSubmit={console.log} onQu
 
 const completed = () => <Task {...completedProps()} onTaskSubmit={console.log} onQuestionSave={console.log} points={randomNumber(0, 110)} />;
 
+const submitted = () => <Task {...completedProps()} onTaskSubmit={console.log} onQuestionSave={console.log} points={randomNumber(0, 110)} submitted />;
+
 
 storiesOf('view.Task', module)
   .add('String item', string)
@@ -177,4 +179,5 @@ storiesOf('view.Task', module)
   .add('Isolated task', isolated)
   .add('With Logo', logo)
   .add('Partially completed task', partial)
-  .add('Completed task', completed);
+  .add('Completed task', completed)
+  .add('Submitted', submitted);

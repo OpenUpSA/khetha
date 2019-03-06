@@ -17,7 +17,7 @@ const persistKeys = [
 ];
 
 
-const initLocalStorage = () => persistState(persistKeys, { key: '04_03_2019' });
+const initLocalStorage = () => persistState(persistKeys, { key: '06_03_2019' });
 const isNode = typeof window === 'undefined';
 
 
