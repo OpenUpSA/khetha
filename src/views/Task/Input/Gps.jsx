@@ -30,7 +30,7 @@ class Gps extends Component {
 
     return window.navigator.geolocation.getCurrentPosition(
       ({ coords }) => saveAnswer(
-        { type: 'gps', value: `${coords.latitude} ${coords.longitude}`, manual: false }
+        { type: 'gps', value: `${coords.latitude} ${coords.longitude}`, manual: false },
       ),
       this.activateManual,
       {
