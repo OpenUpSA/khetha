@@ -1,5 +1,12 @@
 import styled, { createGlobalStyle } from 'styled-components';
 import { Typography } from '@material-ui/core';
+import posed from 'react-pose';
+
+
+const Animate = posed.div({
+  show: { y: 0 },
+  hidden: { y: 75 },
+});
 
 
 const GlobalStyling = createGlobalStyle`
@@ -62,6 +69,7 @@ const Text = styled.div`
 
 
 export {
+  Animate,
   GlobalStyling,
   Wrapper,
   InnerWrapper,

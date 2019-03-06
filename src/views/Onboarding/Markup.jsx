@@ -23,7 +23,7 @@ const Markup = (props) => {
 
 
   return (
-    <Layout header={false} footer={false} fullscreen>
+    <Layout isolated fullscreen>
       <Wrapper pose={step}>
         <Hero />
         <Info

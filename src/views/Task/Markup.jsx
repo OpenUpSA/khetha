@@ -9,7 +9,13 @@ import GradientSelect from '../../components/GradientSelect';
 import SectionHeading from '../../components/SectionHeading';
 import ProgressList from '../../components/ProgressList';
 import Modal from './Modal';
-import { Section, SubmitWrapper, FilterWrapper } from './styled';
+import logoSrc from './big-debate-logo.png';
+import { 
+  Section,
+  SubmitWrapper,
+  FilterWrapper,
+  Logo,
+} from './styled';
 
 
 const Markup = (props) => {
@@ -25,6 +31,8 @@ const Markup = (props) => {
     completeTask,
     completed,
     onMenuButtonPress,
+    isolated,
+    logo,
   } = props;
 
   const items = createItems(Content);
@@ -38,10 +46,11 @@ const Markup = (props) => {
   return (
     <Fragment>
       <Modal {...modalProps} />
-      <Layout {...{ points, onMenuButtonPress }}>
+      <Layout {...{ points, onMenuButtonPress, isolated }}>
+        {!!logo && <Logo src={logoSrc} alt="" />}
         <Section>
           <SectionHeading gutter text={title} />
-          <FilterWrapper gutter={filter !== 0 || (items[0] && items[0].progress)}>
+          <FilterWrapper>
             <GradientSelect
               options={filterOptions}
               fullWidth

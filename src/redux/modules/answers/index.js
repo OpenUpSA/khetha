@@ -6,13 +6,17 @@ const UPDATE = 'answers/UPDATE';
 const COMPLETE = 'answers/COMPLETE';
 
 
+const getTimestamp = () => new Date().getTime();
+
+
 const reducer = (state = {}, action = {}) => {
   switch (action.type) {
     case CREATE: return {
       ...state,
       [action.payload.id]: {
-        data: action.payload.answers,
-        completed: false,
+        data: blankArray(action.payload.length, {}),
+        completed: null,
+        started: getTimestamp(),
       },
     };
 
@@ -30,7 +34,7 @@ const reducer = (state = {}, action = {}) => {
       ...state,
       [action.payload]: {
         ...state[action.payload],
-        completed: true,
+        completed: getTimestamp(),
       },
     };
 
@@ -44,7 +48,7 @@ const create = (id, length) => ({
   type: CREATE,
   payload: {
     id,
-    answers: blankArray(length),
+    length,
   },
 });
 

@@ -11,5 +11,8 @@
     "jest/globals": true,
     "browser": true,
     "node": true
+  },
+  "rules":{
+    "linebreak-style": 0
   }
 }

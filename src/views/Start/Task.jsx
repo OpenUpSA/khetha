@@ -33,7 +33,10 @@ const Task = (props) => {
   } = props;
 
   return (
-    <CustomCard {...{ transparent }} onClick={() => onCardPress({ amountOfQuestions, id })}>
+    <CustomCard
+      {...{ transparent }}
+      onClick={() => !transparent && onCardPress({ amountOfQuestions, id })}
+    >
       <ComponentWrapper source={transparent ? 'div' : CardActionArea}>
         <CardContent>
           <Heading {...{ title, icon, points }} />

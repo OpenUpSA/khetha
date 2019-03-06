@@ -30,24 +30,15 @@ const basic = () => (
 );
 
 
-const noHeader = () => (
-  <Layout {...createProps()} header={false}>
+const isolated = () => (
+  <Layout {...createProps()} isolated>
     {randomLengthBlankArray(1, 10).map(() => (
       <p key={faker.random.uuid()}>{faker.lorem.paragraphs()}</p>
     ))}
   </Layout>
 );
 
-
-const noFooter = () => (
-  <Layout {...createProps()} footer={false}>
-    {randomLengthBlankArray(1, 10).map(() => (
-      <p key={faker.random.uuid()}>{faker.lorem.paragraphs()}</p>
-    ))}
-  </Layout>
-);
 
 storiesOf('component.Layout', module)
   .add('Basic', basic)
-  .add('No Header', noHeader)
-  .add('No Footer', noFooter);
+  .add('Isolated (no header or footer)', isolated)

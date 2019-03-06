@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import t from 'prop-types';
 import { createElement, Component } from 'react';
 import { navigate, graphql } from 'gatsby';
 import { difference } from 'lodash';
@@ -6,7 +7,7 @@ import { difference } from 'lodash';
 
 import { create } from '../../redux/modules/answers';
 import Loading from '../../views/Loading';
-import { requestNotificationAccess } from '../../redux/actions';
+import { requestNotificationAccess, createUser } from '../../redux/actions';
 import Start from '../../views/Start';
 
 
@@ -62,15 +63,13 @@ const buildTasks = tasks => tasks.edges.map(({ node }) => ({
 
 const stateToProps = (state, ownProps) => ({
   points: state.info.points,
-  activeTasks: state.answers
-    ? Object.keys(state.answers).filter(key => !!state.answers[key].completed)
-    : [],
-  // activeTasks: state.answers ? Object.keys(state.answers) : [],
+  activeTasks: state.answers ? Object.keys(state.answers) : [],
   ...ownProps,
 });
 
 
 const dispatchToProps = (dispatch, ownProps) => ({
+  registerUser: () => dispatch(createUser()),
   startTask: (id, amount) => dispatch(create(id, amount)),
   onMount: () => dispatch(requestNotificationAccess()),
   ...ownProps,
@@ -82,6 +81,8 @@ const connectToReduxStore = connect(stateToProps, dispatchToProps);
 
 const createProps = (props) => {
   const {
+    id,
+    registerUser,
     tasks,
     rewards,
     points,
@@ -90,17 +91,19 @@ const createProps = (props) => {
     startTask,
   } = props;
 
-  const validTasks = difference(tasks.map(({ id }) => id), activeTasks);
+  const validTasks = difference(tasks.map(({ id: taskId }) => taskId), activeTasks);
 
   return {
+    id,
+    registerUser,
     rewards,
-    tasks: validTasks.map(id => tasks.find(({ id: taskId }) => id === taskId)),
+    tasks: validTasks.map(validId => tasks.find(({ id: taskId }) => validId === taskId)),
     points,
     onMenuButtonPress: navigate,
     onMount,
-    onCardPress: ({ amountOfQuestions, id }) => {
-      startTask(id, amountOfQuestions);
-      return navigate(`/task/index.html?id=${id}`);
+    onCardPress: ({ amountOfQuestions, id: cardPressId }) => {
+      startTask(cardPressId, amountOfQuestions);
+      return navigate(`/task/index.html?id=${cardPressId}`);
     },
     translation: {
       points: 'Khetha Points',
@@ -132,6 +135,13 @@ class Page extends Component {
   }
 
   componentDidMount() {
+    const { registerUser, id } = this.props;
+
+    if (!id) {
+      registerUser();
+      return this.setState({ loading: false });
+    }
+
     return this.setState({ loading: false });
   }
 
@@ -143,6 +153,8 @@ class Page extends Component {
     }
 
     const passedProps = createProps({
+      id: props.id,
+      registerUser: props.registerUser,
       startTask: props.startTask,
       activeTasks: props.activeTasks,
       points: props.points,
@@ -160,3 +172,14 @@ const connectedPage = connectToReduxStore(Page);
 
 
 export default connectedPage;
+
+
+Page.propTypes = {
+  registerUser: t.func.isRequired,
+  id: t.string,
+};
+
+
+Page.defaultProps = {
+  id: null,
+};

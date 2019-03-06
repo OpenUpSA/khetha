@@ -9,6 +9,9 @@ import createFilterOption from './createFilterOption';
 import Markup from './Markup';
 
 
+const getTimestamp = () => new Date().getTime();
+
+
 class Task extends Component {
   constructor(props) {
     super(props);
@@ -31,11 +34,11 @@ class Task extends Component {
 
 
   completeTask = () => {
-    const { onTaskSubmit } = this.props;
+    const { onTaskSubmit, taskPoints: points } = this.props;
     const { answers } = this.state;
 
     if (onTaskSubmit) {
-      return onTaskSubmit(answers);
+      return onTaskSubmit(answers, points);
     }
 
     return null;
@@ -45,13 +48,12 @@ class Task extends Component {
   changeAnswer = ({ id, value }) => {
     const { onQuestionSave } = this.props;
     const { answers: currentAnswers } = this.state;
+    const baseAnswer = currentAnswers[id];
+    const isFirstUpdate = !currentAnswers[id];
+
 
     if (!value) {
       return null;
-    }
-
-    if (onQuestionSave) {
-      onQuestionSave({ index: id, value });
     }
 
     const answers = [
@@ -60,8 +62,21 @@ class Task extends Component {
       ...currentAnswers.slice(id + 1),
     ];
 
-    return this.setState({ answers });
-  }
+    this.setState({ answers });
+
+    if (!onQuestionSave) {
+      return null;
+    }
+
+    const newAnswer = {
+      value: value.value,
+      answered: isFirstUpdate ? getTimestamp() : currentAnswers[id],
+      edits: !isFirstUpdate ? baseAnswer.edits : 0,
+      lastEdit: !isFirstUpdate ? getTimestamp() : null,
+    };
+
+    return onQuestionSave({ index: id, value: newAnswer });
+  };
 
 
   changeFilter = filter => this.setState({ filter });
@@ -110,6 +125,8 @@ class Task extends Component {
       points: props.points,
       completeTask: events.completeTask,
       onMenuButtonPress: props.onMenuButtonPress,
+      isolated: props.isolated,
+      logo: props.logo,
     };
 
     return <Markup {...passedProps} />;

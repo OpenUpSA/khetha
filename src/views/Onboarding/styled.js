@@ -64,7 +64,8 @@ const Image = styled.img`
 
 const HeroWrapper = styled.div`
   height: 440px;
-  align-items: flex-end;
+  align-items: flex-start;
+  overflow: hidden;
   background: #00C77B;
   flex-grow: 1;
   width: 100%;

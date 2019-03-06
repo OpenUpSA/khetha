@@ -1,49 +1,68 @@
-import React, { Fragment } from 'react';
+import React, { Component } from 'react';
 import t from 'prop-types';
-import CssBaseline from '@material-ui/core/CssBaseline';
 
 
-import Header from './Header';
-import Footer from './Footer';
-import {
-  FooterWrapper,
-  GlobalStyling,
-  Wrapper,
-  InnerWrapper,
-} from './styled';
-
-const buildFooter = (callback, demo) => (
-  <FooterWrapper {...{ demo }}>
-    <Footer {...{ callback }} />
-  </FooterWrapper>
-);
+import Markup from './Markup';
+import ScrollDirectionListener from './ScrollDirectionListener';
 
 
-const Layout = (props) => {
-  const {
-    children,
-    points,
-    header = true,
-    footer = true,
-    onMenuButtonPress,
-    fullscreen,
-  } = props;
+class Layout extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      menuActive: true,
+    };
+
+    this.values = {
+      windowListener: null,
+    };
+  }
 
 
-  return (
-    <Fragment>
-      <CssBaseline />
-      <GlobalStyling />
-      <Wrapper {...{ fullscreen }}>
-        <InnerWrapper {...{ fullscreen }}>
-          {header && <Header {...{ points }} />}
-          {children}
-        </InnerWrapper>
-        {footer && buildFooter(onMenuButtonPress)}
-      </Wrapper>
-    </Fragment>
-  );
-};
+  componentDidMount() {
+    const toggleMenu = menuActive => this.setState({ menuActive });
+    this.values.windowListener = new ScrollDirectionListener('down', toggleMenu);
+  }
+
+
+  componentWillUnmount() {
+    const { windowListener } = this.values;
+
+    if (windowListener) {
+      return windowListener.stop();
+    }
+
+    return null;
+  }
+
+
+  reactToScroll = (scrolledDown) => {
+    const { menuActive } = this.state;
+
+    if (menuActive && scrolledDown) {
+      return this.setState({ menuActive: false });
+    }
+
+    if (!menuActive && !scrolledDown) {
+      return this.setState({ menuActive: true });
+    }
+
+    return null;
+  }
+
+
+  render() {
+    const { props, state } = this;
+
+    const passedProps = {
+      menuActive: state.menuActive,
+      ...props,
+    };
+
+    return <Markup {...passedProps} />;
+  }
+}
 
 
 export default Layout;
