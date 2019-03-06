@@ -15,7 +15,7 @@ const HeaderProgress = styled(LinearProgress)`
   }
 
   & .barColor {
-    background: ${({ progress }) => (progress >= 100 ? '#AFAFAF' : 'linear-gradient(177.9deg, #00F260 0%, #0575E6 83.33%), #0576E6;')};
+    background: ${({ completed }) => (completed ? '#AFAFAF' : 'linear-gradient(177.9deg, #00F260 0%, #0575E6 83.33%), #0576E6;')};
   }
 `;
 
@@ -25,9 +25,9 @@ const Wrapper = styled.div`
 
 const CardWrapper = styled(Card)`
   && {
-    box-shadow: ${({ progress }) => (progress >= 100 ? 'none' : '0px 2px 3px rgba(0, 0, 0, 0.24)')};
-    border:  ${({ progress }) => (progress >= 100 ? '1px solid #A2A2A2' : 'none')};
-    background: ${({ progress }) => (progress >= 100 ? 'none' : '#FFF')};
+    box-shadow: ${({ completed }) => (completed ? 'none' : '0px 2px 3px rgba(0, 0, 0, 0.24)')};
+    border:  ${({ completed }) => (completed ? '1px solid #A2A2A2' : 'none')};
+    background: ${({ completed }) => (completed ? 'none' : '#FFF')};
   }
 `;
 
@@ -48,7 +48,7 @@ const ProgressAndTitle = styled.div`
 
 const ProgressWrapper = styled(Typography)`
   && {
-    color: ${({ progress }) => (progress >= 100 ? '#AFAFAF' : '#0575E6')};
+    color: ${({ completed }) => (completed ? '#AFAFAF' : '#0575E6')};
     font-size: 12px;
     line-height: 20px;
     font-weight: normal;
@@ -61,7 +61,7 @@ const Title = styled(Typography)`
     font-weight: 700;
     line-height: 20px;
     font-size: 18px;
-    color: ${({ progress }) => (progress >= 100 ? '#AFAFAF' : 'rgba(0, 0, 0, 0.87)')};
+    color: ${({ completed }) => (completed ? '#AFAFAF' : 'rgba(0, 0, 0, 0.87)')};
     text-transform: Capitalize;
   }
 `;
