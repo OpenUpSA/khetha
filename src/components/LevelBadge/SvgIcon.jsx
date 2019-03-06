@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
+import t from 'prop-types';
 
 
 import iconLevels from './iconLevels.json';
@@ -126,10 +126,15 @@ export default SvgIcon;
 
 
 SvgIcon.propTypes = {
-  points: PropTypes.number,
+  /** User level number to determine what icon
+   * and number in the shield gets returned  */
+  points: t.number,
+  /** determines the size of the LevelBadge  */
+  size: t.oneOf(['small', 'medium']),
 };
 
 
 SvgIcon.defaultProps = {
   points: 0,
+  size: 'medium',
 };
