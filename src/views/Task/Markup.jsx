@@ -10,7 +10,7 @@ import SectionHeading from '../../components/SectionHeading';
 import ProgressList from '../../components/ProgressList';
 import Modal from './Modal';
 import logoSrc from './big-debate-logo.png';
-import { 
+import {
   Section,
   SubmitWrapper,
   FilterWrapper,

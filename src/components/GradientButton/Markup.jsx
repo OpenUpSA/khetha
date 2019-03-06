@@ -128,10 +128,12 @@ Markup.propTypes = {
   ]).isRequired,
   /** The text to display in the button */
   text: t.string,
+  /** Whether the button should have the gradient color fill */
   primary: t.bool,
   /** Whether the button should span the entirity (100%)
    * of the width of it's parent. */
   full: t.bool,
+  /** String that turns button into a select drop down button */
   prefix: t.string,
   /** An icon that should be used on the right side
    * of the button. Preferably an icon imported
@@ -145,7 +147,9 @@ Markup.propTypes = {
   loading: t.bool,
   active: t.bool,
   /** TODO: @schalk not sure if this should be included since they refer to other types */
-  onButtonPress: t.func,
+  onButtonPress: t.func.isRequired,
+  /** Whether the button should span the entirity (100%)
+  * of the width of it's parent. */
   fullWidth: t.bool,
 };
 
@@ -159,6 +163,7 @@ Markup.defaultProps = {
   full: false,
   loading: false,
   active: false,
+  fullWidth: null,
 };
 
 

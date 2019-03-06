@@ -14,13 +14,16 @@ import { FlexWrapper, FlexQuestion } from './styled';
 const actionsMarkup = (
   <FlexWrapper>
     <FlexQuestion>
+
       Was this helpful?
     </FlexQuestion>
     <div>
       <Button size="small" color="primary">
+
         Yes
       </Button>
       <Button size="small" color="primary">
+
         No
       </Button>
     </div>

@@ -41,4 +41,4 @@ const isolated = () => (
 
 storiesOf('component.Layout', module)
   .add('Basic', basic)
-  .add('Isolated (no header or footer)', isolated)
+  .add('Isolated (no header or footer)', isolated);
