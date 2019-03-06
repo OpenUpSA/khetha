@@ -1,10 +1,9 @@
 import React, { Fragment } from 'react';
-import { Typography } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 
 
 import GradientSelect from '../../../components/GradientSelect';
-import { FlexWrap, NextWrapper, PromptText } from './styled';
+import { NextWrapper, PromptText } from './styled';
 import GradientButton from '../../../components/GradientButton';
 
 
