@@ -37,7 +37,7 @@ const Markup = (props) => {
   const options = createOptions(translation, amounts);
 
   return (
-    <Layout {...{ points, onMenuButtonPress }}>
+    <Layout {...{ points, onMenuButtonPress }} forceMenu>
       <Section>
         <SectionHeading gutter text="Next Goal" />
         <PrizesWidget
@@ -52,8 +52,8 @@ const Markup = (props) => {
       </Section>
 
       <Section>
-        <SectionHeading gutter text="Start a New Task" />
-        <GradientSelect
+        {tasks.length > 0 && <SectionHeading gutter text="Start a New Task" />}
+        {/* <GradientSelect
           {...{ options }}
           onSelectionChange={changeFilter}
           value={filter}
@@ -61,8 +61,7 @@ const Markup = (props) => {
           prefix={translation.filter.active}
           primary
           fullWidth
-        />
-
+        /> */}
         <TasksWrap>
           <PoseGroup>
             {tasks.map(addProps(CardWrapper, { filter, onCardPress }, 'id'))}
@@ -70,8 +69,8 @@ const Markup = (props) => {
           <CardWrap>
             <Task
               transparent
-              title={translation.more.title}
-              description={translation.more.description}
+              title={tasks.length > 0 ? 'Need more tasks?' : 'Well done!'}
+              description={tasks.length > 0 ? 'We are continually adding new tasks to this app as the build up to the 2019 election continues.' : 'You’ve completed all current tasks. Check back soon for new tasks and opportunities to earn more points!'}
             />
           </CardWrap>
         </TasksWrap>

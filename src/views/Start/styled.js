@@ -21,7 +21,7 @@ const Section = styled.div`
 `;
 
 const TasksWrap = styled.div`
-  padding-top: 15px;
+  // padding-top: 15px;
 `;
 
 
@@ -42,6 +42,7 @@ const Title = styled(Typography)`
     line-height: 20px;
   }
 `;
+
 
 const IconWrap = styled.div`
   fill: #0575E6;
