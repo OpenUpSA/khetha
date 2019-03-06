@@ -80,6 +80,7 @@ Markup.propTypes = {
   answers: t.arrayOf(t.string),
   changeAnswer: t.func.isRequired,
   onComplete: t.func.isRequired,
+  onMenuButtonPress: t.func.isRequired,
   questions: t.arrayOf(
     t.shape({
       title: t.string,
