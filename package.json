@@ -22,8 +22,8 @@
     "test:jest": "jest",
     "test:gatsby": "yarn build:gatsby",
     "test:jest:watch": "jest --watchAll",
-    "test:lint": "eslint src",
-    "test:lint:fix": "eslint src --fix",
+    "test:lint": "eslint src --ext .jsx --ext .js",
+    "test:lint:fix": "eslint src --ext .jsx --ext .js --fix",
     "deploy:api": "firebase deploy"
   },
   "dependencies": {
@@ -66,6 +66,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-gatsby": "^0.1.6",
     "babel-preset-react": "^6.24.1",
+    "core-js": "^2.6.5",
     "docz": "^0.13.7",
     "docz-theme-default": "^0.13.7",
     "eslint": "^5.12.0",
