@@ -33,7 +33,7 @@ const createProps = props => ({
       list: [
         {
           title: 'Free Airtime',
-          description: 'Stand a change to win free airtime by completing your first task!',
+          description: 'Stand a chance to win free airtime by completing your first task!',
         },
         {
           title: 'R25 000 worth of prizes',
