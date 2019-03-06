@@ -1,4 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable no-console */
 
 
 import React from 'react';
@@ -148,19 +149,70 @@ const select = () => <Task {...singleItem('select')} onTaskSubmit={console.log} 
 const checkbox = () => <Task {...singleItem('checkboxes')} onTaskSubmit={console.log} onQuestionSave={console.log} points={randomNumber(0, 110)} />;
 const gps = () => <Task {...singleItem('gps')} onTaskSubmit={console.log} onQuestionSave={console.log} points={randomNumber(0, 110)} />;
 
-const small = () => <Task {...createProps(1, 3)} onTaskSubmit={console.log} onQuestionSave={console.log} points={randomNumber(0, 110)} />;
+const small = () => (
+  <Task
+    {...createProps(1, 3)}
+    onTaskSubmit={console.log}
+    onQuestionSave={console.log}
+    points={randomNumber(0, 110)}
+  />
+);
 
-const average = () => <Task {...createProps(6, 12)} onTaskSubmit={console.log} onQuestionSave={console.log} points={randomNumber(0, 110)} />;
+const average = () => (
+  <Task
+    {...createProps(6, 12)}
+    onTaskSubmit={console.log}
+    onQuestionSave={console.log}
+    points={randomNumber(0, 110)}
+  />
+);
 
-const massive = () => <Task {...createProps(30, 35)} onTaskSubmit={console.log} onQuestionSave={console.log} points={randomNumber(0, 110)} />;
+const massive = () => (
+  <Task
+    {...createProps(30, 35)}
+    onTaskSubmit={console.log}
+    onQuestionSave={console.log}
+    points={randomNumber(0, 110)}
+  />
+);
 
-const partial = () => <Task {...partialProps()} onTaskSubmit={console.log} onQuestionSave={console.log} points={randomNumber(0, 110)} />;
+const partial = () => (
+  <Task
+    {...partialProps()}
+    onTaskSubmit={console.log}
+    onQuestionSave={console.log}
+    points={randomNumber(0, 110)}
+  />
+);
 
-const isolated = () => <Task {...createProps(6, 12)} onTaskSubmit={console.log} onQuestionSave={console.log} points={randomNumber(0, 110)} isolated />;
+const isolated = () => (
+  <Task
+    {...createProps(6, 12)}
+    onTaskSubmit={console.log}
+    onQuestionSave={console.log}
+    points={randomNumber(0, 110)}
+    isolated
+  />
+);
 
-const logo = () => <Task {...createProps(6, 12)} onTaskSubmit={console.log} onQuestionSave={console.log} points={randomNumber(0, 110)} logo />;
+const logo = () => (
+  <Task
+    {...createProps(6, 12)}
+    onTaskSubmit={console.log}
+    onQuestionSave={console.log}
+    points={randomNumber(0, 110)}
+    logo
+  />
+);
 
-const completed = () => <Task {...completedProps()} onTaskSubmit={console.log} onQuestionSave={console.log} points={randomNumber(0, 110)} />;
+const completed = () => (
+  <Task
+    {...completedProps()}
+    onTaskSubmit={console.log}
+    onQuestionSave={console.log}
+    points={randomNumber(0, 110)}
+  />
+);
 
 
 storiesOf('view.Task', module)
