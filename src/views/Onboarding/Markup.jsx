@@ -14,10 +14,7 @@ import { Wrapper, Image } from './styled';
 const Markup = (props) => {
   const {
     step,
-    language,
-    changeLanguage,
     nextStep,
-    complete,
     translation,
   } = props;
 

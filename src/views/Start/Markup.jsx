@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import t from 'prop-types';
 import { PoseGroup } from 'react-pose';
 

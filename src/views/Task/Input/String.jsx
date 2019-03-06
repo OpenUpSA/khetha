@@ -11,10 +11,8 @@ const String = (props) => {
     answer,
     saveAnswer,
     focusElement,
-    options,
     id,
     updateAnswer,
-    index,
   } = props;
 
   return (

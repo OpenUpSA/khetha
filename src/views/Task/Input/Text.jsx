@@ -9,12 +9,9 @@ import GradientButton from '../../../components/GradientButton';
 const String = (props) => {
   const {
     answer,
-    focusElement,
-    options,
     id,
     saveAnswer,
     updateAnswer,
-    index,
   } = props;
 
   return (

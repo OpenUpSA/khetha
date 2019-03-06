@@ -2,7 +2,6 @@ import React from 'react';
 import t from 'prop-types';
 
 import { Text, Wrapper } from './styled';
-import ProgressList from '../ProgressList';
 
 
 const SectionHeading = ({ text, id, gutter }) => (
