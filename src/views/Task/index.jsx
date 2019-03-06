@@ -102,7 +102,7 @@ class Task extends Component {
     const modalOpen = state.modalOpen === null && amounts.pending <= 0;
 
     const modalProps = createModalProps({
-      modalOpen,
+      modalOpen: modalOpen && !props.submitted,
       toggleModal: events.toggleModal,
       completeTask: events.completeTask,
     });
@@ -114,6 +114,7 @@ class Task extends Component {
     });
 
     const passedProps = {
+      ...props,
       modalProps,
       createItems,
       filterOptions,

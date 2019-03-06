@@ -2,15 +2,16 @@ import React, { Fragment } from 'react';
 import t from 'prop-types';
 
 
+import Task from './Task';
 import Layout from '../../components/Layout';
 import Content from './Content';
 import GradientButton from '../../components/GradientButton';
-import GradientSelect from '../../components/GradientSelect';
+// import GradientSelect from '../../components/GradientSelect';
 import SectionHeading from '../../components/SectionHeading';
 import ProgressList from '../../components/ProgressList';
 import Modal from './Modal';
 import logoSrc from './big-debate-logo.png';
-import { 
+import {
   Section,
   SubmitWrapper,
   FilterWrapper,
@@ -33,6 +34,7 @@ const Markup = (props) => {
     onMenuButtonPress,
     isolated,
     logo,
+    submitted,
   } = props;
 
   const items = createItems(Content);
@@ -43,6 +45,17 @@ const Markup = (props) => {
     </SubmitWrapper>
   );
 
+  const buildReturn = () => (
+    <SubmitWrapper>
+      <GradientButton
+        primary
+        text="Go to home screen"
+        resolve="long"
+        onButtonPress={() => onMenuButtonPress('./start/')}
+      />
+    </SubmitWrapper>
+  );
+
   return (
     <Fragment>
       <Modal {...modalProps} />
@@ -50,7 +63,7 @@ const Markup = (props) => {
         {!!logo && <Logo src={logoSrc} alt="" />}
         <Section>
           <SectionHeading gutter text={title} />
-          <FilterWrapper>
+          {/* <FilterWrapper>
             <GradientSelect
               options={filterOptions}
               fullWidth
@@ -58,14 +71,31 @@ const Markup = (props) => {
               prefix="Filtering by"
               onSelectionChange={changeFilter}
             />
-          </FilterWrapper>
-          <ProgressList
-            {...{ items }}
-            advance={filter === 0 && !completed}
-            onSaveAnswer={changeAnswer}
-          />
+          </FilterWrapper> */}
+          {
+            !!submitted
+            && (
+              <Task
+                transparent
+                title="Thanks for your answer!"
+                description="We can only accept one answer per person. If you are looking for more ways to contribute, check out the home screen."
+              />
+            )
+          }
+
+          {
+            !submitted
+            && (
+              <ProgressList
+                {...{ items }}
+                advance={filter === 0 && !completed}
+                onSaveAnswer={changeAnswer}
+              />
+            )
+          }
         </Section>
-        {completed && buildSubmit()}
+        {completed && !submitted && buildSubmit()}
+        {!!submitted && buildReturn()}
       </Layout>
     </Fragment>
   );
