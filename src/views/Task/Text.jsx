@@ -1,3 +1,8 @@
+import React, { Component } from 'react';
+import TextField from '@material-ui/core/TextField';
+import GradientButton from '../../components/GradientButton';
+import { SubmitWrap } from './styled';
+
 class FormBinder extends Component {
   constructor(props) {
     super(props);
@@ -24,9 +29,9 @@ class FormBinder extends Component {
     const { props, state, ...events } = this;
 
     return (
-      <Fragment>
+      <React.Fragment>
         {props.callback(state.value, events.updateValue, events.updateArray)}
-      </Fragment>
+      </React.Fragment>
     );
   }
 }
@@ -34,7 +39,7 @@ class FormBinder extends Component {
 return (
   <FormBinder
     callback={(innerValue, updateValue) => (
-      <Fragment>
+      <React.Fragment>
         <TextField
           value={innerValue || ''}
           multiline
@@ -52,7 +57,7 @@ return (
             clickAction={() => next(index, innerValue)}
           />
         </SubmitWrap>
-      </Fragment>
+      </React.Fragment>
     )}
   />
 );
