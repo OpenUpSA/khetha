@@ -68,21 +68,22 @@ Markup.propTypes = {
   /** The amount of points that the user current has.
    * This is used to calculate the badge and 'points required'
    * prompt shown in the header. */
-  points: t.number,
-  /** Whether to show the heeder on this page. If false, then header will not be shown. */
-  header: t.bool,
-  /** Whether to show the footer on this page. If false, then footer will not be shown. */
-  footer: t.bool,
+  points: t.number.isRequired,
+  /** Shows content of the web page without the layout header and footer */
+  isolated: t.bool,
   /** A callback function that will be fired when a user clicks
    * on a button in the footer. Function will take one of
    * the following as it's first parameter: 'progress', 'start'
    * or 'profile'. This will likely be 'navigate' from import { navigate } from 'gatsby' */
-  clickCallback: t.func,
+  onMenuButtonPress: t.func.isRequired,
+  /** Determines the width of the Layout on the screen. */
+  fullscreen: t.bool,
+  /** Determines whether to hide or show the menu. */
+  menuActive: t.bool,
 };
 
 Markup.defaultProps = {
-  header: true,
-  footer: true,
-  clickCallback: null,
-  points: 0,
+  isolated: false,
+  fullscreen: false,
+  menuActive: false,
 };
