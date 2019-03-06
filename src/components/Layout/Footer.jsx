@@ -2,9 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import t from 'prop-types';
 import AddIcon from '@material-ui/icons/Add';
-import PersonIcon from '@material-ui/icons/Person';
 import CheckIcon from '@material-ui/icons/Check';
-import CloseIcon from '@material-ui/icons/Close';
 
 
 const FooterBar = styled.div`
