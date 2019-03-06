@@ -15,17 +15,17 @@ import {
 } from './styled';
 
 
-const createAnimatingFooter = (menuActive, callback) => matches => (
-  <Animate pose={(!matches && menuActive) ? 'hidden' : 'show'}>
+const createAnimatingFooter = (menuActive, callback, forceMenu) => matches => (
+  <Animate pose={(!matches && menuActive && !forceMenu) ? 'hidden' : 'show'}>
     <Footer {...{ callback }} />
   </Animate>
 );
 
 
-const buildFooter = (callback, menuActive) => (
+const buildFooter = (callback, menuActive, forceMenu) => (
   <FooterWrapper>
     <MediaQuery query="(min-height: 750px)">
-      {createAnimatingFooter(menuActive, callback)}
+      {createAnimatingFooter(menuActive, callback, forceMenu)}
     </MediaQuery>
   </FooterWrapper>
 );
@@ -39,6 +39,7 @@ const Markup = (props) => {
     onMenuButtonPress,
     fullscreen,
     menuActive,
+    forceMenu,
   } = props;
 
 
@@ -51,7 +52,7 @@ const Markup = (props) => {
           {!isolated && <Header {...{ points }} />}
           {children}
         </InnerWrapper>
-        {!isolated && buildFooter(onMenuButtonPress, menuActive)}
+        {!isolated && buildFooter(onMenuButtonPress, menuActive, forceMenu)}
       </Wrapper>
     </Fragment>
   );

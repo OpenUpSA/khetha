@@ -17,7 +17,7 @@ const calcIfHighestLevel = (points, remainingPoints) => {
     return 'You are currently in the top tier';
   }
 
-  return `${remainingPoints} points required to unlock next level`
+  return `${remainingPoints} more points to level up`;
 };
 
 
