@@ -25,7 +25,7 @@ const Markup = (props) => {
   return (
     <Layout isolated fullscreen>
       <Wrapper pose={step}>
-        <Hero />
+        {/* <Hero /> */}
         <Info
           title={translation[step].title}
           description={translation[step].description}
