@@ -47,7 +47,7 @@ const stateToProps = (state, ownProps) => ({
 
 const dispatchToProps = (dispatch, ownProps) => ({
   changeAnswer: (id, answers) => dispatch(update('big-debate', answers)),
-  submit: () => dispatch(syncAfterTaskComplete('big-debate', 1)),
+  submit: () => dispatch(syncAfterTaskComplete('big-debate', 2)),
   markTaskAsActive: () => dispatch(create('big-debate', 2)),
   ...ownProps,
 });
@@ -76,12 +76,15 @@ const createProps = (props, id) => {
 
   const calcAnswers = !!props.allAnswers && props.allAnswers['big-debate'] && props.allAnswers['big-debate'].data;
 
+  const completed = !!props.allAnswers && props.allAnswers['big-debate'] && !!props.allAnswers['big-debate'].completed;
+
   const answers = calcAnswers || [{}, {}];
 
   return {
     id: 'big-debate',
     title: task.title,
     points: props.points,
+    submitted: completed,
     onMenuButtonPress: navigate,
     isolated: true,
     logo: true,
@@ -92,7 +95,7 @@ const createProps = (props, id) => {
       formatForSave({ answers, index, value }),
     ),
     onTaskSubmit: () => {
-      props.submit(id, 1);
+      props.submit(id, 2);
       return navigate('/');
     },
   };
@@ -111,16 +114,6 @@ class Page extends Component {
 
   componentDidMount() {
     const { allAnswers } = this.props;
-    const calcAnswers = !!allAnswers && allAnswers['big-debate'] && allAnswers['big-debate'].data;
-
-    const answers = calcAnswers || [{}, {}];
-    const total = answers.length;
-    const answered = answers.filter(({ value }) => !!value).length;
-    const finished = total - answered <= 0;
-
-    if (finished) {
-      return navigate('/');
-    }
 
     return this.setState({
       loading: false,
