@@ -1,4 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable no-console */
 
 
 import React from 'react';
@@ -6,7 +7,6 @@ import { storiesOf } from '@storybook/react';
 import faker from 'faker';
 
 
-import { randomLengthBlankArray } from '../../helpers/randomizer';
 import Onboarding from './index';
 
 
