@@ -126,14 +126,14 @@ Markup.propTypes = {
     t.string,
     t.func,
   ]).isRequired,
-  /** The text to display in the button */
+  /** The label to display in the button */
   text: t.string,
   /** Whether the button should have the gradient color fill */
   primary: t.bool,
   /** Whether the button should span the entirity (100%)
    * of the width of it's parent. */
   full: t.bool,
-  /** String that turns button into a select drop down button */
+  /** String that goes before the label of the button */
   prefix: t.string,
   /** An icon that should be used on the right side
    * of the button. Preferably an icon imported
