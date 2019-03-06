@@ -3,7 +3,6 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import faker from 'faker';
 
 
 import { randomNumber } from '../../helpers/randomizer';
