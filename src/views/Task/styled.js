@@ -55,6 +55,13 @@ const SubmitWrapper = styled.div`
 `;
 
 
+const Logo = styled.img`
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 15px;
+`;
+
+
 export {
   SubmitWrap,
   Section,
@@ -63,6 +70,7 @@ export {
   ActionsWrapper,
   SubmitWrapper,
   FilterWrapper,
+  Logo,
 };
 
 export default {
@@ -73,4 +81,5 @@ export default {
   ActionsWrapper,
   SubmitWrapper,
   FilterWrapper,
+  Logo,
 };
