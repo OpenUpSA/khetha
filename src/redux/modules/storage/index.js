@@ -1,20 +1,14 @@
-const REPLACE_STATE = 'storage/REPLACE_STATE';
-const SET_VERSION = 'storage/SET_VERSION';
-const UPDATE_SYNC_TIME = 'storage/UPDATE_SYNC_TIME';
+const LOG_SYNC = 'storage/LOG_SYNC';
 
 
-export default (state = {}, action = {}) => {
+const getTimestamp = () => new Date().getTime();
+
+
+const reducer = (state = {}, action = {}) => {
   switch (action.type) {
-    case REPLACE_STATE: return action.payload.state;
-
-    case UPDATE_SYNC_TIME: return {
+    case LOG_SYNC: return {
       ...state,
-      synced: action.payload.time,
-    };
-
-    case SET_VERSION: return {
-      ...state,
-      version: action.payload.version,
+      synced: getTimestamp(),
     };
 
     default: return state;
@@ -22,25 +16,17 @@ export default (state = {}, action = {}) => {
 };
 
 
-export const replaceEntireState = ({ state }) => ({
-  type: REPLACE_STATE,
-  payload: {
-    state,
-  },
-});
-
-
-export const setVersion = version => ({
-  type: SET_VERSION,
-  payload: {
-    version,
-  },
-});
-
-
-export const logRemoteSync = time => ({
-  type: UPDATE_SYNC_TIME,
+const logStateSync = time => ({
+  type: LOG_SYNC,
   payload: {
     time,
   },
 });
+
+
+export {
+  logStateSync,
+};
+
+
+export default reducer;

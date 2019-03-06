@@ -5,7 +5,7 @@ import t from 'prop-types';
 
 
 import { update, create } from '../../redux/modules/answers';
-import { completeTask } from '../../redux/actions';
+import { syncAfterTaskComplete } from '../../redux/actions';
 import Loading from '../../views/Loading';
 import Task from '../../views/Task';
 
@@ -47,7 +47,7 @@ const stateToProps = (state, ownProps) => ({
 
 const dispatchToProps = (dispatch, ownProps) => ({
   changeAnswer: (id, answers) => dispatch(update('big-debate', answers)),
-  submit: () => dispatch(completeTask('big-debate', 1)),
+  submit: () => dispatch(syncAfterTaskComplete('big-debate', 1)),
   markTaskAsActive: () => dispatch(create('big-debate', 2)),
   ...ownProps,
 });
@@ -84,6 +84,7 @@ const createProps = (props, id) => {
     points: props.points,
     onMenuButtonPress: navigate,
     isolated: true,
+    logo: true,
     questions: task.questions,
     answers: !!answers && answers.map(({ value }) => value),
     onQuestionSave: ({ index, value }) => props.changeAnswer(

@@ -1,6 +1,11 @@
+import axios from 'axios';
+
+
+import { syncUrl } from '../../config/api';
 import { auth, messaging } from '../../helpers/firebaseHelpers';
-import { addUser, addNotificationToken, addPoints } from '../modules/info';
 import { complete } from '../modules/answers';
+import { addUser, addNotificationToken, addPoints } from '../modules/info';
+import { logStateSync } from '../modules/storage';
 
 
 const createUser = () => (dispatch) => {
@@ -14,6 +19,27 @@ const createUser = () => (dispatch) => {
 };
 
 
+const completeTask = (id, points) => (dispatch) => {
+  dispatch(complete(id));
+  dispatch(addPoints(points));
+  return null;
+};
+
+
+const syncState = () => (dispatch, getState) => {
+  const newState = getState();
+  const { id } = newState.info;
+
+  return axios.post(syncUrl, { id, newState })
+    .then(dispatch(logStateSync()));
+};
+
+
+const syncAfterTaskComplete = (id, points) => (dispatch, getState) => {
+  completeTask(id, points)(dispatch);
+  return syncState()(dispatch, getState);
+};
+
 const requestNotificationAccess = () => (dispatch) => {
   const promise = messaging.requestPermission()
     .then(() => messaging.getToken())
@@ -22,21 +48,19 @@ const requestNotificationAccess = () => (dispatch) => {
 };
 
 
-const completeTask = (id, points) => (dispatch) => {
-  dispatch(complete(id));
-  dispatch(addPoints(points));
-  return null;
-};
-
-
 export {
   createUser,
   requestNotificationAccess,
   completeTask,
+  syncState,
+  syncAfterTaskComplete,
 };
+
 
 export default {
   createUser,
   requestNotificationAccess,
   completeTask,
+  syncState,
+  syncAfterTaskComplete,
 };
