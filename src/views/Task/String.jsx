@@ -1,4 +1,8 @@
-import React from 'react';
+import React, { Component, Fragment } from 'react';
+import t from 'prop-types';
+import TextField from '@material-ui/core/TextField';
+import GradientButton from '../../components/GradientButton';
+import { SubmitWrap } from './styled';
 
 
 class FormBinder extends Component {
