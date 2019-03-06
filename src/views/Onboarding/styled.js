@@ -9,8 +9,8 @@ import { secondary } from '../../tokens/colors';
 
 const Animate = posed.div({
   0: { y: 0 },
-  1: { y: -270 },
-  2: { y: -270 },
+  1: { y: 0 },
+  2: { y: 0 },
 });
 
 
