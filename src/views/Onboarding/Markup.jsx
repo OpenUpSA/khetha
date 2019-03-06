@@ -47,12 +47,7 @@ export default Markup;
 
 Markup.propTypes = {
   step: t.number.isRequired,
-  changeLanguage: t.func.isRequired,
   nextStep: t.func.isRequired,
-  complete: t.oneOfType([t.func, t.string]).isRequired,
-  /** The current language that the user has selected, usually starts as `null` */
-  language: t.string,
-  /** Language specific text to be used in this view */
   translation: t.shape({
     intro: t.shape({
       title: t.string,
@@ -74,9 +69,4 @@ Markup.propTypes = {
       primary: t.string,
     }),
   }).isRequired,
-};
-
-
-Markup.defaultProps = {
-  language: null,
 };
