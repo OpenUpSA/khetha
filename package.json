@@ -22,8 +22,8 @@
     "test:jest": "jest",
     "test:gatsby": "yarn build:gatsby",
     "test:jest:watch": "jest --watchAll",
-    "test:lint": "eslint src",
-    "test:lint:fix": "eslint src --fix",
+    "test:lint": "eslint src --ext .jsx --ext .js",
+    "test:lint:fix": "eslint src --ext .jsx --ext .js --fix",
     "deploy:api": "firebase deploy"
   },
   "dependencies": {
