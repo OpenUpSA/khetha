@@ -1,6 +1,7 @@
 {
   "name": "firebase-cloud-functions",
   "version": "0.0.1",
+  "engines": { "node": "8" },
   "dependencies": {
     "apollo-server-express": "^2.3.3",
     "core-js": "3.0.0-beta.11",
@@ -9,7 +10,11 @@
     "firebase-admin": "~7.0.0",
     "firebase-functions": "^2.2.0",
     "graphql": "^14.1.1",
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.11",
+    "npm": "^6.8.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "axios": "^0.18.0"
+  }
 }
