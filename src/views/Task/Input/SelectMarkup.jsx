@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import t from 'prop-types';
 import TextField from '@material-ui/core/TextField';
 
 
@@ -73,3 +74,17 @@ const SelectMarkup = (props) => {
 
 
 export default SelectMarkup;
+
+
+SelectMarkup.propTypes = {
+  answer: t.string.isRequired,
+  manual: t.bool,
+  activateManual: t.func.isRequired,
+  updateAnswer: t.func.isRequired,
+  manualSave: t.func.isRequired,
+};
+
+
+SelectMarkup.defaultProps = {
+  manual: false,
+};
