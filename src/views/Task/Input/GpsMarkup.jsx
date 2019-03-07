@@ -22,8 +22,8 @@ const GpsMarkup = (props) => {
     return (
       <Fragment>
         <Typography>
-
-          We could not automatically detect your location, or you opted to enter your location manually. Please complete the address field below
+          We could not automatically detect your location, or you opted to enter your location manually.
+          Please complete the address field below
         </Typography>
         <NextWrapper>
           <TextField
@@ -73,14 +73,15 @@ export default GpsMarkup;
 
 
 GpsMarkup.propTypes = {
-  // answer: ,
-  // manual: ,
-  // activateManual: ,
-  // updateAnswer: ,
-  // manualSave: ,
-  // getLocation: ,
+  answer: t.string.isRequired,
+  manual: t.bool,
+  activateManual: t.func.isRequired,
+  updateAnswer: t.func.isRequired,
+  manualSave: t.func.isRequired,
+  getLocation: t.func.isRequired,
 };
 
 
 GpsMarkup.defaultProps = {
+  manual: false,
 };
