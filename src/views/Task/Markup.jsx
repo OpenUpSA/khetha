@@ -77,27 +77,25 @@ export default Markup;
 
 Markup.propTypes = {
   title: t.string.isRequired,
-  answers: t.arrayOf(t.string),
   changeAnswer: t.func.isRequired,
-  onComplete: t.func.isRequired,
-  onMenuButtonPress: t.func.isRequired,
-  questions: t.arrayOf(
-    t.shape({
-      title: t.string,
-      description: t.string,
-      format: t.oneOf([
-        'string',
-        'text',
-        'boolean',
-        'select',
-        'checkboxes',
-        'gps',
-      ]),
-    }),
-  ).isRequired,
+  changeFilter: t.func.isRequired,
+  filter: t.shape({
+    title: t.string,
+    active: t.string,
+    difficulty: t.arrayOf(t.string),
+  }).isRequired,
+  points: t.number,
+  modalProps: t.node.isRequired,
+  createItems: t.func.isRequired,
+  // filterOptions: ,
+  // completeTask: ,
+  // completed: ,
+  // onMenuButtonPress: t.func.isRequired,
+  // isolated: ,
+  // logo: ,
 };
 
 
 Markup.defaultProps = {
-  answers: [],
+  points: 0,
 };
