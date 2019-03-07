@@ -16,7 +16,7 @@ import {
 } from './styled';
 
 
-const resolveContent = ({ content, next }) => {
+const ResolveContent = ({ content, next }) => {
   if ({}.toString.call(content) === '[object Function]') {
     return content(next);
   }
@@ -79,7 +79,7 @@ const Markup = (props) => {
       </Summary>
       <Details>
         <div ref={focusElement}>
-          {resolveContent({ content, next })}
+          <ResolveContent {...{ content, next }} />
         </div>
       </Details>
     </Wrapper>
@@ -91,6 +91,7 @@ export default Markup;
 
 
 Markup.propTypes = {
+  id: t.number.isRequired,
   incremental: t.bool,
   buttons: t.bool,
   progress: t.oneOfType([t.number, t.bool]).isRequired,
@@ -123,4 +124,15 @@ Markup.defaultProps = {
   next: null,
   advance: false,
   summary: null,
+};
+
+
+ResolveContent.propTypes = {
+  content: t.func.isRequired,
+  next: t.func,
+};
+
+
+ResolveContent.defaultProps = {
+  next: null,
 };
