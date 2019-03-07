@@ -1,4 +1,5 @@
 import React from 'react';
+import t from 'prop-types';
 
 
 import { ButtonWrap, FlexWrap } from './styled';
@@ -40,7 +41,6 @@ const Buttons = (props) => {
     answer,
     saveAnswer,
     options,
-    id,
   } = props;
 
   const optionObjects = options.map(text => ({ text }));
@@ -59,3 +59,33 @@ const Buttons = (props) => {
 
 
 export default Buttons;
+
+Buttons.propTypes = {
+  answer: t.string,
+  saveAnswer: t.func,
+  options: t.arrayOf(t.string),
+};
+
+
+Buttons.defaultProps = {
+  answer: null,
+  saveAnswer: null,
+  options: null,
+};
+
+
+ButtonWrapper.propTypes = {
+  text: t.string,
+  answer: t.string,
+  focusElement: t.node.isRequired,
+  saveAnswer: t.func,
+  options: t.arrayOf(t.string),
+};
+
+
+ButtonWrapper.defaultProps = {
+  text: null,
+  answer: null,
+  saveAnswer: null,
+  options: null,
+};
