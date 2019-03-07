@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import t from 'prop-types';
 import { Typography } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 
@@ -69,3 +70,17 @@ const GpsMarkup = (props) => {
 
 
 export default GpsMarkup;
+
+
+GpsMarkup.propTypes = {
+  // answer: ,
+  // manual: ,
+  // activateManual: ,
+  // updateAnswer: ,
+  // manualSave: ,
+  // getLocation: ,
+};
+
+
+GpsMarkup.defaultProps = {
+};

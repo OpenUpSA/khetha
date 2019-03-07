@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import t from 'prop-types';
 
 
 import SelectMarkup from './SelectMarkup';
@@ -60,3 +61,15 @@ class Select extends Component {
 
 
 export default Select;
+
+
+Select.propTypes = {
+  saveAnswer: t.func,
+  options: t.arrayOf(t.string),
+};
+
+
+Select.defaultProps = {
+  saveAnswer: null,
+  options: null,
+};
