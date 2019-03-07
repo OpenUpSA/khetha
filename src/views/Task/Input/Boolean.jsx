@@ -1,4 +1,5 @@
 import React from 'react';
+import t from 'prop-types';
 
 
 import { ButtonWrap, FlexWrap } from './styled';
@@ -53,8 +54,6 @@ const Boolean = (props) => {
     answer,
     saveAnswer,
     focusElement,
-    options,
-    id,
   } = props;
 
   const addedProps = {
@@ -72,3 +71,32 @@ const Boolean = (props) => {
 
 
 export default Boolean;
+
+
+Boolean.propTypes = {
+  answer: t.string,
+  focusElement: t.node.isRequired,
+  saveAnswer: t.func,
+};
+
+
+Boolean.defaultProps = {
+  answer: null,
+  saveAnswer: null,
+};
+
+
+ButtonWrapper.propTypes = {
+  text: t.string,
+  answer: t.string,
+  focusElement: t.node.isRequired,
+  saveAnswer: t.func,
+  index: t.number.isRequired,
+};
+
+
+ButtonWrapper.defaultProps = {
+  text: null,
+  answer: null,
+  saveAnswer: null,
+};
