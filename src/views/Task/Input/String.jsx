@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import t from 'prop-types';
 import TextField from '@material-ui/core/TextField';
 
 
@@ -10,8 +11,6 @@ const String = (props) => {
   const {
     answer,
     saveAnswer,
-    focusElement,
-    id,
     updateAnswer,
   } = props;
 
@@ -38,3 +37,15 @@ const String = (props) => {
 
 
 export default String;
+
+String.propTypes = {
+  answer: t.string,
+  saveAnswer: t.func,
+  updateAnswer: t.func.isRequired,
+};
+
+
+String.defaultProps = {
+  answer: null,
+  saveAnswer: null,
+};
