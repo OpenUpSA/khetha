@@ -60,6 +60,7 @@ Task.propTypes = {
   transparent: t.bool,
   id: t.string.isRequired,
   points: t.number,
+  amountOfQuestions: t.number,
   clickAction: t.func,
   onCardPress: t.func.isRequired,
 };
@@ -69,5 +70,6 @@ Task.defaultProps = {
   icon: null,
   transparent: null,
   points: null,
+  amountOfQuestions: null,
   clickAction: null,
 };
