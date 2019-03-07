@@ -1,4 +1,5 @@
 import React from 'react';
+import t from 'prop-types';
 import Icon from '../../Icon';
 
 
@@ -35,3 +36,16 @@ const IconOverlay = (props) => {
 
 
 export default IconOverlay;
+
+IconOverlay.propTypes = {
+  percentage: t.number.isRequired,
+  incremental: t.bool,
+  index: t.number.isRequired,
+  error: t.bool,
+};
+
+
+IconOverlay.defaultProps = {
+  incremental: false,
+  error: false,
+};

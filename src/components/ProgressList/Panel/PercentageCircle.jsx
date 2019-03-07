@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import t from 'prop-types';
 
 
 import modifyPercentageIfNeeded from './modifyPercentageIfNeeded';
@@ -57,5 +57,14 @@ PercentageCircle.propTypes = {
   /** Percentage to display display by this component.
   Decimal numbers will be automically be rounded down
   and numbers higher than 100 will be reduced to 100 */
-  percentage: PropTypes.number.isRequired,
+  percentage: t.number.isRequired,
+  incremental: t.bool,
+  index: t.number.isRequired,
+  error: t.bool,
+};
+
+
+PercentageCircle.defaultProps = {
+  incremental: false,
+  error: false,
 };
