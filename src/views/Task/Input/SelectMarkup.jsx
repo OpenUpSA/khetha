@@ -82,9 +82,13 @@ SelectMarkup.propTypes = {
   activateManual: t.func.isRequired,
   updateAnswer: t.func.isRequired,
   manualSave: t.func.isRequired,
+  options: t.arrayOf(t.string),
+  dropDownSave: t.func.isRequired,
+  calcIfOther: t.func.isRequired,
 };
 
 
 SelectMarkup.defaultProps = {
   manual: false,
+  options: null,
 };
