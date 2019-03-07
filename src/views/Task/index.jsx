@@ -154,4 +154,15 @@ Task.propTypes = {
       ]),
     }),
   ).isRequired,
+  answers: t.arrayOf(t.string),
+  onTaskSubmit: t.func.isRequired,
+  /** The amount of points that the user current has.
+   * This is used to calculate the badge and 'points required'
+   * prompt shown in the header. */
+  taskPoints: t.number.isRequired,
+  onQuestionSave: t.func.isRequired,
+};
+
+Task.defaultProps = {
+  answers: [],
 };
