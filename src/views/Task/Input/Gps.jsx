@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import t from 'prop-types';
 
 
 import GpsMarkup from './GpsMarkup';
@@ -62,3 +63,13 @@ class Gps extends Component {
 
 
 export default Gps;
+
+
+Gps.propTypes = {
+  saveAnswer: t.func,
+};
+
+
+Gps.defaultProps = {
+  saveAnswer: null,
+};
