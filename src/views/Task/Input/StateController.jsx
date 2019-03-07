@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import t from 'prop-types';
 
 
 class StateController extends Component {
@@ -40,3 +41,12 @@ class StateController extends Component {
 
 
 export default StateController;
+
+StateController.propTypes = {
+  next: t.func,
+};
+
+
+StateController.defaultProps = {
+  next: null,
+};
