@@ -103,6 +103,7 @@ Markup.propTypes = {
   index: t.number.isRequired,
   error: t.bool,
   guided: t.bool,
+  advance: t.bool,
   next: t.func,
   changeFocus: t.func,
   focusElement: t.shape({
@@ -120,5 +121,6 @@ Markup.defaultProps = {
   error: false,
   guided: null,
   next: null,
+  advance: false,
   summary: null,
 };

@@ -59,6 +59,7 @@ Markup.propTypes = {
   changeFocus: t.func.isRequired,
   incremental: t.bool,
   buttons: t.bool,
+  advance: t.bool,
   next: t.func,
   items: t.arrayOf(
     t.shape({
@@ -77,5 +78,6 @@ Markup.defaultProps = {
   incremental: false,
   buttons: false,
   items: null,
+  advance: false,
   next: null,
 };
