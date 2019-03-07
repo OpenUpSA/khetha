@@ -2,6 +2,7 @@
 
 
 import React, { Fragment } from 'react';
+import t from 'prop-types';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 
@@ -55,10 +56,8 @@ const Checkboxes = (props) => {
     answer,
     focusElement,
     options,
-    id,
     updateAnswer,
     saveAnswer,
-    index,
   } = props;
 
   const optionObjects = options.map(text => ({ text }));
@@ -88,3 +87,35 @@ const Checkboxes = (props) => {
 
 
 export default Checkboxes;
+
+
+Checkboxes.propTypes = {
+  answer: t.string,
+  saveAnswer: t.func,
+  options: t.arrayOf(t.string),
+  focusElement: t.node.isRequired,
+  updateAnswer: t.func.isRequired,
+};
+
+
+Checkboxes.defaultProps = {
+  answer: null,
+  saveAnswer: null,
+  options: null,
+};
+
+
+ButtonWrapper.propTypes = {
+  text: t.string,
+  answerArray: t.arrayOf(t.string),
+  updateAnswer: t.func.isRequired,
+  options: t.arrayOf(t.string),
+  index: t.number.isRequired,
+};
+
+
+ButtonWrapper.defaultProps = {
+  text: null,
+  options: null,
+  answerArray: [],
+};
