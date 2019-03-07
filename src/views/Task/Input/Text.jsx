@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import t from 'prop-types';
 import TextField from '@material-ui/core/TextField';
 
 
@@ -9,7 +10,6 @@ import GradientButton from '../../../components/GradientButton';
 const String = (props) => {
   const {
     answer,
-    id,
     saveAnswer,
     updateAnswer,
   } = props;
@@ -39,3 +39,16 @@ const String = (props) => {
 
 
 export default String;
+
+
+String.propTypes = {
+  answer: t.string,
+  saveAnswer: t.func,
+  updateAnswer: t.func.isRequired,
+};
+
+
+String.defaultProps = {
+  answer: null,
+  saveAnswer: null,
+};
