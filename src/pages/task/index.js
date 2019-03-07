@@ -6,7 +6,7 @@ import t from 'prop-types';
 
 
 import { update } from '../../redux/modules/answers';
-import { completeTask } from '../../redux/actions';
+import { syncAfterTaskComplete } from '../../redux/actions';
 import Loading from '../../views/Loading';
 import Task from '../../views/Task';
 
@@ -52,7 +52,7 @@ const stateToProps = (state, ownProps) => ({
 
 const dispatchToProps = (dispatch, ownProps) => ({
   changeAnswer: (id, answers) => dispatch(update(id, answers)),
-  submit: (id, points) => dispatch(completeTask(id, points)),
+  submit: (id, points) => dispatch(syncAfterTaskComplete(id, points)),
   ...ownProps,
 });
 
