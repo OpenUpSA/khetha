@@ -87,15 +87,18 @@ Markup.propTypes = {
   points: t.number,
   modalProps: t.node.isRequired,
   createItems: t.func.isRequired,
-  // filterOptions: ,
-  // completeTask: ,
-  // completed: ,
-  // onMenuButtonPress: t.func.isRequired,
-  // isolated: ,
-  // logo: ,
+  filterOptions: t.arrayOf(t.string).isRequired,
+  completeTask: t.func.isRequired,
+  completed: t.bool,
+  onMenuButtonPress: t.func.isRequired,
+  isolated: t.bool,
+  logo: t.bool,
 };
 
 
 Markup.defaultProps = {
   points: 0,
+  completed: false,
+  isolated: false,
+  logo: false,
 };
