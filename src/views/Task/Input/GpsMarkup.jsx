@@ -24,8 +24,9 @@ const GpsMarkup = (props) => {
     return (
       <Fragment>
         <Typography>
-          We could not automatically detect your location, or you opted to enter your location manually.
-          Please complete the address field below
+          We could not automatically detect your location, or you opted to enter your location
+           manually.
+           Please complete the address field below
         </Typography>
         <NextWrapper>
           <TextField
