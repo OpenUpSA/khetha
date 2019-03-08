@@ -59,9 +59,13 @@ export default Modal;
 
 Modal.propTypes = {
   children: t.node,
+  open: t.bool,
+  closeAction: t.func.isRequired,
+  completeTask: t.func.isRequired,
 };
 
 
 Modal.defaultProps = {
   children: null,
+  open: false,
 };
