@@ -78,6 +78,10 @@ const createProps = (props, id) => {
 
   const completed = !!props.allAnswers && props.allAnswers['big-debate'] && !!props.allAnswers['big-debate'].completed;
 
+  if (completed) {
+    return navigate("/bigdebatejoin")
+  }
+
   const answers = calcAnswers || [{}, {}];
 
   return {
