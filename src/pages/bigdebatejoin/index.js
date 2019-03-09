@@ -23,7 +23,7 @@ const createProps = props => ({
   translation: [
     {
       title: 'Thanks for voting!',
-      description: 'Use this app to vote on weekly polls and stand to win a trip to the Big Debate studio and other prizes. The more you vote, the greater your chance of winning.',
+      description: 'To keep voting in future Big Debate polls, and stand a chance to win a trip to the Big Debate studio live show, join the Khetha! app now. On Khetha! you can also play games about the elections and win airtime.',
       primary: 'Click here to find out more',
     },
   ],
@@ -47,7 +47,7 @@ class Page extends Component {
   }
 
   componentDidMount() {
-    return this.setState({ loading: false });
+      return this.setState({ loading: false });
   }
 
   render() {
@@ -58,7 +58,7 @@ class Page extends Component {
     }
 
     const passedProps = createProps(props);
-    return createElement(BigDebateJoin, passedProps);
+      return createElement(BigDebateJoin, passedProps);
   }
 }
 

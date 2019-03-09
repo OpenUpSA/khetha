@@ -23,7 +23,7 @@ const createProps = props => ({
   translation: [
     {
       title: 'What is Khetha?',
-      description: 'Kheta is an online game where you can win prizes just by sharing your thoughts on the Mzansi 2019 election.',
+      description: 'Khetha! is a game where you share your views on what\'s happening in South Africa. And you can win airtime at the same time! Make your voice heard!',
       primary: 'Start!',
     },
     {
