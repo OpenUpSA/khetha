@@ -20,6 +20,7 @@ const onClientEntry = () => {
 
   const isDebateHomeUrl = /^\/bigdebate\/?$/i.test(window.location.pathname);
   const isDebatePollUrl = /^\/bigdebatepoll\/?$/i.test(window.location.pathname);
+  const isDebateJoinUrl = /^\/bigdebatejoin\/?$/i.test(window.location.pathname);
   const isLoadingUrl = /^\/\/?$/i.test(window.location.pathname);
   const isIntroUrl = /^\/intro\/?$/i.test(window.location.pathname);
   const isOnboarding = isLoadingUrl || isIntroUrl;
@@ -32,6 +33,10 @@ const onClientEntry = () => {
       window.location = '/bigdebatepoll';
 
   if (isDebatePollUrl) {
+    return null;
+  }
+
+  if (isDebateJoinUrl) {
     return null;
   }
 
