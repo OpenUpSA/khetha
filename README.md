@@ -9,14 +9,14 @@
 _If you have any questions about the following instructions please get in touch with us via [our core-team Slack workspace](https://openupsa.slack.com) (if you have access) or the following [public Gitter channel](#)._
 
 ### 🌱 1. Set up local environment
-1. Clone the repository by running `git clone https://help.github.com/OpenUpSA/khetha/`.
+1. Clone the repository by running `git clone https://github.com/OpenUpSA/khetha.git`.
 2. Make sure you have the latest release of [NodeJS](https://nodejs.org/en/) installed.
 3. Make sure you have the latest release of [Yarn](https://yarnpkg.com/en/docs/install) installed.
 4. Run `yarn` in the root folder of the repository to install all dependancies.
 
 ### 👓 2. Read our documentation
 1. Please review the [branches](https://github.com/agis/git-style-guide) and [commits](https://github.com/agis/git-style-guide) sections in the following [documentation](https://github.com/agis/git-style-guide).
-3. Please read the following [document outlinging Khetha's code-architecture](#).
+3. Please read the following [document outlining Khetha's code-architecture](#).
 4. Run `yarn start:docs` to review component/module level documentation as needed.
 
 ### ❤️ 3. Contribute
