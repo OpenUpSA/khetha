@@ -31,6 +31,7 @@ const onClientEntry = () => {
 
   if (isDebateHomeUrl)
       window.location = '/bigdebatepoll';
+      return null;
 
   if (isDebatePollUrl) {
     return null;
