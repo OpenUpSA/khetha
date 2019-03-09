@@ -18,7 +18,9 @@ const onClientEntry = () => {
   const { info } = store.getState();
   const { onboarded, id } = info;
 
-  const isDebateUrl = /^\/bigdebate\/?$/i.test(window.location.pathname);
+  const isDebateHomeUrl = /^\/bigdebate\/?$/i.test(window.location.pathname);
+  const isDebatePollUrl = /^\/bigdebatepoll\/?$/i.test(window.location.pathname);
+  const isDebateJoinUrl = /^\/bigdebatejoin\/?$/i.test(window.location.pathname);
   const isLoadingUrl = /^\/\/?$/i.test(window.location.pathname);
   const isIntroUrl = /^\/intro\/?$/i.test(window.location.pathname);
   const isOnboarding = isLoadingUrl || isIntroUrl;
@@ -27,7 +29,15 @@ const onClientEntry = () => {
     store.dispatch(createUser());
   }
 
-  if (isDebateUrl) {
+  if (isDebateHomeUrl)
+      window.location = '/bigdebatepoll';
+      return null;
+
+  if (isDebatePollUrl) {
+    return null;
+  }
+
+  if (isDebateJoinUrl) {
     return null;
   }
 

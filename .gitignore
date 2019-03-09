@@ -72,3 +72,4 @@ yarn-error.log
 .docz
 server.auth.json
 private-key.json
+\.*.swp
