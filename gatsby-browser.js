@@ -20,6 +20,7 @@ const onClientEntry = () => {
 
   const isDebateHomeUrl = /^\/bigdebate\/?$/i.test(window.location.pathname);
   const isDebatePollUrl = /^\/bigdebatepoll\/?$/i.test(window.location.pathname);
+  const isDebateVoteUrl = /^\/bigdebatevote\/?$/i.test(window.location.pathname);
   const isDebateJoinUrl = /^\/bigdebatejoin\/?$/i.test(window.location.pathname);
   const isLoadingUrl = /^\/\/?$/i.test(window.location.pathname);
   const isIntroUrl = /^\/intro\/?$/i.test(window.location.pathname);
@@ -29,7 +30,7 @@ const onClientEntry = () => {
     store.dispatch(createUser());
   }
 
-  if (isDebateHomeUrl)
+  if (isDebateHomeUrl || isDebateVoteUrl)
       window.location = '/bigdebatepoll';
       return null;
 
