@@ -78,9 +78,6 @@ const createProps = (props, id) => {
 
   const completed = !!props.allAnswers && props.allAnswers['big-debate'] && !!props.allAnswers['big-debate'].completed;
 
-  if (completed) {
-    return navigate("/bigdebatejoin")
-  }
 
   const answers = calcAnswers || [{}, {}];
 
@@ -100,7 +97,7 @@ const createProps = (props, id) => {
     ),
     onTaskSubmit: () => {
       props.submit(id, 2);
-      return navigate('/');
+      return navigate('/bigdebatejoin');
     },
   };
 };
