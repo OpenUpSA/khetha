@@ -30,9 +30,10 @@ const onClientEntry = () => {
     store.dispatch(createUser());
   }
 
-  if (isDebateHomeUrl || isDebateVoteUrl)
-      window.location = '/bigdebatepoll';
-      return null;
+  if (isDebateHomeUrl || isDebateVoteUrl) {
+    window.location.href = '/bigdebatepoll';
+    return null;
+  }
 
   if (isDebatePollUrl) {
     return null;
@@ -43,7 +44,7 @@ const onClientEntry = () => {
   }
 
   if (!onboarded && !isOnboarding) {
-    window.location = '/';
+    window.location.href = '/';
   }
 
   return null;
