@@ -32,7 +32,7 @@ class Gps extends Component {
       ({ coords }) => saveAnswer(
         { type: 'gps', value: `${coords.latitude} ${coords.longitude}`, manual: false },
       ),
-      this.activateManual,
+      () => alert('Sorry, your browser was unable to determine your location.'),
       {
         timeout: 5000,
       },

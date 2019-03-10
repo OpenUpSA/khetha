@@ -36,9 +36,6 @@ const GpsMarkup = (props) => {
   if (manual) {
     return (
       <Fragment>
-        <Typography>
-          We could not automatically detect your location, or you opted to enter your location manually. Please select one of the options below:
-        </Typography>
         <NextWrapper>
           <GradientSelect
             options={provinceObjects}
