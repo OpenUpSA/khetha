@@ -76,6 +76,7 @@ const Markup = (props) => {
           </FilterWrapper> */}
           {
             !!submitted
+            && !autoSubmit
             && (
               <Task
                 transparent
@@ -98,7 +99,7 @@ const Markup = (props) => {
           }
         </Section>
         {completed && !autoSubmit && !submitted && buildSubmit()}
-        {!!submitted && buildReturn()}
+        {!!submitted && !autoSubmit && buildReturn()}
       </Layout>
     </Fragment>
   );
