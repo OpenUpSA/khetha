@@ -31,7 +31,7 @@ const onClientEntry = () => {
   }
 
   if (isDebateHomeUrl || isDebateVoteUrl) {
-    window.location.replace('/bigdebatepoll');
+    window.location.href = '/bigdebatepoll';
     return null;
   }
 
@@ -40,7 +40,7 @@ const onClientEntry = () => {
   }
 
   if (!onboarded && !isOnboarding) {
-    window.location.replace('/');
+    window.location.href = '/';
   }
 
   return null;
