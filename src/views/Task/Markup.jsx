@@ -36,6 +36,7 @@ const Markup = (props) => {
     logo,
     submitted,
     autoSubmit,
+    sent,
   } = props;
 
   const items = createItems(Content);
@@ -86,6 +87,7 @@ const Markup = (props) => {
 
           {
             !submitted
+            && !sent
             && (
               <ProgressList
                 {...{ items }}

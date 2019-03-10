@@ -113,10 +113,6 @@ class Task extends Component {
       ...events
     } = this;
 
-    if (state.sent) {
-      return <div>&nbsp;</div>;
-    }
-
     const all = state.answers.length;
     const pending = state.answers.filter(answer => !answer).length;
 
@@ -157,6 +153,7 @@ class Task extends Component {
       isolated: props.isolated,
       logo: props.logo,
       autoSubmit: props.autoSubmit,
+      sent: state.sent,
     };
 
     return <Markup {...passedProps} />;
