@@ -23,7 +23,7 @@ class Task extends Component {
       answers,
       filter: 0,
       modalOpen: null,
-      submitted: false,
+      sent: false,
     };
   }
 
@@ -52,13 +52,12 @@ class Task extends Component {
   }
 
   componentDidUpdate() {
-    const { onTaskSubmit, points } = this.props;
+    const { onTaskSubmit, points, autoSubmit } = this.props;
     const { answers } = this.state;
     const pending = answers.filter(answer => !answer).length;
 
-    if (pending < 1 && !this.state.submitted) {
-      this.setState({ submitted: true });
-      console.log('asdasd');
+    if (autoSubmit && pending < 1 && !this.state.sent) {
+      this.setState({ sent: true });
 
       if (pending < 1 && onTaskSubmit) {
         return onTaskSubmit(answers, points);
@@ -113,6 +112,10 @@ class Task extends Component {
       state,
       ...events
     } = this;
+
+    if (state.sent) {
+      return <div>&nbsp;</div>;
+    }
 
     const all = state.answers.length;
     const pending = state.answers.filter(answer => !answer).length;
