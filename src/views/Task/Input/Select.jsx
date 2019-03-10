@@ -27,12 +27,12 @@ class Select extends Component {
     const { saveAnswer } = this.props;
     const { answer } = this.state;
 
-    return saveAnswer({ type: 'select', value: answer, manual: true });
+    return saveAnswer({ type: 'select', value: answer.toString(), manual: true });
   }
 
   dropDownSave = (value) => {
     const { saveAnswer } = this.props;
-    return saveAnswer({ type: 'select', value, manual: true });
+    return saveAnswer({ type: 'select', value: value.toString(), manual: true });
   }
 
   render() {
