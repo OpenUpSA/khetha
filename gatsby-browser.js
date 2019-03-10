@@ -30,15 +30,11 @@ const onClientEntry = () => {
     store.dispatch(createUser());
   }
 
-  if (isDebateHomeUrl || isDebateVoteUrl)
+  if (isDebateHomeUrl || isDebateVoteUrl) {
       window.location = '/bigdebatepoll';
       return null;
 
-  if (isDebatePollUrl) {
-    return null;
-  }
-
-  if (isDebateJoinUrl) {
+  if (isDebatePollUrl || isDebateJoinUrl) {
     return null;
   }
 

@@ -28,7 +28,13 @@ class Task extends Component {
 
 
   toggleModal = () => {
+    const { autoSubmit } = this.props;
     const { modalOpen } = this.state;
+
+    if (autoSubmit) {
+      return null;
+    }
+
     return this.setState({ modalOpen: !modalOpen });
   }
 
@@ -44,9 +50,21 @@ class Task extends Component {
     return null;
   }
 
+  componentDidUpdate() {
+    const { onTaskSubmit, points } = this.props;
+    const { answers } = this.state;
+
+    const pending = answers.filter(answer => !answer).length;
+
+    if (pending < 1 && onTaskSubmit) {
+      return onTaskSubmit(answers, points);
+    }
+
+    return null;
+  }
 
   changeAnswer = ({ id, value }) => {
-    const { onQuestionSave } = this.props;
+    const { onQuestionSave, onTaskSubmit, points } = this.props;
     const { answers: currentAnswers } = this.state;
     const baseAnswer = currentAnswers[id];
     const isFirstUpdate = !currentAnswers[id];
@@ -128,6 +146,7 @@ class Task extends Component {
       onMenuButtonPress: props.onMenuButtonPress,
       isolated: props.isolated,
       logo: props.logo,
+      autoSubmit: props.autoSubmit,
     };
 
     return <Markup {...passedProps} />;
