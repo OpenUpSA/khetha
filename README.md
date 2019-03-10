@@ -31,4 +31,4 @@ _If you have any questions about the following instructions please get in touch 
 2. If you are a project contributor (.e. you have write access) use the [feature branch Git workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow).
 3. Make a [pull request](https://www.atlassian.com/git/tutorials/making-a-pull-request) via the [Github](#github) dashboard to the `master` branch.
 4. The designated owner of the repository will automatically be tagged in all pull requests via the `docs/CODEOWNERS` file.
-5. Once your code has been accepted and merged into `master` [Netlify](#netlify) will automatically deploy the changes to [khetha.org.zaa](http://khetha.org.za).
+5. Once your code has been accepted and merged into `master` [Netlify](#netlify) will automatically deploy the changes to [khetha.org.za](http://khetha.org.za).
