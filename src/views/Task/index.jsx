@@ -23,6 +23,7 @@ class Task extends Component {
       answers,
       filter: 0,
       modalOpen: null,
+      submitted: false,
     };
   }
 
@@ -54,10 +55,15 @@ class Task extends Component {
     const { onTaskSubmit, points } = this.props;
     const { answers } = this.state;
 
-    const pending = answers.filter(answer => !answer).length;
+    if (!this.state.submitted) {
+      this.setState({ submitted: true });
+      const pending = answers.filter(answer => !answer).length;
 
-    if (pending < 1 && onTaskSubmit) {
-      return onTaskSubmit(answers, points);
+      if (pending < 1 && onTaskSubmit) {
+        return onTaskSubmit(answers, points);
+      }
+
+      return null;
     }
 
     return null;
