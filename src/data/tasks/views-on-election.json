@@ -69,8 +69,7 @@
         "format": "boolean"
       },
       {
-        "title": "What are your reasons for choosing a party to vote for?",
-        "description": "Please select 3 that apply to you",
+        "title": "What are your top 3 reasons for choosing a party to vote for?",
         "format": "checkboxes",
         "options": [
           "My family supports the party",
