@@ -35,6 +35,7 @@ const Markup = (props) => {
     isolated,
     logo,
     submitted,
+    autoSubmit,
   } = props;
 
   const items = createItems(Content);
@@ -58,7 +59,7 @@ const Markup = (props) => {
 
   return (
     <Fragment>
-      <Modal {...modalProps} />
+      {!autoSubmit && <Modal {...modalProps} />}
       <Layout {...{ points, onMenuButtonPress, isolated }}>
         {!!logo && <Logo src={logoSrc} alt="" />}
         <Section>
@@ -94,7 +95,7 @@ const Markup = (props) => {
             )
           }
         </Section>
-        {completed && !submitted && buildSubmit()}
+        {completed && !autoSubmit && !submitted && buildSubmit()}
         {!!submitted && buildReturn()}
       </Layout>
     </Fragment>

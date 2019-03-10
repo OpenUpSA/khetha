@@ -35,11 +35,7 @@ const onClientEntry = () => {
     return null;
   }
 
-  if (isDebatePollUrl) {
-    return null;
-  }
-
-  if (isDebateJoinUrl) {
+  if (isDebatePollUrl || isDebateJoinUrl) {
     return null;
   }
 

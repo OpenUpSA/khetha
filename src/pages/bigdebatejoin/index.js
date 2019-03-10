@@ -47,7 +47,7 @@ class Page extends Component {
   }
 
   componentDidMount() {
-      return this.setState({ loading: false });
+    return this.setState({ loading: false });
   }
 
   render() {
@@ -58,7 +58,7 @@ class Page extends Component {
     }
 
     const passedProps = createProps(props);
-      return createElement(BigDebateJoin, passedProps);
+    return createElement(BigDebateJoin, passedProps);
   }
 }
 
