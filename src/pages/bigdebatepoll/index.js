@@ -112,15 +112,11 @@ class Page extends Component {
     };
   }
 
-    
-
   componentDidMount() {
-      const props = this.props;
-      const { allAnswers } = props;
-      const completed = !!allAnswers && allAnswers['big-debate'] && !!allAnswers['big-debate'].completed;
+    const props = this.props;
+    const { allAnswers } = props;
 
-      if (completed)
-          return navigate('/bigdebatejoin');
+    const completed = !!allAnswers && allAnswers['big-debate'] && !!allAnswers['big-debate'].completed;
 
     return this.setState({
       loading: false,
