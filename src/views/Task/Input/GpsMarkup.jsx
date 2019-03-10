@@ -1,8 +1,9 @@
 import React, { Fragment } from 'react';
 import { Typography } from '@material-ui/core';
-import TextField from '@material-ui/core/TextField';
 
 
+import { provinces, municipalities } from './GpsOptions';
+import GradientSelect from '../../../components/GradientSelect';
 import { ButtonWrap, FlexWrap, NextWrapper } from './styled';
 import GradientButton from '../../../components/GradientButton';
 
@@ -12,35 +13,43 @@ const GpsMarkup = (props) => {
     answer,
     manual,
     activateManual,
-    updateAnswer,
     manualSave,
     getLocation,
+    updateAnswer,
   } = props;
+
+
+  const provinceObjects = provinces.map((text, id) => ({ id, text }));
+
+  const muniObjects = () => municipalities[provinces[answer]].map((text, id) => ({ id, text }));
+
+  const muniSelect = () => (
+    <GradientSelect
+      options={muniObjects()}
+      placeholder="Select a Municipality"
+      primary
+      resolve="short"
+      onSelectionChange={manualSave}
+    />
+  );
 
   if (manual) {
     return (
       <Fragment>
         <Typography>
-
-          We could not automatically detect your location, or you opted to enter your location manually. Please complete the address field below
+          We could not automatically detect your location, or you opted to enter your location manually. Please select one of the options below:
         </Typography>
         <NextWrapper>
-          <TextField
-            multiline
-            fullWidth
-            rows="4"
-            value={answer || ''}
-            variant="outlined"
-            label="Input answer"
-            onChange={event => updateAnswer(event.target.value)}
+          <GradientSelect
+            options={provinceObjects}
+            primary={!answer}
+            resolve="short"
+            selected={answer}
+            onSelectionChange={updateAnswer}
           />
         </NextWrapper>
         <NextWrapper>
-          <GradientButton
-            primary
-            text="Save Answer"
-            onButtonPress={manualSave}
-          />
+          {!!answer && muniSelect()}
         </NextWrapper>
       </Fragment>
     );

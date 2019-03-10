@@ -1,0 +1,85 @@
+{
+  "provinces": [
+    "Eastern Cape",
+    "Free State",
+    "Gauteng",
+    "KwaZulu-Natal",
+    "Limpopo",
+    "Mpumalanga",
+    "North West",
+    "Northern Cape",
+    "Western Cape"
+  ],
+  "municipalities": {
+    "Eastern Cape": [
+      "Sarah Baartman Municipality",
+      "OR Tambo Municipality",
+      "Nelson Mandela Bay Municipality",
+      "Joe Gqabi Municipality",
+      "Chris Hani Municipality",
+      "Buffalo City Municipality",
+      "Amathole Municipality",
+      "Alfred Nzo Municipality"
+    ],
+    "Free State": [
+      "Xhariep Municipality",
+      "Thabo Municipality",
+      "Mangaung Municipality",
+      "Lejweleputswa Municipality",
+      "Fezile Dabi Municipality"
+    ],
+    "Gauteng": [
+      "West Rand Municipality",
+      "Sedibeng Municipality",
+      "Ekurhuleni Municipality",
+      "City of Tshwane Municipality",
+      "City of Johannesburg Municipality"
+    ],
+    "KwaZulu-Natal": [
+      "Zululand District Municipality",
+      "uThukela Municipality",
+      "uMzinyathi Municipality",
+      "uMkhanyakude Municipality",
+      "uMgungundlovu Municipality",
+      "Ugu Municipality",
+      "King Cetshwayo Municipality",
+      "iLembe Municipality",
+      "Harry Gwala Municipality",
+      "eThekwini Municipality",
+      "Amajuba Municipality"
+    ],
+    "Limpopo": [
+      "Waterberg Municipality",
+      "Vhembe Municipality",
+      "Sekhukhune Municipality",
+      "Mopani Municipality",
+      "Capricorn Municipality"
+    ],
+    "Mpumalanga": [
+      "Nkangala Municipality",
+      "Gert Sibande Municipality",
+      "Ehlanzeni Municipality"
+    ],
+    "North West": [
+      "Ngaka Modiri Molema Municipality",
+      "Dr Ruth Segomotsi Mompati Municipality",
+      "Dr Kenneth Kaunda Municipality",
+      "Bojanala Municipality"
+    ],
+    "Northern Cape": [
+      "ZF Mgcawu Municipality",
+      "Pixley ka Seme Municipality",
+      "Namakwa Municipality",
+      "John Taolo Gaetsewe Municipality",
+      "Frances Baard Municipality"
+    ],
+    "Western Cape": [
+      "West Coast Municipality",
+      "Overberg Municipality",
+      "Garden Route Municipality",
+      "City of Cape Town Municipality",
+      "Central Karoo Municipality",
+      "Cape Winelands Municipality"
+    ]
+  }
+}
