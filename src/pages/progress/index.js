@@ -31,6 +31,10 @@ const buildTask = (allAnswers, allTasks) => (key) => {
   const answersArray = allAnswers[key].data;
   const taskObject = allTasks.find(({ node }) => node.id === key);
 
+  if (!taskObject) {
+    return null;
+  }
+
   const total = answersArray.length;
   const validAnswers = answersArray.filter(({ value }) => !!value).length;
 
@@ -85,7 +89,7 @@ class Page extends Component {
         props.taskAnswers,
         props.data.tasks.edges,
       ),
-    );
+    ).filter(value => !!value);
 
     const tasks = rawTasks || [];
 
