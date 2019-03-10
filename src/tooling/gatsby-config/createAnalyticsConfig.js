@@ -1,14 +1,8 @@
-module.exports = (trackingId) => {
-  if (!trackingId) {
-    return [];
-  }
-
-  return [
-    {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        trackingId,
-      },
+module.exports = () => [
+  {
+    resolve: 'gatsby-plugin-google-analytics',
+    options: {
+      trackingId: 'UA-44046318-5',
     },
-  ];
-};
+  },
+];
