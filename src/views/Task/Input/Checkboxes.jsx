@@ -42,10 +42,12 @@ const ButtonWrapper = (props) => {
   );
 
   return (
-    <FormControlLabel
-      label={text}
-      {...{ control }}
-    />
+    <div>
+      <FormControlLabel
+        label={text}
+        {...{ control }}
+      />
+    </div>
   );
 };
 
