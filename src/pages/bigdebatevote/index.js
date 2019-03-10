@@ -1,21 +1,7 @@
-import { createElement, Component } from 'react';
-import { navigate, } from 'gatsby';
+import { createElement } from 'react';
+
+
 import Loading from '../../views/Loading';
 
 
-import Task from '../../views/Task';
-
-
-class Page extends Component {
-
-  componentDidMount() {
-      return navigate('/bigdebatepoll');
-  }
-
-  render() {
-    return createElement(Loading, {});
-  }
-}
-
-export default Page;
-
+export default createElement(Loading);

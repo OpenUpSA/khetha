@@ -78,10 +78,10 @@ const createProps = (props, id) => {
 
   const completed = !!props.allAnswers && props.allAnswers['big-debate'] && !!props.allAnswers['big-debate'].completed;
 
-
   const answers = calcAnswers || [{}, {}];
 
   return {
+    autoSubmit: true,
     id: 'big-debate',
     title: task.title,
     points: props.points,
@@ -112,15 +112,9 @@ class Page extends Component {
     };
   }
 
-    
 
   componentDidMount() {
-      const props = this.props;
-      const { allAnswers } = props;
-      const completed = !!allAnswers && allAnswers['big-debate'] && !!allAnswers['big-debate'].completed;
-
-      if (completed)
-          return navigate('/bigdebatejoin');
+    const { allAnswers } = this.props;
 
     return this.setState({
       loading: false,
