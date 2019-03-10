@@ -54,10 +54,11 @@ class Task extends Component {
   componentDidUpdate() {
     const { onTaskSubmit, points } = this.props;
     const { answers } = this.state;
+    const pending = answers.filter(answer => !answer).length;
 
-    if (!this.state.submitted) {
+    if (pending < 1 && !this.state.submitted) {
       this.setState({ submitted: true });
-      const pending = answers.filter(answer => !answer).length;
+      console.log('asdasd');
 
       if (pending < 1 && onTaskSubmit) {
         return onTaskSubmit(answers, points);
