@@ -11,10 +11,12 @@ const createItem = createContent => (props) => {
     id,
   } = props;
 
+  const summary = (format === 'select') ? options[answer] : answer;
+
   return {
     title,
     id,
-    summary: answer,
+    summary,
     progress: !!answer,
     content: createContent({ format, description, options }),
     highlighted: !!answer,

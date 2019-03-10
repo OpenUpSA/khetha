@@ -1,16 +1,22 @@
 import React, { Fragment } from 'react';
 import t from 'prop-types';
-
+import MediaQuery from 'react-media';
 
 import { ForceNormalWeight, StyledSelect } from './styled';
 import Item from './Item';
 
 
 const addPrefix = (prefix, value) => (
-  <Fragment>
-    {prefix && <ForceNormalWeight>{`${prefix}: `}</ForceNormalWeight>}
-    <span>{value}</span>
-  </Fragment>
+  <MediaQuery query="(min-width: 500px)">
+    {
+      matches => (
+        <Fragment>
+          {prefix && <ForceNormalWeight>{`${prefix}: `}</ForceNormalWeight>}
+          <span>{(value.length > 18 && !matches) ? `${value.substr(0, 15)}...` : value}</span>
+        </Fragment>
+      )
+    }
+  </MediaQuery>
 );
 
 

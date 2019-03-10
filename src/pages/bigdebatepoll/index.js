@@ -114,8 +114,6 @@ class Page extends Component {
 
 
   componentDidMount() {
-    const { allAnswers } = this.props;
-
     return this.setState({
       loading: false,
     });

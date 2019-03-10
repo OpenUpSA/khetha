@@ -18,11 +18,11 @@ class Gps extends Component {
 
   updateAnswer = answer => this.setState({ answer });
 
-  manualSave = () => {
+  manualSave = (value) => {
     const { saveAnswer } = this.props;
     const { answer } = this.state;
 
-    return saveAnswer({ type: 'gps', value: answer, manual: true });
+    return saveAnswer({ type: 'gps', province: answer, value, manual: true });
   }
 
   getLocation = () => {
