@@ -13,6 +13,7 @@ import Task from '../../views/Task';
 // FIXME:
 const hardcodedQuestionId = 'big-debate';
 const hardcodedEmptyAnswers = [{}, {}];
+const hardcodedTaskPoints = 2;
 
 export const query = graphql`query {
   rawTask: tasksJson(id: { eq: "big-debate" }) {
@@ -51,7 +52,7 @@ const stateToProps = (state, ownProps) => ({
 
 const dispatchToProps = (dispatch, ownProps) => ({
   changeAnswer: (id, answers) => dispatch(update(hardcodedQuestionId, answers)),
-  submit: () => dispatch(syncAfterTaskComplete(hardcodedQuestionId, 2)),
+  submit: () => dispatch(syncAfterTaskComplete(hardcodedQuestionId, hardcodedTaskPoints)),
   markTaskAsActive: () => dispatch(create(hardcodedQuestionId, 2)),
   ...ownProps,
 });
@@ -100,7 +101,7 @@ const createProps = (props, id) => {
       formatForSave({ answers, index, value }),
     ),
     onTaskSubmit: () => {
-      props.submit(id, 2);
+      props.submit(id, hardcodedTaskPoints);
       return navigate('/bigdebatejoin');
     },
   };
