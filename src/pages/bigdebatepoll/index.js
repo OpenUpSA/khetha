@@ -12,6 +12,7 @@ import Task from '../../views/Task';
 
 // FIXME:
 const hardcodedQuestionId = 'big-debate';
+const hardcodedEmptyAnswers = [{}, {}];
 
 export const query = graphql`query {
   rawTask: tasksJson(id: { eq: "big-debate" }) {
@@ -81,7 +82,7 @@ const createProps = (props, id) => {
 
   const completed = !!props.allAnswers && props.allAnswers[hardcodedQuestionId] && !!props.allAnswers[hardcodedQuestionId].completed;
 
-  const answers = calcAnswers || [{}, {}];
+  const answers = calcAnswers || hardcodedEmptyAnswers;
 
   return {
     autoSubmit: true,
