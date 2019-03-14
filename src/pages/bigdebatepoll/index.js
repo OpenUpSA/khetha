@@ -11,12 +11,12 @@ import Task from '../../views/Task';
 
 
 // FIXME:
-const hardcodedQuestionId = 'big-debate';
-const hardcodedEmptyAnswers = [{}, {}];
+const hardcodedQuestionId = 'big-debate-2';
+const hardcodedEmptyAnswers = [{}];
 const hardcodedTaskPoints = 2;
 
 export const query = graphql`query {
-  rawTask: tasksJson(id: { eq: "big-debate" }) {
+  rawTask: tasksJson(id: { eq: "big-debate-2" }) {
     id
     points
     eng {
