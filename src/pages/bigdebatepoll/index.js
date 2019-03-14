@@ -10,6 +10,9 @@ import Loading from '../../views/Loading';
 import Task from '../../views/Task';
 
 
+// FIXME:
+const hardcodedQuestionId = 'big-debate';
+
 export const query = graphql`query {
   rawTask: tasksJson(id: { eq: "big-debate" }) {
     id
@@ -46,9 +49,9 @@ const stateToProps = (state, ownProps) => ({
 
 
 const dispatchToProps = (dispatch, ownProps) => ({
-  changeAnswer: (id, answers) => dispatch(update('big-debate', answers)),
-  submit: () => dispatch(syncAfterTaskComplete('big-debate', 2)),
-  markTaskAsActive: () => dispatch(create('big-debate', 2)),
+  changeAnswer: (id, answers) => dispatch(update(hardcodedQuestionId, answers)),
+  submit: () => dispatch(syncAfterTaskComplete(hardcodedQuestionId, 2)),
+  markTaskAsActive: () => dispatch(create(hardcodedQuestionId, 2)),
   ...ownProps,
 });
 
@@ -70,19 +73,19 @@ const createProps = (props, id) => {
     return navigate('/');
   }
 
-  if (!props.allAnswers || !props.allAnswers['big-debate']) {
+  if (!props.allAnswers || !props.allAnswers[hardcodedQuestionId]) {
     props.markTaskAsActive();
   }
 
-  const calcAnswers = !!props.allAnswers && props.allAnswers['big-debate'] && props.allAnswers['big-debate'].data;
+  const calcAnswers = !!props.allAnswers && props.allAnswers[hardcodedQuestionId] && props.allAnswers[hardcodedQuestionId].data;
 
-  const completed = !!props.allAnswers && props.allAnswers['big-debate'] && !!props.allAnswers['big-debate'].completed;
+  const completed = !!props.allAnswers && props.allAnswers[hardcodedQuestionId] && !!props.allAnswers[hardcodedQuestionId].completed;
 
   const answers = calcAnswers || [{}, {}];
 
   return {
     autoSubmit: true,
-    id: 'big-debate',
+    id: hardcodedQuestionId,
     title: task.title,
     points: props.points,
     submitted: completed,
