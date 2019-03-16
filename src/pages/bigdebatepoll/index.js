@@ -10,8 +10,13 @@ import Loading from '../../views/Loading';
 import Task from '../../views/Task';
 
 
+// FIXME:
+const hardcodedQuestionId = 'big-debate-2';
+const hardcodedEmptyAnswers = [{}];
+const hardcodedTaskPoints = 2;
+
 export const query = graphql`query {
-  rawTask: tasksJson(id: { eq: "big-debate" }) {
+  rawTask: tasksJson(id: { eq: "big-debate-2" }) {
     id
     points
     eng {
@@ -46,9 +51,9 @@ const stateToProps = (state, ownProps) => ({
 
 
 const dispatchToProps = (dispatch, ownProps) => ({
-  changeAnswer: (id, answers) => dispatch(update('big-debate', answers)),
-  submit: () => dispatch(syncAfterTaskComplete('big-debate', 2)),
-  markTaskAsActive: () => dispatch(create('big-debate', 2)),
+  changeAnswer: (id, answers) => dispatch(update(hardcodedQuestionId, answers)),
+  submit: () => dispatch(syncAfterTaskComplete(hardcodedQuestionId, hardcodedTaskPoints)),
+  markTaskAsActive: () => dispatch(create(hardcodedQuestionId, 2)),
   ...ownProps,
 });
 
@@ -70,19 +75,19 @@ const createProps = (props, id) => {
     return navigate('/');
   }
 
-  if (!props.allAnswers || !props.allAnswers['big-debate']) {
+  if (!props.allAnswers || !props.allAnswers[hardcodedQuestionId]) {
     props.markTaskAsActive();
   }
 
-  const calcAnswers = !!props.allAnswers && props.allAnswers['big-debate'] && props.allAnswers['big-debate'].data;
+  const calcAnswers = !!props.allAnswers && props.allAnswers[hardcodedQuestionId] && props.allAnswers[hardcodedQuestionId].data;
 
-  const completed = !!props.allAnswers && props.allAnswers['big-debate'] && !!props.allAnswers['big-debate'].completed;
+  const completed = !!props.allAnswers && props.allAnswers[hardcodedQuestionId] && !!props.allAnswers[hardcodedQuestionId].completed;
 
-  const answers = calcAnswers || [{}, {}];
+  const answers = calcAnswers || hardcodedEmptyAnswers;
 
   return {
     autoSubmit: true,
-    id: 'big-debate',
+    id: hardcodedQuestionId,
     title: task.title,
     points: props.points,
     submitted: completed,
@@ -96,7 +101,7 @@ const createProps = (props, id) => {
       formatForSave({ answers, index, value }),
     ),
     onTaskSubmit: () => {
-      props.submit(id, 2);
+      props.submit(id, hardcodedTaskPoints);
       return navigate('/bigdebatejoin');
     },
   };

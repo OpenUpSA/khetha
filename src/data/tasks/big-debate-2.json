@@ -1,0 +1,21 @@
+{
+  "id": "big-debate-2",
+  "points": 2,
+  "icon": "Public",
+
+  "eng": {
+    "title": "Politician Values",
+    "description": "In the coming elections, do you believe there are politicians you can vote for who have the vision and the values to take South Africa forward?",
+    "questions": [
+      {
+        "title": "In the coming elections, do you believe there are politicians you can vote for who have the vision and the values to take South Africa forward?",
+        "format": "buttons",
+        "options": [
+          "Yes",
+          "No",
+          "Not sure"
+        ]
+      }
+    ]
+  }
+}

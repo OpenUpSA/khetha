@@ -23,7 +23,9 @@ const createProps = props => ({
   translation: [
     {
       title: 'Thanks for voting!',
-      description: 'To keep voting in future Big Debate polls, and stand a chance to win a trip to the Big Debate studio live show, join the Khetha! app now. On Khetha! you can also play games about the elections and win airtime.',
+      // TODO (Pi 2019-03-14): This gets text-flowed in the current HTML output.
+      //  Add line / paragraph break markup?
+      description: "Don't miss the Big Debate - Sunday, 17 March on SABC 2. PRIZES UP FOR GRABS!! Keep voting and stand a chance to win a trip to the Big Debate studio live show, and prizes to the value of R25,000 by playing the Khetha! game. Would you like to play?",
       primary: 'Click here to find out more',
     },
   ],
