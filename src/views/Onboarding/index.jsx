@@ -14,6 +14,10 @@ export default class Onboarding extends Component {
     };
   }
 
+  componentDidMount() {
+    console.log(notExist.example);
+  }
+
   changeLanguage = (language) => {
     const { nextStep } = this;
     this.setState({ language });
