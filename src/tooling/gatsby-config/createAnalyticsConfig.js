@@ -1,8 +1,8 @@
-module.exports = trackingId => [
+module.exports = () => [
   {
     resolve: 'gatsby-plugin-google-analytics',
     options: {
-      trackingId,
+      trackingId: 'UA-93649482-14',
     },
   },
 ];
