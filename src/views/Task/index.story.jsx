@@ -22,6 +22,7 @@ const types = [
   'buttons',
   'select',
   'checkboxes',
+  'date',
   'gps',
 ];
 
@@ -141,11 +142,14 @@ const completedProps = (seed) => {
 
 
 const string = () => <Task {...singleItem('string')} onTaskSubmit={console.log} onQuestionSave={console.log} points={randomNumber(0, 110)} />;
+const date = () => <Task {...singleItem('date')} onTaskSubmit={console.log} onQuestionSave={console.log} points={randomNumber(0, 110)} />;
 const text = () => <Task {...singleItem('text')} onTaskSubmit={console.log} onQuestionSave={console.log} points={randomNumber(0, 110)} />;
 const boolean = () => <Task {...singleItem('boolean')} onTaskSubmit={console.log} onQuestionSave={console.log} points={randomNumber(0, 110)} />;
 const buttons = () => <Task {...singleItem('buttons')} onTaskSubmit={console.log} onQuestionSave={console.log} points={randomNumber(0, 110)} />;
 const select = () => <Task {...singleItem('select')} onTaskSubmit={console.log} onQuestionSave={console.log} points={randomNumber(0, 110)} />;
 const checkbox = () => <Task {...singleItem('checkboxes')} onTaskSubmit={console.log} onQuestionSave={console.log} points={randomNumber(0, 110)} />;
+
+
 const gps = () => <Task {...singleItem('gps')} onTaskSubmit={console.log} onQuestionSave={console.log} points={randomNumber(0, 110)} />;
 
 const small = () => <Task {...createProps(1, 3)} onTaskSubmit={console.log} onQuestionSave={console.log} points={randomNumber(0, 110)} />;
@@ -174,6 +178,7 @@ storiesOf('view.Task', module)
   .add('Buttons item', buttons)
   .add('Select item', select)
   .add('Checkboxes item', checkbox)
+  .add('Date item', date)
   .add('GPS item', gps)
   .add('Small task', small)
   .add('Average task', average)
