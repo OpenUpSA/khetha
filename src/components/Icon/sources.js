@@ -3,6 +3,7 @@ import School from '@material-ui/icons/School';
 import Poll from '@material-ui/icons/Poll';
 import Person from '@material-ui/icons/Person';
 import People from '@material-ui/icons/People';
+import Face from '@material-ui/icons/Face';
 import Notifications from '@material-ui/icons/Notifications';
 import FreeBreakfast from '@material-ui/icons/FreeBreakfast';
 import FitnessCenter from '@material-ui/icons/FitnessCenter';
@@ -78,6 +79,7 @@ const materialIcons = {
   AirportShuttle,
   Wifi,
   Wc,
+  Face,
   TimeToLeave,
   Power,
   Cancel,

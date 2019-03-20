@@ -51,6 +51,7 @@ const list = [
   'Poll',
   'Person',
   'People',
+  'Face',
   'Notifications',
   'FreeBreakfast',
   'FitnessCenter',
