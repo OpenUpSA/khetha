@@ -49,7 +49,7 @@
 
       {
         "title": "What is your year of birth?",
-        "format": "date"
+        "format": "string"
       },
 
       {
