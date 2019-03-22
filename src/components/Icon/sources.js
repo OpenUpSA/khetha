@@ -1,5 +1,6 @@
 import Public from '@material-ui/icons/Public';
 import School from '@material-ui/icons/School';
+import OfflineBolt from '@material-ui/icons/OfflineBolt';
 import Poll from '@material-ui/icons/Poll';
 import Person from '@material-ui/icons/Person';
 import People from '@material-ui/icons/People';
@@ -65,6 +66,7 @@ const customIcons = {
 
 
 const materialIcons = {
+  OfflineBolt,
   Public,
   School,
   Poll,
