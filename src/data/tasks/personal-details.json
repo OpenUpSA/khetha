@@ -1,0 +1,100 @@
+{
+  "id": "personal-details",
+  "points": 2,
+  "icon": "Face",
+
+  "eng": {
+    "title": "Personal Details",
+    "description": "Earn Khetha points by telling us a bit about yourself and how you would like to receive your airtime rewards",
+    "questions": [
+      {
+        "title": "Do you give us permission to save your information?",
+        "description": "Your information will be kept confidential",
+        "format": "buttons",
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+
+      {
+        "title": "What will your gaming name be?",
+        "description": "You can choose an alias if you want",
+        "format": "string"
+      },
+
+
+      {
+        "title": "Which network provider are you with?",
+        "description": "This information will be used for airtime prizes",
+        "format": "checkboxes",
+        "options": [
+          "Cell C",
+          "MTN",
+          "rain",
+          "Telkom (8ta)",
+          "Virgin Mobile",
+          "Vodacom"
+        ]
+      },
+
+      {
+        "title": "What do you prefer as a reward for playing?",
+        "format": "buttons",
+        "options": [
+          "Airtime",
+          "Data"
+        ]
+      },
+
+      {
+        "title": "What is your year of birth?",
+        "format": "string"
+      },
+
+      {
+        "title": "How would you describe yourself?",
+        "format": "select",
+        "options": [
+          "Black South African",
+          "White South African",
+          "Coloured South African",
+          "Indian South African",
+          "Other"
+        ]
+      },
+
+      {
+        "title": "What is your highest level of education?",
+        "format": "select",
+        "description": "For tertiary education (university or college) incomplete diplomas/degrees are also valid",
+        "options": [
+          "Some primary schooling (grade 0-7)",
+          "High school (grade 9-11)",
+          "Matric (grade 12)",
+          "TVET college",
+          "University/ college undergraduate",
+          "University/ college post-graduate"
+        ]
+      },
+
+      
+      {
+        "title": "What do you do at the moment?",
+        "format": "select",
+        "options": [
+          "In high school",
+          "In college/ university",
+          "Employed",
+          "Self-employed",
+          "Unemployed and not looking",
+          "Unemployed and seeking employment"
+        ]
+      }
+    ]
+  }
+}
+
+
+
+

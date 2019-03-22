@@ -10,6 +10,7 @@ import Buttons from './Buttons';
 import Select from './Select';
 import Checkboxes from './Checkboxes';
 import Gps from './Gps';
+import Date from './Date';
 
 
 const calcComponent = (format) => {
@@ -20,6 +21,7 @@ const calcComponent = (format) => {
     case 'buttons': return Buttons;
     case 'select': return Select;
     case 'checkboxes': return Checkboxes;
+    case 'date': return Date;
     case 'gps': return Gps;
     default: return null;
   }

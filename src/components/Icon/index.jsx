@@ -46,11 +46,13 @@ const Icon = ({ type, color, ...props }) => {
 
 
 const list = [
+  'OfflineBolt',
   'Public',
   'School',
   'Poll',
   'Person',
   'People',
+  'Face',
   'Notifications',
   'FreeBreakfast',
   'FitnessCenter',

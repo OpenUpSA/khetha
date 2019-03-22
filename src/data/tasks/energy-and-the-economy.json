@@ -1,0 +1,21 @@
+{
+  "id": "energy-and-the-economy",
+  "points": 2,
+  "icon": "OfflineBolt",
+
+  "eng": {
+    "title": "Energy and the Economy",
+    "description": "Given the current situation, what do you think is the best way forward to ensure the sustained production of electricity in the next coming years?",
+    "questions": [
+      {
+        "title": "What’s the way forward for Energy and the Economy in SA?",
+        "format": "buttons",
+        "options": [
+          "Rebuild Eskom, protect jobs in coal mines",
+          "Prioritise solar, wind energy in communities",
+          "It’s not that simple"
+        ]
+      }
+    ]
+  }
+}
