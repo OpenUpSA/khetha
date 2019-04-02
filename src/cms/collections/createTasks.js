@@ -25,8 +25,8 @@ const tasksRecord = () => [
     widget: 'list',
     fields: [
       {
-        name: 'title',
-        label: 'Title',
+        name: 'question',
+        label: 'Question',
         widget: 'string',
       },
       {
