@@ -7,7 +7,7 @@ const tasksRecord = () => [
   {
     name: 'icon',
     label: 'Icon',
-    widget: 'string',
+    widget: 'icon-selector',
   },
   {
     name: 'title',
