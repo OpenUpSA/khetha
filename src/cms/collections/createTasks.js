@@ -37,7 +37,16 @@ const tasksRecord = () => [
       {
         name: 'format',
         label: 'Format',
-        widget: 'string',
+        widget: 'select',
+        options: [
+          'string',
+          'text',
+          'buttons',
+          'select',
+          'checkboxes',
+          'date',
+          'gps',
+        ],
       },
       {
         name: 'option',
