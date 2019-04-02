@@ -37,7 +37,6 @@ const Markup = (props) => {
     points,
     isolated,
     onMenuButtonPress,
-    fullscreen,
     menuActive,
     forceMenu,
   } = props;
