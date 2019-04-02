@@ -1,11 +1,5 @@
 const tasksRecord = (required = true) => [
   {
-    name: 'id',
-    label: 'ID',
-    widget: 'string',
-    required,
-  },
-  {
     name: 'points',
     label: 'Points',
     widget: 'number',
