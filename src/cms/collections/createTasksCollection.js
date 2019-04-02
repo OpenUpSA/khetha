@@ -64,7 +64,7 @@ const tasksRecord = () => [
 const createTasks = () => ({
   name: 'tasks',
   label: '✅ Tasks',
-  folder: 'src/data/tasks-test/',
+  folder: 'src/data/tasks/',
   extension: 'json',
   create: true,
   fields: [
