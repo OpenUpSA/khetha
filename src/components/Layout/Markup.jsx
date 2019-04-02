@@ -47,8 +47,8 @@ const Markup = (props) => {
     <Fragment>
       <CssBaseline />
       <GlobalStyling />
-      <Wrapper {...{ fullscreen }}>
-        <InnerWrapper {...{ fullscreen }}>
+      <Wrapper>
+        <InnerWrapper>
           {!isolated && <Header {...{ points }} />}
           {children}
         </InnerWrapper>
