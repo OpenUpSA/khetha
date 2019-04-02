@@ -1,4 +1,5 @@
 import React from 'react';
+import t from 'prop-types';
 
 
 import { StyledItem } from './styled';
@@ -27,3 +28,17 @@ const Item = (props) => {
 
 
 export default Item;
+
+Item.propTypes = {
+  text: t.string,
+  id: t.string,
+  reset: t.string,
+  disabled: t.bool,
+};
+
+Item.defaultProps = {
+  text: null,
+  id: null,
+  reset: null,
+  disabled: false,
+};

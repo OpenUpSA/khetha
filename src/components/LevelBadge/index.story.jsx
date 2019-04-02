@@ -6,7 +6,7 @@ import { storiesOf } from '@storybook/react';
 import faker from 'faker';
 
 
-import { randomLengthBlankArray, randomNumber } from '../../helpers/randomizer';
+import { /* randomLengthBlankArray, */ randomNumber } from '../../helpers/randomizer';
 import LevelBadge from './index';
 
 

@@ -127,9 +127,11 @@ export default SvgIcon;
 
 SvgIcon.propTypes = {
   points: PropTypes.number,
+  size: PropTypes.number,
 };
 
 
 SvgIcon.defaultProps = {
   points: 0,
+  size: 0,
 };

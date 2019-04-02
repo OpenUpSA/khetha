@@ -66,6 +66,7 @@ export default GradientButton;
 
 
 GradientButton.propTypes = {
+  resolve: t.bool,
   active: t.bool,
   /** Accepts a React ref created via 'React.createRef' to link the underlying HTML
    * node to a React state */
@@ -103,6 +104,7 @@ GradientButton.propTypes = {
 };
 
 GradientButton.defaultProps = {
+  resolve: false,
   active: false,
   buttonRef: null,
   text: null,

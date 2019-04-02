@@ -128,6 +128,12 @@ Markup.propTypes = {
   link: t.func,
   startLoading: t.func.isRequired,
   loading: t.bool,
+  onButtonPress: t.oneOfType([
+    t.string,
+    t.func,
+  ]).isRequired,
+  active: t.bool,
+  fullWidth: t.string,
 };
 
 Markup.defaultProps = {
@@ -139,6 +145,8 @@ Markup.defaultProps = {
   link: null,
   full: false,
   loading: false,
+  active: false,
+  fullWidth: null,
 };
 
 
