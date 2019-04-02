@@ -3,9 +3,9 @@
 import React from 'react';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-// import MenuItem from '@material-ui/core/MenuItem';
+import MenuItem from '@material-ui/core/MenuItem';
 import styled from 'styled-components';
-// import iconsObject from '../../../components/Icon/iconsObject';
+import iconsObject from '../../../components/Icon/iconsObject';
 
 
 const Wrapper = styled.form`
@@ -38,22 +38,22 @@ const StyledSelect = styled(Select)`
 `;
 
 
-// const buildIcons = iconsObject => Object.keys(iconsObject).map((key) => {
-//   const Icon = iconsObject[key];
+const buildIcons = iconsObject => Object.keys(iconsObject).map((key) => {
+  const Icon = iconsObject[key];
 
-//   return (
-//     <MenuItem value={key}>
-//       <Icon />
-//     </MenuItem>
-//   );
-// });
+  return (
+    <MenuItem value={key}>
+      <Icon />
+    </MenuItem>
+  );
+});
 
 const Markup = ({ value, handleChange: onChange }) => (
   <div>
     <Wrapper>
       <FormControl>
         <StyledSelect {...{ onChange, value }} classes={{ select: 'select' }}>
-          {/* {buildIcons(iconsObject)} */}
+          {buildIcons(iconsObject)}
         </StyledSelect>
       </FormControl>
     </Wrapper>
