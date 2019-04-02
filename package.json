@@ -18,7 +18,7 @@
     "start:gatsby:open": "gatsby develop -o",
     "start:serve": "gatsby build && gatsby serve -o",
     "test": "yarn test:jest && yarn test:lint",
-    "test:husky": "yarn test && yarn test:gatsby",
+    "test:husky": "yarn test:jest",
     "test:jest": "jest",
     "test:gatsby": "yarn build:gatsby",
     "test:jest:watch": "jest --watchAll",
