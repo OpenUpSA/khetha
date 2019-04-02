@@ -33,6 +33,7 @@ const tasksRecord = () => [
         name: 'description',
         label: 'Description',
         widget: 'markdown',
+        required: false,
       },
       {
         name: 'format',
@@ -52,6 +53,7 @@ const tasksRecord = () => [
         name: 'options',
         label: 'Option',
         widget: 'list',
+        required: false,
         field: { name: 'single-option', widget: 'string' },
         default: [],
       },
