@@ -79,6 +79,11 @@ Markup.propTypes = {
    * the following as it's first parameter: 'progress', 'start'
    * or 'profile'. This will likely be 'navigate' from import { navigate } from 'gatsby' */
   clickCallback: t.func,
+  isolated: t.bool,
+  onMenuButtonPress: t.func,
+  fullscreen: t.bool,
+  menuActive: t.bool,
+  forceMenu: t.string,
 };
 
 Markup.defaultProps = {
@@ -86,4 +91,9 @@ Markup.defaultProps = {
   footer: true,
   clickCallback: null,
   points: 0,
+  isolated: false,
+  onMenuButtonPress: null,
+  fullscreen: true,
+  menuActive: true,
+  forceMenu: false,
 };

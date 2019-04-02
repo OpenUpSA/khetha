@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import t from 'prop-types';
 import HomeIcon from '@material-ui/icons/Home';
-import PersonIcon from '@material-ui/icons/Person';
+// import PersonIcon from '@material-ui/icons/Person';
 import CheckIcon from '@material-ui/icons/Check';
 
 

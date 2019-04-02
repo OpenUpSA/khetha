@@ -13,6 +13,7 @@
     "node": true
   },
   "rules":{
-    "linebreak-style": 0
+    "linebreak-style": "off",
+    "react/prop-types": "off"
   }
 }
