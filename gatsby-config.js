@@ -1,6 +1,8 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const { config } = require('dotenv');
+
 const createFilesystemConfig = require('./src/tooling/gatsby-config/createFilesystemConfig');
+const createNetlifyCmsConfig = require('./src/tooling/gatsby-config/createNetlifyCmsConfig');
 const manifestConfig = require('./src/tooling/gatsby-config/manifestConfig');
 const createHotjarConfig = require('./src/tooling/gatsby-config/createHotjarConfig');
 const createAnalyticsConfig = require('./src/tooling/gatsby-config/createAnalyticsConfig');
@@ -23,6 +25,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-polyfill-io',
     createFilesystemConfig(__dirname),
+    createNetlifyCmsConfig(__dirname),
     manifestConfig,
     ...(createHotjarConfig({ id: HOTJAR_ID, sv: HOTJAR_SNIPPET_VERSION })),
     ...(createAnalyticsConfig({ trackingId: GOOGLE_ANALYTICS_ID })),

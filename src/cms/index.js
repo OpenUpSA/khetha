@@ -18,7 +18,7 @@ const isoKeys = Object.keys(languages);
 const config = {
   backend: {
     name: 'github',
-    repo: 'OpenUpSA/pocket-reporter',
+    repo: 'OpenUpSA/khetha',
   },
   media_folder: 'static/assets',
   public_folder: 'assets',
