@@ -10,8 +10,8 @@ const tasksRecord = () => [
     widget: 'icon-selector',
   },
   {
-    name: 'title',
-    label: 'Title',
+    name: 'question',
+    label: 'Question',
     widget: 'string',
   },
   {
