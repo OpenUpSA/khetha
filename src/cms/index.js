@@ -3,7 +3,7 @@
 import CMS, { init } from 'netlify-cms';
 import IconSelector from './widgets/IconSelector';
 import IconSelectorMarkup from './widgets/IconSelector/Markup';
-import createTasks from './collections/createTasks';
+import createTasksCollection from './collections/createTasksCollection';
 
 const config = {
   backend: {
@@ -18,7 +18,7 @@ const config = {
     preview: false,
   },
   collections: [
-    createTasks(),
+    createTasksCollection(),
   ],
 };
 

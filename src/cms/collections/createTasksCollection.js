@@ -1,17 +1,7 @@
 const tasksRecord = () => [
   {
-    name: 'points',
-    label: 'Points',
-    widget: 'number',
-  },
-  {
-    name: 'icon',
-    label: 'Icon',
-    widget: 'icon-selector',
-  },
-  {
-    name: 'question',
-    label: 'Question',
+    name: 'title',
+    label: 'Title',
     widget: 'string',
   },
   {
@@ -20,12 +10,22 @@ const tasksRecord = () => [
     widget: 'markdown',
   },
   {
-    name: 'questions',
+    name: 'icon',
+    label: 'Icon',
+    widget: 'icon-selector',
+  },
+  {
+    name: 'points',
+    label: 'Points',
+    widget: 'number',
+  },
+  {
+    name: 'single_question',
     label: 'Questions',
     widget: 'list',
     fields: [
       {
-        name: 'question',
+        name: 'single_question',
         label: 'Question',
         widget: 'string',
       },
@@ -39,19 +39,20 @@ const tasksRecord = () => [
         label: 'Format',
         widget: 'select',
         options: [
-          'string',
-          'text',
-          'buttons',
-          'select',
-          'checkboxes',
-          'date',
-          'gps',
+          'Single line text',
+          'Paragraph',
+          'Buttons',
+          'Dropdown',
+          'Checkboxes',
+          'Date',
+          'GPS Location',
         ],
       },
       {
-        name: 'option',
+        name: 'options',
         label: 'Option',
         widget: 'list',
+        field: { name: 'single-option', widget: 'string' },
         default: [],
       },
     ],
