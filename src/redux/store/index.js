@@ -2,6 +2,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import persistState from 'redux-localstorage';
 import thunk from 'redux-thunk';
+import './adapter';
 
 import initialState from './initialState.json';
 import info from '../modules/info';
@@ -15,7 +16,6 @@ const persistKeys = [
   'info',
   'answers',
 ];
-
 
 const initLocalStorage = () => persistState(persistKeys, { key: '06_03_2019' });
 const isNode = typeof window === 'undefined';
@@ -40,6 +40,5 @@ const createEnhancers = () => {
 
   return composeWithDevTools(middleware, initLocalStorage());
 };
-
 
 export default createStore(reducers, initialState, createEnhancers());
