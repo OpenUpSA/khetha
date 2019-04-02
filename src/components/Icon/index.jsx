@@ -122,9 +122,19 @@ Icon.propTypes = {
     'huge',
     'massive',
   ]),
+  color: PropTypes.oneOf([
+    'green',
+    'blue',
+    'red',
+    'grey',
+    'light-grey',
+    'white',
+    'black',
+  ]),
 };
 
 
 Icon.defaultProps = {
   size: 'standard',
+  color: 'black',
 };

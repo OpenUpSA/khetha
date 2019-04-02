@@ -86,3 +86,10 @@ Layout.propTypes = {
    * or 'profile'. This will likely be 'navigate' from import { navigate } from 'gatsby' */
   clickCallback: t.func,
 };
+
+Layout.defaultProps = {
+  header: true,
+  footer: true,
+  clickCallback: null,
+  points: 0,
+};

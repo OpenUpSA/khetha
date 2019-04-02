@@ -3,7 +3,7 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import faker from 'faker';
+// import faker from 'faker';
 
 
 import { randomNumber } from '../../helpers/randomizer';
@@ -11,15 +11,15 @@ import { names } from '../../config/icons';
 import Icon from './index';
 
 
-const createProps = (seed) => {
-  if (seed) {
-    faker.seed(seed);
-  }
+// const createProps = (seed) => {
+//   if (seed) {
+//     faker.seed(seed);
+//   }
 
-  return {
-    text: faker.hacker.verb(),
-  };
-};
+//   return {
+//     text: faker.hacker.verb(),
+//   };
+// };
 
 
 const randomIcon = () => randomNumber(0, names.length > 0 ? names.length - 1 : 0);

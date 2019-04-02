@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import t from 'prop-types';
 
 import Markup from './Markup';
 
@@ -19,3 +20,13 @@ class IconSelector extends Component {
 
 
 export default IconSelector;
+
+IconSelector.propTypes = {
+  onChange: t.func,
+  value: t.string,
+};
+
+IconSelector.defaultProps = {
+  onChange: null,
+  value: null,
+};

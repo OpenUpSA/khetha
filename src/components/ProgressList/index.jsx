@@ -98,6 +98,8 @@ ProgressList.propTypes = {
       highlighted: t.bool,
     }),
   ),
+  onSaveAnswer: t.func,
+  advance: t.string,
 };
 
 
@@ -107,4 +109,6 @@ ProgressList.defaultProps = {
   incremental: false,
   buttons: false,
   items: null,
+  onSaveAnswer: null,
+  advance: null,
 };
