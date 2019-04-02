@@ -17,7 +17,7 @@ const tasksRecord = () => [
   {
     name: 'description',
     label: 'Description',
-    widget: 'string',
+    widget: 'markdown',
   },
   {
     name: 'questions',
