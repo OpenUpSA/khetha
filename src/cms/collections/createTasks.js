@@ -51,7 +51,8 @@ const tasksRecord = () => [
       {
         name: 'option',
         label: 'Option',
-        widget: 'string',
+        widget: 'list',
+        default: [],
       },
     ],
   },
