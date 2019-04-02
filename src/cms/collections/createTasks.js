@@ -1,27 +1,23 @@
-const tasksRecord = (required = true) => [
+const tasksRecord = () => [
   {
     name: 'points',
     label: 'Points',
     widget: 'number',
-    required,
   },
   {
     name: 'icon',
     label: 'Icon',
     widget: 'string',
-    required,
   },
   {
     name: 'title',
     label: 'Title',
     widget: 'string',
-    required,
   },
   {
     name: 'description',
     label: 'Description',
     widget: 'string',
-    required,
   },
   {
     name: 'questions',
@@ -32,25 +28,21 @@ const tasksRecord = (required = true) => [
         name: 'title',
         label: 'Title',
         widget: 'string',
-        required,
       },
       {
         name: 'description',
         label: 'Description',
         widget: 'string',
-        required: false,
       },
       {
         name: 'format',
         label: 'Format',
         widget: 'string',
-        required,
       },
       {
         name: 'option',
         label: 'Option',
         widget: 'string',
-        required: false,
       },
     ],
   },
@@ -69,7 +61,7 @@ const createTasks = () => ({
       widget: 'hidden',
       default: 'tasks',
     },
-    ...tasksRecord(true),
+    ...tasksRecord(),
   ],
 });
 
