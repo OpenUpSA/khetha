@@ -75,5 +75,3 @@ private-key.json
 \.*.swp
 
 package-lock.json
-src/.prettierrc
-.gitignore
