@@ -1,33 +1,33 @@
 const faqsRecord = () => [
   {
-    name: "question",
-    label: "Question",
-    widget: "text"
+    name: 'question',
+    label: 'Question',
+    widget: 'text',
   },
   {
-    name: "answer",
-    label: "Answer",
-    widget: "markdown"
-  }
+    name: 'answer',
+    label: 'Answer',
+    widget: 'markdown',
+  },
 ];
 
 const createFaqsCollection = () => ({
-  name: "faqs",
-  identifier_field: "question",
-  label: "FAQ",
-  label_singular: "Question",
-  folder: "src/data/faqs/",
-  extension: "json",
+  name: 'faqs',
+  identifier_field: 'question',
+  label: 'FAQ',
+  label_singular: 'Question',
+  folder: 'src/data/faqs/',
+  extension: 'json',
   create: true,
   fields: [
     {
-      name: "type",
-      label: "Type",
-      widget: "hidden",
-      default: "faqs"
+      name: 'type',
+      label: 'Type',
+      widget: 'hidden',
+      default: 'faqs',
     },
-    ...faqsRecord()
-  ]
+    ...faqsRecord(),
+  ],
 });
 
 export default createFaqsCollection;

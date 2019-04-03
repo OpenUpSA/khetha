@@ -5,46 +5,46 @@ const rewardsRecord = () => [
   //   widget: "string"
   // },
   {
-    name: "points",
-    label: "Points",
-    widget: "number",
-    valueType: "int"
+    name: 'points',
+    label: 'Points',
+    widget: 'number',
+    valueType: 'int',
   },
   {
-    name: "title",
-    label: "Title",
-    widget: "string"
+    name: 'title',
+    label: 'Title',
+    widget: 'string',
   },
   {
-    name: "description",
-    label: "Description",
-    widget: "markdown"
+    name: 'description',
+    label: 'Description',
+    widget: 'markdown',
   },
   {
-    name: "dates",
-    label: "Dates",
-    widget: "list",
-    hint: "List of dates. Separated by commas. Format: YYYY-MM-DD"
-  }
+    name: 'dates',
+    label: 'Dates',
+    widget: 'list',
+    hint: 'List of dates. Separated by commas. Format: YYYY-MM-DD',
+  },
 ];
 
 const createRewards = () => ({
-  name: "rewards",
-  identifier_field: "id",
-  label: "Rewards",
-  label_singular: "Reward",
-  folder: "src/data/rewards/",
-  extension: "json",
+  name: 'rewards',
+  identifier_field: 'id',
+  label: 'Rewards',
+  label_singular: 'Reward',
+  folder: 'src/data/rewards/',
+  extension: 'json',
   create: true,
   fields: [
     {
-      name: "type",
-      label: "Type",
-      widget: "hidden",
-      default: "rewards"
+      name: 'type',
+      label: 'Type',
+      widget: 'hidden',
+      default: 'rewards',
     },
-    ...rewardsRecord()
-  ]
+    ...rewardsRecord(),
+  ],
 });
 
 export default createRewards;
