@@ -73,3 +73,5 @@ yarn-error.log
 server.auth.json
 private-key.json
 \.*.swp
+
+package-lock.json

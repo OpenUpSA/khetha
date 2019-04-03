@@ -37,7 +37,6 @@ const Markup = (props) => {
     points,
     isolated,
     onMenuButtonPress,
-    fullscreen,
     menuActive,
     forceMenu,
   } = props;
@@ -47,8 +46,8 @@ const Markup = (props) => {
     <Fragment>
       <CssBaseline />
       <GlobalStyling />
-      <Wrapper {...{ fullscreen }}>
-        <InnerWrapper {...{ fullscreen }}>
+      <Wrapper>
+        <InnerWrapper>
           {!isolated && <Header {...{ points }} />}
           {children}
         </InnerWrapper>
