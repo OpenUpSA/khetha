@@ -28,5 +28,4 @@ const config = {
 
 CMS.registerWidget('icon-selector', IconSelector, IconSelectorMarkup);
 
-console.log('config', config);
 init({ config });

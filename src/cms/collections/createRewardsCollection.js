@@ -1,9 +1,4 @@
 const rewardsRecord = () => [
-  // {
-  //   name: "id",
-  //   label: "Id",
-  //   widget: "string"
-  // },
   {
     name: 'points',
     label: 'Points',
