@@ -11,7 +11,7 @@ const faqsRecord = () => [
   }
 ];
 
-const createFaqs = () => ({
+const createFaqsCollection = () => ({
   name: "faqs",
   identifier_field: "question",
   label: "FAQ",
@@ -30,4 +30,4 @@ const createFaqs = () => ({
   ]
 });
 
-export default createFaqs;
+export default createFaqsCollection;
