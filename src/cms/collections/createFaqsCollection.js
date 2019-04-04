@@ -16,7 +16,7 @@ const createFaqsCollection = () => ({
   identifier_field: 'question',
   label: 'FAQ',
   label_singular: 'Question',
-  folder: 'src/data/faqs/',
+  folder: 'src/data/faqs-test/',
   extension: 'json',
   create: true,
   fields: [
