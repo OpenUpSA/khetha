@@ -4,6 +4,8 @@ import CMS, { init } from 'netlify-cms';
 import IconSelector from './widgets/IconSelector';
 import IconSelectorMarkup from './widgets/IconSelector/Markup';
 import createTasksCollection from './collections/createTasksCollection';
+import createRewardsCollection from './collections/createRewardsCollection';
+import createFaqsCollection from './collections/createFaqsCollection';
 
 const config = {
   backend: {
@@ -19,11 +21,11 @@ const config = {
   },
   collections: [
     createTasksCollection(),
+    createFaqsCollection(),
+    createRewardsCollection(),
   ],
 };
 
-
 CMS.registerWidget('icon-selector', IconSelector, IconSelectorMarkup);
-
 
 init({ config });
