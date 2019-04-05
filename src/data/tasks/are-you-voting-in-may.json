@@ -1,0 +1,28 @@
+{
+  "type": "tasks",
+  "title": "Are you voting in May?",
+  "description": "Voting is an important event in a democratic country....",
+  "icon": "FreeBreakfast",
+  "points": 3,
+  "single_question": [
+    {
+      "single_question": "Did you vote in the previous elections?",
+      "description": "Some text, blah bah",
+      "format": "Single line text",
+      "options": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "single_question": "Do you consider yourself to be an informed voter?",
+      "description": "dfsdrsdf",
+      "format": "Single line text",
+      "options": [
+        "No",
+        "Not at all",
+        "No no no!"
+      ]
+    }
+  ]
+}
