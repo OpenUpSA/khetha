@@ -10,14 +10,14 @@ const convertOldInfoToNewInfo = ({ info, storage: { synced } }) => ({
 });
 
 const createAnswerObject = key => ({ value, answered, ...otherValues }, index) => {
-
   const [{ eng: { questions } }] = tasks.filter(({ id }) => id === key);
+  const { title: question } = questions[index];  
 
   return {
     ...otherValues,
     answer: value,
     firstAnswered: answered,
-    question: questions[index].title,
+    question,
   };
 };
 
