@@ -1,0 +1,55 @@
+---
+name: Layout
+menu: Components
+---
+
+
+import Layout from './index';
+import { Playground, PropsTable } from 'docz';
+
+
+# Layout
+
+![stability-stable](https://img.shields.io/badge/stability-stable-green.svg)
+
+**This is a component that should wrap all views.**
+
+It does the following:
+- Adds header and/or footer (unless disabled)
+- Forces vertical scrollbar, so that content does not jump if scrollbar appears.
+
+## Props
+
+<PropsTable of={Layout} />
+
+## Demos
+
+### Basic
+
+<Playground style={{ background: '#EDEDED', position: 'relative' }}>
+  <Layout demo callback={console.log} points={3}>
+    <em>
+      This is content that will be wrapped by the Layout component
+    </em>
+  </Layout>
+</Playground>
+
+### No header
+
+<Playground style={{ background: '#EDEDED', position: 'relative' }}>
+  <Layout demo header={false} callback={console.log} points={30}>
+    <em>
+      This is content that will be wrapped by the Layout component
+    </em>
+  </Layout>
+</Playground>
+
+### No footer
+
+<Playground style={{ background: '#EDEDED', position: 'relative' }}>
+  <Layout demo footer={false} callback={console.log} points={150}>
+    <em>
+      This is content that will be wrapped by the Layout component
+    </em>
+  </Layout>
+</Playground>

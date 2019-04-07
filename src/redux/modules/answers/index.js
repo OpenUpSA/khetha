@@ -1,4 +1,4 @@
-import { blankArray } from '../../../helpers/functions/randomizer';
+import { blankArray } from '../../../helpers/randomizer';
 
 
 const CREATE = 'answers/CREATE';

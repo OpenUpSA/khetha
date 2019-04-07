@@ -6,9 +6,9 @@ import { difference } from 'lodash';
 
 
 import { create } from '../../redux/modules/answers';
-import Loading from '../../components/views/Loading';
-import requestNotificationAccess from '../../redux/actions/requestNotificationAccess';
-import Start from '../../components/views/Start';
+import Loading from '../../views/Loading';
+import { requestNotificationAccess } from '../../redux/actions';
+import Start from '../../views/Start';
 
 
 export const query = graphql`query {
@@ -132,7 +132,7 @@ class Page extends Component {
   }
 
   componentDidMount() {
-    const { id } = this.props;
+    const { id } = this.props
     return this.setState({ loading: false });
   }
 
