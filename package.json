@@ -7,7 +7,7 @@
     "packages/firebase-cloud-functions"
   ],
   "scripts": {
-    "build": "yarn build:gatsby",
+    "build": "yarn build:gatsby && yarn build:storybook",
     "build:storybook": "build-storybook --output-dir ./public/documentation",
     "build:gatsby": "gatsby build",
     "start": "yarn start:gatsby:open",
@@ -16,7 +16,7 @@
     "start:api": "firebase serve",
     "start:gatsby:open": "gatsby develop -o",
     "start:serve": "gatsby build && gatsby serve -o",
-    "test": "yarn test:jest && yarn test:lint",
+    "test": "yarn test:jest",
     "test:husky": "yarn test:gatsby",
     "test:jest": "jest",
     "test:gatsby": "yarn build:gatsby",

@@ -28,7 +28,7 @@ const firebaseImports = [
 ].join('|');
 
 
-const mockPath = '<rootDir>/src/tooling/initJestConfig/__mocks__';
+const mockPath = '<rootDir>/src/scripts/initJestConfig/__mocks__';
 
 
 const moduleNameMapper = {
@@ -50,7 +50,7 @@ const testRegex = '\\.test\\.([tj]sx?)';
 module.exports = {
   testRegex,
   transform: {
-    '^.+\\.jsx?$': '<rootDir>/src/tooling/initJestConfig/preprocess.js',
+    '^.+\\.jsx?$': '<rootDir>/src/scripts/initJestConfig/preprocess.js',
   },
   moduleNameMapper,
   testPathIgnorePatterns: ['node_modules', '.cache', '.history'],
@@ -59,5 +59,5 @@ module.exports = {
     __PATH_PREFIX__: '',
   },
   testURL: 'http://localhost',
-  setupFiles: ['<rootDir>/src/tooling/initJestConfig/loadershim.js'],
+  setupFiles: ['<rootDir>/src/scripts/initJestConfig/loadershim.js'],
 };
