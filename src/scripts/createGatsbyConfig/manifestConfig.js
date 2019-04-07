@@ -2,7 +2,7 @@ module.exports = ({
   resolve: 'gatsby-plugin-manifest',
   options: {
     name: 'Khetha',
-    icon: 'src/assets/meta/khetha-icon.png',
+    icon: 'src/data/assets/general/icon.png',
     short_name: 'Khetha',
     start_url: '/',
     background_color: '#0575E6',
