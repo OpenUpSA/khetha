@@ -1,7 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/messaging';
-import firebaseConfig from '../../config/firebaseConfig.json';
+import firebaseConfig from './data.json';
 
 
 const initMessaging = (isClient, messaging) => {
