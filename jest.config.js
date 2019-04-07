@@ -28,7 +28,7 @@ const firebaseImports = [
 ].join('|');
 
 
-const mockPath = '<rootDir>/src/tooling/jest-config/__mocks__';
+const mockPath = '<rootDir>/src/scripts/initJestConfig/__mocks__';
 
 
 const moduleNameMapper = {
@@ -37,10 +37,20 @@ const moduleNameMapper = {
   [`(${firebaseImports})`]: `${mockPath}/firebase.js`,
 };
 
+/**
+ * Regular expression that instructs Jest to consider all files in all files that end in one of the
+ * following as unit tests:
+ * - `.test.js`
+ * - `.test.jsx`
+ * - `.test.ts`
+ * - `.test.jsx`
+ */
+const testRegex = '\\.test\\.([tj]sx?)';
 
 module.exports = {
+  testRegex,
   transform: {
-    '^.+\\.jsx?$': '<rootDir>/src/tooling/jest-config/preprocess.js',
+    '^.+\\.jsx?$': '<rootDir>/src/scripts/initJestConfig/preprocess.js',
   },
   moduleNameMapper,
   testPathIgnorePatterns: ['node_modules', '.cache', '.history'],
@@ -49,5 +59,5 @@ module.exports = {
     __PATH_PREFIX__: '',
   },
   testURL: 'http://localhost',
-  setupFiles: ['<rootDir>/src/tooling/jest-config/loadershim.js'],
+  setupFiles: ['<rootDir>/src/scripts/initJestConfig/loadershim.js'],
 };

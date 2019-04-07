@@ -1,17 +1,35 @@
----
-name: store
-menu: Redux
----
+# Modules
 
-# store
+**Description pending...**
 
-**This file builds the entire Redux store and exports it as is for usage throughout project. **
+| Property               | State             |
+| ---------------------- | ----------------- |
+| **Documentation**      | :warning: PARTIAL |
+| **Browser tests**      | :x: NO            |
+| **Type notation**      | :x: NO            |
+| **IE10 support**       | :warning: UNKNOWN |
+| **Opera Mini support** | :warning: UNKNOWN |
 
-This page covers the following:
+**Files**
 
 - [Redux Provider](#redux-provider)
 - [initialState.json](#initialstatejson)
 - [index.js](#indexjs)
+  - [Methods](#methods)
+  - [localStorage](#localstorage)
+
+# store
+
+```
+/**
+ * Hello world!
+ */
+export type Hello = string;
+```
+
+**This file builds the entire Redux store and exports it as is for usage throughout project. **
+
+This page covers the following:
 
 ## Redux Provider
 

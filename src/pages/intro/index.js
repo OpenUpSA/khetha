@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 
 
 import { completeOnboarding } from '../../redux/modules/info';
-import Onboarding from '../../views/Onboarding';
-import Loading from '../../views/Loading';
+import Onboarding from '../../components/views/Onboarding';
+import Loading from '../../components/views/Loading';
 
 
 const stateToProps = (state, ownProps) => ({

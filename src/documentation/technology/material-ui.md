@@ -1,0 +1,11 @@
+## Material UI
+
+**Material UI is React library that provides ready-to-use interactive and components.**
+
+The following [Material UI](https://material-ui.com/) modules are used:
+
+|Name|Purpose|
+|---|---|
+|[@material‑ui/core](https://www.npmjs.com/package/@material-ui/core)|This package includes all core Material Design components and services found at [https://material-ui.com](https://material-ui.com). These can be imported directly into the project as [React components](https://reactjs.org/docs/react-component.html). For example: `import Card from '@material/icons/Card'`. Visit [https://material-ui.com/getting-started/usage/](https://material-ui.com/getting-started/usage/) for more details.|
+|[@material‑ui/icons](https://www.npmjs.com/package/@material-ui/icons)|This package contains all standard SVG Material Design icons as listed on [https://material.io/tools/icons](https://material.io/tools/icons). Icons can be imported into the project via their name (converted into [Pascal case](Pascal,_Modula-2_and_Oberon)) as a [React component](https://reactjs.org/docs/react-component.html). For example: `import AddToQueueIcon from '@material/icons/AddToQueue'`. Please do not use the [font-icon version of Material Icons](https://google.github.io/material-design-icons/), since fonts are subject to [anti-aliasing](https://en.wikipedia.org/wiki/Spatial_anti-aliasing) which degrades the quality of icons (especially when very small). Visit [https://material-ui.com/style/icons/](https://material-ui.com/style/icons/) for more details. |
+|[@material‑ui/lab](https://www.npmjs.com/package/@material-ui/lab)|This package contains [Material UI](https://material-ui.com/) components that are still under development, and have not been moved into `@material/core` yet. Note that the API of these components might be updated in future versions of [Material UI](https://material-ui.com/), however, they are considered production-ready in the current version. Visit [https://material-ui.com/lab/about/](https://material-ui.com/lab/about/) for more details.|

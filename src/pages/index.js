@@ -4,7 +4,7 @@ import { createElement, Component } from 'react';
 import { navigate } from 'gatsby';
 
 
-import Loading from '../views/Loading';
+import Loading from '../components/views/Loading';
 
 
 const stateToProps = (state, ownProps) => ({
