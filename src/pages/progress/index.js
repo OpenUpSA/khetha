@@ -3,8 +3,8 @@ import { createElement, Component } from 'react';
 import { navigate, graphql } from 'gatsby';
 
 
-import Loading from '../../components/views/Loading';
-import Progress from '../../components/views/Progress';
+import Loading from '../../views/Loading';
+import Progress from '../../views/Progress';
 
 
 export const query = graphql`query {

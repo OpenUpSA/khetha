@@ -1,12 +1,12 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const { config } = require('dotenv');
 
-const createFilesystemConfig = require('./src/scripts/createGatsbyConfig/createFilesystemConfig');
-const createNetlifyCmsConfig = require('./src/scripts/createGatsbyConfig/createNetlifyCmsConfig');
-const manifestConfig = require('./src/scripts/createGatsbyConfig/manifestConfig');
-const createHotjarConfig = require('./src/scripts/createGatsbyConfig/createHotjarConfig');
-const createAnalyticsConfig = require('./src/scripts/createGatsbyConfig/createAnalyticsConfig');
-const createSentryConfig = require('./src/scripts/createGatsbyConfig/createSentryConfig');
+const createFilesystemConfig = require('./src/tooling/gatsby-config/createFilesystemConfig');
+const createNetlifyCmsConfig = require('./src/tooling/gatsby-config/createNetlifyCmsConfig');
+const manifestConfig = require('./src/tooling/gatsby-config/manifestConfig');
+const createHotjarConfig = require('./src/tooling/gatsby-config/createHotjarConfig');
+const createAnalyticsConfig = require('./src/tooling/gatsby-config/createAnalyticsConfig');
+const createSentryConfig = require('./src/tooling/gatsby-config/createSentryConfig');
 
 
 const {

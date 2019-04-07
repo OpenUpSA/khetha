@@ -7,16 +7,17 @@
     "packages/firebase-cloud-functions"
   ],
   "scripts": {
-    "build": "yarn build:gatsby && yarn build:storybook",
-    "build:storybook": "build-storybook --output-dir ./public/documentation",
+    "build": "yarn build:gatsby",
     "build:gatsby": "gatsby build",
+    "build:docs": "docz build",
     "start": "yarn start:gatsby:open",
     "start:storybook": "start-storybook -p 9001 -c .storybook",
+    "start:docs": "docz dev",
     "start:gatsby": "gatsby develop",
     "start:api": "firebase serve",
     "start:gatsby:open": "gatsby develop -o",
     "start:serve": "gatsby build && gatsby serve -o",
-    "test": "yarn test:jest",
+    "test": "yarn test:jest && yarn test:lint",
     "test:husky": "yarn test:gatsby",
     "test:jest": "jest",
     "test:gatsby": "yarn build:gatsby",
@@ -57,13 +58,8 @@
     "uuid": "^3.3.2"
   },
   "devDependencies": {
-    "@storybook/addon-a11y": "^5.0.6",
-    "@storybook/addon-info": "^5.0.6",
-    "@storybook/addon-knobs": "^5.0.6",
-    "@storybook/addon-storyshots": "^5.0.6",
-    "@storybook/react": "^5.0.6",
+    "@storybook/react": "^4.1.13",
     "@wapps/gatsby-plugin-material-ui": "^1.1.0",
-    "awesome-typescript-loader": "^5.2.1",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
@@ -91,7 +87,6 @@
     "gatsby-plugin-offline": "^2.0.20",
     "gatsby-plugin-polyfill-io": "^1.0.5",
     "gatsby-plugin-react-helmet": "^3.0.5",
-    "gatsby-plugin-root-import": "^2.0.5",
     "gatsby-plugin-sentry": "^1.0.0",
     "gatsby-plugin-sitemap": "^2.0.3",
     "gatsby-plugin-styled-components": "^3.0.4",
@@ -102,15 +97,12 @@
     "husky": "^1.3.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^23.6.0",
-    "react-docgen-typescript-webpack-plugin": "^1.1.0",
-    "react-test-renderer": "^16.8.6",
-    "storybook-readme": "^5.0.1",
+    "react-test-renderer": "^16.7.0",
     "stylelint": "^9.10.1",
     "stylelint-config-recommended": "^2.1.0",
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-no-unsupported-browser-features": "^3.0.2",
-    "stylelint-processor-styled-components": "^1.5.2",
-    "typescript": "^3.4.2"
+    "stylelint-processor-styled-components": "^1.5.2"
   },
   "husky": {
     "hooks": {
