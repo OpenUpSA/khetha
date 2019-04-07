@@ -1,7 +1,7 @@
 import { createElement } from 'react';
 
 
-import Loading from '../views/Loading';
+import Loading from '../components/views/Loading';
 
 
 const page = () => createElement(Loading);

@@ -6,9 +6,9 @@ import t from 'prop-types';
 
 
 import { update } from '../../redux/modules/answers';
-import { syncAfterTaskComplete } from '../../redux/actions';
-import Loading from '../../views/Loading';
-import Task from '../../views/Task';
+import syncAfterTaskComplete from '../../redux/actions/syncAfterTaskComplete';
+import Loading from '../../components/views/Loading';
+import Task from '../../components/views/Task';
 
 
 export const query = graphql`query {
