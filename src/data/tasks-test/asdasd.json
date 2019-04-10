@@ -1,0 +1,25 @@
+{
+  "type": "tasks",
+  "title": "asdasd",
+  "description": "asfddsgafdsgh",
+  "icon": "AirportShuttle",
+  "points": 4,
+  "single_question": [
+    {
+      "single_question": "sdahfsgdfhj",
+      "description": "asfdhssgfdj",
+      "format": "Single line text",
+      "options": []
+    },
+    {
+      "single_question": "safhdsgjhdfgf",
+      "description": "afdshgfjdgf",
+      "format": "Dropdown",
+      "options": [
+        "asdfhsgfjdhgf",
+        "asdfhsjfdgfk",
+        "sdgfjdhkgfh"
+      ]
+    }
+  ]
+}
