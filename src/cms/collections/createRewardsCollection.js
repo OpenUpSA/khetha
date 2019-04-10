@@ -28,7 +28,7 @@ const createRewards = () => ({
   identifier_field: 'id',
   label: 'Rewards',
   label_singular: 'Reward',
-  folder: 'src/data/rewards/',
+  folder: 'src/data/rewards-test/',
   extension: 'json',
   create: true,
   fields: [
