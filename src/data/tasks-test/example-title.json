@@ -1,0 +1,24 @@
+{
+  "type": "tasks",
+  "title": "Example Title",
+  "description": "Example Description",
+  "icon": "BusinessCenter",
+  "points": 2,
+  "Question Information": [
+    {
+      "Question Information": "Example Question 1",
+      "description": "Example Description 1",
+      "format": "Buttons",
+      "options": [
+        "Yes",
+        "No",
+        "Maybe"
+      ]
+    },
+    {
+      "Question Information": "Example Question 2",
+      "description": "Example Description 2",
+      "format": "GPS Location"
+    }
+  ]
+}
