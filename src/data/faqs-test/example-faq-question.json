@@ -1,0 +1,5 @@
+{
+  "type": "faqs",
+  "question": "Example FAQ question",
+  "answer": "Example FAQ **bold answer**\n\n* [example link](#)"
+}

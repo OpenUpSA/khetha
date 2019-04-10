@@ -1,8 +1,7 @@
 {
-  "id": "airtime-prize",
   "points": 2,
-  "title": "Airtime Prize",
-  "description": "1200 Airtime prizes up for grabs",
+  "title": "Example Reward",
+  "description": "Example **Reward** Description",
   "dates": [
     "2019-03-21",
     "2019-03-28",
