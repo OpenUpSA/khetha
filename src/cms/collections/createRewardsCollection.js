@@ -26,7 +26,7 @@ const rewardsRecord = () => [
 const createRewards = () => ({
   name: 'rewards',
   identifier_field: 'id',
-  label: 'Rewards',
+  label: '❓ Rewards',
   label_singular: 'Reward',
   folder: 'src/data/rewards-test/',
   extension: 'json',

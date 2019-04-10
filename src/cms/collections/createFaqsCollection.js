@@ -14,7 +14,7 @@ const faqsRecord = () => [
 const createFaqsCollection = () => ({
   name: 'faqs',
   identifier_field: 'question',
-  label: 'FAQ',
+  label: '🏆 FAQs',
   label_singular: 'Question',
   folder: 'src/data/faqs-test/',
   extension: 'json',
